@@ -1,0 +1,27 @@
+---
+const {
+  metrics = [
+    { label: "Projects", value: "250+" },
+    { label: "Years", value: "8+" },
+    { label: "Avg. LCP", value: "<2.5s" },
+  ],
+} = Astro.props as { metrics: { label: string; value: string }[] };
+---
+
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-6">
+    {
+      metrics.map((m) => (
+        <div
+          class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center"
+          data-aos="zoom-in"
+        >
+          <div class="text-3xl font-extrabold bg-gradient-to-r from-cyan-300 to-violet-400 bg-clip-text text-transparent">
+            {m.value}
+          </div>
+          <div class="mt-1 text-white/60 text-sm">{m.label}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>

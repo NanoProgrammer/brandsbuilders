@@ -1,0 +1,12 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import NextSteps from "../../components/thankyou/NextSteps.astro";
+
+
+const title = "Thank you — We’ll get back within 1 business day";
+const description = "Thanks for reaching out to BrandsBuilders. Next steps & resources.";
+const canonical = "https://brandsbuilders.agency/thank-you";
+---
+<SiteLayout {title} {description} {canonical} noindex={true} jsonLd={[]}>
+<NextSteps />
+</SiteLayout>

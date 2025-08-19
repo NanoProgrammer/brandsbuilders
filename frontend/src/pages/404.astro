@@ -1,0 +1,16 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+const title = "Page not found — BrandsBuilders";
+const description = "The page you’re looking for does not exist.";
+const canonical = "https://brandsbuilders.agency/404";
+---
+<SiteLayout {title} {description} {canonical} noindex={true} jsonLd={[]}>
+<section class="max-w-3xl mx-auto px-6 py-24 text-center">
+<h1 class="text-5xl font-bold">404</h1>
+<p class="mt-4 text-white/70">Let’s get you back on track.</p>
+<div class="mt-8">
+<a class="px-5 py-3 rounded-xl bg-white text-black" href="/">Go Home</a>
+<a class="ml-3 px-5 py-3 rounded-xl border border-white/30" href="/services">See Services</a>
+</div>
+</section>
+</SiteLayout>

@@ -1,0 +1,11 @@
+---
+interface Props { title?: string; eyebrow?: string; content?: string; href?: string; class?: string }
+const { title, eyebrow, content, href, class: cls = '' } = Astro.props as Props;
+---
+<article class={`group relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06] transition ${cls}`}>
+<div class="absolute inset-px rounded-2xl opacity-0 group-hover:opacity-100 blur-xl -z-10" style="background:radial-gradient(60% 60% at 50% 50%, rgba(56,189,248,0.12), rgba(167,139,250,0.12));"></div>
+{eyebrow && <p class="text-[11px] tracking-widest uppercase text-white/50">{eyebrow}</p>}
+{title && <h3 class="mt-2 text-lg font-semibold">{title}</h3>}
+{content && <p class="mt-2 text-sm text-white/70">{content}</p>}
+{href && <a href={href} class="mt-4 inline-block text-sm text-cyan-300/90 hover:text-cyan-200">Learn more →</a>}
+</article>

@@ -1,0 +1,10 @@
+---
+// Lightweight <img> with responsive attributes; no @astrojs/image required.
+interface Props {
+src: string; alt: string; width?: number; height?: number;
+loading?: 'lazy' | 'eager'; decoding?: 'async' | 'sync' | 'auto';
+class?: string; sizes?: string; srcset?: string;
+}
+const { src, alt, width, height, loading = 'lazy', decoding = 'async', class: cls = '', sizes, srcset } = Astro.props as Props;
+---
+<img src={src} alt={alt} width={width} height={height} loading={loading} decoding={decoding} class={cls} sizes={sizes} srcset={srcset} />

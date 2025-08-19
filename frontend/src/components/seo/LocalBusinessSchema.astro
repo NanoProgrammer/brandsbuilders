@@ -1,0 +1,14 @@
+---
+interface Props { name?: string; phone?: string; street?: string; city?: string; region?: string; postal?: string; country?: string }
+const { name="BrandsBuilders", phone="+1-403-000-0000", street="—", city="Airdrie", region="AB", postal="—", country="CA" } = Astro.props as Props;
+const data = {
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name": name,
+  "telephone": phone,
+  "address": { "@type":"PostalAddress", "streetAddress": street, "addressLocality": city, "addressRegion": region, "postalCode": postal, "addressCountry": country },
+  "areaServed": ["Airdrie","Calgary","Edmonton","Red Deer"],
+  "url": "https://brandsbuilders.agency"
+};
+---
+<script type="application/ld+json">{JSON.stringify(data)}</script>

@@ -1,0 +1,27 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import Breadcrumbs from "../../../components/seo/Breadcrumbs.astro";
+import CaseHeader from "../../../components/work/CaseHeader.astro";
+import KPIStats from "../../../components/work/KPIStats.astro";
+import GalleryGrid from "../../../components/work/GalleryGrid.astro";
+import QuoteBlock from "../../../components/work/QuoteBlock.astro";
+import CTASection from "../../../components/ui/CTASection.astro";
+import ArticleSchema from "../../../components/seo/ArticleSchema.astro";
+
+
+const { project } = Astro.params;
+const title = `Case Study — ${project} | Web Design Alberta`;
+const description = "Objectives, approach and outcomes.";
+const canonical = `https://brandsbuilders.agency/work/project/${project}`;
+---
+<SiteLayout {title} {description} {canonical} jsonLd={[]}>
+<div class="max-w-6xl mx-auto px-6 py-6">
+<Breadcrumbs items={[{name:"Home",href:"/"},{name:"Work",href:"/work"},{name:project,href:`/work/project/${project}`}]}/>
+</div>
+<CaseHeader title={project} sub="Local SEO + Web" />
+<KPIStats items={[{label:"Leads",value:"+42%"},{label:"LCP",value:"1.8s"}]} />
+<GalleryGrid images={["/assets/work/a.jpg","/assets/work/b.jpg"]} />
+<QuoteBlock quote="Clear value + faster pages = more calls." author="Owner, Alberta SMB" />
+<CTASection title="Let’s plan your lift" cta={{href:"/contact",label:"Book a call"}} />
+<ArticleSchema headline={title} url={`/work/project/${project}`} />
+</SiteLayout>

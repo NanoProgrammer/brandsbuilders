@@ -1,0 +1,38 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import HeroPrimary from "../../components/sections/HeroPrimary.astro";
+import LogosCloud from "../../components/ui/LogosCloud.astro";
+import CTASection from "../../components/ui/CTASection.astro";
+import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
+import LocalBusinessSchema from "../../components/seo/LocalBusinessSchema.astro";
+
+
+const title = "About BrandsBuilders — Web Design Agency in Alberta";
+const description = "Small Alberta team helping owner‑led SMBs grow through Web Design, Local SEO and Branding across Airdrie, Calgary, Edmonton & Red Deer.";
+const canonical = "https://brandsbuilders.agency/about";
+---
+<SiteLayout {title} {description} {canonical} jsonLd={[]}>
+<div class="max-w-6xl mx-auto px-6 py-6">
+<Breadcrumbs items={[{name:"Home",href:"/"},{name:"About",href:"/about"}]} />
+</div>
+
+
+<HeroPrimary title="About our Alberta web design agency" subtitle="Small team, senior hands — outcomes over vanity." ctaPrimary={{href:"/contact",label:"Book a call"}} />
+
+
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+<div>
+<h2 class="text-2xl font-semibold">What we believe</h2>
+<p class="mt-3 text-white/70">Clarity over noise. Speed over bloat. Local intent over generic traffic.</p>
+</div>
+<div>
+<h2 class="text-2xl font-semibold">How we work</h2>
+<p class="mt-3 text-white/70">Short cycles, transparent scope, and measurable KPIs from day one.</p>
+</div>
+</section>
+
+
+<LogosCloud />
+<CTASection title="Let’s build something useful" cta={{href:"/contact",label:"Start a project"}} />
+<LocalBusinessSchema />
+</SiteLayout>

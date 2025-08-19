@@ -1,0 +1,82 @@
+---
+import Button from "../ui/Button.astro";
+interface Props {
+  eyebrow?: string;
+  title: string;
+  highlight?: string;
+  subtitle?: string;
+  ctaPrimary?: { href: string; label: string };
+  ctaSecondary?: { href: string; label: string } | null;
+  badges?: { label: string }[];
+}
+const {
+  eyebrow = "Alberta · Canada",
+  title = "We develop amazing websites for your business.",
+  highlight = "amazing",
+  subtitle = "Conversion‑first design, Local SEO and clear messaging.",
+  ctaPrimary = { href: "/contact", label: "Book a call" },
+  ctaSecondary = { href: "/work", label: "See case studies" },
+  badges = [{ label: "Trusted by SMBs" }],
+} = Astro.props as Props;
+function emphasize(text: string, word: string) {
+  if (!text || !word) return text;
+  const parts = text.split(new RegExp(`(${word})`, "i"));
+  return parts
+    .map((p) =>
+      p.toLowerCase() === word.toLowerCase()
+        ? `<span class="bg-gradient-to-r from-cyan-300 to-violet-400 bg-clip-text text-transparent">${p}</span>`
+        : p
+    )
+    .join("");
+}
+---
+
+<section class="relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div
+      class="absolute -top-24 -left-24 h-80 w-80 rounded-full blur-3xl opacity-30"
+      style="background:radial-gradient(60% 60% at 50% 50%, #60a5fa33 0%, transparent 70%);"
+    >
+    </div>
+    <div
+      class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full blur-3xl opacity-20"
+      style="background:radial-gradient(60% 60% at 50% 50%, #a78bfa33 0%, transparent 70%);"
+    >
+    </div>
+  </div>
+  <div
+    class="max-w-7xl mx-auto px-6 pt-24 pb-16 text-center"
+    data-aos="fade-up"
+  >
+    <p class="text-sm tracking-widest text-white/60 uppercase">{eyebrow}</p>
+    <h1
+      class="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+    >
+      <span set:html={emphasize(title, highlight)} />
+    </h1>
+    {subtitle && <p class="mt-4 text-white/70 max-w-2xl mx-auto">{subtitle}</p>}
+    <div class="mt-8 flex items-center justify-center gap-3">
+      <Button href={ctaPrimary.href} label={ctaPrimary.label} />
+      {
+        ctaSecondary && (
+          <Button
+            href={ctaSecondary.href}
+            label={ctaSecondary.label}
+            variant="secondary"
+          />
+        )
+      }
+    </div>
+    {
+      badges?.length && (
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs text-white/70">
+          {badges.map((b) => (
+            <span class="rounded-xl border border-white/10 px-3 py-1.5 bg-white/5">
+              {b.label}
+            </span>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+interface Item { name: string; url: string; priceRange?: string }
+const { items = [] } = Astro.props as { items: Item[] };
+const data = {
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "itemListElement": items.map((it, i) => ({
+    "@type":"ListItem", "position": i+1, "name": it.name, "url": new URL(it.url, "https://brandsbuilders.agency").toString(),
+    "offers": it.priceRange ? { "@type":"AggregateOffer", "priceCurrency":"CAD", "highPrice": it.priceRange } : undefined
+  }))
+};
+---
+<script type="application/ld+json">{JSON.stringify(data)}</script>

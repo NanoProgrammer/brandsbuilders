@@ -1,0 +1,67 @@
+---
+interface Props {
+  action?: string;                   // dónde procesas (Netlify/Formspree/tu backend). Por ahora thank-you.
+  successRedirect?: string;          // por si quieres <input name="redirect">
+  fields?: string[];                 // orden visible
+}
+const {
+  action = "/thank-you",
+  successRedirect = "/thank-you",
+  fields = ["name","email","company","phone","budget","projectType","message"]
+} = Astro.props as Props;
+---
+<form action={action} method="POST" class="space-y-4">
+  <input type="hidden" name="_redirect" value={successRedirect} />
+  <!-- honey pot -->
+  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
+  {fields.includes("name") && (
+    <div><label class="block text-sm mb-1">Name</label>
+      <input name="name" required class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2" />
+    </div>
+  )}
+  {fields.includes("email") && (
+    <div><label class="block text-sm mb-1">Email</label>
+      <input name="email" type="email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2" />
+    </div>
+  )}
+  {fields.includes("company") && (
+    <div><label class="block text-sm mb-1">Company</label>
+      <input name="company" class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2" />
+    </div>
+  )}
+  <div class="grid md:grid-cols-2 gap-4">
+    {fields.includes("phone") && (
+      <div><label class="block text-sm mb-1">Phone</label>
+        <input name="phone" class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2" />
+      </div>
+    )}
+    {fields.includes("budget") && (
+      <div><label class="block text-sm mb-1">Budget</label>
+        <select name="budget" class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2">
+          <option value="">Select</option>
+          <option>$2k–$4k</option><option>$5k–$8k</option>
+          <option>$9k–$15k</option><option>$16k+</option>
+        </select>
+      </div>
+    )}
+  </div>
+
+  {fields.includes("projectType") && (
+    <div><label class="block text-sm mb-1">Project type</label>
+      <select name="projectType" class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2">
+        <option>Web Design</option><option>Branding</option>
+        <option>Local SEO</option><option>E-commerce</option>
+      </select>
+    </div>
+  )}
+
+  {fields.includes("message") && (
+    <div><label class="block text-sm mb-1">Message</label>
+      <textarea name="message" rows={5} class="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2"></textarea>
+    </div>
+  )}
+
+  <button class="w-full rounded-xl bg-white text-black px-4 py-3 font-medium hover:bg-white/90">Send</button>
+  <p class="text-xs text-white/50">We reply within 1 business day.</p>
+</form>

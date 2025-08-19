@@ -1,0 +1,16 @@
+---
+interface Proof { label: string; value: string }
+const { items = [
+  { label:"Avg. LCP", value:"1.9s" },
+  { label:"Projects", value:"250+" },
+  { label:"Years", value:"8+" }
+] } = Astro.props as { items?: Proof[] };
+---
+<div class="grid grid-cols-3 gap-3">
+  {items.map((m) => (
+    <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+      <div class="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-violet-400 bg-clip-text text-transparent">{m.value}</div>
+      <div class="text-xs text-white/60 mt-1">{m.label}</div>
+    </div>
+  ))}
+</div>

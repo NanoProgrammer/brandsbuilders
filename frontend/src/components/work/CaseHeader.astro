@@ -1,0 +1,8 @@
+---
+interface Props { title: string; sub?: string }
+const { title, sub="Local SEO + Web" } = Astro.props as Props;
+---
+<header class="text-center">
+  <h1 class="text-3xl md:text-5xl font-bold">{title}</h1>
+  <p class="mt-2 text-white/70">{sub}</p>
+</header>
