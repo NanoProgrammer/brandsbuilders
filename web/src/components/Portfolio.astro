@@ -1,0 +1,192 @@
+---
+// Portfolio.astro
+const portfolioItems = [
+  {
+    title: "Luxe Med Spa",
+    category: "Healthcare & Beauty",
+    description: "Complete rebrand and website redesign for Calgary's premier med spa. 300% increase in online bookings.",
+    tags: ["Branding", "Web Design", "Local SEO"],
+    stats: {
+      metric: "Online Bookings",
+      increase: "300%",
+      timeframe: "First Month"
+    },
+    image: "/portfolio/luxe-med-spa.jpg",
+    url: "https://luxemedspa.ca"
+  },
+  {
+    title: "Mountain View Dental",
+    category: "Healthcare",
+    description: "Modern website with online appointment booking system. Improved patient experience and reduced phone calls by 60%.",
+    tags: ["Web Development", "UX Design", "Patient Portal"],
+    stats: {
+      metric: "Phone Calls Reduced",
+      increase: "60%",
+      timeframe: "3 Months"
+    },
+    image: "/portfolio/mountain-dental.jpg",
+    url: "https://mountainviewdental.ca"
+  },
+  {
+    title: "Alberta Solar Co",
+    category: "Energy & Sustainability",
+    description: "Lead generation website for solar panel installations. Generated 150+ qualified leads in first quarter.",
+    tags: ["Lead Generation", "Local SEO", "Conversion Optimization"],
+    stats: {
+      metric: "Qualified Leads",
+      increase: "150+",
+      timeframe: "First Quarter"
+    },
+    image: "/portfolio/alberta-solar.jpg",
+    url: "https://albertasolar.ca"
+  },
+  {
+    title: "Prairie Law Group",
+    category: "Legal Services",
+    description: "Professional law firm website with client portal. Established credibility and increased consultation requests by 200%.",
+    tags: ["Professional Services", "Client Portal", "Brand Authority"],
+    stats: {
+      metric: "Consultations",
+      increase: "200%",
+      timeframe: "6 Months"
+    },
+    image: "/portfolio/prairie-law.jpg",
+    url: "https://prairielawgroup.ca"
+  },
+  {
+    title: "Urban Fitness Club",
+    category: "Health & Fitness",
+    description: "Membership website with class booking system. Streamlined operations and increased memberships by 180%.",
+    tags: ["Membership Site", "Booking System", "Fitness Industry"],
+    stats: {
+      metric: "New Memberships",
+      increase: "180%",
+      timeframe: "4 Months"
+    },
+    image: "/portfolio/urban-fitness.jpg",
+    url: "https://urbanfitnessclub.ca"
+  },
+  {
+    title: "Calgary Tech Startup",
+    category: "Technology",
+    description: "SaaS product landing page with conversion optimization. Achieved 15% conversion rate and $2M in pre-orders.",
+    tags: ["SaaS", "Conversion Optimization", "Product Launch"],
+    stats: {
+      metric: "Conversion Rate",
+      increase: "15%",
+      timeframe: "Launch Period"
+    },
+    image: "/portfolio/tech-startup.jpg",
+    url: "https://calgarytechstartup.com"
+  }
+];
+---
+
+<section id="portfolio" class="py-24 bg-slate-950 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.3)_0%,transparent_70%)]"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-5xl lg:text-7xl font-black mb-8">
+        Projects we are
+        <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+          proud of
+        </span>
+      </h2>
+      <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+        Real results for real businesses across Alberta. Each project represents our commitment to excellence and measurable outcomes.
+      </p>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+      {portfolioItems.map((item, index) => {
+        // Create asymmetric grid layout
+        const isLarge = index === 0 || index === 3;
+        const gridClass = isLarge ? "lg:col-span-8" : "lg:col-span-4";
+        const heightClass = isLarge ? "min-h-[500px]" : "min-h-[400px]";
+        
+        return (
+          <div class={`${gridClass} ${heightClass} group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-violet-500/10`}>
+            <!-- Background Image Placeholder -->
+            <div class="absolute inset-0 bg-gradient-to-br from-violet-900/20 to-slate-900 opacity-60"></div>
+            
+            <!-- Content -->
+            <div class="absolute inset-0 p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="px-3 py-1 text-xs font-medium bg-violet-500/20 text-violet-300 rounded-full border border-violet-500/30">
+                    {item.category}
+                  </span>
+                </div>
+                
+                <h3 class="text-2xl lg:text-3xl font-bold mb-4 group-hover:text-violet-300 transition-colors duration-300">
+                  {item.title}
+                </h3>
+                
+                <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+              
+              <div>
+                <!-- Stats -->
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-slate-700/50">
+                  <div class="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div class="text-2xl font-bold text-violet-400">{item.stats.increase}</div>
+                      <div class="text-sm text-slate-400">{item.stats.metric}</div>
+                    </div>
+                    <div>
+                      <div class="text-2xl font-bold text-fuchsia-400">{item.stats.timeframe}</div>
+                      <div class="text-sm text-slate-400">Timeline</div>
+                    </div>
+                    <div>
+                      <div class="text-2xl font-bold text-indigo-400">5.0★</div>
+                      <div class="text-sm text-slate-400">Rating</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {item.tags.map(tag => (
+                    <span class="px-3 py-1 text-xs bg-slate-700/50 text-slate-300 rounded-full border border-slate-600/50">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <!-- CTA -->
+                <a 
+                  href={item.url} 
+                  class="inline-flex items-center gap-2 text-violet-400 hover:text-white font-medium group-hover:underline transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                  <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- View All Projects CTA -->
+    <div class="text-center">
+        <a href="/contact" class="btn btn-primary">View All Explore Services
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

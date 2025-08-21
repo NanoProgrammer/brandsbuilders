@@ -1,0 +1,96 @@
+---
+// CTA.astro
+---
+
+<section id="cta" class="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+    <div class="absolute top-1/2 right-0 w-96 h-96 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 4s;"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main CTA Content -->
+      <div class="mb-16">
+        <h2 class="text-5xl lg:text-7xl font-black mb-8 leading-tight">
+          Ready to
+          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+            transform
+          </span>
+          your business?
+        </h2>
+        
+        <p class="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+          Join 50+ successful Alberta businesses that have increased their revenue with our proven digital solutions. 
+          <span class="text-violet-400 font-semibold">Free consultation • No commitments • Real results</span>
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <a href="/contact" class="btn btn-primary btn-lg">Get Free Consultations</a>
+          
+          <a 
+            href="tel:+1-403-XXX-XXXX" 
+            class="px-8 py-4 border-2 border-violet-500 text-violet-400 font-bold text-lg rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-300 hover:shadow-xl"
+          >
+            Call (403) XXX-XXXX
+          </a>
+        </div>
+      </div>
+
+      <!-- Value Propositions -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10">
+          <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Fast Results</h3>
+          <p class="text-slate-400 leading-relaxed">See measurable improvements in your online presence within 30 days. We focus on quick wins that build momentum.</p>
+        </div>
+
+        <div class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10">
+          <div class="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Proven ROI</h3>
+          <p class="text-slate-400 leading-relaxed">Our clients see an average 300% return on investment within 6 months. Every dollar spent works harder for your business.</p>
+        </div>
+
+        <div class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Local Experts</h3>
+          <p class="text-slate-400 leading-relaxed">Alberta-based team with deep understanding of local markets. We know what works for Canadian businesses.</p>
+        </div>
+      </div>
+
+      <!-- Urgency/Scarcity -->
+      <div class="bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-8 border border-violet-500/20 shadow-2xl shadow-violet-500/10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-left">
+            <h3 class="text-2xl font-bold mb-2">Limited Time Offer</h3>
+            <p class="text-slate-300">Book your free consultation this month and get a complimentary website audit worth $500.</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-violet-400">7</div>
+              <div class="text-sm text-slate-400">Spots Left</div>
+            </div>
+           <a href="/contact" class="btn btn-primary ">
+              Claim Your Spot
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

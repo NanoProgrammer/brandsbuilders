@@ -1,9 +1,0 @@
----
-interface Logo { src: string; alt: string }
-const { logos = [] } = Astro.props as { logos: Logo[] };
----
-<section class="py-8">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-3 sm:grid-cols-6 gap-6 opacity-80">
-    {logos.map((l) => <img src={l.src} alt={l.alt} loading="lazy" decoding="async" class="h-8 w-auto grayscale" />)}
-  </div>
-</section>

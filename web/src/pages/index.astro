@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Stats from '../components/Stats.astro';
+import Process from '../components/Process.astro';
+import CTA from '../components/CTA.astro';
+import Contact from '../components/Contact.astro';
+
+const seo = {
+  title: 'BrandsBuilders Agency - Web Design & Digital Marketing in Alberta',
+  description:
+    'Professional web design, branding, and digital marketing services for small businesses in Calgary, Edmonton, and Airdrie. Boost your online presence with custom websites and local SEO.',
+  keywords:
+    'web design Alberta, digital marketing Calgary, branding Edmonton, website development Airdrie, local SEO Alberta, small business web design',
+  canonical: 'https://brandsbuilders.agency',
+  ogImage: '/og-image.jpg'
+};
+---
+
+<Layout seo={seo}>
+  <Hero />
+  <Services />
+  <Testimonials />
+  <Portfolio />
+  <Stats />
+  <Process />
+  <CTA />
+  <Contact />
+</Layout>
