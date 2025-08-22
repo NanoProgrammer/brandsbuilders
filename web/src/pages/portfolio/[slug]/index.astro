@@ -1,0 +1,195 @@
+---
+/** Dark detail page for portfolio items */
+
+// Si NO quieres SSR, deja prerender en true (default). Generamos estático con getStaticPaths.
+export const prerender = true;
+
+// Lista fija de proyectos (sin map externo). Añade/quita aquí.
+const entries = [
+  {
+    slug: "luxe-med-spa",
+    title: "Luxe Med Spa",
+    category: "Healthcare & Beauty",
+    impact: "300% more online bookings · First month",
+    image: "/portfolio/luxe-med-spa.jpg",
+  },
+  {
+    slug: "mountain-view-dental",
+    title: "Mountain View Dental",
+    category: "Healthcare",
+    impact: "60% fewer phone calls · 3 months",
+    image: "/portfolio/mountain-dental.jpg",
+  },
+  {
+    slug: "alberta-solar-co",
+    title: "Alberta Solar Co",
+    category: "Energy & Sustainability",
+    impact: "150+ qualified leads · First quarter",
+    image: "/portfolio/alberta-solar.jpg",
+  },
+  {
+    slug: "prairie-law-group",
+    title: "Prairie Law Group",
+    category: "Legal Services",
+    impact: "200% more consultations · 6 months",
+    image: "/portfolio/prairie-law.jpg",
+  },
+  {
+    slug: "urban-fitness-club",
+    title: "Urban Fitness Club",
+    category: "Health & Fitness",
+    impact: "180% more memberships · 4 months",
+    image: "/portfolio/urban-fitness.jpg",
+  },
+  {
+    slug: "calgary-tech-startup",
+    title: "Calgary Tech Startup",
+    category: "Technology",
+    impact: "15% conversion rate · Launch period",
+    image: "/portfolio/tech-startup.jpg",
+  },
+];
+
+// Requerido por Astro para rutas dinámicas: generamos las paths y pasamos props a la página.
+export async function getStaticPaths() {
+    const entries = [
+  {
+    slug: "luxe-med-spa",
+    title: "Luxe Med Spa",
+    category: "Healthcare & Beauty",
+    impact: "300% more online bookings · First month",
+    image: "/portfolio/luxe-med-spa.jpg",
+  },
+  {
+    slug: "mountain-view-dental",
+    title: "Mountain View Dental",
+    category: "Healthcare",
+    impact: "60% fewer phone calls · 3 months",
+    image: "/portfolio/mountain-dental.jpg",
+  },
+  {
+    slug: "alberta-solar-co",
+    title: "Alberta Solar Co",
+    category: "Energy & Sustainability",
+    impact: "150+ qualified leads · First quarter",
+    image: "/portfolio/alberta-solar.jpg",
+  },
+  {
+    slug: "prairie-law-group",
+    title: "Prairie Law Group",
+    category: "Legal Services",
+    impact: "200% more consultations · 6 months",
+    image: "/portfolio/prairie-law.jpg",
+  },
+  {
+    slug: "urban-fitness-club",
+    title: "Urban Fitness Club",
+    category: "Health & Fitness",
+    impact: "180% more memberships · 4 months",
+    image: "/portfolio/urban-fitness.jpg",
+  },
+  {
+    slug: "calgary-tech-startup",
+    title: "Calgary Tech Startup",
+    category: "Technology",
+    impact: "15% conversion rate · Launch period",
+    image: "/portfolio/tech-startup.jpg",
+  },
+];
+  return entries.map((e) => ({
+    params: { slug: e.slug },
+    props: e, // disponibles como Astro.props
+  }));
+}
+
+// Props de este slug
+const { title, category, impact, image } = Astro.props;
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title} — Portfolio | BrandsBuilders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content={`${title} — ${impact}`} />
+  </head>
+  <body class="bg-slate-950 text-white">
+    <main>
+      <!-- HERO (dark) -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.35)_0%,transparent_70%)]"></div>
+
+        <div class="container mx-auto px-6 pt-16 pb-10 relative z-10">
+          <nav class="mb-6 text-sm text-slate-400">
+            <a href="/portfolio" class="hover:text-white">Portfolio</a>
+            <span class="mx-2">/</span>
+            <span class="text-slate-300">{title}</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-6xl font-black tracking-tight">
+            {title}
+          </h1>
+          <p class="mt-3 text-violet-300 font-medium">{category}</p>
+          <p class="mt-2 text-slate-300">{impact}</p>
+
+          <div class="mt-8 rounded-2xl overflow-hidden border border-slate-800">
+            <img
+              src={image}
+              alt={title}
+              class="w-full h-[42vh] md:h-[56vh] object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contact" class="inline-flex items-center px-5 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 font-semibold hover:opacity-95 transition">
+              Get a proposal
+            </a>
+            <a href="/portfolio" class="inline-flex items-center px-5 py-3 rounded-xl border border-slate-700 hover:border-violet-500/50 hover:bg-violet-500/10 transition">
+              Back to all projects
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BODY (breve y oscuro) -->
+      <section class="py-12">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 space-y-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+              <h2 class="text-xl font-bold mb-2">Overview</h2>
+              <p class="text-slate-300">
+                Brief case study goes here. Replace this text with your challenge → solution → outcome summary.
+              </p>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+              <h2 class="text-xl font-bold mb-2">Results</h2>
+              <ul class="text-slate-300 list-disc pl-5 space-y-1">
+                <li>{impact}</li>
+                <li>Speed, accessibility and SEO foundations shipped.</li>
+                <li>Ownership & hand-off with analytics configured.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="space-y-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+              <h3 class="font-semibold mb-2">Services included</h3>
+              <ul class="text-slate-300 text-sm space-y-1 list-disc pl-5">
+                <li>Brand / Web</li>
+                <li>Local SEO / CRO</li>
+                <li>Analytics setup</li>
+              </ul>
+            </div>
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+              <h3 class="font-semibold mb-2">Next steps</h3>
+              <a href="/services" class="inline-flex items-center px-4 py-2 rounded-lg border border-slate-700 hover:border-violet-500/50 hover:bg-violet-500/10 transition">
+                Explore services
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

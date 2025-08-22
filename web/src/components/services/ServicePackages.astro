@@ -1,0 +1,229 @@
+---
+// components/services/ServicePackages.astro
+const packages = [
+  {
+    name: 'Startup Essential',
+    price: '2,499',
+    originalPrice: '3,199',
+    description: 'Perfect for new businesses ready to make their mark',
+    popular: false,
+    features: [
+      '5-Page Custom Website',
+      'Mobile-Responsive Design',
+      'Basic SEO Setup',
+      'Contact Forms',
+      'Social Media Integration',
+      '30 Days Support',
+      'Google My Business Setup',
+      'Basic Analytics'
+    ],
+    deliveryTime: '2-3 weeks',
+    color: 'from-gray-600 to-gray-700',
+    buttonClass: 'btn-secondary'
+  },
+  {
+    name: 'Business Growth',
+    price: '4,999',
+    originalPrice: '6,299',
+    description: 'Complete digital presence for growing Alberta businesses',
+    popular: true,
+    features: [
+      '10-Page Custom Website',
+      'Advanced SEO Optimization',
+      'E-commerce Ready',
+      'Blog Setup',
+      'Advanced Analytics',
+      '90 Days Support',
+      'Brand Identity Package',
+      'Social Media Strategy',
+      'Local SEO Optimization',
+      'Performance Optimization'
+    ],
+    deliveryTime: '3-4 weeks',
+    color: 'from-purple-600 to-cyan-600',
+    buttonClass: 'btn-primary'
+  },
+  {
+    name: 'Enterprise Premium',
+    price: '9,999',
+    originalPrice: '12,499',
+    description: 'Full-scale digital transformation for established companies',
+    popular: false,
+    features: [
+      'Unlimited Pages',
+      'Custom Functionality',
+      'Advanced E-commerce',
+      'Multi-location SEO',
+      'Complete Brand Suite',
+      '6 Months Support',
+      'Marketing Automation',
+      'Advanced Analytics Dashboard',
+      'Priority Support',
+      'Monthly Strategy Calls'
+    ],
+    deliveryTime: '4-6 weeks',
+    color: 'from-cyan-600 to-purple-600',
+    buttonClass: 'btn-secondary'
+  }
+];
+---
+
+<section id="packages" class="py-20 lg:py-32 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Choose Your Perfect
+        <span class="gradient-text">Digital Package</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Transparent pricing with everything included. No hidden fees, no surprises. 
+        Just results-driven solutions for Alberta businesses.
+      </p>
+      
+      <!-- Savings Badge -->
+      <div class="inline-flex items-center px-6 py-2 bg-green-100 text-green-800 rounded-full font-semibold mt-6">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+        </svg>
+        Save up to $2,500 with our bundled packages!
+      </div>
+    </div>
+
+    <!-- Packages Grid -->
+    <div class="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {packages.map((pkg, index) => (
+        <div class={`relative group ${pkg.popular ? 'lg:scale-105 lg:-translate-y-4' : ''} animate-fade-in-up animation-delay-${index * 200}`}>
+          <!-- Popular Badge -->
+          {pkg.popular && (
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+              <div class="bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-6 py-2 rounded-full text-sm font-bold">
+                MOST POPULAR
+              </div>
+            </div>
+          )}
+
+          <!-- Package Card -->
+          <div class={`glass-card h-full ${pkg.popular ? 'border-purple-200 shadow-2xl' : ''} group-hover:scale-105 transition-all duration-300`}>
+            <!-- Header -->
+            <div class="p-8 pb-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+              <p class="text-gray-600 mb-6">{pkg.description}</p>
+              
+              <!-- Pricing -->
+              <div class="mb-6">
+                <div class="flex items-baseline">
+                  <span class="text-4xl font-bold text-gray-900">$</span>
+                  <span class="text-5xl font-bold text-gray-900">{pkg.price}</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <span class="text-gray-500 line-through text-lg mr-2">
+                    ${pkg.originalPrice}
+                  </span>
+                  <span class="bg-red-100 text-red-600 px-2 py-1 rounded-full text-sm font-semibold">
+                    Save ${(parseInt(pkg.originalPrice.replace(',', '')) - parseInt(pkg.price.replace(',', ''))).toLocaleString()}
+                  </span>
+                </div>
+                
+                <!-- Delivery Time -->
+                <div class="flex items-center mt-4 text-gray-600">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="font-medium">Delivered in {pkg.deliveryTime}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <div class="px-8 pb-8">
+              <h4 class="font-semibold text-gray-900 mb-4">What's Included:</h4>
+              <ul class="space-y-3">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="px-8 pb-8 mt-auto">
+              <a href="/contact" class={`${pkg.buttonClass} w-full justify-center group`}>
+                <span>Get Started</span>
+                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Info -->
+    <div class="mt-16 text-center">
+      <div class="glass-card max-w-4xl mx-auto p-8">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-purple-600 mb-3">
+              <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">No Hidden Fees</h4>
+            <p class="text-gray-600 text-sm">Everything is included in the price. What you see is what you pay.</p>
+          </div>
+          
+          <div>
+            <div class="text-purple-600 mb-3">
+              <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">100% Satisfaction</h4>
+            <p class="text-gray-600 text-sm">We guarantee you'll love your new digital presence or we'll make it right.</p>
+          </div>
+          
+          <div>
+            <div class="text-purple-600 mb-3">
+              <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Fast Delivery</h4>
+            <p class="text-gray-600 text-sm">Most projects completed within 2-4 weeks. No long waits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Options -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Flexible payment options available</p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          50% deposit, 50% on completion
+        </span>
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Monthly payment plans available
+        </span>
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          All major cards accepted
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

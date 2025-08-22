@@ -1,0 +1,29 @@
+---
+// pages/services.astro
+import Layout from '../../layouts/Layout.astro';
+import ServicesHero from '../../components/services/ServicesHero.astro';
+import ServicesOverview from '../../components/services/ServicesOverview.astro';
+import ServiceFeatures from '../../components/services/ServiceFeatures.astro';
+import ServiceProcess from '../../components/services/ServiceProcess.astro';
+import ServicePackages from '../../components/services/ServicePackages.astro';
+import ServiceAddons from '../../components/services/ServiceAddons.astro';
+import CTA from '../../components/CTA.astro';
+
+const seo = {
+  title: 'Our Services - BrandsBuilders Agency | Web Design, Branding & Digital Marketing Alberta',
+  description: 'Professional web design, branding, local SEO, and digital marketing services for Alberta businesses. From $2,499 websites to complete digital transformations.',
+  keywords: 'web design services Alberta, branding services Calgary, digital marketing Edmonton, local SEO Airdrie, website development packages',
+  canonical: 'https://brandsbuilders.agency/services',
+  ogImage: '/services-og.jpg'
+};
+---
+
+<Layout seo={seo}>
+  <ServicesHero />
+  <ServicesOverview />
+  <ServiceFeatures />
+  <ServicePackages />
+  <ServiceProcess />
+  <ServiceAddons />
+  <CTA />
+</Layout>
