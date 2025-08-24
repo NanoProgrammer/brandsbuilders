@@ -1,100 +1,77 @@
 ---
-// components/services/ServicesOverview.astro
-const services = [
+const items = [
   {
-    icon: '🎨',
+    href: '/web-design',
     title: 'Web Design & Development',
-    description: 'Custom websites that convert visitors into customers',
-    features: ['Responsive Design', 'Fast Loading', 'SEO Optimized', 'Mobile-First'],
-    color: 'from-purple-400 to-cyan-400'
+    desc: 'Fast, accessible and analytics-ready websites with CRO-first UX.',
+    bullets: ['Mobile-first', 'Lighthouse ≥90 target', 'GA4 events', 'SEO-ready'],
+    grad: 'from-violet-500 to-fuchsia-500',
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h18M3 9h18M7 9v10m5-10v10m5-10v10"/></svg>`
   },
   {
-    icon: '🚀',
-    title: 'Brand Identity & Design',
-    description: 'Complete branding solutions that make you unforgettable',
-    features: ['Logo Design', 'Brand Guidelines', 'Marketing Materials', 'Visual Identity'],
-    color: 'from-cyan-400 to-purple-400'
+    href: '/branding',
+    title: 'Branding & Identity',
+    desc: 'Identity systems and messaging that lift perceived quality and trust.',
+    bullets: ['Logo & variants', 'Color/Type tokens', 'Voice & tone', 'Social kit'],
+    grad: 'from-fuchsia-500 to-indigo-500',
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path stroke-width="2" d="M8 12h8M12 8v8"/></svg>`
   },
   {
-    icon: '📈',
-    title: 'Digital Marketing',
-    description: 'Strategic marketing to grow your online presence',
-    features: ['Local SEO', 'Social Media', 'Content Strategy', 'Analytics'],
-    color: 'from-purple-500 to-cyan-500'
-  },
-  {
-    icon: '🎯',
-    title: 'Local SEO & Optimization',
-    description: 'Get found by Alberta customers searching for you',
-    features: ['Google My Business', 'Local Citations', 'Review Management', 'Location-Based SEO'],
-    color: 'from-cyan-500 to-purple-500'
+    href: '/local-seo',
+    title: 'Local SEO (On-Page)',
+    desc: 'Technical + on-page SEO and GBP optimization to capture high-intent searches.',
+    bullets: ['LocalBusiness schema', 'Internal links', 'GBP setup', 'FAQ/Breadcrumb schema'],
+    grad: 'from-indigo-500 to-violet-500',
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.5-4.5M10 18a8 8 0 100-16 8 8 0 000 16z"/></svg>`
   }
 ];
 ---
 
-<section class="py-20 lg:py-32 bg-gray-50">
+<section class="py-16 lg:py-24 bg-slate-950">
   <div class="container mx-auto px-6">
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-        Complete Digital Solutions for
-        <span class="gradient-text">Alberta Businesses</span>
-      </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        From small startups to established companies, we provide end-to-end digital services 
-        that help you stand out in the competitive Alberta market.
-      </p>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white">What we do</h2>
+      <p class="text-slate-400 mt-2">Brand • Web • Local SEO — made to sell.</p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-      {services.map((service, index) => (
-        <div class={`glass-card group hover:scale-105 transition-all duration-500 animate-fade-in-up animation-delay-${index * 200}`}>
-          <!-- Service Icon -->
-          <div class={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl text-2xl mb-6 group-hover:scale-110 transition-transform`}>
-            {service.icon}
+    <div class="grid md:grid-cols-3 gap-6">
+      {items.map((s, i) => (
+        <a href={s.href}
+           class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-white/5 p-6 hover:border-violet-500/40 hover:bg-violet-500/10 transition"
+           style={`animation: fade-in .6s both; animation-delay:${i*120}ms`}>
+          <!-- subtle corner glow -->
+          <div class="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 blur-2xl"></div>
+
+          <div class={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r ${s.grad} text-white mb-4`}>
+            <Fragment set:html={s.icon} />
           </div>
 
-          <!-- Service Content -->
-          <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:gradient-text transition-all">
-            {service.title}
-          </h3>
-          
-          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-            {service.description}
-          </p>
+          <h3 class="text-white text-xl font-semibold">{s.title}</h3>
+          <p class="text-slate-300 mt-2">{s.desc}</p>
 
-          <!-- Features List -->
-          <div class="grid grid-cols-2 gap-3 mb-8">
-            {service.features.map((feature) => (
-              <div class="flex items-center text-gray-700">
-                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <ul class="mt-4 grid grid-cols-2 gap-2">
+            {s.bullets.map((b) => (
+              <li class="text-slate-300 text-sm inline-flex items-center gap-2">
+                <svg class="w-4 h-4 text-violet-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span class="text-sm font-medium">{feature}</span>
-              </div>
+                {b}
+              </li>
             ))}
-          </div>
+          </ul>
 
-          <!-- Learn More Link -->
-          <a href="#packages" class="inline-flex items-center text-purple-600 hover:text-cyan-600 font-semibold group/link transition-colors">
-            <span>Learn More</span>
-            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          <span class="mt-5 inline-flex items-center gap-2 text-violet-300">
+            Explore
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4-4 4M21 12H3"/>
             </svg>
-          </a>
-        </div>
+          </span>
+        </a>
       ))}
-    </div>
-
-    <!-- Bottom CTA -->
-    <div class="text-center mt-16">
-      <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-full font-semibold hover:scale-105 transition-transform cursor-pointer">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-        </svg>
-        <span>Not sure which service you need? Let's talk!</span>
-      </div>
     </div>
   </div>
 </section>
+
+<style>
+@keyframes fade-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+</style>

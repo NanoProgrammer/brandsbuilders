@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactHero from '../../components/ContactHero';
+import BookingSection from '../../components/BookingSection';
+import IntakeForm from '../../components/IntakeForm';
+import ContactFAQ from '../../components/ContactFAQ.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import ContactDetails from '../../components/ContactDetails.astro';
+
+const seo = {
+  title: 'Contact Us - BrandsBuilders Agency | Get Your Free Quote Today',
+  description: 'Ready to grow your business? Book a 15-minute discovery call or tell us about your project. Free consultation, 24-hour response time, no sales pitch.',
+  keywords: 'contact web design Alberta, free consultation Calgary, digital marketing quote Edmonton, web development Airdrie',
+  canonical: 'https://brandsbuilders.agency/contact',
+  ogImage: '/og-contact.jpg'
+};
+---
+
+<Layout seo={seo}>
+  <!-- React components (asegúrate de tener @astrojs/react instalado) -->
+  <ContactHero client:only="react" />
+  <BookingSection client:only="react" />
+  <IntakeForm client:only="react" />
+
+  <!-- Astro components -->
+  <ContactFAQ />
+  <TrustBadges />
+  <ContactDetails />
+</Layout>
+
+<!-- Smooth scroll para anchors + sin conflictos con Cal -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Forzar stacking correcto del embed de Cal */
+  :global([id*="cal-embed"]) {
+    position: relative;
+    z-index: 1;
+  }
+  :global([id*="cal-embed"] iframe) {
+    border: none;
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    display: block;
+  }
+</style>

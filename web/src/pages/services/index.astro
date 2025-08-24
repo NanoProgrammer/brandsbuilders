@@ -1,29 +1,284 @@
 ---
-// pages/services.astro
-import Layout from '../../layouts/Layout.astro';
-import ServicesHero from '../../components/services/ServicesHero.astro';
-import ServicesOverview from '../../components/services/ServicesOverview.astro';
-import ServiceFeatures from '../../components/services/ServiceFeatures.astro';
-import ServiceProcess from '../../components/services/ServiceProcess.astro';
-import ServicePackages from '../../components/services/ServicePackages.astro';
-import ServiceAddons from '../../components/services/ServiceAddons.astro';
-import CTA from '../../components/CTA.astro';
+import Layout from "../../layouts/Layout.astro";
 
 const seo = {
-  title: 'Our Services - BrandsBuilders Agency | Web Design, Branding & Digital Marketing Alberta',
-  description: 'Professional web design, branding, local SEO, and digital marketing services for Alberta businesses. From $2,499 websites to complete digital transformations.',
-  keywords: 'web design services Alberta, branding services Calgary, digital marketing Edmonton, local SEO Airdrie, website development packages',
-  canonical: 'https://brandsbuilders.agency/services',
-  ogImage: '/services-og.jpg'
+  title: "Services - Brand, Web & Local SEO | BrandsBuilders Agency",
+  description:
+    "Professional branding, web design, and local SEO services for Alberta businesses. Fast delivery, clear scope, measurable results.",
+  keywords:
+    "web design Alberta, branding Calgary, local SEO Edmonton, website development",
+  canonical: "https://brandsbuilders.agency/services",
 };
+
+// DATA
+const smallBusinessPackages = [
+  {
+    name: "Go-to-Market Launch",
+    tagline: "Brand + Landing + simple on-page SEO",
+    deadline: "30–45 days",
+    price: "$2,500–$4,000",
+    features: [
+      "Brand Launch (light): logo, palette, type pair, voice & tone",
+      "Campaign Landing (CRO-first): 5–7 sections, mobile 90+",
+      "Technical SEO only (meta, semantic HTML, OG/Twitter)",
+      "Google Business Profile Setup & Optimization",
+    ],
+    addons: [
+      { name: "Booking & Integrations Pack", price: "$350–$700" },
+      { name: "Analytics Setup", price: "$250–$600" },
+    ],
+    popular: false,
+  },
+  {
+    name: "Local Service Site",
+    tagline: "Identity + multipage site + local on-page + social kit",
+    deadline: "30–45 days",
+    price: "$3,500–$5,500",
+    features: [
+      "Brand Launch (light)",
+      "Web (3–7 pages): Home, Services, About, Contact",
+      "Local on-page SEO + GBP setup & review prompts",
+      "Media Lite: 2-page guide, 6 Canva templates, icons",
+    ],
+    addons: [
+      { name: "Reviews Engine Setup", price: "$250–$450" },
+      { name: "Care Plan (Monthly)", price: "$180–$420/mo" },
+      { name: "Web Performance Boost", price: "$1,000–$1,800" },
+    ],
+    popular: true,
+  },
+  {
+    name: "Starter Shop",
+    tagline: "Identity + e-commerce base + technical SEO + social commerce",
+    deadline: "6–8 weeks",
+    price: "$7,500–$10,000",
+    features: [
+      "Brand Launch (light)",
+      "E-commerce (Shopify/Headless): PLP/PDP, checkout, emails",
+      "Technical SEO (Product schema, metas, canonicals)",
+      "Media Lite: Social Commerce guide, UGC kit",
+    ],
+    addons: [
+      { name: "Reviews Engine Setup", price: "$250–$450" },
+      { name: "Care Plan (E-commerce)", price: "$260–$520/mo" },
+      { name: "Product Feed Setup", price: "$350–$700" },
+    ],
+    popular: false,
+  },
+];
+
+const midMarketPackages = [
+  {
+    name: "Rebrand & Site Foundation",
+    tagline: "Full rebrand + scalable site + technical/on-page base",
+    deadline: "6–10 weeks",
+    price: "$7,500–$12,500",
+    features: [
+      "Rebrand & Identity System: logo set, colors, guidelines",
+      "Site + CMS: component library, content roles, AA essentials",
+      "SEO: technical + on-page base (taxonomies, breadcrumbs)",
+      "10–20 pages with mobile Lighthouse 90+ target",
+    ],
+    addons: [
+      { name: "Content System & On-Page Lift", price: "$3,000–$6,000" },
+      { name: "Multilingual (EN/ES + hreflang)", price: "$700–$1,500/lang" },
+      { name: "Accessibility AA Upgrade", price: "$700–$1,400" },
+    ],
+    popular: false,
+  },
+  {
+    name: "Content System & On-Page Lift",
+    tagline: "CMS ready + on-page for 10–20 URLs + 90-day playbook",
+    deadline: "4–6 weeks",
+    price: "$2,800–$5,000",
+    features: [
+      "Content models (Blog/Case/Category), taxonomies wired",
+      "On-page for 10–20 URLs (titles, metas, H1–H3, links)",
+      "Article/FAQ/Breadcrumb schema implementation",
+      "GSC mapping + GA4 goals + 90-day editorial calendar",
+    ],
+    addons: [
+      { name: "On-Page Expansion (+10–20 URLs)", price: "$1,100–$2,200" },
+      { name: "Search Console & Reporting Setup", price: "$300–$650" },
+      { name: "Schema Expansion at Scale", price: "$600–$1,200" },
+    ],
+    popular: true,
+  },
+  {
+    name: "E-commerce Foundation",
+    tagline: "Catalog modeled + PLP/PDP pro + checkout + technical SEO",
+    deadline: "6–10 weeks",
+    price: "$13,000–$20,000",
+    features: [
+      "Catalog architecture (attributes/facets) + search config",
+      "PLP/PDP advanced: variants, badges, trust, upsell/cross",
+      "Checkout setup + transactional emails + CMS blocks",
+      "Technical + on-page SEO (Product/Breadcrumb schema)",
+    ],
+    addons: [
+      { name: "Checkout Acceleration", price: "$700–$1,400" },
+      { name: "Order/Shipping/Refund System", price: "$4,000–$6,000" },
+      { name: "Merchandising Rules Kit", price: "$600–$1,200" },
+      { name: "Analytics & Event Tracking", price: "$250–$600" },
+    ],
+    popular: false,
+  },
+];
+
+const coreServices = [
+  { name: "Web Design", slug: "/services/web-design", summary: "Fast, accessible websites built for conversions" },
+  { name: "Branding", slug: "/services/branding", summary: "Identity systems that build trust and credibility" },
+  { name: "Local SEO", slug: "/services/local-seo", summary: "On-page optimization and Google Business Profile setup" },
+];
 ---
 
 <Layout seo={seo}>
-  <ServicesHero />
-  <ServicesOverview />
-  <ServiceFeatures />
-  <ServicePackages />
-  <ServiceProcess />
-  <ServiceAddons />
-  <CTA />
+  <!-- HERO (un poquito más grande) -->
+  <section class="bg-slate-950">
+    <div class="container mx-auto px-6 py-20 md:py-28">
+      <div class="max-w-4xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-3">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+          Alberta • Owner-led SMBs • Clear Results
+        </p>
+        <h1 class="text-5xl md:text-7xl font-black leading-tight text-white mb-4">Brand, Web & Local SEO</h1>
+        <p class="text-slate-300 text-base md:text-lg mb-6 max-w-2xl">
+          We ship clean identities, fast websites and pragmatic on-page SEO that move the needle in 30–90 days.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#packages" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">View Packages</a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10">Get Proposal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (simplificado: solo navegación) -->
+  <section class="bg-slate-950 border-t border-slate-800 py-10">
+    <div class="container mx-auto px-6">
+      <nav aria-label="Core services" class="flex flex-wrap justify-center gap-3">
+        {coreServices.map((s) => (
+          <a href={s.slug} class="rounded-xl border border-slate-800 bg-slate-900/60 px-5 py-3 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            <span class="block text-white font-medium">{s.name}</span>
+            <span class="block text-slate-400 text-xs">{s.summary}</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  <!-- PACKAGES (HORIZONTALES + DEADLINE POR CARD) -->
+  <section id="packages" class="bg-slate-950 py-14">
+    <div class="container mx-auto px-6">
+      <!-- Small Business row -->
+      <header class="flex items-center gap-2 mb-4">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+        <h2 class="text-white font-semibold">Small Business</h2>
+        <span class="text-slate-500 text-sm">30–45 days</span>
+      </header>
+      <div class="overflow-x-auto">
+        <div class="flex gap-4 snap-x snap-mandatory pb-2">
+          {smallBusinessPackages.map((pkg) => (
+            <article class={`snap-start min-w-[86%] sm:min-w-[56%] md:min-w-[42%] lg:min-w-[32%] xl:min-w-[28%] rounded-2xl border ${pkg.popular ? 'border-emerald-500/50' : 'border-slate-800'} bg-slate-900/70 p-6`}>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-white">{pkg.name}</h3>
+                {pkg.popular && <span class="text-[10px] px-2 py-1 rounded-full bg-emerald-500 text-white font-bold">POPULAR</span>}
+              </div>
+              <p class="text-slate-300 text-sm mb-3">{pkg.tagline}</p>
+              <!-- deadline por paquete -->
+              <div class="flex items-center gap-2 text-slate-300 text-xs mb-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span>{pkg.deadline}</span>
+              </div>
+              <div class="text-2xl font-bold text-white mb-4">{pkg.price}</div>
+              <ul class="space-y-2 mb-5 text-sm">
+                {pkg.features.map((f) => (
+                  <li class="flex items-start gap-2 text-slate-300">
+                    <svg class="w-4 h-4 text-emerald-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <details class="mb-5">
+                <summary class="text-emerald-300 text-xs cursor-pointer">Popular add-ons</summary>
+                <div class="mt-2 space-y-1 text-xs text-slate-300">
+                  {pkg.addons.map((a) => (
+                    <div class="flex justify-between items-center"><span class="text-slate-400">{a.name}</span><span>{a.price}</span></div>
+                  ))}
+                </div>
+              </details>
+              <a href="/contact" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 px-4 py-3 font-semibold text-white">Get Started</a>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mid-Market row -->
+      <header class="flex items-center gap-2 mt-10 mb-4">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-violet-400"></span>
+        <h2 class="text-white font-semibold">Mid-Market</h2>
+        <span class="text-slate-500 text-sm">6–10 weeks</span>
+      </header>
+      <div class="overflow-x-auto">
+        <div class="flex gap-4 snap-x snap-mandatory pb-2">
+          {midMarketPackages.map((pkg) => (
+            <article class={`snap-start min-w-[86%] sm:min-w-[56%] md:min-w-[42%] lg:min-w-[32%] xl:min-w-[28%] rounded-2xl border ${pkg.popular ? 'border-violet-500/50' : 'border-slate-800'} bg-slate-900/70 p-6`}>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-white">{pkg.name}</h3>
+                {pkg.popular && <span class="text-[10px] px-2 py-1 rounded-full bg-violet-500 text-white font-bold">POPULAR</span>}
+              </div>
+              <p class="text-slate-300 text-sm mb-3">{pkg.tagline}</p>
+              <!-- deadline por paquete -->
+              <div class="flex items-center gap-2 text-slate-300 text-xs mb-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                <span>{pkg.deadline}</span>
+              </div>
+              <div class="text-2xl font-bold text-white mb-4">{pkg.price}</div>
+              <ul class="space-y-2 mb-5 text-sm">
+                {pkg.features.map((f) => (
+                  <li class="flex items-start gap-2 text-slate-300">
+                    <svg class="w-4 h-4 text-violet-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <details class="mb-5">
+                <summary class="text-violet-300 text-xs cursor-pointer">Popular add-ons</summary>
+                <div class="mt-2 space-y-1 text-xs text-slate-300">
+                  {pkg.addons.map((a) => (
+                    <div class="flex justify-between items-center"><span class="text-slate-400">{a.name}</span><span>{a.price}</span></div>
+                  ))}
+                </div>
+              </details>
+              <a href="/contact" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-3 font-semibold text-white">Get Started</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees -->
+  <section class="py-14 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <h3 class="text-white font-semibold mb-1 text-sm">Performance Target</h3>
+          <p class="text-slate-300 text-xs">Mobile Lighthouse ≥90 and LCP &lt; 2.5s on new pages (trade-offs documented).</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <h3 class="text-white font-semibold mb-1 text-sm">Accessibility Essentials</h3>
+          <p class="text-slate-300 text-xs">WCAG 2.1 A/AA core compliance on shipped templates and semantic HTML.</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <h3 class="text-white font-semibold mb-1 text-sm">Bug-fix Warranty</h3>
+          <p class="text-slate-300 text-xs">30 days on all builds; 60 days for checkout-blocking e-commerce issues.</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <h3 class="text-white font-semibold mb-1 text-sm">Source Code Ownership</h3>
+          <p class="text-slate-300 text-xs">Full ownership of the source code after project completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

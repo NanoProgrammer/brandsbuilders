@@ -1,0 +1,129 @@
+
+---
+// components/TestimonialsVideo.astro
+---
+
+<section class="py-24 bg-slate-950 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent mb-6">
+        Client Success Stories
+      </h2>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto">
+        Hear directly from our clients about their transformation journey
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Video Section -->
+        <div class="relative group">
+          <!-- Video Placeholder/Thumbnail -->
+          <div class="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden aspect-video">
+            <!-- Background Image Placeholder -->
+            <div class="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button class="group-hover:scale-110 transition-transform duration-300 bg-white/90 backdrop-blur-sm rounded-full p-6 shadow-2xl hover:bg-white">
+                <svg class="w-12 h-12 text-violet-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Video Info Overlay -->
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="bg-black/50 backdrop-blur-sm rounded-2xl p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Maria Rodriguez - CEO Success Story</h3>
+                <p class="text-slate-300 text-sm">See how we increased her revenue by 340% in 6 months</p>
+                <div class="flex items-center mt-3 space-x-2">
+                  <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                    MR
+                  </div>
+                  <span class="text-slate-300 text-sm">Rodriguez Consulting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Duration Badge -->
+          <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white text-sm px-3 py-1 rounded-full">
+            3:42
+          </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Real Stories, Real Results
+            </h3>
+            <p class="text-slate-300 text-lg leading-relaxed mb-8">
+              Don't just take our word for it. Watch our clients share their success stories and discover how we've helped transform their businesses through strategic design and digital marketing.
+            </p>
+          </div>
+
+          <!-- Featured Testimonial Quote -->
+          <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-violet-500/20">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                MR
+              </div>
+              <div>
+                <blockquote class="text-white font-medium text-lg leading-relaxed mb-4">
+                  "The results speak for themselves. BrandsBuilders didn't just redesign our website – they transformed our entire business approach."
+                </blockquote>
+                <div>
+                  <div class="text-white font-semibold">Maria Rodriguez</div>
+                  <div class="text-slate-400 text-sm">CEO, Rodriguez Consulting</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Video Thumbnails -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="group relative bg-slate-800 rounded-xl overflow-hidden aspect-video cursor-pointer">
+              <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/30 to-blue-500/30"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-white/90 rounded-full p-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="absolute bottom-3 left-3 right-3">
+                <div class="text-white text-sm font-medium">James Sullivan</div>
+                <div class="text-slate-300 text-xs">Sullivan Law Firm</div>
+              </div>
+              <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">2:15</div>
+            </div>
+
+            <div class="group relative bg-slate-800 rounded-xl overflow-hidden aspect-video cursor-pointer">
+              <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-teal-500/30"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-white/90 rounded-full p-3 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="absolute bottom-3 left-3 right-3">
+                <div class="text-white text-sm font-medium">Anna Kim</div>
+                <div class="text-slate-300 text-xs">TechFlow Solutions</div>
+              </div>
+              <div class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">4:28</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

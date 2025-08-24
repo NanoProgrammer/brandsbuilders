@@ -1,0 +1,139 @@
+---
+// components/FeaturedTestimonials.astro
+---
+
+<section class="py-24 bg-slate-900 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.3)_0%,transparent_70%)]"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-6">
+        Featured Success Stories
+      </h2>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto">
+        Discover how we've helped businesses achieve remarkable growth
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
+      <!-- Testimonial 1 - Large Card -->
+      <div class="lg:row-span-2">
+        <div class="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-500 h-full">
+          <div class="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-fuchsia-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative z-10">
+            <!-- Quote Icon -->
+            <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35L9.7 4.44c-.316.074-.633.15-.948.249-.295.092-.526.25-.757.406-.247.143-.463.319-.684.478-.227.147-.425.319-.623.468-.201.157-.357.344-.539.516-.158.181-.363.328-.466.52-.123.188-.252.349-.356.556-.436.92-.588 1.638-.588 2.629v.381Q6.755 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35L20.7 4.44c-.316.074-.633.15-.948.249-.295.092-.526.25-.757.406-.247.143-.463.319-.684.478-.227.147-.425.319-.623.468-.201.157-.357.344-.539.516-.158.181-.363.328-.466.52-.123.188-.252.349-.356.556-.436.92-.588 1.638-.588 2.629v.381Q17.755 10 17.5 10z"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <blockquote class="text-xl lg:text-2xl text-white font-medium leading-relaxed mb-8">
+              "Working with BrandsBuilders was the best decision we made for our business. Their strategic approach to our website redesign and SEO optimization resulted in a 450% increase in qualified leads within 4 months."
+            </blockquote>
+
+            <!-- Results Grid -->
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-violet-400 mb-2">450%</div>
+                <div class="text-slate-400 text-sm">Lead Increase</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-fuchsia-400 mb-2">4x</div>
+                <div class="text-slate-400 text-sm">Revenue Growth</div>
+              </div>
+            </div>
+
+            <!-- Author -->
+            <div class="flex items-center space-x-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                JS
+              </div>
+              <div>
+                <div class="text-white font-semibold text-lg">James Sullivan</div>
+                <div class="text-slate-400">Founder, Sullivan Law Firm</div>
+                <div class="text-violet-400 text-sm">Calgary, AB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 & 3 - Smaller Cards -->
+      <div class="space-y-8">
+        <div class="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-fuchsia-500/20 hover:border-fuchsia-400/40 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 to-pink-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35L9.7 4.44c-.316.074-.633.15-.948.249-.295.092-.526.25-.757.406-.247.143-.463.319-.684.478-.227.147-.425.319-.623.468-.201.157-.357.344-.539.516-.158.181-.363.328-.466.52-.123.188-.252.349-.356.556-.436.92-.588 1.638-.588 2.629v.381Q6.755 10 6.5 10z"/>
+                </svg>
+              </div>
+              <div class="text-yellow-400 text-lg">★★★★★</div>
+            </div>
+
+            <blockquote class="text-lg text-white font-medium leading-relaxed mb-6">
+              "Their branding work completely transformed our market position. We went from unknown to industry leader in Edmonton."
+            </blockquote>
+
+            <div class="text-center mb-6">
+              <div class="text-2xl font-bold text-fuchsia-400 mb-1">280%</div>
+              <div class="text-slate-400 text-sm">Brand Recognition Increase</div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-fuchsia-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
+                AK
+              </div>
+              <div>
+                <div class="text-white font-semibold">Anna Kim</div>
+                <div class="text-slate-400 text-sm">CEO, TechFlow Solutions</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-indigo-500/20 hover:border-indigo-400/40 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35L20.7 4.44c-.316.074-.633.15-.948.249-.295.092-.526.25-.757.406-.247.143-.463.319-.684.478-.227.147-.425.319-.623.468-.201.157-.357.344-.539.516-.158.181-.363.328-.466.52-.123.188-.252.349-.356.556-.436.92-.588 1.638-.588 2.629v.381Q17.755 10 17.5 10z"/>
+                </svg>
+              </div>
+              <div class="text-yellow-400 text-lg">★★★★★</div>
+            </div>
+
+            <blockquote class="text-lg text-white font-medium leading-relaxed mb-6">
+              "ROI was incredible. Our investment paid for itself in the first month through increased online sales."
+            </blockquote>
+
+            <div class="text-center mb-6">
+              <div class="text-2xl font-bold text-indigo-400 mb-1">520%</div>
+              <div class="text-slate-400 text-sm">Return on Investment</div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                DM
+              </div>
+              <div>
+                <div class="text-white font-semibold">David Miller</div>
+                <div class="text-slate-400 text-sm">Owner, Miller's Market</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

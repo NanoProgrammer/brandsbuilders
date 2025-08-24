@@ -1,0 +1,203 @@
+---
+// components/TestimonialsCTA.astro
+---
+<section class="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950">
+  <!-- Background blobs -->
+  <div class="absolute inset-0 opacity-30 pointer-events-none">
+    <div class="absolute -top-10 -left-8 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply blur-2xl animate-pulse"></div>
+    <div class="absolute top-1/3 -right-8 w-80 h-80 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-0 left-1/3 w-64 h-64 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full mix-blend-multiply blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Floating quotes -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-20 text-violet-400/15 text-7xl animate-float">"</div>
+    <div class="absolute top-1/3 right-20 text-fuchsia-400/15 text-5xl animate-float-delayed">"</div>
+    <div class="absolute bottom-20 left-1/2 text-indigo-400/15 text-6xl animate-float-slow">"</div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent mb-6 leading-tight">
+        Ready to Join Our Success Stories?
+      </h2>
+      <p class="text-xl lg:text-2xl text-slate-300 mb-3 leading-relaxed">
+        We help owner-led SMBs grow credibility, qualified leads and revenue.
+      </p>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        Join 50+ Alberta businesses that upgraded Brand, Web, Local SEO & Media with BrandsBuilders.
+      </p>
+
+      <div class="mt-8 mb-14 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="group relative inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold hover:from-violet-700 hover:to-purple-700 transition">
+          Get Your Free Strategy Session
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M21 12H3"/></svg>
+          <span class="pointer-events-none absolute -inset-x-6 -inset-y-3 blur-3xl bg-violet-400/0 group-hover:bg-violet-400/20 rounded-[32px] transition"></span>
+        </a>
+        <a href="/portfolio" class="px-7 py-4 rounded-2xl border border-slate-600 text-slate-200 font-semibold hover:border-violet-500 hover:text-white transition">
+          View Our Work
+        </a>
+      </div>
+    </div>
+
+    <!-- Call agenda -->
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8">
+      <div class="glass rounded-3xl p-7 lg:p-9 border border-slate-800 bg-white/5">
+        <h3 class="text-2xl font-bold text-white mb-4">What happens on the call (60 min)</h3>
+        <ol class="space-y-5">
+          <li class="flex gap-4">
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-violet-600/30 border border-violet-500/40 text-violet-200 font-semibold flex items-center justify-center">1</div>
+            <div>
+              <p class="text-white font-semibold">Discover & context</p>
+              <p class="text-slate-300 text-sm">
+                ICP, high-value services/AOV, markets/locations, current capacity and goals for the next <span class="font-medium text-white">30–90 days</span>.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-fuchsia-600/30 border border-fuchsia-500/40 text-fuchsia-200 font-semibold flex items-center justify-center">2</div>
+            <div>
+              <p class="text-white font-semibold">Live quick audit</p>
+              <p class="text-slate-300 text-sm">
+                Site speed (CWV), UX, on-page & Local SEO, GBP/reviews, analytics/events. You’ll get <span class="text-white">quick wins</span> to apply this week.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-indigo-600/30 border border-indigo-500/40 text-indigo-200 font-semibold flex items-center justify-center">3</div>
+            <div>
+              <p class="text-white font-semibold">Plan & priorities</p>
+              <p class="text-slate-300 text-sm">
+                1–3 scoped options (e.g., Go-to-Market, Local Service Site, Content/E-com foundation) with KPIs, timeline and budget range.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="flex-shrink-0 w-9 h-9 rounded-full bg-emerald-600/30 border border-emerald-500/40 text-emerald-200 font-semibold flex items-center justify-center">4</div>
+            <div>
+              <p class="text-white font-semibold">Next steps</p>
+              <p class="text-slate-300 text-sm">
+                Proposal recap, start date and onboarding checklist. To reserve a slot we take a <span class="text-white font-medium">50% upfront deposit</span> of the <em>minimum price in the selected package/service range</em>. Balance by milestones or at completion (per SOW).
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="mt-7 grid sm:grid-cols-3 gap-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-center">
+            <p class="text-2xl font-bold text-white">Free</p>
+            <p class="text-slate-400 text-xs">~$500 value</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-center">
+            <p class="text-2xl font-bold text-white">60 min</p>
+            <p class="text-slate-400 text-xs">No commitment</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-center">
+            <p class="text-2xl font-bold text-white">Actionable</p>
+            <p class="text-slate-400 text-xs">Quick-wins checklist</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Takeaways + policies (aligned with TOS) -->
+      <div class="space-y-8">
+        <div class="glass rounded-3xl p-7 lg:p-9 border border-slate-800 bg-white/5">
+          <h3 class="text-2xl font-bold text-white mb-4">You’ll walk away with</h3>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              A one-page action plan (goals, KPIs, 30–90-day roadmap).
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Budget range mapped to impact & capacity.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Recommended stack & integrations (GA4, GBP, booking, feeds).
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              “First 21 days” list of high-leverage tasks.
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass rounded-3xl p-7 lg:p-9 border border-slate-800 bg-white/5">
+          <h3 class="text-2xl font-bold text-white mb-4">Guarantees & key policies</h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Performance target</p>
+              <p class="text-slate-300 text-sm">New pages aim for mobile Lighthouse <span class="font-semibold text-white">≥90</span> and LCP <span class="font-semibold text-white">&lt;2.5s</span>, subject to media/third-party scripts (trade-offs documented).</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Accessibility</p>
+              <p class="text-slate-300 text-sm">WCAG 2.1 A/AA essentials on shipped templates.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Warranty</p>
+              <p class="text-slate-300 text-sm">30-day bug-fix (e-com checkout blockers: 60 days).</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Ownership</p>
+              <p class="text-slate-300 text-sm">Final deliverables transfer after full payment; drafts/working files excluded unless stated in the SOW.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Deposit & billing</p>
+              <p class="text-slate-300 text-sm">Reserve your slot with a <span class="text-white font-semibold">50% upfront deposit of the minimum price in the selected range</span>. Non-refundable once work begins. Milestones/balance per SOW.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Portfolio use</p>
+              <p class="text-slate-300 text-sm">
+                We may showcase non-confidential work (screenshots, logos, public URLs, <span class="font-semibold text-white">metrics you approve</span>) in our site/portfolio/case studies.
+                You can opt-out or request anonymity in the SOW/NDA.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">12-month freebies (new builds)</p>
+              <p class="text-slate-300 text-sm">
+                1 domain (.com/.ca) + privacy, 1 custom inbox credit, DNS & SSL setup/management.
+                <span class="text-slate-400/90">Renewals after 12 months are paid by you at provider rates.</span>
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-white font-semibold">Reschedules</p>
+              <p class="text-slate-300 text-sm">Free reschedule with 24h notice. No-show? We’ll rebook once.</p>
+            </div>
+          </div>
+
+          <p class="text-slate-400 text-xs mt-3">
+            Third-party costs (domains, apps, SaaS, ads, stock, fonts & licenses) are the client’s responsibility unless explicitly included.
+          </p>
+          <p class="text-slate-400 text-xs">
+            Full details in our <a href="/terms-of-service" class="text-violet-300 underline">Terms of Service</a> and <a href="/privacy-policy" class="text-violet-300 underline">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center mt-10">
+      <p class="text-slate-400 text-sm">
+        Calgary • Edmonton • Airdrie · We prioritize owner-led small & mid-market brands with high-value services or products.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float { 0%,100%{ transform: translateY(0) rotate(0) } 50%{ transform: translateY(-18px) rotate(4deg) } }
+  @keyframes float-delayed { 0%,100%{ transform: translateY(0) rotate(0) } 50%{ transform: translateY(-12px) rotate(-3deg) } }
+  @keyframes float-slow { 0%,100%{ transform: translateY(0) rotate(0) } 50%{ transform: translateY(-8px) rotate(2deg) } }
+  .animate-float{ animation: float 7s ease-in-out infinite; }
+  .animate-float-delayed{ animation: float-delayed 9s ease-in-out infinite; }
+  .animate-float-slow{ animation: float-slow 11s ease-in-out infinite; }
+  .glass{ backdrop-filter: blur(8px); }
+</style>

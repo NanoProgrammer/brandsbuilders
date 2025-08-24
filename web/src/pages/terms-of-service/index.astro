@@ -1,0 +1,247 @@
+---
+// src/pages/terms-of-service.astro
+import Layout from '../../layouts/Layout.astro';
+
+const seo = {
+  title: 'Terms of Service | BrandsBuilders Agency',
+  description:
+    'Read our terms of service and understand the conditions for using BrandsBuilders Agency web design and digital marketing services.',
+  canonical: 'https://brandsbuilders.agency/terms-of-service'
+};
+
+const lastUpdated = '2025-01-15';
+---
+
+<Layout seo={seo}>
+  <!-- Hero -->
+  <section class="relative py-24 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent">
+          Terms of Service
+        </h1>
+        <p class="text-xl text-slate-300 mb-4">
+          These Terms govern your access to and use of our Brand, Web, Local SEO & Media services.
+        </p>
+        <p class="text-slate-400">
+          Last updated: <span class="text-violet-400">{lastUpdated}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section class="py-24 bg-slate-950 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="glass rounded-3xl p-8 lg:p-12">
+          <div class="prose prose-lg prose-invert max-w-none terms-content">
+
+            <p class="text-slate-300">
+              Our business goal is simple: <strong>generate credibility, qualified leads, and more revenue for our clients</strong>.
+              We work primarily with owner-led small & mid-market brands offering high-value services or products.
+            </p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By requesting a quote, signing a proposal, paying an invoice or using our services, you agree to these Terms of Service
+              (“Terms”). If you are entering into these Terms on behalf of an organization, you represent that you have authority to bind
+              that organization.
+            </p>
+
+            <h2>2. Eligibility & Fit (ICP)</h2>
+            <p>
+              We prioritize owner-led SMBs (2–50 employees, ~$300k–$5M+ revenue) with high-value services (≥$150–$300 per booking) or
+              e-commerce AOV ≥$60, capacity to grow in 30–90 days, and minimum budgets from $5–8k (projects) or $1–2k/mo (retainers).
+              We may decline projects that do not fit this profile (e.g., low ticket/fully booked/5+ decision makers/unrealistic promises).
+            </p>
+
+            <h2>3. Services & Scope</h2>
+            <p>
+              We provide brand identity, website design/development, local on-page SEO, e-commerce implementations, and content/media support.
+              Deliverables, milestones, and assumptions are defined in the proposal or statement of work (the “SOW”). Items not listed there are
+              <strong>out of scope</strong>.
+            </p>
+
+            <h2>4. Fees, Deposits & Payments</h2>
+            <ul>
+              <li><strong>Deposit (projects/packages):</strong> To reserve start dates and commence work, we require an
+                <strong>upfront deposit of 50% of the minimum price of the selected service or package</strong> as publicly listed or quoted.
+                This deposit is <strong>non-refundable</strong> once work begins.</li>
+              <li><strong>Retainers:</strong> First month is billed in advance; subsequent months bill on the same date each month.</li>
+              <li><strong>Milestones/Balance:</strong> Remaining amounts are invoiced per milestones or on completion, as stated in the SOW.</li>
+              <li><strong>Late payments:</strong> May accrue interest and/or pause work until resolved.</li>
+              <li><strong>Third-party costs:</strong> Domains, apps, SaaS, ads, stock, fonts and licenses are the client’s responsibility unless explicitly included
+                (see any “Freebies” stated on our site/proposal).</li>
+            </ul>
+
+            <h2>5. Revisions</h2>
+            <p>
+              Unless otherwise stated in the SOW, packages include <strong>1–3 rounds of grouped revisions</strong> per major deliverable.
+              Additional rounds or net-new directions are billable.
+            </p>
+
+            <h2>6. Timelines</h2>
+            <p>
+              Estimated timelines (e.g., 30–45 days for Small Business; 6–10 weeks for Mid-Market) assume prompt feedback, asset availability,
+              and no material scope changes. We’ll flag risks and propose adjustments if dependencies slip.
+            </p>
+
+            <h2>7. Changes & Out-of-Scope</h2>
+            <p>
+              Material changes (new pages/features/integrations/languages/redesigns) require a change order with revised fees and timeline.
+            </p>
+
+            <h2>8. Third-Party Platforms</h2>
+            <p>
+              We integrate with platforms such as Google, Meta, Shopify, Square, Acuity, Cloudflare. Their policies, pricing and availability may change.
+              You agree to comply with their terms and maintain your accounts in good standing.
+            </p>
+
+            <h2>9. Performance, SEO & Accessibility</h2>
+            <ul>
+              <li><strong>Performance targets:</strong> For new pages we aim for mobile Lighthouse ≥ 90 and LCP &lt; 2.5s,
+                subject to media weight and third-party scripts; trade-offs documented before shipping.</li>
+              <li><strong>SEO:</strong> We do not guarantee rankings or traffic; we use sustainable, best-practice methods.</li>
+              <li><strong>Accessibility:</strong> We ship core WCAG 2.1 A/AA essentials on templates unless otherwise agreed.</li>
+            </ul>
+
+            <h2>10. Intellectual Property & License</h2>
+            <ul>
+              <li><strong>Ownership transfer:</strong> Upon full payment of all amounts due under the SOW, we assign to you the ownership of the final,
+                approved deliverables (excluding third-party assets, open-source components under their licenses, and our internal libraries/tools).</li>
+              <li><strong>Client license before final payment:</strong> Prior to full payment, you receive a temporary, revocable license for internal review only.
+                No public use, launch, or distribution is permitted until invoices are paid in full.</li>
+              <li><strong>Drafts & working files:</strong> Non-final explorations, drafts and working files are not deliverables unless explicitly included in the SOW.</li>
+            </ul>
+
+            <h2>11. Portfolio Use, Credits & Case Studies</h2>
+            <p>
+              You grant BrandsBuilders Agency a non-exclusive, worldwide, royalty-free license to <strong>display, reference and link</strong> the final
+              non-confidential work (screenshots, logos, public URLs, metrics you approve) in our website, portfolio, proposals and social channels to
+              demonstrate capabilities and results. If you prefer to opt out (e.g., NDA), indicate it in writing in the SOW, and we will limit or defer
+              publicity accordingly. Reasonable attribution (footer or credits page) may be included unless you request removal.
+            </p>
+
+            <h2>12. Confidentiality</h2>
+            <p>
+              Each party agrees to keep the other’s non-public information confidential and use it solely to perform obligations under these Terms.
+            </p>
+
+            <h2>13. Data & Privacy</h2>
+            <p>
+              Personal data is handled in accordance with our <a href="/privacy-policy" class="text-violet-300 underline">Privacy Policy</a>.
+              Where applicable, you are the controller of your customer data; we are a service provider/processor.
+            </p>
+
+            <h2>14. Cancellations, Pauses & Refunds</h2>
+            <ul>
+              <li><strong>Client cancellation:</strong> You may cancel with written notice. Earned fees and the deposit remain due; we will deliver work-in-progress that is paid for.</li>
+              <li><strong>Pauses:</strong> If a project is inactive for 21+ days due to missing inputs, we may pause and re-book the schedule; a restart fee may apply.</li>
+              <li><strong>Refunds:</strong> Due to the nature of creative/technical services, payments are non-refundable once work has begun, except where required by law.</li>
+            </ul>
+
+            <h2>15. Warranties & Disclaimers</h2>
+            <ul>
+              <li>We warrant that deliverables will substantially conform to the SOW for 30 days after launch (60 days for checkout-blocking e-commerce issues).</li>
+              <li>Except as stated, services are provided “as is”. We do not guarantee specific rankings, revenues, bookings, or ad results.</li>
+            </ul>
+
+            <h2>16. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, our total liability related to the services is limited to the fees actually paid to us for the specific
+              SOW during the <strong>3 months</strong> preceding the claim. We are not liable for indirect, incidental, special, punitive, or consequential damages,
+              including lost profits or data.
+            </p>
+
+            <h2>17. Indemnification</h2>
+            <p>
+              You agree to indemnify and hold us harmless from claims arising from your content, products, ads, or misuse of deliverables, and from third-party
+              disputes related to your business operations.
+            </p>
+
+            <h2>18. Force Majeure</h2>
+            <p>
+              Neither party is liable for delays or failures due to events beyond reasonable control (e.g., outages, platform changes, strikes, natural disasters, governmental actions).
+            </p>
+
+            <h2>19. Governing Law & Dispute Resolution</h2>
+            <p>
+              These Terms are governed by the laws of the Province of Alberta and applicable Canadian federal law. Parties will first attempt to resolve disputes in good faith.
+              If unresolved, disputes shall be submitted to binding arbitration in Alberta, conducted in English, with each party bearing its own costs.
+            </p>
+
+            <h2>20. Changes to These Terms</h2>
+            <p>
+              We may update these Terms from time to time. Material changes will be posted on this page with an updated “Last updated” date.
+              Continued use of our services after changes constitutes acceptance.
+            </p>
+
+            <h2>21. Contact</h2>
+            <div class="bg-slate-800/50 rounded-2xl p-6 mt-4">
+              <p><strong>BrandsBuilders Agency</strong><br>
+              Alberta, Canada<br>
+              Email: legal@brandsbuilders.agency<br>
+              Phone: +1-403-XXX-XXXX</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="glass rounded-3xl p-8 text-center mt-12">
+          <h3 class="text-2xl font-bold text-white mb-4">Questions about these Terms?</h3>
+          <p class="text-slate-300 mb-6">
+            We’ll happily clarify scope, guarantees, or retainers before you start.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-violet-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .terms-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgb(139 92 246 / 0.3);
+  }
+  .terms-content h2:first-child { margin-top: 0; }
+  .terms-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(196 181 253);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .terms-content p {
+    color: rgb(203 213 225);
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+  .terms-content ul {
+    color: rgb(203 213 225);
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .terms-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  .terms-content strong { color: rgb(196 181 253); font-weight: 600; }
+</style>

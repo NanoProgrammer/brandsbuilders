@@ -1,0 +1,364 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const siteUrl = "https://brandsbuilders.agency";
+
+const seo = {
+  title: "Local SEO & Google Business Profile | Alberta SMBs",
+  description:
+    "Pragmatic local SEO for owner-led businesses in Alberta. On-page optimization, GBP setup, reviews engine, schema, and measurement—clear timelines and outcomes.",
+  canonical: `${siteUrl}/services/local-seo`,
+  keywords:
+    "local SEO Alberta, Google Business Profile Calgary, local SEO Edmonton, on-page SEO, LocalBusiness schema, reviews engine, Alberta small business SEO",
+  ogImage: `${siteUrl}/images/og/local-seo-og.jpg`,
+};
+
+// ────────────────────────────────────────────────────────────────────────────────
+// DATA — LOCAL SEO ONLY (one-time offers + monthly retainers)
+// ────────────────────────────────────────────────────────────────────────────────
+const localOffers = [
+  {
+    name: "Local SEO Foundation (one-time)",
+    price: "$700–$1,400",
+    timeline: "2–3 weeks",
+    summary:
+      "Set the groundwork for local visibility and conversions across your key service/location pages.",
+    bullets: [
+      "Local on-page: titles, metas, H1–H3, internal links, contact blocks",
+      "LocalBusiness schema (core) + FAQ schema where relevant",
+      "NAP consistency pass + GBP category/keywords recommendations",
+      "Reviews prompts kit (QR/link) + response templates",
+      "GSC targets + basic goal mapping in GA4",
+    ],
+  },
+  {
+    name: "Technical SEO Setup (one-time)",
+    price: "$600–$1,200",
+    timeline: "~1 week",
+    summary:
+      "Search foundations that prevent crawl/index issues and keep signals clean.",
+    bullets: [
+      "Semantic HTML checks + sitemap/robots",
+      "Canonical/redirect sanity + 404/5xx review",
+      "Meta/OG/Twitter preview polish",
+      "Core Web Vitals sanity pass (LCP/CLS/TBT)",
+      "Index status and coverage fixes (quick wins)",
+    ],
+  },
+  {
+    name: "On-Page Content Pack (per 5 URLs)",
+    price: "$600–$1,100",
+    timeline: "1–2 weeks per pack",
+    summary:
+      "Tight on-page improvements for your most valuable local pages—services, locations, FAQs.",
+    bullets: [
+      "Short briefs and keyword mapping for 5 URLs",
+      "Updated titles/metas/H1–H3, internal links, FAQs",
+      "Article/FAQ/Breadcrumb schema as needed",
+      "Before/after diffs for each URL",
+      "QA + publish handoff or supervised deploy",
+    ],
+  },
+  {
+    name: "Google Business Profile (GBP) Setup & Optimization",
+    price: "$250–$450",
+    timeline: "3–5 days",
+    summary:
+      "Baseline GBP health for higher local pack visibility and better conversion from Maps.",
+    bullets: [
+      "Profile completeness: categories, services, attributes",
+      "Photos/hours/UTM tagging + tracking template",
+      "2 starter posts + Q&A seed",
+      "Reviews ask flow + response templates",
+      "Simple audit with next steps",
+    ],
+  },
+];
+
+const localAddons = [
+  { name: "Schema Expansion (LocalBusiness/FAQ/Product)", price: "$250–$1,200" },
+  { name: "Redirects & Canonicals Cleanup", price: "$400–$900" },
+  { name: "Core Web Vitals Hardening", price: "$700–$1,500" },
+  { name: "Search Console & Reporting Setup", price: "$300–$650" },
+];
+
+// Monthly retainers — Alberta (low → low-mid)
+// Note: per your ask, Plan #2 explicitly includes 3–5 small on-page changes.
+const monthlyLocal = [
+  {
+    name: "Local SEO Lite",
+    price: "$250–$350 / mo",
+    bullets: [
+      "GBP hygiene + 2 posts/mo",
+      "Review prompts and canned responses",
+      "GSC + GA4 mini report (top queries/URLs)",
+      "1 minor site tweak/mo (copy/image/link)",
+      "Issue log and priorities",
+    ],
+  },
+  {
+    name: "Local SEO Essential",
+    price: "$450–$650 / mo",
+    bullets: [
+      "Everything in Lite",
+      "1 content round/mo (3–5 small on-page changes or 1 simple local section)",
+      "Monthly CWV sanity (LCP/CLS/TBT) with quick fixes",
+      "Broken links scan + basic redirects",
+      "GA4 & GSC summary with 2–3 recommendations",
+    ],
+  },
+  {
+    name: "Local SEO Growth Lite",
+    price: "$700–$900 / mo",
+    bullets: [
+      "Everything in Essential",
+      "GBP content cadence (4 posts/mo) + Q&A",
+      "One substantive improvement/mo (e.g., local hub, service FAQ)",
+      "Light A/B test (headline/CTA) and note on results",
+      "Monthly insight report (what changed, impact, next steps)",
+    ],
+  },
+];
+---
+
+<Layout seo={seo}>
+  <!-- HERO (larger, clean; no gimmicks) -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-24 -left-24 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia-600/15 blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 py-24 md:py-32">
+      <div class="max-w-4xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+          Local SEO • Google Business Profile • On-page
+        </p>
+        <h1 class="text-5xl md:text-7xl font-black leading-tight text-white mb-4">
+          Local SEO & GBP Optimization
+          <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
+            built to convert nearby searches
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base md:text-lg max-w-2xl">
+          Pragmatic local SEO for owner-led SMBs in Alberta. On-page fixes, schema,
+          GBP hygiene, reviews engine and measurement—clear deliverables and timelines.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#offers" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+            See deliverables
+          </a>
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Request proposal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE-TIME OFFERS (grid; no horizontal scroll) -->
+  <section id="offers" class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Local SEO deliverables</h2>
+        <p class="text-slate-400">Clear scope, timeline and pricing. No carousels, no fluff.</p>
+      </header>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {localOffers.map((o) => (
+          <article class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="text-white font-bold text-lg">{o.name}</h3>
+              <div class="text-right">
+                <div class="text-white text-sm font-semibold">{o.price}</div>
+                <div class="text-slate-400 text-xs">Timeline: {o.timeline}</div>
+              </div>
+            </div>
+            <p class="text-slate-300 text-sm mb-4">{o.summary}</p>
+            <ul class="space-y-2 text-slate-300 text-sm mb-5">
+              {o.bullets.map((b) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-3 font-semibold text-white">
+              Request this
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <!-- Add-ons -->
+      <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h3 class="text-white font-semibold mb-2">Popular add-ons</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-slate-300 text-sm">
+          {localAddons.map((a) => (
+            <div class="rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2 flex items-center justify-between">
+              <span>{a.name}</span><span class="text-slate-400">{a.price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Cross-links (tiny) -->
+      <p class="text-slate-500 text-xs mt-6">
+        Need a faster site or a clean identity? See
+        <a href="/services/web-design" class="text-violet-300 underline-offset-2 hover:underline"> Web Design</a>
+        and
+        <a href="/services/branding" class="text-violet-300 underline-offset-2 hover:underline"> Branding</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- MONTHLY (local-only retainers) -->
+  <section id="monthly" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Monthly local SEO</h2>
+        <p class="text-slate-400">Low to low-mid retainers for Alberta SMBs. Cancel anytime with 30-day notice.</p>
+      </header>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {monthlyLocal.map((m) => (
+          <article class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6">
+            <div class="flex items-start justify-between mb-1">
+              <h3 class="text-white font-semibold">{m.name}</h3>
+              <span class="text-white text-sm font-semibold">{m.price}</span>
+            </div>
+            <ul class="text-slate-300 text-sm space-y-2">
+              {m.bullets.map((b) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <p class="text-slate-500 text-xs mt-4">
+        Note: Retainers cover on-page/technical & GBP. No link-building or net-new blog production unless scoped as an add-on.
+      </p>
+    </div>
+  </section>
+
+  <!-- GUARANTEES (compact, relevant) -->
+  <section class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What we guarantee</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Performance</h3>
+          <p class="text-slate-300 text-sm">Mobile Lighthouse &ge; 90 and LCP &lt; 2.5s on new pages (trade-offs documented).</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Accessibility</h3>
+          <p class="text-slate-300 text-sm">WCAG 2.1 A/AA essentials on shipped templates.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Warranty</h3>
+          <p class="text-slate-300 text-sm">30-day bug fixes; 60-day coverage for checkout blockers.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Ownership</h3>
+          <p class="text-slate-300 text-sm">You own domain, code and content from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (local-specific) -->
+  <section id="faq" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Local SEO FAQ</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Do you guarantee rankings?</h3>
+          <p class="text-slate-300 text-sm">No one can guarantee rankings. We focus on durable on-page, GBP hygiene, reviews and measurement to improve qualified traffic and conversions.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">How fast will I see results?</h3>
+          <p class="text-slate-300 text-sm">Most small businesses see meaningful movement in 30–90 days when we can publish changes quickly and collect reviews consistently.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Do you handle photos and posts?</h3>
+          <p class="text-slate-300 text-sm">We provide templates and guidelines. We can post for you as part of a retainer or document a cadence and hand off to your team.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">What about multiple locations?</h3>
+          <p class="text-slate-300 text-sm">We’ll recommend a location hub structure, per-location pages and GBP management at scale; pricing adjusts by number of locations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD (local SEO focused) -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          url: `${siteUrl}/services/local-seo`,
+          name: "Local SEO & Google Business Profile | BrandsBuilders Agency",
+          description: seo.description,
+          inLanguage: "en-CA",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+              { "@type": "ListItem", position: 3, name: "Local SEO", item: `${siteUrl}/services/local-seo` }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          name: "Local SEO & GBP Optimization",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Alberta" },
+            { "@type": "City", name: "Calgary" },
+            { "@type": "City", name: "Edmonton" }
+          ],
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Local SEO Deliverables",
+            itemListElement: localOffers.map((o) => ({
+              "@type": "Offer",
+              name: o.name,
+              description: o.summary,
+              priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: o.price }
+            }))
+          }
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Local SEO Monthly Plans",
+          itemListElement: monthlyLocal.map((m) => ({
+            "@type": "Offer",
+            name: m.name,
+            priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: m.price }
+          }))
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Do you guarantee rankings?", acceptedAnswer: { "@type": "Answer", text: "No one can guarantee rankings. We focus on durable on-page, GBP hygiene, reviews and measurement to improve qualified traffic and conversions." } },
+            { "@type": "Question", name: "How fast will I see results?", acceptedAnswer: { "@type": "Answer", text: "Most small businesses see meaningful movement in 30–90 days when we can publish changes quickly and collect reviews consistently." } },
+            { "@type": "Question", name: "Do you handle photos and posts?", acceptedAnswer: { "@type": "Answer", text: "We provide templates and guidelines. We can post for you as part of a retainer or document a cadence and hand off to your team." } },
+            { "@type": "Question", name: "What about multiple locations?", acceptedAnswer: { "@type": "Answer", text: "We’ll recommend a location hub structure, per-location pages and GBP management at scale; pricing adjusts by number of locations." } }
+          ]
+        }
+      ]
+    })}
+  </script>
+</Layout>

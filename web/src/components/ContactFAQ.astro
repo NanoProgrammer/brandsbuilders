@@ -1,0 +1,70 @@
+---
+export interface Props {
+  title?: string;
+  items?: { q: string; a: string }[];
+}
+
+const {
+  title = 'Frequently Asked',
+  items = [
+    {
+      q: 'What happens on the call?',
+      a: "We'll have a friendly 15-minute conversation about your business goals, current challenges, timeline, and budget. No sales pitch—just an honest assessment of whether we're a good fit and how we can help."
+    },
+    {
+      q: 'Do you work with small budgets?',
+      a: "We offer solutions starting at $2,500 and work with businesses of all sizes. We're transparent about pricing and will recommend the best approach for your budget and goals, even if it means referring you to someone else."
+    },
+    {
+      q: 'Can you meet outside business hours?',
+      a: 'Yes! We have limited evening and weekend slots available for discovery calls. We understand that business owners often need flexibility with scheduling.'
+    },
+    {
+      q: 'Do you provide proposals?',
+      a: "Absolutely! If we're a good fit after our discovery call, we'll provide a detailed proposal with project scope, timeline, and transparent pricing within 48 hours."
+    }
+  ]
+} = Astro.props;
+
+// JSON-LD (FAQPage)
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a }
+  }))
+};
+---
+
+<section class="py-16 bg-slate-950">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6">
+        {title}
+        <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+          {' '}Questions
+        </span>
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-6">
+      {items.map((item) => (
+        <details class="group bg-gray-900/50 border border-gray-800 rounded-2xl p-6 hover:border-violet-500/30 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer font-semibold text-lg text-white">
+            {item.q}
+            <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    {JSON.stringify(faqLd)}
+  </script>
+</section>

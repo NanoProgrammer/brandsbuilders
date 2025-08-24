@@ -1,0 +1,84 @@
+---
+// components/TestimonialsHero.astro
+---
+<section class="relative flex items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-16 xl:px-32 py-20 lg:py-32 min-h-[80vh] bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950">
+  <!-- Subtle animated background -->
+  <div class="absolute inset-0 opacity-25">
+    <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply blur-2xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full mix-blend-multiply blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Floating quote glyphs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-20 text-violet-400/15 text-6xl animate-float">"</div>
+    <div class="absolute top-40 right-32 text-fuchsia-400/15 text-4xl animate-float-delayed">"</div>
+    <div class="absolute bottom-32 left-40 text-indigo-400/15 text-5xl animate-float-slow">"</div>
+  </div>
+
+  <div class="relative z-10 text-center max-w-5xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="flex justify-center mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2 text-sm text-slate-400">
+        <li><a href="/" class="hover:text-violet-400 transition-colors">Home</a></li>
+        <li><span class="text-slate-600">/</span></li>
+        <li class="text-violet-400">Testimonials</li>
+      </ol>
+    </nav>
+
+    <!-- Main content -->
+    <div class="space-y-8">
+      <h1 class="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent leading-tight">
+        Success Stories
+      </h1>
+
+      <p class="text-xl lg:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Real outcomes from owner-led brands. See how Alberta businesses strengthened credibility and <span class="text-violet-300 font-semibold">grew qualified revenue</span> with Brand, Web, Local SEO & Media.
+      </p>
+
+      <!-- Featured quote -->
+      <div class="mt-16 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-violet-500/10 to-transparent blur-3xl"></div>
+        <blockquote class="relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-violet-500/20">
+          <div class="flex justify-center mb-6" aria-label="5 out of 5 stars">
+            <div class="flex text-yellow-300">
+              <!-- SVG stars for a11y -->
+              {Array.from({ length: 5 }).map(() => (
+                <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+          </div>
+
+          <p class="text-2xl lg:text-3xl text-white font-medium leading-relaxed mb-8">
+            “Within six weeks we went from a DIY site to a credible brand with a fast-performing website. Bookings grew 3× and our cost-per-lead dropped by 42%.”
+          </p>
+
+          <div class="flex items-center justify-center gap-4">
+            <!-- Initials badge (use image if you prefer) -->
+            <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              AH
+            </div>
+            <div class="text-left">
+              <div class="text-white font-semibold text-lg">Dr. Alicia Harper</div>
+              <div class="text-slate-400">Owner, Glow Dental</div>
+            </div>
+          </div>
+
+          <!-- Disclaimer aligned with ToS -->
+          <p class="mt-4 text-xs text-slate-400 text-center">
+            Individual results vary and are not guaranteed. See our <a href="/terms-of-service" class="underline text-violet-300">Terms of Service</a>.
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float { 0%, 100% { transform: translateY(0) rotate(0) } 50% { transform: translateY(-18px) rotate(4deg) } }
+  @keyframes float-delayed { 0%, 100% { transform: translateY(0) rotate(0) } 50% { transform: translateY(-12px) rotate(-3deg) } }
+  @keyframes float-slow { 0%, 100% { transform: translateY(0) rotate(0) } 50% { transform: translateY(-8px) rotate(2deg) } }
+  .animate-float { animation: float 7s ease-in-out infinite; }
+  .animate-float-delayed { animation: float-delayed 9s ease-in-out infinite; }
+  .animate-float-slow { animation: float-slow 11s ease-in-out infinite; }
+</style>

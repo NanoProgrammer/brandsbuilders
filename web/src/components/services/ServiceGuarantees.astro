@@ -1,0 +1,66 @@
+---
+const items = [
+  {
+    t: 'Performance target',
+    d: 'For new pages we target mobile Lighthouse ≥90 and LCP < 2.5s (trade-offs documented).',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 12h6l3 9 4-18 2 9h3"/></svg>'
+  },
+  {
+    t: 'Accessibility essentials',
+    d: 'WCAG 2.1 A/AA core on shipped templates and semantic HTML.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="2" stroke-width="2"/><path stroke-width="2" d="M4 8l8 3 8-3M12 11v8M7 21h10"/></svg>'
+  },
+  {
+    t: 'Bug-fix warranty',
+    d: '30 days on all builds; 60 days for checkout-blocking issues on e-commerce.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+  },
+  {
+    t: 'Ownership',
+    d: 'Domain, code and content are yours from day one. No vendor lock-in.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 3l7 4v6c0 5-7 8-7 8s-7-3-7-8V7l7-4z"/></svg>'
+  }
+];
+
+const freebies = [
+  '1st year domain (.com/.ca) + privacy',
+  'One custom inbox credit',
+  'Managed DNS + SSL setup',
+];
+---
+
+<section class="py-16 bg-slate-950">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Guarantees</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {items.map((g, i) => (
+            <div class="rounded-2xl border border-slate-800 bg-white/5 p-6">
+              <div class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-violet-500/15 text-violet-300 mb-3">
+                <Fragment set:html={g.icon} />
+              </div>
+              <h3 class="text-white font-semibold">{g.t}</h3>
+              <p class="text-slate-300 mt-1">{g.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <aside>
+        <h3 class="text-xl font-semibold text-white mb-3">Freebies (first year)</h3>
+        <ul class="space-y-2">
+          {freebies.map((f) => (
+            <li class="text-slate-300 inline-flex items-start gap-2">
+              <svg class="w-4 h-4 mt-1 text-violet-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-slate-400 text-xs mt-3">Renewals after 12 months are paid by you at provider rates.</p>
+      </aside>
+    </div>
+  </div>
+</section>

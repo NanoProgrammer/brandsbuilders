@@ -1,0 +1,294 @@
+---
+// src/pages/about.astro
+import Layout from '../../layouts/Layout.astro';
+
+const seo = {
+  title: 'About Us - BrandsBuilders Agency | Digital Experts in Alberta',
+  description: 'Meet the team behind BrandsBuilders Agency. Alberta\'s premier digital agency specializing in web design, branding, and local SEO for small businesses.',
+  keywords: 'about BrandsBuilders, digital agency team Alberta, web design experts Calgary, branding specialists Edmonton',
+  canonical: 'https://brandsbuilders.agency/about'
+};
+
+const teamMembers = [
+  {
+    name: 'Alex Rodriguez',
+    role: 'Founder & Creative Director',
+    bio: 'With 12+ years in digital design, Alex leads our creative vision and ensures every project exceeds expectations.',
+    avatar: 'AR',
+    skills: ['Brand Strategy', 'UX/UI Design', 'Creative Direction']
+  },
+  {
+    name: 'Sarah Chen',
+    role: 'Lead Developer',
+    bio: 'Full-stack developer with expertise in modern web technologies and performance optimization.',
+    avatar: 'SC',
+    skills: ['React/Vue.js', 'Node.js', 'Performance Optimization']
+  },
+  {
+    name: 'Mike Thompson',
+    role: 'SEO & Marketing Specialist',
+    bio: 'Local SEO expert helping Alberta businesses dominate their digital presence and increase revenue.',
+    avatar: 'MT',
+    skills: ['Local SEO', 'Google Ads', 'Analytics']
+  },
+  {
+    name: 'Emma Wilson',
+    role: 'Project Manager',
+    bio: 'Ensures seamless project delivery with clear communication and on-time results for every client.',
+    avatar: 'EW',
+    skills: ['Project Management', 'Client Relations', 'Process Optimization']
+  }
+];
+
+const values = [
+  {
+    title: 'Client-First Approach',
+    description: 'Your success is our success. We listen, understand, and deliver solutions that truly make a difference.',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+  },
+  {
+    title: 'Quality & Excellence',
+    description: 'We never compromise on quality. Every pixel, every line of code, every strategy is crafted with precision.',
+    icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
+  },
+  {
+    title: 'Transparency',
+    description: 'Clear communication, honest timelines, and transparent pricing. No surprises, just results.',
+    icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'
+  },
+  {
+    title: 'Innovation',
+    description: 'We stay ahead of trends and use cutting-edge technologies to give you competitive advantages.',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+  }
+];
+---
+
+<Layout seo={seo}>
+  <!-- Hero Section -->
+  <section class="relative flex items-center justify-center overflow-hidden px-4 sm:px-8 lg:px-16 xl:px-32 py-24 lg:py-32">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900"></div>
+    
+    <!-- Animated elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/4 left-1/6 w-64 h-64 bg-violet-600 rounded-full filter blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/3 right-1/5 w-48 h-48 bg-fuchsia-600 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-block px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-full text-sm text-violet-400 font-medium mb-6">
+          About BrandsBuilders Agency
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-8">
+          We're
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Alberta's
+          </span>
+          Digital Experts
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-gray-400 leading-relaxed mb-12 max-w-3xl mx-auto">
+          A passionate team of designers, developers, and digital marketers dedicated to helping Alberta businesses thrive online.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="/contact" class="btn btn-primary btn-lg">Work With Us</a>
+          <a href="/portfolio" class="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-violet-500 hover:text-white transition-all duration-300 text-center">
+            See Our Work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-24 bg-slate-950 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.3)_0%,transparent_70%)]"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+            Our
+            <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Story
+            </span>
+          </h2>
+          <div class="space-y-6 text-slate-400 leading-relaxed">
+            <p>
+              Founded in 2019 in the heart of Alberta, BrandsBuilders Agency started with a simple mission: help local businesses compete in the digital world with professional websites and smart marketing strategies.
+            </p>
+            <p>
+              What began as a two-person team has grown into a full-service digital agency serving businesses across Calgary, Edmonton, Airdrie, and beyond. We've helped over 50 businesses transform their online presence and achieve measurable growth.
+            </p>
+            <p>
+              We understand the unique challenges Alberta businesses face, from seasonal fluctuations to competitive markets. That's why we focus on practical, results-driven solutions that deliver real ROI.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-gradient-to-br from-violet-900/30 to-fuchsia-900/30 rounded-3xl p-8 border border-violet-500/20">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-violet-400 mb-2">50+</div>
+                <div class="text-slate-400 text-sm">Happy Clients</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-fuchsia-400 mb-2">75+</div>
+                <div class="text-slate-400 text-sm">Projects Completed</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-indigo-400 mb-2">300%</div>
+                <div class="text-slate-400 text-sm">Average ROI</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-400 mb-2">5.0</div>
+                <div class="text-slate-400 text-sm">Client Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-24 bg-slate-900 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+          Meet Our
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Team
+          </span>
+        </h2>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          The talented individuals who make the magic happen every single day.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300 text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+              {member.avatar}
+            </div>
+            <h3 class="text-xl font-bold mb-2">{member.name}</h3>
+            <div class="text-violet-400 font-medium mb-4">{member.role}</div>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">{member.bio}</p>
+            <div class="space-y-2">
+              {member.skills.map((skill) => (
+                <div class="inline-block px-3 py-1 bg-violet-500/10 text-violet-300 text-xs rounded-full mr-2">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-24 bg-slate-950 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+          Our
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Values
+          </span>
+        </h2>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          The principles that guide everything we do and every decision we make.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map((value, index) => (
+          <div class="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={value.icon}></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-4">{value.title}</h3>
+                <p class="text-slate-400 leading-relaxed">{value.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-24 bg-slate-900 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+          How We
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Work
+          </span>
+        </h2>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          Our proven process ensures exceptional results for every project.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">1</div>
+            <h3 class="text-xl font-bold mb-4">Discovery</h3>
+            <p class="text-slate-400 text-sm">We learn about your business, goals, and challenges</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">2</div>
+            <h3 class="text-xl font-bold mb-4">Strategy</h3>
+            <p class="text-slate-400 text-sm">We create a custom plan tailored to your needs</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">3</div>
+            <h3 class="text-xl font-bold mb-4">Execution</h3>
+            <p class="text-slate-400 text-sm">We build and implement with precision</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">4</div>
+            <h3 class="text-xl font-bold mb-4">Growth</h3>
+            <p class="text-slate-400 text-sm">We optimize and scale for continued success</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-900">
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <div class="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-12 border border-slate-700/50 hover:border-violet-500/30 transition-all duration-300 inline-block">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-8">Ready to Grow Your Business?</h2>
+        <p class="text-xl text-slate-400 mb-12">Contact us today to discuss your project and learn how we can help you achieve your goals.</p>
+        <a href="/contact" class="inline-block px-8 py-4 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold rounded-full hover:scale-105 transition-all duration-300">Get in Touch</a>
+      </div>
+    </div>
+  </section>
