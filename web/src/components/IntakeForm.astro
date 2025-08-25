@@ -1,0 +1,245 @@
+---
+/* No TS aquí; el frontmatter queda vacío o con JS de build si lo necesitas */
+---
+
+<section id="intake-section" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
+        Tell us about
+        <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+          your project
+        </span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Share some details about your business and goals. We’ll follow up shortly.
+      </p>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <!-- Netlify-ready form -->
+      <form
+        name="intake"
+        method="POST"
+        action="/thank-you"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+        novalidate
+      >
+        <!-- Netlify hidden marker -->
+        <input type="hidden" name="form-name" value="intake" />
+
+        <!-- Honeypot anti-spam -->
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+
+        <!-- Honeypot adicional (si validas server-side) -->
+        <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Name (required) -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              placeholder="Your full name"
+            />
+            <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
+          </div>
+
+          <!-- Email (required) -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              placeholder="your@email.com"
+            />
+            <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Company (optional) -->
+          <div>
+            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company (optional)</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              placeholder="Your company name"
+            />
+          </div>
+
+          <!-- Website (optional) -->
+          <div>
+            <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website (optional)</label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              placeholder="https://yourwebsite.com"
+            />
+          </div>
+        </div>
+
+        <!-- Industry (required) -->
+        <div class="mb-6">
+          <label for="industry" class="block text-sm font-medium text-gray-300 mb-2">Industry *</label>
+          <select
+            id="industry"
+            name="industry"
+            required
+            class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          >
+            <option value="">Select your industry</option>
+            <option value="med-spa">Med-spa</option>
+            <option value="dental">Dental</option>
+            <option value="hvac">HVAC</option>
+            <option value="home-services">Home Services</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="text-red-400 text-sm mt-1" data-error-for="industry" aria-live="polite"></div>
+        </div>
+
+        <!-- Main Goal (required) -->
+        <div class="mb-6">
+          <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal *</label>
+          <textarea
+            id="goal"
+            name="goal"
+            required
+            rows="3"
+            class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none"
+            placeholder="What's your main goal for this project?"
+          ></textarea>
+          <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Budget (required) -->
+          <div>
+            <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">Budget *</label>
+            <select
+              id="budget"
+              name="budget"
+              required
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+            >
+              <option value="">Select budget range</option>
+              <option value="under-2k">Under $2,000</option>
+              <option value="2k-4k">$2,000 - $4,000</option>
+              <option value="4k-8k">$4,000 - $8,000</option>
+              <option value="8k-plus">$8,000+</option>
+            </select>
+            <div class="text-red-400 text-sm mt-1" data-error-for="budget" aria-live="polite"></div>
+          </div>
+
+          <!-- Timeline (required) -->
+          <div>
+            <label for="timeline" class="block text sm font-medium text-gray-300 mb-2">Timeline *</label>
+            <select
+              id="timeline"
+              name="timeline"
+              required
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+            >
+              <option value="">Select timeline</option>
+              <option value="asap">ASAP</option>
+              <option value="1-2-months">1-2 months</option>
+              <option value="3-6-months">3-6 months</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+            <div class="text-red-400 text-sm mt-1" data-error-for="timeline" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <!-- Consent (required) -->
+        <div class="mb-8">
+          <label class="flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              required
+              class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"
+            />
+            <span class="text-sm text-gray-400 leading-relaxed">
+              I agree to be contacted by BrandsBuilders Agency via email, phone, or text regarding my inquiry.
+              I understand I can unsubscribe at any time. By submitting this form, I consent to the collection,
+              use, and disclosure of my personal information in accordance with applicable privacy laws. *
+            </span>
+          </label>
+          <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Send My Project Details
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- JS de validación en cliente (no TS) -->
+<script is:inline>
+  (function () {
+    var form = document.querySelector('form[name="intake"]');
+    if (!form) return;
+
+    function showError(field, message) {
+      var slot = form.querySelector('[data-error-for="' + field.name + '"]');
+      if (slot) slot.textContent = message || '';
+    }
+
+    var validators = {
+      name: function (el) { return el.value.trim() ? '' : 'Please enter your name.'; },
+      email: function (el) {
+        if (!el.value.trim()) return 'Please enter your email.';
+        var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+        return ok ? '' : 'Enter a valid email address.';
+      },
+      industry: function (el) { return el.value ? '' : 'Please select your industry.'; },
+      goal: function (el) { return el.value.trim() ? '' : 'Please describe your main goal.'; },
+      budget: function (el) { return el.value ? '' : 'Please select a budget range.'; },
+      timeline: function (el) { return el.value ? '' : 'Please select a timeline.'; },
+      consent: function (el) { return el.checked ? '' : 'Consent is required.'; }
+    };
+
+    var fields = Array.prototype.slice.call(form.elements).filter(function (el) {
+      return ['name','email','industry','goal','budget','timeline','consent'].indexOf(el.name) !== -1;
+    });
+
+    fields.forEach(function (el) {
+      el.addEventListener('input', function () { showError(el, (validators[el.name] && validators[el.name](el)) || ''); });
+      el.addEventListener('change', function () { showError(el, (validators[el.name] && validators[el.name](el)) || ''); });
+    });
+
+    form.addEventListener('submit', function (e) {
+      var hasErrors = false;
+      fields.forEach(function (el) {
+        var msg = (validators[el.name] && validators[el.name](el)) || '';
+        showError(el, msg);
+        if (msg) hasErrors = true;
+      });
+      if (hasErrors) e.preventDefault(); // bloquea envío si hay errores
+      // si no hay errores, Netlify procesa y redirige a /thank-you
+    });
+  })();
+</script>

@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ContactHero from '../../components/ContactHero';
 import BookingSection from '../../components/BookingSection';
-import IntakeForm from '../../components/IntakeForm';
+import IntakeForm from '../../components/IntakeForm.astro';
 import ContactFAQ from '../../components/ContactFAQ.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import ContactDetails from '../../components/ContactDetails.astro';
@@ -20,7 +20,7 @@ const seo = {
   <!-- React components (asegúrate de tener @astrojs/react instalado) -->
   <ContactHero client:only="react" />
   <BookingSection client:only="react" />
-  <IntakeForm client:only="react" />
+  <IntakeForm/>
 
   <!-- Astro components -->
   <ContactFAQ />
