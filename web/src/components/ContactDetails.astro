@@ -26,11 +26,17 @@ const {
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-lg text-white">Email</h4>
-              <a href={`mailto:${email}`} class="text-violet-400 hover:text-white transition-colors">
-                {email}
-              </a>
-            </div>
+  <h4 class="font-semibold text-lg text-white">Email</h4>
+  <a
+    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-violet-400 hover:text-white transition-colors"
+  >
+    {email}
+  </a>
+</div>
+
           </div>
 
           <div class="flex items-center gap-4">
@@ -67,9 +73,9 @@ const {
           <p>By submitting the form, you consent to be contacted by BrandsBuilders Agency via email, phone, or text. You can opt out at any time.</p>
           <p>
             See our
-            <a href="/privacy" class="text-violet-400 hover:text-white"> Privacy Policy</a>
+            <a href="/privacy-policy" class="text-violet-400 hover:text-white"> Privacy Policy</a>
             and
-            <a href="/terms" class="text-violet-400 hover:text-white"> Terms of Service</a>.
+            <a href="/terms-of-service" class="text-violet-400 hover:text-white"> Terms of Service</a>.
           </p>
         </div>
       </div>
