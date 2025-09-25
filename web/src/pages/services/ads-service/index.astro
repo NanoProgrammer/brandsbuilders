@@ -1,0 +1,441 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const siteUrl = "https://brandsbuilders.agency";
+
+const seo = {
+  title: "Paid Media (Google & Meta) | Audit → Launch → Optimize for ROAS",
+  description:
+    "We run Paid Media only inside our Growth Partner model. Audit, keyword research, ~$50/day initial data phase, negatives, CRO/A/B, and iterative optimization to exceed target ROAS.",
+  canonical: `${siteUrl}/services/ads`,
+  keywords:
+    "Google Ads Alberta, Meta Ads Calgary, PPC Edmonton, paid media Alberta, keyword research, negative keywords, CRO A/B testing, ROAS",
+  ogImage: `${siteUrl}/images/og/paid-media-og.jpg`,
+};
+
+const channels = [
+  "Google Ads (Search, Performance Max, Shopping, YouTube if applicable)",
+  "Meta Ads (Facebook & Instagram: prospecting + remarketing)",
+  "Microsoft Advertising (Bing) when incremental demand exists"
+];
+
+// Process — explicit, no “buy now” packages
+const process = [
+  {
+    title: "Audit & Tracking Sanity",
+    points: [
+      "Accounts, pixels, GA4, conversions and UTM hygiene review",
+      "Crawl/index sanity for landing pages + basic speed/CWV checks",
+      "Attribution sanity (model compare, lag, duplicate events)"
+    ]
+  },
+  {
+    title: "Keyword & Angle Research",
+    points: [
+      "Demand mapping (core, long-tail, local intent) + match type strategy",
+      "Query themes, competitor angles, and offer hooks",
+      "Initial negatives plan (brand safety, irrelevant intents)"
+    ]
+  },
+  {
+    title: "Initial Campaign Build (Data Phase)",
+    note: "Minimum media budget: ~ $50/day to collect statistically useful data within the first weeks.",
+    points: [
+      "Lean structure (search/shopping or PMax when justified)",
+      "Tight ad groups with message-match landings",
+      "Enhanced conversions + call/form tracking wired"
+    ]
+  },
+  {
+    title: "Data Review (Days 7–21)",
+    points: [
+      "Search term mining → add negative keywords continuously",
+      "Early bid & budget adjustments (TCPA/TROAS as signal matures)",
+      "Creative iterations on winning angles; trim placement waste"
+    ]
+  },
+  {
+    title: "CRO & A/B Testing",
+    points: [
+      "Headline/CTA/form friction tests on landings (A/B light)",
+      "Speed & clarity quick wins (LCP, layout shift, trust cues)",
+      "Thank-you logic & follow-up paths to lift close rate"
+    ]
+  },
+  {
+    title: "Scale & ROAS Lift",
+    points: [
+      "Expand profitable segments; cap CPA/raise ROAS targets",
+      "Seasonality, value rules, budget scenarios & new surfaces",
+      "Monthly insight report: what changed, impact, next steps"
+    ]
+  }
+];
+
+const ops = [
+  "Search term audits weekly; negatives added on the fly",
+  "Bid/budget pacing by daypart/geo/device when justified",
+  "Creative backlog maintained (UGC, hooks, offers)",
+  "Feed and Merchant Center hygiene for Shopping",
+  "Exclusions and frequency controls for Meta remarketing",
+  "Anomaly detection and rollback plan documented"
+];
+
+const fit = [
+  "Owner-led SMB (2–50 employees) with capacity to handle more demand in 30–90 days",
+  "High-value services (≥ $150–$300 per appointment) or e-commerce with healthy AOV",
+  "Willingness to test offers and ship landing updates quickly",
+  "Clear decision-maker; fast approvals"
+];
+---
+
+<Layout seo={seo}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" role="presentation">
+      <div class="absolute -top-24 -left-24 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia-600/15 blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 py-16 md:py-20">
+      <div class="max-w-4xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+          Operated inside our Growth Partner — not sold standalone
+        </p>
+        <h1 class="text-4xl md:text-5xl font-black leading-tight text-white mb-4">
+          Paid Media (Google &amp; Meta)
+          <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
+            audit → research → launch → optimize for ROAS
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base md:text-lg max-w-2xl">
+          We run ads only when we control the full loop: tracking, keywords, landings and CRO.
+          Minimum media budget starts at <strong>$50/day</strong> to gather initial signal; then we iterate to
+          lift ROAS beyond your ideal target.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#process" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+            See the process
+          </a>
+          <a href="#intake-ads" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Apply for Growth Partner
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section class="py-12 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Channels we operate</h2>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-slate-300 text-sm">
+        {channels.map((c) => (
+          <li class="rounded-xl border border-slate-800 bg-slate-900/60 p-4 flex gap-2 items-start">
+            <svg class="w-4 h-4 text-violet-400 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>{c}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-slate-500 text-xs mt-3">Surfaces added/removed based on volume, margins and tracking quality.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">How we run paid media</h2>
+        <p class="text-slate-400">No packages. A single operating model focused on compounding ROAS.</p>
+      </header>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {process.map((step, i) => (
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-white font-semibold">{i + 1}. {step.title}</h3>
+            </div>
+            {step.note && <p class="text-xs text-violet-300 mb-3">{step.note}</p>}
+            <ul class="space-y-2 text-slate-300 text-sm">
+              {step.points.map((p) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- OPS -->
+  <section class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Operational standards</h2>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <ul class="grid md:grid-cols-2 gap-3 text-slate-300 text-sm">
+          {ops.map((item) => (
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Who this is for</h2>
+        <p class="text-slate-400">We partner with a small number of brands where paid media can unlock revenue quickly.</p>
+      </header>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <ul class="grid md:grid-cols-2 gap-3 text-slate-300 text-sm">
+          {fit.map((f) => (
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Paid Media FAQ</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Is this a standalone service?</h3>
+          <p class="text-slate-300 text-sm">No. We operate paid media only within our Growth Partner to align offers, landings, tracking and budgets.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">What’s the minimum media budget?</h3>
+          <p class="text-slate-300 text-sm">We recommend starting at roughly <strong>$50/day</strong> to generate initial data quickly, then scale based on performance.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Do you add negative keywords?</h3>
+          <p class="text-slate-300 text-sm">Yes—continuously. We mine search terms weekly and add negatives to protect ROAS and tighten intent.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">How do you improve ROAS?</h3>
+          <p class="text-slate-300 text-sm">Iterative: refine queries and bids, ship creative variations, and run A/B tests on landings to lift conversion rate—then re-allocate budget to winners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM (Netlify ready) -->
+  <section id="intake-ads" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
+          Apply for <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Growth Partner</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Short application first. If it’s a fit, we’ll share a calendar link for a strategy call.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <form
+          name="intake-ads"
+          method="POST"
+          action="/thank-you"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="intake-ads" />
+          <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+          <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+              <input id="name" name="name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your full name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+              <input id="email" name="email" type="email" required pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="your@email.com"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company *</label>
+              <input id="company" name="company" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your company name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="company" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website (optional)</label>
+              <input id="website" name="website" type="url" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="https://yourwebsite.com"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="monthly_adspend" class="block text-sm font-medium text-gray-300 mb-2">Current/Planned ad spend *</label>
+              <select id="monthly_adspend" name="monthly_adspend" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select a range</option>
+                <option value="under-2k">Under $2,000 / mo</option>
+                <option value="2k-5k">$2,000 – $5,000 / mo</option>
+                <option value="5k-10k">$5,000 – $10,000 / mo</option>
+                <option value="10k-plus">$10,000+ / mo</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="monthly_adspend" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="industry" class="block text-sm font-medium text-gray-300 mb-2">Industry *</label>
+              <select id="industry" name="industry" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select your industry</option>
+                <option value="med-spa">Med-spa</option>
+                <option value="dental">Dental</option>
+                <option value="hvac">HVAC</option>
+                <option value="home-services">Home Services</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="industry" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal for paid media *</label>
+            <textarea id="goal" name="goal" required rows="3" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none" placeholder="What should ads achieve in the next 90 days? (e.g., +40 qualified leads, 3.5x MER, fill Tuesdays…)"></textarea>
+            <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
+          </div>
+
+          <div class="mb-8">
+            <label class="flex items-start gap-3">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"/>
+              <span class="text-sm text-gray-400 leading-relaxed">
+                I agree to be contacted by BrandsBuilders Agency regarding my inquiry and understand I can unsubscribe at any time. *
+              </span>
+            </label>
+            <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed">
+            Apply — Growth Partner (Paid Media)
+          </button>
+
+          <!-- Single contact email hint -->
+          <p class="text-xs text-slate-500 mt-4">
+            Prefer email? Reach us at <a href="mailto:hello@brandsbuilders.agency" class="underline text-violet-300">hello@brandsbuilders.agency</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          url: `${siteUrl}/services/ads`,
+          name: "Paid Media (Google & Meta) | BrandsBuilders Agency",
+          description: seo.description,
+          inLanguage: "en-CA",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+              { "@type": "ListItem", position: 3, name: "Paid Media", item: `${siteUrl}/services/ads` }
+            ]
+          },
+          isPartOf: { "@type": "WebSite", url: siteUrl }
+        },
+        {
+          "@type": "Service",
+          name: "Paid Media (within Growth Partner)",
+          serviceType: "Performance advertising",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Alberta" },
+            { "@type": "City", name: "Calgary" },
+            { "@type": "City", name: "Edmonton" }
+          ],
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          offers: {
+            "@type": "Offer",
+            url: `${siteUrl}/services/ads`,
+            availability: "https://schema.org/InStock"
+            // no public pricing; bespoke engagement under Growth Partner
+          },
+          description: "Audit, keyword research, ~$50/day initial data phase, negatives, CRO/A/B and iterative optimization to exceed target ROAS."
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Is this a standalone service?", acceptedAnswer: { "@type": "Answer", text: "No. We operate paid media only within our Growth Partner to align offers, landings, tracking and budgets." } },
+            { "@type": "Question", name: "What’s the minimum media budget?", acceptedAnswer: { "@type": "Answer", text: "Roughly $50/day to collect initial data quickly; scaling depends on performance and volume." } },
+            { "@type": "Question", name: "Do you add negative keywords?", acceptedAnswer: { "@type": "Answer", text: "Yes. We mine search terms weekly and add negatives continuously to protect ROAS." } },
+            { "@type": "Question", name: "How do you improve ROAS?", acceptedAnswer: { "@type": "Answer", text: "Refine queries/bids, iterate creatives, and run A/B tests on landings to raise conversion rate and reallocate budget to winners." } }
+          ]
+        }
+      ]
+    })}
+  </script>
+
+  <!-- Minimal inline validation -->
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('form[name="intake-ads"]');
+      if (!form) return;
+      function showError(field, message) {
+        var slot = form.querySelector('[data-error-for="' + field.name + '"]');
+        if (slot) slot.textContent = message || '';
+      }
+      var validators = {
+        name: el => el.value.trim() ? '' : 'Please enter your name.',
+        email: el => !el.value.trim() ? 'Please enter your email.' :
+          (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value) ? '' : 'Enter a valid email address.'),
+        company: el => el.value.trim() ? '' : 'Please enter your company name.',
+        monthly_adspend: el => el.value ? '' : 'Please select an ad spend range.',
+        industry: el => el.value ? '' : 'Please select your industry.',
+        goal: el => el.value.trim() ? '' : 'Please describe your main goal.',
+        consent: el => el.checked ? '' : 'Consent is required.'
+      };
+      var fields = Array.prototype.slice.call(form.elements).filter(function (el) {
+        return ['name','email','company','monthly_adspend','industry','goal','consent'].includes(el.name);
+      });
+      fields.forEach(function (el) {
+        el.addEventListener('input', function () { showError(el, validators[el.name](el)); });
+        el.addEventListener('change', function () { showError(el, validators[el.name](el)); });
+      });
+      form.addEventListener('submit', function (e) {
+        var hasErrors = false;
+        fields.forEach(function (el) {
+          var msg = validators[el.name](el);
+          showError(el, msg);
+          if (msg) hasErrors = true;
+        });
+        if (hasErrors) e.preventDefault();
+      });
+    })();
+  </script>
+</Layout>

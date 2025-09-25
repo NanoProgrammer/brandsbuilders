@@ -1,0 +1,421 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const siteUrl = "https://brandsbuilders.agency";
+
+const seo = {
+  title: "Growth Partner — Web, Local SEO & Paid Media Operated Together",
+  description:
+    "One accountable engagement where we design, ship and operate the growth loop: web, local SEO and paid media — tracked, tested and tuned to revenue.",
+  canonical: `${siteUrl}/services/growth-partner`,
+  keywords:
+    "growth partner Alberta, web SEO paid media, CRO Alberta, owner-led SMB marketing, lead generation Alberta",
+  ogImage: `${siteUrl}/images/og/growth-partner-og.jpg`,
+};
+
+// No branding pillar. Ads included.
+const pillars = [
+  { title: "Web & Conversion", points: ["Fast, accessible pages (Lighthouse ≥90 mobile)", "Message-match landings", "CRO & light A/B testing"] },
+  { title: "Local SEO", points: ["On-page SEO (titles, H1–H3, schema)", "GBP hygiene & posts cadence", "Reviews workflow & prompts"] },
+  { title: "Paid Media", points: ["Audit & tracking sanity (GA4/pixels/UTMs)", "Keyword/angle research & ad structure", "Data phase (~$50/day), negatives & scaling"] },
+  { title: "Measurement", points: ["Single source of truth dashboards", "Lead/revenue attribution sanity", "Insight report: what changed, impact, next"] },
+];
+
+const how = [
+  {
+    title: "Setup (Month 0–1)",
+    note: "You own the site/code/content from the moment we ship.",
+    bullets: [
+      "Tracking & attribution sanity (GA4, pixels, conversions, UTMs)",
+      "Web foundation (new build or refactor) with accessibility essentials",
+      "On-page/local technical SEO pass + schema",
+      "Initial keyword & angle research; ad account structure ready",
+      "Dashboards & alerts (lead/revenue, CWV, anomalies)"
+    ]
+  },
+  {
+    title: "Operate (Month 2+)",
+    bullets: [
+      "CRO cadence (A/B copy/CTA, form friction fixes)",
+      "GBP & local pages maintenance; reviews engine",
+      "Paid: query mining, negative keywords, pacing & scaling",
+      "Insight report: what changed, impact, next steps"
+    ]
+  },
+  {
+    title: "Performance Layer",
+    bullets: [
+      "Services/local: lead targets with clear definitions",
+      "E-commerce (if applicable): revenue share on attributable lift over threshold",
+      "All incentives documented; no attribution games"
+    ]
+  }
+];
+
+const fit = [
+  "Owner-led SMB (2–50 employees) with capacity to absorb demand in 30–90 days",
+  "High-value services (≥ $150–$300 per appointment) or healthy AOV e-commerce",
+  "Willing to publish changes quickly and collect reviews consistently",
+  "Clear decision-maker, fast feedback loops"
+];
+
+const notFor = [
+  "‘Fully booked’ teams or no operational capacity",
+  "Five decision-makers for every change",
+  "Promises like “#1 on Google in 2 weeks”",
+  "Budgets that cannot sustain testing or ~ $50/day data phase for ads"
+];
+
+const guarantees = [
+  { h: "Performance", p: "Mobile Lighthouse ≥90 and LCP < 2.5s on new pages (trade-offs documented)." },
+  { h: "Accessibility", p: "WCAG 2.1 A/AA essentials on shipped templates." },
+  { h: "Ownership", p: "You own domain, code and content from day one." },
+  { h: "Clarity", p: "One plan, one report, one accountable partner." }
+];
+
+const faq = [
+  { q: "Is this a bundle of services?", a: "No. It’s one operating model. Web, Local SEO and Paid Media are run together only if they’re required for the growth plan." },
+  { q: "Do you publish prices?", a: "No. Investment is aligned privately after the fit call and depends on scope, speed and channels involved." },
+  { q: "Do you run ads without changing the website?", a: "Only if tracking and landings already meet our standards. Otherwise we fix foundations first, then launch with a ~ $50/day data phase and add negative keywords continuously." },
+  { q: "How fast are results?", a: "Most owner-led SMBs see meaningful movement in 30–90 days when changes publish quickly and reviews flow steadily." }
+];
+---
+
+<Layout seo={seo}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-24 -left-24 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia-600/15 blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 py-16 md:py-20">
+      <div class="max-w-4xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+          One engagement • Web · Local SEO · Paid Media
+        </p>
+        <h1 class="text-4xl md:text-5xl font-black leading-tight text-white mb-4">
+          Growth Partner
+          <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
+            we operate your revenue loop
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base md:text-lg max-w-2xl">
+          One accountable partner to design, ship and run the loop: fast pages, local SEO, reviews and paid media tuned to revenue. No public packages. No price anchoring.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#how" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+            See how it works
+          </a>
+          <a href="#apply" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Apply for Growth Partner
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="py-14 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What we operate</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pillars.map((card) => (
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 class="text-white font-semibold mb-3">{card.title}</h3>
+            <ul class="space-y-2 text-slate-300 text-sm">
+              {card.points.map((p) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">How it works</h2>
+        <p class="text-slate-400">Setup first, then ongoing operation. No public pricing.</p>
+      </header>
+      <div class="grid md:grid-cols-3 gap-6">
+        {how.map((blk, i) => (
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-white font-semibold">{i + 1}. {blk.title}</h3>
+            </div>
+            {blk.note && <p class="text-xs text-violet-300 mb-3">{blk.note}</p>}
+            <ul class="space-y-2 text-slate-300 text-sm">
+              {blk.bullets.map((b) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT / NOT FOR -->
+  <section class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-3">Who it’s for</h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            {fit.map((f) => (
+              <li class="flex gap-2">
+                <svg class="w-4 h-4 text-emerald-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-3">Not a fit</h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            {notFor.map((n) => (
+              <li class="flex gap-2">
+                <svg class="w-4 h-4 text-fuchsia-400 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+                {n}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What we guarantee</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {guarantees.map((g) => (
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <h3 class="text-white font-semibold mb-1">{g.h}</h3>
+            <p class="text-slate-300 text-sm">{g.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">FAQ</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {faq.map((f) => (
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 class="text-white font-semibold mb-2">{f.q}</h3>
+            <p class="text-slate-300 text-sm">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY (form-first, Netlify ready) -->
+  <section id="apply" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
+          Apply for <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Growth Partner</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Short application first. If it’s a fit, we’ll share a calendar link for a strategy call.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <form
+          name="growth-partner"
+          method="POST"
+          action="/thank-you"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="growth-partner" />
+          <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+          <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+              <input id="name" name="name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your full name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+              <input id="email" name="email" type="email" required pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="your@email.com"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company *</label>
+              <input id="company" name="company" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your company name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="company" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website (optional)</label>
+              <input id="website" name="website" type="url" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="https://yourwebsite.com"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="industry" class="block text-sm font-medium text-gray-300 mb-2">Industry *</label>
+              <select id="industry" name="industry" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select your industry</option>
+                <option value="med-spa">Med-spa</option>
+                <option value="dental">Dental</option>
+                <option value="hvac">HVAC</option>
+                <option value="home-services">Home Services</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="industry" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="timeline" class="block text-sm font-medium text-gray-300 mb-2">Timeline *</label>
+              <select id="timeline" name="timeline" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select timeline</option>
+                <option value="asap">ASAP</option>
+                <option value="1-2-months">1–2 months</option>
+                <option value="3-6-months">3–6 months</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="timeline" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal in the next 90 days *</label>
+            <textarea id="goal" name="goal" required rows="3" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none" placeholder="What should we achieve together? (e.g., +40 qualified leads, 3.5x MER, fill mid-week schedule)"></textarea>
+            <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
+          </div>
+
+          <div class="mb-8">
+            <label class="flex items-start gap-3">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"/>
+              <span class="text-sm text-gray-400 leading-relaxed">
+                I agree to be contacted by BrandsBuilders Agency regarding my inquiry and understand I can unsubscribe at any time. *
+              </span>
+            </label>
+            <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed">
+            Apply — Growth Partner
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD (no pricing) -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          url: `${siteUrl}/services/growth-partner`,
+          name: "Growth Partner | BrandsBuilders Agency",
+          description: seo.description,
+          inLanguage: "en-CA",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+              { "@type": "ListItem", position: 3, name: "Growth Partner", item: `${siteUrl}/services/growth-partner` }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          name: "Growth Partner",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Alberta" },
+            { "@type": "City", name: "Calgary" },
+            { "@type": "City", name: "Edmonton" }
+          ],
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          description: "A premium engagement where we build and operate systems for growth across web, local SEO and paid media, tracked and optimized to revenue.",
+          offers: { "@type": "Offer", url: `${siteUrl}/services/growth-partner`, availability: "https://schema.org/InStock" }
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: faq[0].q, acceptedAnswer: { "@type": "Answer", text: faq[0].a } },
+            { "@type": "Question", name: faq[1].q, acceptedAnswer: { "@type": "Answer", text: faq[1].a } },
+            { "@type": "Question", name: faq[2].q, acceptedAnswer: { "@type": "Answer", text: faq[2].a } },
+            { "@type": "Question", name: faq[3].q, acceptedAnswer: { "@type": "Answer", text: faq[3].a } }
+          ]
+        }
+      ]
+    })}
+  </script>
+
+  <!-- Minimal inline validation -->
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('form[name="growth-partner"]');
+      if (!form) return;
+      function showError(field, message) {
+        var slot = form.querySelector('[data-error-for="' + field.name + '"]');
+        if (slot) slot.textContent = message || '';
+      }
+      var validators = {
+        name: el => el.value.trim() ? '' : 'Please enter your name.',
+        email: el => !el.value.trim() ? 'Please enter your email.' :
+          (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value) ? '' : 'Enter a valid email address.'),
+        company: el => el.value.trim() ? '' : 'Please enter your company name.',
+        industry: el => el.value ? '' : 'Please select your industry.',
+        timeline: el => el.value ? '' : 'Please select a timeline.',
+        goal: el => el.value.trim() ? '' : 'Please describe your main goal.',
+        consent: el => el.checked ? '' : 'Consent is required.'
+      };
+      var fields = Array.prototype.slice.call(form.elements).filter(function (el) {
+        return ['name','email','company','industry','timeline','goal','consent'].includes(el.name);
+      });
+      fields.forEach(function (el) {
+        el.addEventListener('input', function () { showError(el, validators[el.name](el)); });
+        el.addEventListener('change', function () { showError(el, validators[el.name](el)); });
+      });
+      form.addEventListener('submit', function (e) {
+        var hasErrors = false;
+        fields.forEach(function (el) {
+          var msg = validators[el.name](el);
+          showError(el, msg);
+          if (msg) hasErrors = true;
+        });
+        if (hasErrors) e.preventDefault();
+      });
+    })();
+  </script>
+</Layout>

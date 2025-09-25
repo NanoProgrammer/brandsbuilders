@@ -9,12 +9,11 @@ const seo = {
 };
 
 const lastUpdated = '2025-01-15';
+const contactEmail = 'hello@brandsbuilders.agency';
 ---
-
 <Layout seo={seo}>
   <!-- Hero Section -->
   <section class="relative py-24 lg:py-32 overflow-hidden">
-    <!-- Background Elements -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950"></div>
     <div class="absolute inset-0 opacity-20">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -38,7 +37,6 @@ const lastUpdated = '2025-01-15';
 
   <!-- Privacy Policy Content -->
   <section class="py-24 bg-slate-950 relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
       <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=none fill-rule=evenodd%3E%3Cg fill=%23a855f7 fill-opacity=0.4%3E%3Ccircle cx=30 cy=30 r=1/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] bg-repeat"></div>
     </div>
@@ -47,22 +45,22 @@ const lastUpdated = '2025-01-15';
       <div class="max-w-4xl mx-auto">
         <div class="glass rounded-3xl p-8 lg:p-12">
           <div class="prose prose-lg prose-invert max-w-none privacy-content">
-            
+
             <h2>1. Information We Collect</h2>
-            
+
             <h3>Personal Information</h3>
             <p>We collect information you provide directly to us, such as when you:</p>
             <ul>
-              <li>Fill out contact forms on our website</li>
+              <li>Fill out forms on our website</li>
               <li>Subscribe to our newsletter</li>
               <li>Request a quote or consultation</li>
-              <li>Communicate with us via email or phone</li>
+              <li>Communicate with us via email at <strong>{contactEmail}</strong></li>
               <li>Create an account for our services</li>
             </ul>
 
             <p>This information may include:</p>
             <ul>
-              <li>Name and contact information (email, phone number, address)</li>
+              <li>Name and contact information (email, mailing address)</li>
               <li>Business information (company name, industry, website)</li>
               <li>Project requirements and preferences</li>
               <li>Payment information (processed through secure third-party providers)</li>
@@ -78,11 +76,10 @@ const lastUpdated = '2025-01-15';
             </ul>
 
             <h2>2. How We Use Your Information</h2>
-            
             <p>We use your information to:</p>
             <ul>
               <li>Provide and improve our services</li>
-              <li>Respond to your inquiries and provide customer support</li>
+              <li>Respond to your inquiries and provide support via <strong>{contactEmail}</strong></li>
               <li>Send you relevant updates about our services and industry news</li>
               <li>Process payments and manage billing</li>
               <li>Analyze website usage to improve user experience</li>
@@ -90,14 +87,13 @@ const lastUpdated = '2025-01-15';
             </ul>
 
             <h2>3. Information Sharing and Disclosure</h2>
-            
             <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
 
             <h3>Service Providers</h3>
             <p>We work with trusted third-party service providers who assist us in operating our business, such as:</p>
             <ul>
               <li>Web hosting and analytics providers</li>
-              <li>Email marketing platforms</li>
+              <li>Email delivery and marketing platforms</li>
               <li>Payment processors</li>
               <li>Project management tools</li>
             </ul>
@@ -106,7 +102,6 @@ const lastUpdated = '2025-01-15';
             <p>We may disclose your information if required by law or in response to valid legal requests from government authorities.</p>
 
             <h2>4. Data Security</h2>
-            
             <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
             <ul>
               <li>SSL encryption for data transmission</li>
@@ -116,8 +111,7 @@ const lastUpdated = '2025-01-15';
             </ul>
 
             <h2>5. Cookies and Tracking Technologies</h2>
-            
-            <p>We use cookies and similar tracking technologies to enhance your browsing experience and analyze website traffic. You can control cookie preferences through your browser settings. Our website uses:</p>
+            <p>We use cookies and similar tracking technologies to enhance your browsing experience and analyze website traffic. You can control cookie preferences through your browser settings. Our website may use:</p>
             <ul>
               <li><strong>Essential cookies:</strong> Required for basic website functionality</li>
               <li><strong>Analytics cookies:</strong> Help us understand how visitors use our site</li>
@@ -125,7 +119,6 @@ const lastUpdated = '2025-01-15';
             </ul>
 
             <h2>6. Your Rights and Choices</h2>
-            
             <p>You have the right to:</p>
             <ul>
               <li>Access the personal information we hold about you</li>
@@ -134,43 +127,34 @@ const lastUpdated = '2025-01-15';
               <li>Opt out of marketing communications at any time</li>
               <li>Request a copy of your data in a portable format</li>
             </ul>
-
-            <p>To exercise these rights, please contact us using the information provided below.</p>
+            <p>To exercise these rights, please contact us at <strong>{contactEmail}</strong>.</p>
 
             <h2>7. Data Retention</h2>
-            
             <p>We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this policy. We will securely delete or anonymize your information when it is no longer needed, unless we are required to retain it for legal or regulatory purposes.</p>
 
             <h2>8. International Data Transfers</h2>
-            
             <p>Your information may be transferred to and processed in countries other than Canada. We ensure appropriate safeguards are in place to protect your information in accordance with this privacy policy and applicable data protection laws.</p>
 
             <h2>9. Children's Privacy</h2>
-            
             <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child, we will take steps to delete such information promptly.</p>
 
             <h2>10. Third-Party Links</h2>
-            
             <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information.</p>
 
             <h2>11. Changes to This Policy</h2>
-            
-            <p>We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by posting the updated policy on our website and updating the "last updated" date.</p>
+            <p>We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by posting the updated policy on our website and updating the “last updated” date.</p>
 
             <h2>12. Contact Information</h2>
-            
-            <p>If you have any questions about this privacy policy or our data practices, please contact us:</p>
-            
+            <p>If you have any questions about this privacy policy or our data practices, contact us:</p>
+
             <div class="bg-slate-800/50 rounded-2xl p-6 mt-8">
-              <p><strong>BrandsBuilders Agency</strong><br>
-              Alberta, Canada<br>
-              Email: privacy@brandsbuilders.agency<br>
-              Phone: +1-403-XXX-XXXX</p>
+              <p><strong>BrandsBuilders Agency</strong><br />
+              Alberta, Canada<br />
+              Email: <a href={`mailto:${contactEmail}`} class="text-violet-300 underline underline-offset-2">{contactEmail}</a></p>
             </div>
 
             <h2>13. Compliance</h2>
-            
-            <p>This privacy policy complies with applicable Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA), and international standards such as the General Data Protection Regulation (GDPR) where applicable.</p>
+            <p>This privacy policy is designed to align with applicable Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA), and with international standards such as the GDPR where applicable.</p>
 
           </div>
         </div>
@@ -179,16 +163,16 @@ const lastUpdated = '2025-01-15';
         <div class="glass rounded-3xl p-8 text-center mt-12">
           <h3 class="text-2xl font-bold text-white mb-4">Questions About Your Privacy?</h3>
           <p class="text-slate-300 mb-6">
-            Our team is here to help address any concerns about how we handle your personal information.
+            We’ll respond by email. Reach us directly at <span class="text-violet-300 font-semibold">{contactEmail}</span>.
           </p>
-          <a 
-            href="/contact" 
+          <a
+            href={`mailto:${contactEmail}`}
             class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-violet-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
+            Email {contactEmail}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-4-4m4 4l-4 4"></path>
             </svg>
-            Contact Us
           </a>
         </div>
       </div>
@@ -206,11 +190,7 @@ const lastUpdated = '2025-01-15';
     padding-bottom: 0.75rem;
     border-bottom: 2px solid rgb(139 92 246 / 0.3);
   }
-
-  .privacy-content h2:first-child {
-    margin-top: 0;
-  }
-
+  .privacy-content h2:first-child { margin-top: 0; }
   .privacy-content h3 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -218,26 +198,16 @@ const lastUpdated = '2025-01-15';
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
-
   .privacy-content p {
     color: rgb(203 213 225);
     margin-bottom: 1.5rem;
     line-height: 1.75;
   }
-
   .privacy-content ul {
     color: rgb(203 213 225);
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
   }
-
-  .privacy-content li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-  }
-
-  .privacy-content strong {
-    color: rgb(196 181 253);
-    font-weight: 600;
-  }
+  .privacy-content li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .privacy-content strong { color: rgb(196 181 253); font-weight: 600; }
 </style>

@@ -1,130 +1,47 @@
 ---
+// src/pages/services/local-seo.astro
 import Layout from "../../../layouts/Layout.astro";
 
 const siteUrl = "https://brandsbuilders.agency";
 
 const seo = {
-  title: "Local SEO & Google Business Profile | Alberta SMBs",
+  title: "Local SEO & Google Business Profile | Growth Partner Capability",
   description:
-    "Pragmatic local SEO for owner-led businesses in Alberta. On-page optimization, GBP setup, reviews engine, schema, and measurement—clear timelines and outcomes.",
+    "Local SEO delivered only within our Growth Partner model. We integrate web, GBP, reviews, on-page and measurement to turn nearby searches into revenue.",
   canonical: `${siteUrl}/services/local-seo`,
-  keywords:
-    "local SEO Alberta, Google Business Profile Calgary, local SEO Edmonton, on-page SEO, LocalBusiness schema, reviews engine, Alberta small business SEO",
   ogImage: `${siteUrl}/images/og/local-seo-og.jpg`,
 };
 
-// ────────────────────────────────────────────────────────────────────────────────
-// DATA — LOCAL SEO ONLY (one-time offers + monthly retainers)
-// ────────────────────────────────────────────────────────────────────────────────
-const localOffers = [
-  {
-    name: "Local SEO Foundation (one-time)",
-    price: "$900–$2,000",
-    timeline: "2–3 weeks",
-    summary:
-      "Set the groundwork for local visibility and conversions across your key service/location pages.",
-    bullets: [
-      "Local on-page: titles, metas, H1–H3, internal links, contact blocks",
-      "LocalBusiness schema (core) + FAQ schema where relevant",
-      "NAP consistency pass + GBP category/keywords recommendations",
-      "Reviews prompts kit (QR/link) + response templates",
-      "GSC targets + basic goal mapping in GA4",
-    ],
-  },
-  {
-    name: "Technical SEO Setup (one-time)",
-    price: "$1,500–$3,000",
-    timeline: "~1 week",
-    summary:
-      "Search foundations that prevent crawl/index issues and keep signals clean.",
-    bullets: [
-      "Semantic HTML checks + sitemap/robots",
-      "Canonical/redirect sanity + 404/5xx review",
-      "Meta/OG/Twitter preview polish",
-      "Core Web Vitals sanity pass (LCP/CLS/TBT)",
-      "Index status and coverage fixes (quick wins)",
-    ],
-  },
-  {
-    name: "On-Page Content Pack (per 5 URLs)",
-    price: "$800–$1,400",
-    timeline: "1–2 weeks per pack",
-    summary:
-      "Tight on-page improvements for your most valuable local pages—services, locations, FAQs.",
-    bullets: [
-      "Short briefs and keyword mapping for 5 URLs",
-      "Updated titles/metas/H1–H3, internal links, FAQs",
-      "Article/FAQ/Breadcrumb schema as needed",
-      "Before/after diffs for each URL",
-      "QA + publish handoff or supervised deploy",
-    ],
-  },
-  {
-    name: "Google Business Profile (GBP) Setup & Optimization",
-    price: "$300–$500",
-    timeline: "3–5 days",
-    summary:
-      "Baseline GBP health for higher local pack visibility and better conversion from Maps.",
-    bullets: [
-      "Profile completeness: categories, services, attributes",
-      "Photos/hours/UTM tagging + tracking template",
-      "2 starter posts + Q&A seed",
-      "Reviews ask flow + response templates",
-      "Simple audit with next steps",
-    ],
-  },
+// Capability bullets (not packages, not purchasable)
+const capability = [
+  "On-page local optimization for key service & location pages (titles, metas, H1–H3, internal links, contact blocks).",
+  "LocalBusiness / FAQ schema where relevant; breadcrumb & Article schema on content.",
+  "Google Business Profile hygiene & optimization: categories, services, attributes, hours, UTM tracking.",
+  "Reviews engine: short asks, QR/link cards, response templates, team cadence.",
+  "Search Console targets, GA4 goals and events for calls, forms and bookings.",
+  "Core Web Vitals sanity and quick wins to protect local conversion on mobile."
 ];
 
-const localAddons = [
-  { name: "Schema Expansion (LocalBusiness/FAQ/Product)", price: "$300–$1,200" },
-  { name: "Redirects & Canonicals Cleanup", price: "$400–$900" },
-  { name: "Core Web Vitals Hardening", price: "$700–$1,500" },
-  { name: "Search Console & Reporting Setup", price: "$300–$650" },
+// Example 90-day operating plan (illustrative, not a package)
+const plan90 = [
+  { phase: "Weeks 1–2", items: ["Technical & local audit (site + GBP)", "Keyword/intent map (services & locations)", "Fix crawl/index/canonical basics", "Define review + post cadence"] },
+  { phase: "Weeks 3–6", items: ["Ship on-page updates for top services/locations", "Publish 2–3 FAQs per page with schema", "GBP pass: photos, categories, services, posts", "Implement call/form tracking and dashboards"] },
+  { phase: "Weeks 7–12", items: ["Expand to secondary locations/services", "Light A/B on headline/CTA where volume allows", "Review growth levers & blockers, adjust cadence", "Prep next 90-day roadmap"] }
 ];
 
-// Monthly retainers — Alberta (low → low-mid)
-// Note: per your ask, Plan #2 explicitly includes 3–5 small on-page changes.
-const monthlyLocal = [
-  {
-    name: "Local SEO Lite",
-    price: "$450–$650 / mo",
-    bullets: [
-      "GBP hygiene + 2 posts/mo",
-      "Review prompts and canned responses",
-      "GSC + GA4 mini report (top queries/URLs)",
-      "1 minor site tweak/mo (copy/image/link)",
-      "Issue log and priorities",
-    ],
-  },
-  {
-    name: "Local SEO Essential",
-    price: "$720–$1,120 / mo",
-    bullets: [
-      "Everything in Lite",
-      "1 content round/mo (3–5 small on-page changes or 1 simple local section)",
-      "Monthly CWV sanity (LCP/CLS/TBT) with quick fixes",
-      "Broken links scan + basic redirects",
-      "GA4 & GSC summary with 2–3 recommendations",
-    ],
-  },
-  {
-    name: "Local SEO Growth Lite",
-    price: "$1,080–$1,600 / mo",
-    bullets: [
-      "Everything in Essential",
-      "GBP content cadence (4 posts/mo) + Q&A",
-      "One substantive improvement/mo (e.g., local hub, service FAQ)",
-      "Light A/B test (headline/CTA) and note on results",
-      "Monthly insight report (what changed, impact, next steps)",
-    ],
-  },
+// What good fit looks like (aligns with your ICP)
+const goodFit = [
+  "Owner-led SMB with 2–50 employees and capacity to take more demand in 30–90 days.",
+  "Service lines with ≥ $150–$300 value per appointment, or e-commerce with healthy AOV.",
+  "Visible digital gap (DIY site, weak GBP/reviews, slow pages) and willingness to fix it fast.",
+  "Clear decision-maker, content availability (photos/reviews), and quick approvals."
 ];
 ---
 
 <Layout seo={seo}>
-  <!-- HERO (larger, clean; no gimmicks) -->
+  <!-- HERO -->
   <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
-    <div class="pointer-events-none absolute inset-0">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" role="presentation">
       <div class="absolute -top-24 -left-24 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl"></div>
       <div class="absolute -bottom-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia-600/15 blur-3xl"></div>
     </div>
@@ -133,110 +50,96 @@ const monthlyLocal = [
       <div class="max-w-4xl">
         <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
           <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
-          Local SEO • Google Business Profile • On-page
+          Capability within Growth Partner — not sold standalone
         </p>
         <h1 class="text-4xl md:text-5xl font-black leading-tight text-white mb-4">
-          Local SEO & GBP Optimization
+          Local SEO &amp; Google Business Profile
           <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
-            built to convert nearby searches
+            turn nearby searches into booked revenue
           </span>
         </h1>
         <p class="text-slate-300 text-base md:text-lg max-w-2xl">
-          Pragmatic local SEO for owner-led SMBs in Alberta. On-page fixes, schema,
-          GBP hygiene, reviews engine and measurement—clear deliverables and timelines.
+          We operate Local SEO only as part of our <strong>Growth Partner</strong> engagement. That means web, GBP,
+          reviews, content, and measurement ship together under one plan—no à la carte menus, no “buy now” cards.
         </p>
+
         <div class="flex flex-wrap gap-3 mt-6">
-          <a href="#offers" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
-            See deliverables
+          <a href="#capabilities" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+            See how we improve local visibility
           </a>
-          <a href="/contact" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
-            Request proposal
+          <a href="#intake-section" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Apply for Growth Partner
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ONE-TIME OFFERS (grid; no horizontal scroll) -->
-  <section id="offers" class="py-16 bg-slate-950">
+  <!-- CAPABILITIES (NOT packages) -->
+  <section id="capabilities" class="py-16 bg-slate-950">
     <div class="container mx-auto px-6">
       <header class="mb-8">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white">Local SEO deliverables</h2>
-        <p class="text-slate-400">Clear scope, timeline and pricing. No carousels, no fluff.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">What we actually do</h2>
+        <p class="text-slate-400">Integrated Local SEO work streams delivered inside a single Growth Partner engagement.</p>
       </header>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {localOffers.map((o) => (
-          <article class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6">
-            <div class="flex items-start justify-between gap-4 mb-2">
-              <h3 class="text-white font-bold text-lg">{o.name}</h3>
-              <div class="text-right">
-                <div class="text-white text-sm font-semibold">{o.price}</div>
-                <div class="text-slate-400 text-xs">Timeline: {o.timeline}</div>
-              </div>
-            </div>
-            <p class="text-slate-300 text-sm mb-4">{o.summary}</p>
-            <ul class="space-y-2 text-slate-300 text-sm mb-5">
-              {o.bullets.map((b) => (
-                <li class="flex gap-2">
-                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-3 font-semibold text-white">
-              Request this
-            </a>
-          </article>
-        ))}
-      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-3">Core capabilities</h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            {capability.map((c) => (
+              <li class="flex gap-2">
+                <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                {c}
+              </li>
+            ))}
+          </ul>
+        </article>
 
-      <!-- Add-ons -->
-      <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h3 class="text-white font-semibold mb-2">Popular add-ons</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-slate-300 text-sm">
-          {localAddons.map((a) => (
-            <div class="rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2 flex items-center justify-between">
-              <span>{a.name}</span><span class="text-slate-400">{a.price}</span>
-            </div>
-          ))}
-        </div>
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-3">Signals we measure</h3>
+          <ul class="space-y-2 text-slate-300 text-sm">
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              GBP actions (calls, direction requests, website visits)
+            </li>
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Local impressions and discovery vs. branded queries
+            </li>
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Conversion rate from service/location pages (forms, calls, bookings)
+            </li>
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Review velocity and rating trend
+            </li>
+          </ul>
+        </article>
       </div>
-
-      <!-- Cross-links (tiny) -->
-      <p class="text-slate-500 text-xs mt-6">
-        Need a faster site or a clean identity? See
-        <a href="/services/web-design" class="text-violet-300 underline-offset-2 hover:underline"> Web Design</a>
-        and
-        <a href="/services/branding" class="text-violet-300 underline-offset-2 hover:underline"> Branding</a>.
-      </p>
     </div>
   </section>
 
-  <!-- MONTHLY (local-only retainers) -->
-  <section id="monthly" class="py-16 bg-slate-900">
+  <!-- 90-DAY PLAN (Illustrative, not selectable) -->
+  <section class="py-16 bg-slate-900">
     <div class="container mx-auto px-6">
       <header class="mb-8">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white">Monthly local SEO</h2>
-        <p class="text-slate-400">Low to low-mid retainers for Alberta SMBs. Cancel anytime with 30-day notice.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Illustrative 90-day plan</h2>
+        <p class="text-slate-400">Actual roadmap depends on your capacity, approvals and baseline.</p>
       </header>
 
       <div class="grid md:grid-cols-3 gap-6">
-        {monthlyLocal.map((m) => (
-          <article class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6">
-            <div class="flex items-start justify-between mb-1">
-              <h3 class="text-white font-semibold">{m.name}</h3>
-              <span class="text-white text-sm font-semibold">{m.price}</span>
-            </div>
-            <ul class="text-slate-300 text-sm space-y-2">
-              {m.bullets.map((b) => (
+        {plan90.map((p) => (
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 class="text-white font-semibold mb-3">{p.phase}</h3>
+            <ul class="space-y-2 text-slate-300 text-sm">
+              {p.items.map((i) => (
                 <li class="flex gap-2">
-                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  {b}
+                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  {i}
                 </li>
               ))}
             </ul>
@@ -244,63 +147,192 @@ const monthlyLocal = [
         ))}
       </div>
 
-      <p class="text-slate-500 text-xs mt-4">
-        Note: Retainers cover on-page/technical & GBP. No link-building or net-new blog production unless scoped as an add-on.
-      </p>
+      <div class="mt-8">
+        <a href="#intake-section" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+          Apply for Growth Partner
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- GUARANTEES (compact, relevant) -->
+  <!-- FIT (aligns with ICP) -->
   <section class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Who this is for</h2>
+        <p class="text-slate-400">We work with a small number of owner-led brands where Local SEO moves revenue quickly.</p>
+      </header>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <ul class="grid md:grid-cols-2 gap-3 text-slate-300 text-sm">
+          {goodFit.map((g) => (
+            <li class="flex gap-2">
+              <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              {g}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="py-16 bg-slate-900">
     <div class="container mx-auto px-6">
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What we guarantee</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <h3 class="text-white font-semibold mb-1">Performance</h3>
-          <p class="text-slate-300 text-sm">Mobile Lighthouse &ge; 90 and LCP &lt; 2.5s on new pages (trade-offs documented).</p>
+          <p class="text-slate-300 text-sm">Mobile Lighthouse ≥ 90 and LCP &lt; 2.5s on new pages (trade-offs documented).</p>
         </div>
         <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <h3 class="text-white font-semibold mb-1">Accessibility</h3>
           <p class="text-slate-300 text-sm">WCAG 2.1 A/AA essentials on shipped templates.</p>
         </div>
         <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-          <h3 class="text-white font-semibold mb-1">Warranty</h3>
-          <p class="text-slate-300 text-sm">30-day bug fixes; 60-day coverage for checkout blockers.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <h3 class="text-white font-semibold mb-1">Ownership</h3>
           <p class="text-slate-300 text-sm">You own domain, code and content from day one.</p>
         </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Warranty</h3>
+          <p class="text-slate-300 text-sm">30-day bug fixes; 60-day coverage for critical lead-flow blockers.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ (local-specific) -->
-  <section id="faq" class="py-16 bg-slate-900">
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-slate-950">
     <div class="container mx-auto px-6">
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Local SEO FAQ</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Is this a standalone service?</h3>
+          <p class="text-slate-300 text-sm">No. Local SEO is delivered inside our Growth Partner model so web, GBP, reviews and analytics move together.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 class="text-white font-semibold mb-2">Do you guarantee rankings?</h3>
-          <p class="text-slate-300 text-sm">No one can guarantee rankings. We focus on durable on-page, GBP hygiene, reviews and measurement to improve qualified traffic and conversions.</p>
+          <p class="text-slate-300 text-sm">No one can. We focus on durable inputs (on-page, GBP, reviews, CWV) that improve qualified traffic and conversions.</p>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 class="text-white font-semibold mb-2">How fast will I see results?</h3>
-          <p class="text-slate-300 text-sm">Most small businesses see meaningful movement in 30–90 days when we can publish changes quickly and collect reviews consistently.</p>
+          <p class="text-slate-300 text-sm">Many SMBs see movement in 30–90 days when we can ship changes and collect reviews consistently.</p>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
-          <h3 class="text-white font-semibold mb-2">Do you handle photos and posts?</h3>
-          <p class="text-slate-300 text-sm">We provide templates and guidelines. We can post for you as part of a retainer or document a cadence and hand off to your team.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
-          <h3 class="text-white font-semibold mb-2">What about multiple locations?</h3>
-          <p class="text-slate-300 text-sm">We’ll recommend a location hub structure, per-location pages and GBP management at scale; pricing adjusts by number of locations.</p>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Do you handle posts/photos?</h3>
+          <p class="text-slate-300 text-sm">We create the cadence and templates and can operate posts with you under the engagement.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- JSON-LD (local SEO focused) -->
+  <!-- INTAKE FORM (form-first, Netlify ready) -->
+  <section id="intake-section" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
+          Tell us about <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">your locations</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Short application first. If it’s a fit, we’ll share a calendar link for a strategy call.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <form
+          name="intake-local-seo"
+          method="POST"
+          action="/thank-you"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="intake-local-seo" />
+          <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+          <input type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+              <input id="name" name="name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your full name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+              <input id="email" name="email" type="email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="your@email.com"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company *</label>
+              <input id="company" name="company" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your company name"/>
+              <div class="text-red-400 text-sm mt-1" data-error-for="company" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website (optional)</label>
+              <input id="website" name="website" type="url" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="https://yourwebsite.com"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="locations" class="block text-sm font-medium text-gray-300 mb-2">Locations *</label>
+              <select id="locations" name="locations" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select # of locations</option>
+                <option value="1">1 location</option>
+                <option value="2-3">2–3 locations</option>
+                <option value="4-6">4–6 locations</option>
+                <option value="7-plus">7+ locations</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="locations" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="industry" class="block text-sm font-medium text-gray-300 mb-2">Industry *</label>
+              <select id="industry" name="industry" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
+                <option value="">Select your industry</option>
+                <option value="med-spa">Med-spa</option>
+                <option value="dental">Dental</option>
+                <option value="hvac">HVAC</option>
+                <option value="home-services">Home Services</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="industry" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal *</label>
+            <textarea id="goal" name="goal" required rows="3" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none" placeholder="What should Local SEO help you achieve in the next 90 days?"></textarea>
+            <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
+          </div>
+
+          <div class="mb-8">
+            <label class="flex items-start gap-3">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"/>
+              <span class="text-sm text-gray-400 leading-relaxed">
+                I agree to be contacted by BrandsBuilders Agency regarding my inquiry and understand I can unsubscribe at any time. *
+              </span>
+            </label>
+            <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed">
+            Apply — Growth Partner (Local SEO capability)
+          </button>
+
+          <!-- Single contact email hint -->
+          <p class="text-xs text-slate-500 mt-4">
+            Prefer email? Reach us at <a href="mailto:hello@brandsbuilders.agency" class="underline text-violet-300">hello@brandsbuilders.agency</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD (no public prices, positioned as capability) -->
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
@@ -318,47 +350,74 @@ const monthlyLocal = [
               { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
               { "@type": "ListItem", position: 3, name: "Local SEO", item: `${siteUrl}/services/local-seo` }
             ]
-          }
+          },
+          isPartOf: { "@type": "WebSite", url: siteUrl }
         },
         {
           "@type": "Service",
-          name: "Local SEO & GBP Optimization",
+          name: "Local SEO & GBP (within Growth Partner)",
+          serviceType: "Local search optimization",
           areaServed: [
             { "@type": "AdministrativeArea", name: "Alberta" },
             { "@type": "City", name: "Calgary" },
             { "@type": "City", name: "Edmonton" }
           ],
-          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: "Local SEO Deliverables",
-            itemListElement: localOffers.map((o) => ({
-              "@type": "Offer",
-              name: o.name,
-              description: o.summary,
-              priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: o.price }
-            }))
-          }
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "Local SEO Monthly Plans",
-          itemListElement: monthlyLocal.map((m) => ({
+          offers: {
             "@type": "Offer",
-            name: m.name,
-            priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: m.price }
-          }))
+            availability: "https://schema.org/InStock",
+            url: `${siteUrl}/services/local-seo`
+          },
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          description: "Delivered only as part of our Growth Partner engagement. No à la carte packages."
         },
         {
           "@type": "FAQPage",
           mainEntity: [
-            { "@type": "Question", name: "Do you guarantee rankings?", acceptedAnswer: { "@type": "Answer", text: "No one can guarantee rankings. We focus on durable on-page, GBP hygiene, reviews and measurement to improve qualified traffic and conversions." } },
-            { "@type": "Question", name: "How fast will I see results?", acceptedAnswer: { "@type": "Answer", text: "Most small businesses see meaningful movement in 30–90 days when we can publish changes quickly and collect reviews consistently." } },
-            { "@type": "Question", name: "Do you handle photos and posts?", acceptedAnswer: { "@type": "Answer", text: "We provide templates and guidelines. We can post for you as part of a retainer or document a cadence and hand off to your team." } },
-            { "@type": "Question", name: "What about multiple locations?", acceptedAnswer: { "@type": "Answer", text: "We’ll recommend a location hub structure, per-location pages and GBP management at scale; pricing adjusts by number of locations." } }
+            { "@type": "Question", name: "Is this a standalone service?", acceptedAnswer: { "@type": "Answer", text: "No. Local SEO is delivered inside our Growth Partner model so web, GBP, reviews and analytics move together." } },
+            { "@type": "Question", name: "Do you guarantee rankings?", acceptedAnswer: { "@type": "Answer", text: "No one can. We focus on durable inputs (on-page, GBP, reviews, CWV) that improve qualified traffic and conversions." } },
+            { "@type": "Question", name: "How fast will I see results?", acceptedAnswer: { "@type": "Answer", text: "Many SMBs see movement in 30–90 days when we can ship changes and collect reviews consistently." } },
+            { "@type": "Question", name: "Do you handle posts/photos?", acceptedAnswer: { "@type": "Answer", text: "We create the cadence and templates and can operate posts with you under the engagement." } }
           ]
         }
       ]
     })}
+  </script>
+
+  <!-- Minimal inline validation -->
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('form[name="intake-local-seo"]');
+      if (!form) return;
+      function showError(field, message) {
+        var slot = form.querySelector('[data-error-for="' + field.name + '"]');
+        if (slot) slot.textContent = message || '';
+      }
+      var validators = {
+        name: el => el.value.trim() ? '' : 'Please enter your name.',
+        email: el => !el.value.trim() ? 'Please enter your email.' :
+          (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value) ? '' : 'Enter a valid email address.'),
+        company: el => el.value.trim() ? '' : 'Please enter your company name.',
+        locations: el => el.value ? '' : 'Please select number of locations.',
+        industry: el => el.value ? '' : 'Please select your industry.',
+        goal: el => el.value.trim() ? '' : 'Please describe your main goal.',
+        consent: el => el.checked ? '' : 'Consent is required.'
+      };
+      var fields = Array.prototype.slice.call(form.elements).filter(function (el) {
+        return ['name','email','company','locations','industry','goal','consent'].includes(el.name);
+      });
+      fields.forEach(function (el) {
+        el.addEventListener('input', function () { showError(el, validators[el.name](el)); });
+        el.addEventListener('change', function () { showError(el, validators[el.name](el)); });
+      });
+      form.addEventListener('submit', function (e) {
+        var hasErrors = false;
+        fields.forEach(function (el) {
+          var msg = validators[el.name](el);
+          showError(el, msg);
+          if (msg) hasErrors = true;
+        });
+        if (hasErrors) e.preventDefault();
+      });
+    })();
   </script>
 </Layout>

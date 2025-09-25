@@ -1,0 +1,249 @@
+---
+// src/pages/services/web-design.astro
+import Layout from "../../../layouts/Layout.astro";
+
+const siteUrl = "https://brandsbuilders.agency";
+
+const seo = {
+  title: "Web Design & Development in Alberta | Fast, Accessible, Conversion-Focused",
+  description:
+    "We build lean, accessible, high-performance websites as part of our Growth Partner model — where web and SEO work together to drive revenue.",
+  canonical: `${siteUrl}/services/web-design`,
+  ogImage: `${siteUrl}/images/og/web-design-og.jpg`,
+};
+
+// Small feature lists (no prices, no packages)
+const webHighlights = [
+  "Astro/Next.js builds focused on speed and Core Web Vitals",
+  "Accessible-by-default components (WCAG 2.1 A/AA essentials)",
+  "Technical SEO foundations (semantic HTML, metas, sitemap/robots)",
+  "Tracking wired for decisions (GA4 + events, form health checks)",
+  "Editor-friendly CMS or content collections (roles, drafts, approvals)"
+];
+
+const duo = [
+  {
+    title: "Web",
+    copy:
+      "A fast, trustworthy website is the conversion backbone. We ship lean templates, clear IA and CRO-first sections.",
+    points: ["CWV: LCP/CLS/TBT targets", "Forms & booking logic", "Schema & internal links"]
+  },
+  {
+    title: "SEO",
+    copy:
+      "On-page and content systems to capture intent — local packs, categories, FAQs — all measured in Search Console.",
+    points: ["LocalBusiness/schema", "Editorial models (Blog/Case/FAQ)", "Query mapping & interlinking"]
+  }
+];
+
+const process = [
+  { name: "Discovery → Plan", text: "ICP, offers, jobs-to-be-done, site architecture and success metrics." },
+  { name: "Design → Build", text: "Component system, copy frames, templates, accessibility and performance passes." },
+  { name: "Wire → Measure", text: "GA4 events, GSC, form QA; ship and validate CWV on key pages." },
+  { name: "Iterate → Grow", text: "CRO tweaks, content cadence, and SEO feedback loops." },
+];
+---
+
+<Layout seo={seo}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900 min-h-[70vh] max-h-[90vh] flex items-center">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" role="presentation">
+      <div class="absolute -top-24 -left-24 h-[30rem] w-[30rem] rounded-full bg-violet-600/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-fuchsia-600/15 blur-3xl"></div>
+    </div>
+    <div class="container mx-auto px-6 relative z-10 py-28 md:py-40">
+      <div class="max-w-4xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+          Web Design • Development • Performance
+        </p>
+        <h1 class="text-4xl md:text-5xl font-black leading-tight text-white mb-4">
+          Web Design & Development
+          <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
+            fast, accessible, built to convert
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base md:text-lg max-w-2xl">
+          We build and operate your site as part of a single engagement — the Growth Partner model — where
+          web and SEO work together to grow revenue. No à la carte menus.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#why" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+            How it works
+          </a>
+          <a href="#intake-section" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Apply for Growth Partner
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WEB INSIDE GROWTH PARTNER -->
+  <section id="why" class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Web is one piece of the system</h2>
+        <p class="text-slate-400 max-w-3xl">
+          A beautiful website alone won’t move the P&amp;L. We ship web as part of a growth system that also handles
+          demand capture (SEO), with measurement tied to revenue.
+        </p>
+      </header>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {duo.map((t) => (
+          <article class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-800/70 p-6">
+            <h3 class="text-white font-bold text-lg mb-2">{t.title}</h3>
+            <p class="text-slate-300 text-sm mb-4">{t.copy}</p>
+            <ul class="space-y-2 text-slate-300 text-sm">
+              {t.points.map((p) => (
+                <li class="flex gap-2">
+                  <svg class="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <!-- Quick highlight list -->
+      <div class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h3 class="text-white font-semibold mb-2">What you can expect</h3>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-slate-300 text-sm">
+          {webHighlights.map((h) => (
+            <li class="rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2 flex items-center gap-2">
+              <svg class="w-4 h-4 text-fuchsia-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-slate-500 text-xs mt-3">
+          Investment and scope are aligned privately after we review your application.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <header class="mb-8">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">Process & operating cadence</h2>
+        <p class="text-slate-400 max-w-3xl">
+          Clear milestones, shipped fast. We document trade-offs and keep you in the loop with practical reporting.
+        </p>
+      </header>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {process.map((p, i) => (
+          <article class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+            <div class="text-sm text-slate-400 mb-1">Step {i + 1}</div>
+            <h3 class="text-white font-semibold mb-2">{p.name}</h3>
+            <p class="text-slate-300 text-sm">{p.text}</p>
+          </article>
+        ))}
+      </div>
+      <div class="mt-8">
+        <a href="#intake-section" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+          Apply — Growth Partner
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="py-16 bg-slate-950">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What we guarantee</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Performance</h3>
+          <p class="text-slate-300 text-sm">Mobile Lighthouse ≥90 and LCP less than 2.5s on new pages (trade-offs documented).</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Accessibility</h3>
+          <p class="text-slate-300 text-sm">WCAG 2.1 A/AA essentials on shipped templates.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Ownership</h3>
+          <p class="text-slate-300 text-sm">You own domain, code and content from day one.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <h3 class="text-white font-semibold mb-1">Warranty</h3>
+          <p class="text-slate-300 text-sm">30-day bug fixes; 60-day coverage for critical lead-flow blockers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Web Design FAQ</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Do you sell web as a standalone?</h3>
+          <p class="text-slate-300 text-sm">
+            No. Web is integrated into our Growth Partner model so it actually drives revenue alongside SEO.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">What stack do you use?</h3>
+          <p class="text-slate-300 text-sm">Astro or Next for sites. We choose based on speed, editing needs and integrations.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">Who hosts the site?</h3>
+          <p class="text-slate-300 text-sm">Client-owned accounts (Vercel/Netlify/Cloudflare). We connect domains and configure SSL.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
+          <h3 class="text-white font-semibold mb-2">How are timelines set?</h3>
+          <p class="text-slate-300 text-sm">Milestones with weekly check-ins. Delays are typically content/feedback; we document trade-offs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTAKE FORM (Netlify ready) -->
+  <!-- ... se mantiene tu formulario igual ... -->
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          url: `${siteUrl}/services/web-design`,
+          name: "Web Design & Development | BrandsBuilders Agency",
+          description: seo.description,
+          inLanguage: "en-CA",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+              { "@type": "ListItem", position: 3, name: "Web Design", item: `${siteUrl}/services/web-design` }
+            ]
+          },
+          isPartOf: { "@type": "WebSite", url: siteUrl }
+        },
+        {
+          "@type": "Service",
+          name: "Web Design & Development (within Growth Partner)",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Alberta" },
+            { "@type": "City", name: "Calgary" },
+            { "@type": "City", name: "Edmonton" }
+          ],
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          description: "We integrate Web and SEO into one operating model focused on revenue. No à la carte packages.",
+          offers: { "@type": "Offer", availability: "https://schema.org/InStock" }
+        }
+      ]
+    })}
+  </script>
+</Layout>
