@@ -8,7 +8,8 @@ export interface Props {
 const {
   email = 'hello@brandsbuilders.agency',
   location = 'Airdrie / Calgary, Alberta, Canada',
-  hours = 'Mon–Fri: 9:00–17:00 (America/Edmonton) • Evenings by appointment',
+  // 9–9 todos los días; ajusta si es Lun–Dom distinto
+  hours = 'Daily: 9:00–21:00 (America/Edmonton)',
 } = Astro.props;
 ---
 
@@ -17,31 +18,38 @@ const {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Contact Info -->
       <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-200 text-xs">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            Extended Hours • 9–9
+          </span>
+        </div>
         <h3 class="text-2xl font-bold mb-8 text-white">Get in touch directly</h3>
+
         <div class="space-y-6">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <div>
-  <h4 class="font-semibold text-lg text-white">Email</h4>
-  <a
-    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-violet-400 hover:text-white transition-colors"
-  >
-    {email}
-  </a>
-</div>
-
+              <h4 class="font-semibold text-lg text-white">Email</h4>
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-violet-400 hover:text-white transition-colors"
+              >
+                {email}
+              </a>
+              <div class="text-xs text-gray-500 mt-1">Same-day reply during 9:00–21:00.</div>
+            </div>
           </div>
 
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0L6 16.657A8 8 0 1117.657 16.657z" />
               </svg>
             </div>
@@ -53,7 +61,7 @@ const {
 
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M12 3v18" />
               </svg>
             </div>
@@ -69,8 +77,9 @@ const {
       <div>
         <h3 class="text-2xl font-bold mb-8 text-white">Privacy & Consent</h3>
         <div class="space-y-4 text-gray-400 leading-relaxed">
-          <p>We collect only the information needed to respond to your inquiry and provide services. We do not sell your data.</p>
-          <p>By submitting the form, you consent to be contacted by BrandsBuilders Agency via email, phone, or text. You can opt out at any time.</p>
+          <p>We collect only what’s needed to evaluate fit and operate our Growth Partner engagement. We do <strong class="text-violet-300 font-semibold">not</strong> sell your data.</p>
+          <p>By contacting us or submitting any form, you consent to be contacted by BrandsBuilders Agency via email, phone, or text. You can opt out at any time.</p>
+          <p>We follow <span class="text-slate-300">CASL</span> for commercial messaging and handle personal information under <span class="text-slate-300">PIPEDA</span>.</p>
           <p>
             See our
             <a href="/privacy-policy" class="text-violet-400 hover:text-white"> Privacy Policy</a>
