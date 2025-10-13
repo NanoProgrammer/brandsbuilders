@@ -14,15 +14,14 @@ export const GET: APIRoute = async () => {
     "/contact",
     "/faq",
     "/portfolio",
-    "/privacy-policy",
     "/services",
     "/services/ads-service",
     "/services/growth-partner",
     "/services/local-seo",
     "/services/web-development",
-    "/terms-of-service",
     "/testimonials",
     "/thank-you",
+    "/sprint",
   ];
 
   // 2) Descubrir subpáginas en /services/**/index.astro

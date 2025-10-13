@@ -1,53 +1,21 @@
----
-// Stats.astro
----
-
-<section class="py-24 bg-slate-900 relative overflow-hidden">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=`60` height=`60`` viewBox=`0 0 60 60`` xmlns=`http://www.w3.org/2000/svg`%3E%3Cg fill=`none`` fill-rule=`evenodd`%3E%3Cg fill=`%23a855f7` fill-opacity=`0.4`%3E%3Ccircle cx=`30` cy=`30` r=`1`/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] bg-repeat"></div>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="text-center">
-        <div class="w-20 h-20 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
-        </div>
-        <div class="text-4xl lg:text-5xl font-bold text-violet-400 mb-2">50+</div>
-        <div class="text-slate-400 font-medium">Happy Clients</div>
+<section class="py-24 bg-slate-900 relative overflow-hidden" id="standards">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="text-4xl lg:text-5xl font-bold text-violet-300 mb-2">≤ 2.5s</div>
+        <div class="text-slate-400">Mobile LCP target</div>
       </div>
-
-      <div class="text-center">
-        <div class="w-20 h-20 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-          </svg>
-        </div>
-        <div class="text-4xl lg:text-5xl font-bold text-fuchsia-400 mb-2">75+</div>
-        <div class="text-slate-400 font-medium">Projects Completed</div>
+      <div>
+        <div class="text-4xl lg:text-5xl font-bold text-fuchsia-300 mb-2">90+</div>
+        <div class="text-slate-400">Lighthouse (mobile) goal</div>
       </div>
-
-      <div class="text-center">
-        <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <div class="text-4xl lg:text-5xl font-bold text-indigo-400 mb-2">300%</div>
-        <div class="text-slate-400 font-medium">Average ROI</div>
+      <div>
+        <div class="text-4xl lg:text-5xl font-bold text-emerald-300 mb-2">A11y</div>
+        <div class="text-slate-400">WCAG 2.1 A/AA essentials</div>
       </div>
-
-      <div class="text-center">
-        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-          </svg>
-        </div>
-        <div class="text-4xl lg:text-5xl font-bold text-emerald-400 mb-2">5.0</div>
-        <div class="text-slate-400 font-medium">Client Rating</div>
+      <div>
+        <div class="text-4xl lg:text-5xl font-bold text-cyan-300 mb-2">1 source</div>
+        <div class="text-slate-400">Clean GA4 events & dashboard</div>
       </div>
     </div>
   </div>

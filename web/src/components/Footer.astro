@@ -1,25 +1,14 @@
 ---
 ---
-
 <footer class="bg-slate-950 border-t border-slate-800 pt-12 sm:pt-16 pb-8 sm:pb-10">
   <div class="container mx-auto px-4 sm:px-6">
-    <!-- Contenido principal -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
-
-      <!-- Social / Intro (sin logo ni nombre) -->
+      <!-- Social / Intro -->
       <div class="sm:col-span-2 lg:col-span-1">
         <p class="text-slate-400 mb-6 leading-relaxed">
-          We build brands, websites and SEO that turn visitors into customers.
+          We build growth systems — web, ads, and local SEO — that turn visitors into customers.
         </p>
-
-        <!-- Social Media: Facebook, Instagram, Twitter (una sola vez) -->
         <div class="flex items-center gap-4">
-          <!-- Facebook -->
-          <a href="#" aria-label="Facebook" class="w-10 h-10 bg-slate-800 hover:bg-violet-600 rounded-lg flex items-center justify-center transition-colors duration-300">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.5v-9.294H9.847v-3.62h2.978V8.413c0-2.95 1.8-4.556 4.43-4.556 1.26 0 2.343.093 2.659.135v3.082h-1.825c-1.432 0-1.708.68-1.708 1.676v2.199h3.414l-.445 3.62h-2.969V24h5.826C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"/>
-            </svg>
-          </a>
           <!-- Instagram -->
           <a href="#" aria-label="Instagram" class="w-10 h-10 bg-slate-800 hover:bg-violet-600 rounded-lg flex items-center justify-center transition-colors duration-300">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -35,14 +24,15 @@
         </div>
       </div>
 
-      <!-- Services -->
+      <!-- Services (updated) -->
       <div>
         <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Services</h3>
         <ul class="space-y-3 sm:space-y-4 text-slate-400">
-          <li><a href="/services/web-design" class="hover:text-violet-400 transition-colors duration-300">Web Design</a></li>
-          <li><a href="/services/branding" class="hover:text-violet-400 transition-colors duration-300">Brand Identity</a></li>
+          <li><a href="/services/web-development" class="hover:text-violet-400 transition-colors duration-300">Web Development</a></li>
+          <li><a href="/services/ads-service" class="hover:text-violet-400 transition-colors duration-300">Ads Campaign</a></li>
           <li><a href="/services/local-seo" class="hover:text-violet-400 transition-colors duration-300">Local SEO</a></li>
-          <li><a href="/services" class="text-violet-400 font-medium hover:text-white transition-colors duration-300">View All Services</a></li>
+          <li><a href="/services/growth-partner" class="hover:text-violet-400 transition-colors duration-300">Growth Partner</a></li>
+    
         </ul>
       </div>
 
@@ -67,38 +57,29 @@
           <li><a href="/terms-of-service" class="hover:text-violet-400 transition-colors duration-300">Terms of Service</a></li>
         </ul>
 
-        <!-- Newsletter (sin iconos extra, botón simple) -->
         <div>
           <h4 class="font-semibold mb-4 text-white">Stay Updated</h4>
           <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-3">
-  <!-- Honeypot -->
-  <input type="hidden" name="form-name" value="subscribe" />
-  <p class="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field" />
-    </label>
-  </p>
-
-  <!-- Email input -->
-  <input
-    type="email"
-    name="email"
-    placeholder="Your email"
-    required
-    class="w-full px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-violet-500 transition-colors duration-300"
-  />
-
-  <!-- Submit button -->
-  <button
-    type="submit"
-    class="w-full px-4 py-2 sm:py-3 bg-violet-600 text-white font-medium rounded-lg hover:bg-violet-700 transition-colors duration-300 text-sm"
-  >
-    Subscribe
-  </button>
-</form>
-
+            <input type="hidden" name="form-name" value="subscribe" />
+            <p class="hidden">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              class="w-full px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-violet-500 transition-colors duration-300"
+            />
+            <button
+              type="submit"
+              class="w-full px-4 py-2 sm:py-3 bg-violet-600 text-white font-medium rounded-lg hover:bg-violet-700 transition-colors duration-300 text-sm"
+            >
+              Subscribe
+            </button>
+          </form>
           <p class="text-xs text-slate-500 mt-2">
-            Get the latest web design tips and industry insights.
+            Get the latest growth tips for web, ads, and local SEO.
           </p>
         </div>
       </div>
