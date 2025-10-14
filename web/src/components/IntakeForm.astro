@@ -12,196 +12,215 @@
         </span>
       </h2>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        Solo pedimos lo esencial. Si encaja, te enviaremos un Loom con el diagnóstico inicial y el enlace para agendar.
+        We only ask for the essentials. If appropriate, we'll send you a Loom with the initial assessment and a link to schedule an appointment.
       </p>
     </div>
 
     <div class="max-w-2xl mx-auto">
-      <!-- Netlify-ready form -->
-      <form
-        name="sprint-apply"
-        method="POST"
-        action="/thank-you"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
-        novalidate
-      >
-        <!-- Netlify hidden marker -->
-        <input type="hidden" name="form-name" value="sprint-apply" />
+  <!-- Netlify-ready form -->
+  <form
+    name="sprint-apply"
+    method="POST"
+    action="/thank-you"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+    novalidate
+  >
+    <!-- Netlify hidden marker -->
+    <input type="hidden" name="form-name" value="sprint-apply" />
 
-        <!-- Honeypots -->
-        <p class="hidden">
-          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </p>
-        <input type="text" name="trap_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+    <!-- Honeypots -->
+    <p class="hidden">
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
+    <input type="text" name="trap_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
-        <!-- Name + Email -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
-            <input
-              id="name"
-              name="name"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="Your full name"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
-          </div>
+    <!-- Name + Email -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name *</label>
+        <input
+          id="name"
+          name="name"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          placeholder="Your full name"
+        />
+        <div class="text-red-400 text-sm mt-1" data-error-for="name" aria-live="polite"></div>
+      </div>
 
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="your@email.com"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- Business + Website -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="business" class="block text-sm font-medium text-gray-300 mb-2">Business *</label>
-            <input
-              id="business"
-              name="business"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="Company name"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="business" aria-live="polite"></div>
-          </div>
-
-          <div>
-            <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website *</label>
-            <input
-              id="website"
-              name="website"
-              type="url"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="https://yourwebsite.com"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="website" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- City + GBP -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="city" class="block text-sm font-medium text-gray-300 mb-2">City in Alberta *</label>
-            <input
-              id="city"
-              name="city"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="Calgary / Edmonton / Airdrie…"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="city" aria-live="polite"></div>
-          </div>
-
-          <div>
-            <label for="gbp" class="block text-sm font-medium text-gray-300 mb-2">Google Business Profile *</label>
-            <select
-              id="gbp"
-              name="gbp"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-            >
-              <option value="">Do you have a GBP?</option>
-              <option value="yes">Yes</option>
-              <option value="no">No / Not sure</option>
-            </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="gbp" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- Goal -->
-        <div class="mb-6">
-          <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal this month *</label>
-          <textarea
-            id="goal"
-            name="goal"
-            required
-            rows="3"
-            class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none"
-            placeholder="Bookings / calls / sales — be specific"
-          ></textarea>
-          <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
-        </div>
-
-        <!-- Contact pref + Temp access -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <label for="contact_pref" class="block text-sm font-medium text-gray-300 mb-2">Preferred contact *</label>
-            <select
-              id="contact_pref"
-              name="contact_pref"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-            >
-              <option value="">Choose one</option>
-              <option value="email">Email</option>
-              <option value="call">Call</option>
-              <option value="text">Text</option>
-            </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="contact_pref" aria-live="polite"></div>
-          </div>
-
-          <div>
-            <label for="temp_access" class="block text-sm font-medium text-gray-300 mb-2">Temporary access if accepted *</label>
-            <select
-              id="temp_access"
-              name="temp_access"
-              required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-            >
-              <option value="">Can you grant collaborator/manager access?</option>
-              <option value="yes">Yes — collaborator/manager</option>
-              <option value="no">No / need help</option>
-            </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="temp_access" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- Consent -->
-        <div class="mb-8">
-          <label class="flex items-start gap-3">
-            <input
-              type="checkbox"
-              id="consent"
-              name="consent"
-              required
-              class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"
-            />
-            <span class="text-sm text-gray-400 leading-relaxed">
-              I agree to be contacted by BrandsBuilders Agency about my application (email/phone/text). I can unsubscribe anytime.
-              We follow CASL and handle personal information under PIPEDA. *
-            </span>
-          </label>
-          <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
-        </div>
-
-        <!-- Submit -->
-        <button
-          type="submit"
-          class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Apply — Free 72-Hour Growth Sprint
-        </button>
-
-        <p class="text-xs text-slate-500 mt-4 text-center">
-          ¿Prefieres email? <a href="mailto:hello@brandsbuilders.agency" class="underline text-violet-300">hello@brandsbuilders.agency</a>
-        </p>
-      </form>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          placeholder="your@email.com"
+        />
+        <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+      </div>
     </div>
+
+    <!-- Business + Website -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="business" class="block text-sm font-medium text-gray-300 mb-2">Business *</label>
+        <input
+          id="business"
+          name="business"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          placeholder="Company name"
+        />
+        <div class="text-red-400 text-sm mt-1" data-error-for="business" aria-live="polite"></div>
+      </div>
+
+      <div>
+        <label for="website" class="block text-sm font-medium text-gray-300 mb-2">Website *</label>
+        <input
+          id="website"
+          name="website"
+          type="url"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          placeholder="https://yourwebsite.com"
+        />
+        <div class="text-red-400 text-sm mt-1" data-error-for="website" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- City + GBP -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="city" class="block text-sm font-medium text-gray-300 mb-2">City in Alberta *</label>
+        <input
+          id="city"
+          name="city"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+          placeholder="Calgary / Edmonton / Airdrie…"
+        />
+        <div class="text-red-400 text-sm mt-1" data-error-for="city" aria-live="polite"></div>
+      </div>
+
+      <div>
+        <label for="gbp" class="block text-sm font-medium text-gray-300 mb-2">Google Business Profile *</label>
+        <select
+          id="gbp"
+          name="gbp"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+        >
+          <option value="">Do you have a GBP?</option>
+          <option value="yes">Yes</option>
+          <option value="no">No / Not sure</option>
+        </select>
+        <div class="text-red-400 text-sm mt-1" data-error-for="gbp" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- Business Annual Revenue -->
+    <div class="mb-6">
+      <label for="revenue" class="block text-sm font-medium text-gray-300 mb-2">Business Annual Revenue *</label>
+      <select
+        id="revenue"
+        name="revenue"
+        required
+        class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+      >
+        <option value="">Select your range</option>
+        <option value="under-250k">Less than $250K</option>
+        <option value="250k-500k">$250K – $500K</option>
+        <option value="500k-1.5m">$500K – $1.5M</option>
+        <option value="over-1.5m">More than $1.5M</option>
+      </select>
+      <div class="text-red-400 text-sm mt-1" data-error-for="revenue" aria-live="polite"></div>
+    </div>
+
+    <!-- Goal -->
+    <div class="mb-6">
+      <label for="goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal this month *</label>
+      <textarea
+        id="goal"
+        name="goal"
+        required
+        rows="3"
+        class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none"
+        placeholder="Bookings / calls / sales — be specific"
+      ></textarea>
+      <div class="text-red-400 text-sm mt-1" data-error-for="goal" aria-live="polite"></div>
+    </div>
+
+    <!-- Contact pref + Temp access -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div>
+        <label for="contact_pref" class="block text-sm font-medium text-gray-300 mb-2">Preferred contact *</label>
+        <select
+          id="contact_pref"
+          name="contact_pref"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+        >
+          <option value="">Choose one</option>
+          <option value="email">Email</option>
+          <option value="call">Call</option>
+          <option value="text">Text</option>
+        </select>
+        <div class="text-red-400 text-sm mt-1" data-error-for="contact_pref" aria-live="polite"></div>
+      </div>
+
+      <div>
+        <label for="temp_access" class="block text-sm font-medium text-gray-300 mb-2">Temporary access if accepted *</label>
+        <select
+          id="temp_access"
+          name="temp_access"
+          required
+          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+        >
+          <option value="">Can you grant collaborator/manager access?</option>
+          <option value="yes">Yes — collaborator/manager</option>
+          <option value="no">No / need help</option>
+        </select>
+        <div class="text-red-400 text-sm mt-1" data-error-for="temp_access" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- Consent -->
+    <div class="mb-8">
+      <label class="flex items-start gap-3">
+        <input
+          type="checkbox"
+          id="consent"
+          name="consent"
+          required
+          class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"
+        />
+        <span class="text-sm text-gray-400 leading-relaxed">
+          I agree to be contacted by BrandsBuilders Agency about my application (email/phone/text). I can unsubscribe anytime.
+          We follow CASL and handle personal information under PIPEDA. *
+        </span>
+      </label>
+      <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
+    </div>
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Apply — Free 72-Hour Growth Sprint
+    </button>
+
+    <p class="text-xs text-slate-500 mt-4 text-center">
+      Prefer email? <a href="mailto:hello@brandsbuilders.agency" class="underline text-violet-300">hello@brandsbuilders.agency</a>
+    </p>
+  </form>
+</div>
+
   </div>
 </section>
 

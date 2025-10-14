@@ -103,7 +103,7 @@ const seo = {
             </div>
           </div>
 
-          <!-- 2 row: City + Goal (select to reduce friction) -->
+          <!-- 2 row: City + Annual Revenue -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label for="city" class="block text-sm font-medium text-gray-300 mb-2">City (Alberta) *</label>
@@ -125,23 +125,41 @@ const seo = {
             </div>
 
             <div>
-              <label for="main_goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal this month *</label>
+              <label for="revenue" class="block text-sm font-medium text-gray-300 mb-2">Business Annual Revenue *</label>
               <select
-                id="main_goal"
-                name="main_goal"
+                id="revenue"
+                name="revenue"
                 required
                 class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
               >
-                <option value="">Choose one</option>
-                <option value="bookings">More bookings</option>
-                <option value="calls">More calls</option>
-                <option value="sales">More online sales</option>
+                <option value="">Select range</option>
+                <option value="under-250k">Less than $250K</option>
+                <option value="250k-500k">$250K – $500K</option>
+                <option value="500k-1.5m">$500K – $1.5M</option>
+                <option value="over-1.5m">More than $1.5M</option>
               </select>
-              <div class="text-red-400 text-sm mt-1" data-error-for="main_goal" aria-live="polite"></div>
+              <div class="text-red-400 text-sm mt-1" data-error-for="revenue" aria-live="polite"></div>
             </div>
           </div>
 
-          <!-- 3 row: Email only -->
+          <!-- 3 row: Goal -->
+          <div class="mb-6">
+            <label for="main_goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal this month *</label>
+            <select
+              id="main_goal"
+              name="main_goal"
+              required
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+            >
+              <option value="">Choose one</option>
+              <option value="bookings">More bookings</option>
+              <option value="calls">More calls</option>
+              <option value="sales">More online sales</option>
+            </select>
+            <div class="text-red-400 text-sm mt-1" data-error-for="main_goal" aria-live="polite"></div>
+          </div>
+
+          <!-- 4 row: Email -->
           <div class="mb-6">
             <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
             <input
@@ -156,7 +174,7 @@ const seo = {
             <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
           </div>
 
-          <!-- Single consent -->
+          <!-- Consent -->
           <div class="mb-8">
             <label class="flex items-start gap-3">
               <input
@@ -187,7 +205,7 @@ const seo = {
     </div>
   </section>
 
-  <!-- HOW IT WORKS (brief, reassurance) -->
+  <!-- HOW IT WORKS -->
   <section class="py-14 bg-slate-900">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-6">
@@ -207,45 +225,7 @@ const seo = {
     </div>
   </section>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebPage",
-          url: `${siteUrl}/sprint`,
-          name: "Free 72-Hour Growth Sprint | BrandsBuilders Agency",
-          description: seo.description,
-          inLanguage: "en-CA",
-          breadcrumb: {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-              { "@type": "ListItem", position: 2, name: "Sprint", item: `${siteUrl}/sprint` }
-            ]
-          },
-          isPartOf: { "@type": "WebSite", url: siteUrl }
-        },
-        {
-          "@type": "WebApplication",
-          name: "Free 72-Hour Growth Sprint — Application",
-          url: `${siteUrl}/sprint`,
-          applicationCategory: "BusinessApplication",
-          description: "Apply for a free 72-hour sprint. We review your web & Google presence and send a 2-minute Loom with opportunities."
-        },
-        {
-          "@type": "Offer",
-          url: `${siteUrl}/sprint`,
-          price: 0,
-          priceCurrency: "CAD",
-          availability: "https://schema.org/InStock"
-        }
-      ]
-    })}
-  </script>
-
-  <!-- Minimal inline validation -->
+  <!-- Inline validation -->
   <script is:inline>
     (function () {
       var form = document.querySelector('form[name="sprint-apply"]');
@@ -264,6 +244,7 @@ const seo = {
           return /^https?:\/\//i.test(el.value.trim()) ? '' : 'URL must start with http:// or https://';
         },
         city: el => el.value ? '' : 'Please select your city.',
+        revenue: el => el.value ? '' : 'Please select a revenue range.',
         main_goal: el => el.value ? '' : 'Please select a goal.',
         email: el => {
           if (!el.value.trim()) return 'Please enter your email.';
@@ -273,7 +254,7 @@ const seo = {
       };
 
       function validateAll() {
-        var fields = ['business_name','site_url','city','main_goal','email','consent'];
+        var fields = ['business_name','site_url','city','revenue','main_goal','email','consent'];
         var bad = false;
         fields.forEach(function (name) {
           var el = form.elements[name];
