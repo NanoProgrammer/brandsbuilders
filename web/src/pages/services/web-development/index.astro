@@ -7,7 +7,7 @@ const siteUrl = "https://brandsbuilders.agency";
 const seo = {
   title: "Web Design & Development in Alberta | Fast, Accessible, Conversion-Focused",
   description:
-    "We build lean, accessible, high-performance websites as part of our Growth Partner model — where web and SEO work together to drive revenue. Entry via Free 72-Hour Growth Sprint.",
+    "We build lean, accessible, high-performance websites inside our Growth Partner model — where web and SEO operate together to drive revenue. Entry via a 72-hour Revenue Growth Blueprint.",
   canonical: `${siteUrl}/services/web-design`,
   ogImage: `${siteUrl}/images/og/web-design-og.jpg`,
 };
@@ -64,15 +64,15 @@ const process = [
           </span>
         </h1>
         <p class="text-slate-300 text-base md:text-lg max-w-2xl">
-          We build and operate your site inside one accountable engagement — the Growth Partner model — where
-          web and SEO work together to grow revenue. Start with a free, no-risk 72-hour sprint.
+          We build and operate your site inside one accountable engagement — the Growth Partner model —
+          where web and SEO work together to grow revenue. Start with a <strong>72-hour Revenue Growth Blueprint</strong>.
         </p>
         <div class="flex flex-wrap gap-3 mt-6">
           <a href="#why" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
             How it works
           </a>
-          <a href="#free-sprint" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
-            Apply for Free 72-Hour Sprint
+          <a href="#blueprint" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
+            Request Revenue Growth Blueprint
           </a>
         </div>
       </div>
@@ -148,8 +148,8 @@ const process = [
         ))}
       </div>
       <div class="mt-8">
-        <a href="#free-sprint" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
-          Apply — Free 72-Hour Sprint
+        <a href="#blueprint" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 font-semibold text-white">
+          Request Revenue Growth Blueprint
         </a>
       </div>
     </div>
@@ -184,12 +184,10 @@ const process = [
   <section id="faq" class="py-16 bg-slate-900">
     <div class="container mx-auto px-6">
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Web Design FAQ</h2>
-      <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
           <h3 class="text-white font-semibold mb-2">Do you sell web as a standalone?</h3>
-          <p class="text-slate-300 text-sm">
-            No. Web is integrated into our Growth Partner model so it actually drives revenue alongside SEO.
-          </p>
+          <p class="text-slate-300 text-sm">No. Web is integrated into our Growth Partner model so it actually drives revenue alongside SEO.</p>
         </div>
         <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6">
           <h3 class="text-white font-semibold mb-2">What stack do you use?</h3>
@@ -207,306 +205,292 @@ const process = [
     </div>
   </section>
 
-<!-- FREE SPRINT APPLICATION (Netlify) -->
-<section id="free-sprint" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
-        Apply for your
-        <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Free 72-Hour Growth Sprint</span>
-      </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        We’ll review your website and Google presence, then send a 2-minute Loom showing quick wins — within 72 hours.
-        <span class="text-slate-300"> Limited Alberta slots weekly. No credit card.</span>
-      </p>
-    </div>
+ <!-- FREE SPRINT APPLICATION (Netlify) — mismo form que /sprint -->
+  <section id="blueprint" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-white">
+          Request your <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Revenue Growth Blueprint</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          72-hour turnaround. We review your website and Google presence, then send a 2–3 minute Loom + PDF with gaps, opportunities, and a clear 3-step plan.
+        </p>
+      </div>
 
-    <div class="max-w-2xl mx-auto">
-      <form
-        name="sprint-apply"
-        method="POST"
-        action="/sprint/thanks"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
-        novalidate
-      >
-        <input type="hidden" name="form-name" value="sprint-apply" />
-        <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-        <input type="text" name="trap_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+      <div class="max-w-2xl mx-auto">
+        <form
+          name="sprint-apply"
+          method="POST"
+          action="/sprint/thanks"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-3xl p-8"
+          novalidate
+        >
+          <!-- Netlify -->
+          <input type="hidden" name="form-name" value="sprint-apply" />
+          <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+          <input type="text" name="trap_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
-        <!-- Business + Website -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="business_name" class="block text-sm font-medium text-gray-300 mb-2">Business name *</label>
-            <input id="business_name" name="business_name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="Your company name" />
-            <div class="text-red-400 text-sm mt-1" data-error-for="business_name" aria-live="polite"></div>
-          </div>
-
-          <div>
-            <label for="site_url" class="block text-sm font-medium text-gray-300 mb-2">Website URL *</label>
-            <input id="site_url" name="site_url" type="url" required pattern="^https?:\\/\\/.*" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="https://yourwebsite.com" />
-            <div class="text-red-400 text-sm mt-1" data-error-for="site_url" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- City + Annual Revenue -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="city" class="block text-sm font-medium text-gray-300 mb-2">City (Alberta) *</label>
-            <select id="city" name="city" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
-              <option value="">Select your city</option>
-              <option value="Calgary">Calgary</option>
-              <option value="Edmonton">Edmonton</option>
-              <option value="Airdrie">Airdrie</option>
-              <option value="Lethbridge">Lethbridge</option>
-              <option value="Red Deer">Red Deer</option>
-              <option value="Other (Alberta)">Other (Alberta)</option>
-            </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="city" aria-live="polite"></div>
-          </div>
-
-          <div>
-            <label for="revenue" class="block text-sm font-medium text-gray-300 mb-2">Business Annual Revenue *</label>
-            <select id="revenue" name="revenue" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
-              <option value="">Select range</option>
-              <option value="under-250k">Less than $250K</option>
-              <option value="250k-500k">$250K – $500K</option>
-              <option value="500k-1.5m">$500K – $1.5M</option>
-              <option value="over-1.5m">More than $1.5M</option>
-            </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="revenue" aria-live="polite"></div>
-          </div>
-        </div>
-
-        <!-- GBP + Platform -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <span class="block text-sm font-medium text-gray-300 mb-2">Google Business Profile *</span>
-            <div class="flex items-center gap-6 text-gray-300">
-              <label class="inline-flex items-center gap-2">
-                <input type="radio" name="has_gbp" value="Yes" required class="text-violet-600 focus:ring-violet-500" />
-                <span>Yes</span>
-              </label>
-              <label class="inline-flex items-center gap-2">
-                <input type="radio" name="has_gbp" value="No" required class="text-violet-600 focus:ring-violet-500" />
-                <span>No</span>
-              </label>
+          <!-- 1: Business + Website -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="business_name" class="block text-sm font-medium text-gray-300 mb-2">Business name *</label>
+              <input
+                id="business_name"
+                name="business_name"
+                required
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="Your company"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="business_name" aria-live="polite"></div>
             </div>
-            <div class="text-red-400 text-sm mt-1" data-error-for="has_gbp" aria-live="polite"></div>
+            <div>
+              <label for="site_url" class="block text-sm font-medium text-gray-300 mb-2">Website URL *</label>
+              <input
+                id="site_url"
+                name="site_url"
+                type="url"
+                required
+                pattern="^https?:\\/\\/.*"
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="https://yourwebsite.com"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="site_url" aria-live="polite"></div>
+            </div>
           </div>
 
-          <div>
-            <label for="platform" class="block text-sm font-medium text-gray-300 mb-2">Website platform *</label>
-            <select id="platform" name="platform" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors">
-              <option value="">Select platform</option>
-              <option value="Wix">Wix</option>
-              <option value="Squarespace">Squarespace</option>
-              <option value="Shopify">Shopify</option>
-              <option value="WordPress">WordPress</option>
-              <option value="Custom Code">Custom Code</option>
-              <option value="Not sure">Not sure</option>
+          <!-- 2: City + Annual Revenue -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="city" class="block text-sm font-medium text-gray-300 mb-2">City (Alberta) *</label>
+              <select
+                id="city"
+                name="city"
+                required
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              >
+                <option value="">Select your city</option>
+                <option value="Calgary">Calgary</option>
+                <option value="Edmonton">Edmonton</option>
+                <option value="Airdrie">Airdrie</option>
+                <option value="Lethbridge">Lethbridge</option>
+                <option value="Red Deer">Red Deer</option>
+                <option value="Other (Alberta)">Other (Alberta)</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="city" aria-live="polite"></div>
+            </div>
+
+            <div>
+              <label for="revenue" class="block text-sm font-medium text-gray-300 mb-2">Business Annual Revenue *</label>
+              <select
+                id="revenue"
+                name="revenue"
+                required
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+              >
+                <option value="">Select range</option>
+                <option value="under-250k">Less than $250K</option>
+                <option value="250k-500k">$250K – $500K</option>
+                <option value="500k-1.5m">$500K – $1.5M</option>
+                <option value="over-1.5m">More than $1.5M</option>
+              </select>
+              <div class="text-red-400 text-sm mt-1" data-error-for="revenue" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <!-- 3: Main goal -->
+          <div class="mb-6">
+            <label for="main_goal" class="block text-sm font-medium text-gray-300 mb-2">Main goal this month *</label>
+            <select
+              id="main_goal"
+              name="main_goal"
+              required
+              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+            >
+              <option value="">Choose one</option>
+              <option value="bookings">More bookings</option>
+              <option value="calls">More calls</option>
+              <option value="sales">More online sales</option>
             </select>
-            <div class="text-red-400 text-sm mt-1" data-error-for="platform" aria-live="polite"></div>
+            <div class="text-red-400 text-sm mt-1" data-error-for="main_goal" aria-live="polite"></div>
           </div>
-        </div>
 
-        <!-- Contact preference -->
-        <div class="mb-6">
-          <span class="block text-sm font-medium text-gray-300 mb-2">Preferred contact *</span>
-          <div class="flex flex-wrap items-center gap-6 text-gray-300">
-            <label class="inline-flex items-center gap-2"><input type="radio" name="contact_pref" value="Email" required class="text-violet-600 focus:ring-violet-500" /><span>Email</span></label>
-            <label class="inline-flex items-center gap-2"><input type="radio" name="contact_pref" value="Text" required class="text-violet-600 focus:ring-violet-500" /><span>Text</span></label>
-            <label class="inline-flex items-center gap-2"><input type="radio" name="contact_pref" value="Call" required class="text-violet-600 focus:ring-violet-500" /><span>Call</span></label>
+          <!-- 4: Email + Phone (opcional) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="you@company.com"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone (optional)</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                pattern="^[+()\\d\\s.-]{7,}$"
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="+1 (403) 555-0123"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="phone" aria-live="polite"></div>
+            </div>
           </div>
-          <div class="text-red-400 text-sm mt-1" data-error-for="contact_pref" aria-live="polite"></div>
-        </div>
 
-        <!-- Email + Phone -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
-            <input id="email" name="email" type="email" required pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="you@company.com" />
-            <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+          <!-- Consent -->
+          <div class="mb-8">
+            <label class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+                class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"
+              />
+              <span class="text-sm text-gray-400 leading-relaxed">
+                I agree to receive a free 2-minute Loom using public information (website & Google Business Profile) and to be contacted about the results. PIPEDA-aware; opt-out anytime. *
+              </span>
+            </label>
+            <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
           </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone (optional)</label>
-            <input id="phone" name="phone" type="tel" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" placeholder="+1 403 555 0123" />
-          </div>
-        </div>
 
-        <!-- Consent (Loom + contact) -->
-        <div class="mb-6">
-          <label class="flex items-start gap-3">
-            <input type="checkbox" id="consent_looom" name="consent_looom" required class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800" />
-            <span class="text-sm text-gray-400 leading-relaxed">
-              I agree to receive a <strong>free 2-minute Loom</strong> using public information from my website and Google Business Profile. No account access is requested at this stage.
-            </span>
-          </label>
-          <div class="text-red-400 text-sm mt-1" data-error-for="consent_looom" aria-live="polite"></div>
-        </div>
+          <!-- CTA -->
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Get My Free Loom in 72 Hours
+          </button>
 
-        <div class="mb-8">
-          <label class="flex items-start gap-3">
-            <input type="checkbox" id="consent_contact" name="consent_contact" required class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800" />
-            <span class="text-sm text-gray-400 leading-relaxed">
-              I agree to be contacted about my Sprint results (email, text or call). PIPEDA-aware: we collect minimal data and you can opt out anytime.
-            </span>
-          </label>
-          <div class="text-red-400 text-sm mt-1" data-error-for="consent_contact" aria-live="polite"></div>
-        </div>
-
-        <button type="submit" class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed">
-          Start My Free 72-Hour Sprint
-        </button>
-
-        <p class="text-xs text-slate-500 mt-3">Typical turnaround: 2–3 business days • Alberta businesses only</p>
-      </form>
+          <p class="text-xs text-slate-500 mt-3">Typical turnaround: 72 hours • Hours: 9am–9pm daily • Alberta only</p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- JSON-LD -->
-<script type="application/ld+json">
-  {JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        url: `${siteUrl}/services/ads`,
-        name: "Paid Media (Google & Meta) | BrandsBuilders Agency",
-        description: seo.description,
-        inLanguage: "en-CA",
-        breadcrumb: {
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-            { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
-            { "@type": "ListItem", position: 3, name: "Paid Media", item: `${siteUrl}/services/ads` }
-          ]
-        },
-        isPartOf: { "@type": "WebSite", url: siteUrl }
-      },
-      {
-        "@type": "Service",
-        name: "Paid Media (within Growth Partner)",
-        serviceType: "Performance advertising",
-        areaServed: [
-          { "@type": "AdministrativeArea", name: "Alberta" },
-          { "@type": "City", name: "Calgary" },
-          { "@type": "City", name: "Edmonton" }
-        ],
-        provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
-        offers: {
-          "@type": "Offer",
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
           url: `${siteUrl}/services/ads`,
-          availability: "https://schema.org/InStock"
+          name: "Paid Media (Google & Meta) | BrandsBuilders Agency",
+          description: seo.description,
+          inLanguage: "en-CA",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+              { "@type": "ListItem", position: 3, name: "Paid Media", item: `${siteUrl}/services/ads` }
+            ]
+          },
+          isPartOf: { "@type": "WebSite", url: siteUrl }
         },
-        description: "Audit, keyword research, ~$50/day initial data phase, negatives, CRO/A/B and iterative optimization to exceed target ROAS."
-      },
-      {
-        "@type": "WebApplication",
-        name: "Free 72-Hour Growth Sprint — Application",
-        url: `${siteUrl}/services/ads#free-sprint`,
-        description: "Free audit sprint for Alberta owner-led SMBs. 2-minute Loom with opportunities delivered within 72 hours.",
-        applicationCategory: "BusinessApplication"
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          { "@type": "Question", name: "Is this a standalone service?", acceptedAnswer: { "@type": "Answer", text: "No. We operate paid media only within our Growth Partner to align offers, landings, tracking and budgets." } },
-          { "@type": "Question", name: "What’s the minimum media budget?", acceptedAnswer: { "@type": "Answer", text: "Roughly $50/day to collect initial data quickly; scaling depends on performance and volume." } },
-          { "@type": "Question", name: "Do you add negative keywords?", acceptedAnswer: { "@type": "Answer", text: "Yes. We mine search terms weekly and add negatives continuously to protect ROAS." } },
-          { "@type": "Question", name: "How do you improve ROAS?", acceptedAnswer: { "@type": "Answer", text: "Refine queries/bids, iterate creatives, and run A/B tests on landings to raise conversion rate and reallocate budget to winners." } }
-        ]
+        {
+          "@type": "Service",
+          name: "Paid Media (within Growth Partner)",
+          serviceType: "Performance advertising",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Alberta" },
+            { "@type": "City", name: "Calgary" },
+            { "@type": "City", name: "Edmonton" }
+          ],
+          provider: { "@type": "Organization", name: "BrandsBuilders Agency", url: siteUrl },
+          offers: {
+            "@type": "Offer",
+            url: `${siteUrl}/services/ads`,
+            availability: "https://schema.org/InStock"
+          },
+          description: "Audit, keyword research, ~$50/day initial data phase, negatives, CRO/A/B and iterative optimization to exceed target ROAS."
+        },
+        {
+          "@type": "WebApplication",
+          name: "Revenue Growth Blueprint — Request",
+          url: `${siteUrl}/services/ads#free-sprint`,
+          description: "72-hour blueprint for Alberta owner-led SMBs. 2–3 min Loom + PDF with gaps, opportunities, and a 3-step plan.",
+          applicationCategory: "BusinessApplication"
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Is this a standalone service?", acceptedAnswer: { "@type": "Answer", text: "No. We operate paid media only within our Growth Partner to align offers, landings, tracking and budgets." } },
+            { "@type": "Question", name: "What’s the minimum media budget?", acceptedAnswer: { "@type": "Answer", text: "Roughly $50/day to collect initial data quickly; scaling depends on performance and volume." } },
+            { "@type": "Question", name: "Do you add negative keywords?", acceptedAnswer: { "@type": "Answer", text: "Yes. We mine search terms weekly and add negatives continuously to protect ROAS." } },
+            { "@type": "Question", name: "How do you improve ROAS?", acceptedAnswer: { "@type": "Answer", text: "Refine queries/bids, iterate creatives, and run A/B tests on landings to raise conversion rate and reallocate budget to winners." } }
+          ]
+        }
+      ]
+    })}
+  </script>
+
+  <!-- Inline validation — idéntica a la del Sprint (con phone opcional) -->
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('form[name="sprint-apply"]');
+      if (!form) return;
+
+      function msg(elOrName, text) {
+        var el = typeof elOrName === 'string' ? form.elements[elOrName] : elOrName;
+        var slot = form.querySelector('[data-error-for="' + (el.name || elOrName) + '"]');
+        if (slot) slot.textContent = text || '';
       }
-    ]
-  })}
-</script>
 
-<!-- Minimal inline validation -->
-<script is:inline>
-  (function () {
-    var form = document.querySelector('form[name="sprint-apply"]');
-    if (!form) return;
+      var validators = {
+        business_name: function (el) { return el.value.trim() ? '' : 'Please enter your business name.'; },
+        site_url: function (el) {
+          if (!el.value.trim()) return 'Please enter your website URL.';
+          return /^https?:\/\//i.test(el.value.trim()) ? '' : 'URL must start with http:// or https://';
+        },
+        city: function (el) { return el.value ? '' : 'Please select your city.'; },
+        revenue: function (el) { return el.value ? '' : 'Please select a revenue range.'; },
+        main_goal: function (el) { return el.value ? '' : 'Please select a goal.'; },
+        email: function (el) {
+          if (!el.value.trim()) return 'Please enter your email.';
+          return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value) ? '' : 'Enter a valid email.';
+        },
+        phone: function (el) {
+          if (!el.value.trim()) return '';
+          return /^[+()\\d\\s.-]{7,}$/.test(el.value.trim()) ? '' : 'Enter a valid phone number.';
+        },
+        consent: function (el) { return el.checked ? '' : 'Consent is required.'; }
+      };
 
-    function err(el, msg) {
-      var slot = form.querySelector('[data-error-for="' + (el.name || '') + '"]');
-      if (slot) slot.textContent = msg || '';
-    }
+      function validateAll() {
+        var fields = ['business_name','site_url','city','revenue','main_goal','email','phone','consent'];
+        var bad = false;
+        fields.forEach(function (name) {
+          var el = form.elements[name];
+          var err = validators[name](el);
+          msg(el, err);
+          if (err) bad = true;
+        });
+        return !bad;
+      }
 
-    var validators = {
-      business_name: function (el) { return el.value.trim() ? '' : 'Please enter your business name.'; },
-      site_url: function (el) {
-        if (!el.value.trim()) return 'Please enter your website URL.';
-        var ok = /^https?:\/\/[^\s/$.?#].[^\s]*$/i.test(el.value.trim());
-        return ok ? '' : 'URL must start with http:// or https://';
-      },
-      city: function (el) { return el.value ? '' : 'Please select your city.'; },
-      revenue: function (el) { return el.value ? '' : 'Please select a revenue range.'; },
-      has_gbp: function () {
-        var checked = form.querySelector('input[name="has_gbp"]:checked');
-        return checked ? '' : 'Please select an option.';
-      },
-      platform: function (el) { return el.value ? '' : 'Please select your platform.'; },
-      contact_pref: function () {
-        var checked = form.querySelector('input[name="contact_pref"]:checked');
-        return checked ? '' : 'Please select a contact method.';
-      },
-      email: function (el) {
-        if (!el.value.trim()) return 'Please enter your email.';
-        var ok = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);
-        return ok ? '' : 'Enter a valid email address.';
-      },
-      consent_looom: function (el) { return el.checked ? '' : 'Consent to receive the Loom is required.'; },
-      consent_contact: function (el) { return el.checked ? '' : 'Contact permission is required.'; }
-    };
-
-    // radios validated as groups by name
-    var fields = Array.prototype.slice.call(form.elements).filter(function (el) {
-      return ['business_name','site_url','city','revenue','platform','email','consent_looom','consent_contact'].includes(el.name)
-             || el.name === 'has_gbp' || el.name === 'contact_pref';
-    });
-
-    fields.forEach(function (el) {
-      var ev = (el.type === 'radio' || el.tagName === 'SELECT' || el.type === 'checkbox') ? 'change' : 'input';
-      el.addEventListener(ev, function () {
-        var name = el.name;
-        var msg = '';
-        if (name === 'has_gbp' || name === 'contact_pref') {
-          msg = validators[name]();
-        } else if (validators[name]) {
-          msg = validators[name](el);
-        }
-        if (name === 'has_gbp') {
-          var any = form.querySelector('input[name="has_gbp"]');
-          if (any) err(any, msg);
-        } else if (name === 'contact_pref') {
-          var any2 = form.querySelector('input[name="contact_pref"]');
-          if (any2) err(any2, msg);
-        } else {
-          err(el, msg);
-        }
+      form.addEventListener('input', function (e) {
+        var t = e.target;
+        if (validators[t.name]) msg(t, validators[t.name](t));
       });
-    });
-
-    form.addEventListener('submit', function (e) {
-      var hasErrors = false;
-      ['has_gbp','contact_pref'].forEach(function (group) {
-        var msg = validators[group]();
-        var any = form.querySelector('input[name="' + group + '"]');
-        if (any) err(any, msg);
-        if (msg) hasErrors = true;
+      form.addEventListener('change', function (e) {
+        var t = e.target;
+        if (validators[t.name]) msg(t, validators[t.name](t));
       });
-      fields.forEach(function (el) {
-        if (el.type === 'radio') return;
-        var msg = validators[el.name] ? validators[el.name](el) : '';
-        err(el, msg);
-        if (msg) hasErrors = true;
+      form.addEventListener('submit', function (e) {
+        if (!validateAll()) e.preventDefault();
       });
-      if (hasErrors) e.preventDefault();
-    });
-  })();
-</script>
+    })();
+  </script>
 
 </Layout>

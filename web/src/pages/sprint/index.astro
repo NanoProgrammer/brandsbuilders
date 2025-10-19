@@ -4,9 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 const siteUrl = "https://brandsbuilders.agency";
 
 const seo = {
-  title: "Free 72-Hour Growth Sprint — Alberta | BrandsBuilders",
+  title: "Revenue Growth Blueprint (72-Hour Turnaround) — Alberta | BrandsBuilders",
   description:
-    "Apply for a free 72-hour sprint. We’ll review your website & Google presence and send a 2-minute Loom with quick wins — no credit card, Alberta only.",
+    "Request your 72-hour Revenue Growth Blueprint. We review your website & Google presence and send a 2–3 min Loom + PDF with gaps, opportunities, and a clear 3-step plan. Alberta businesses only.",
   canonical: `${siteUrl}/sprint`,
   ogImage: `${siteUrl}/images/og/sprint-og.jpg`,
 };
@@ -24,16 +24,16 @@ const seo = {
       <div class="max-w-3xl">
         <p class="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-violet-200 text-xs mb-4">
           <span class="inline-block h-1.5 w-1.5 rounded-full bg-violet-400"></span>
-          Alberta • 100% Free • 9am–9pm daily
+          Alberta • 72-hour turnaround • 9am–9pm daily
         </p>
         <h1 class="text-4xl md:text-5xl font-black leading-tight text-white mb-4">
-          Free 72-Hour Growth Sprint
+          Revenue Growth Blueprint
           <span class="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">
-            2-minute Loom with before → after opportunities
+            2–3 min Loom + PDF with gaps, opportunities & a clear 3-step plan
           </span>
         </h1>
         <p class="text-slate-300 text-base md:text-lg">
-          Apply in 60 seconds. We’ll review public data (site + Google Business Profile) and send a quick video with high-impact fixes. No contracts. No card.
+          Request in 60 seconds. We review public data (website + Google Business Profile) and send a short breakdown focused on high-impact improvements.
         </p>
       </div>
 
@@ -41,7 +41,7 @@ const seo = {
       <ul class="mt-6 grid sm:grid-cols-3 gap-3 max-w-3xl">
         <li class="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-2 text-slate-300 text-sm">
           <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          No credit card
+          72-hour delivery
         </li>
         <li class="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-2 text-slate-300 text-sm">
           <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -49,13 +49,13 @@ const seo = {
         </li>
         <li class="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-2 text-slate-300 text-sm">
           <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          Reply within 72 hours
+          Hours: 9am–9pm daily
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- ULTRA-SIMPLE FORM (Netlify) -->
+  <!-- SIMPLE FORM (Netlify) -->
   <section id="apply" class="py-16 bg-slate-950">
     <div class="container mx-auto px-6">
       <div class="max-w-2xl mx-auto">
@@ -159,19 +159,35 @@ const seo = {
             <div class="text-red-400 text-sm mt-1" data-error-for="main_goal" aria-live="polite"></div>
           </div>
 
-          <!-- 4 row: Email -->
-          <div class="mb-6">
-            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
-              placeholder="you@company.com"
-            />
-            <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+          <!-- 4 row: Email + Phone (optional) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="you@company.com"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="email" aria-live="polite"></div>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone (optional)</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                pattern="^[+()\\d\\s.-]{7,}$"
+                class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+                placeholder="+1 (403) 555-0123"
+              />
+              <div class="text-red-400 text-sm mt-1" data-error-for="phone" aria-live="polite"></div>
+            </div>
           </div>
 
           <!-- Consent -->
@@ -185,7 +201,7 @@ const seo = {
                 class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800"
               />
               <span class="text-sm text-gray-400 leading-relaxed">
-                I agree to receive a free 2-minute Loom using public information (website & Google Business Profile) and to be contacted about the results. PIPEDA-aware; opt-out anytime. *
+                I agree to receive a 2–3 minute Loom using public information (website & Google Business Profile) and to be contacted about the results. PIPEDA-aware; opt out anytime. *
               </span>
             </label>
             <div class="text-red-400 text-sm mt-1" data-error-for="consent" aria-live="polite"></div>
@@ -196,10 +212,12 @@ const seo = {
             type="submit"
             class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Get My Free Loom in 72 Hours
+            Request My Blueprint (72 Hours)
           </button>
 
-          <p class="text-xs text-slate-500 mt-3">Typical turnaround: 72 hours • Hours: 9am–9pm daily • Alberta only</p>
+          <p class="text-xs text-slate-500 mt-3">
+            Typical turnaround: 72 hours • Hours: 9am–9pm daily • Alberta only
+          </p>
         </form>
       </div>
     </div>
@@ -210,7 +228,7 @@ const seo = {
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-6">
         <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 class="text-white font-semibold mb-2">1) Apply (60s)</h3>
+          <h3 class="text-white font-semibold mb-2">1) Request (60s)</h3>
           <p class="text-slate-300 text-sm">Tell us your business, URL, city and goal. That’s it.</p>
         </article>
         <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
@@ -218,8 +236,8 @@ const seo = {
           <p class="text-slate-300 text-sm">We check speed, clarity, and Google visibility using public data.</p>
         </article>
         <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 class="text-white font-semibold mb-2">3) 2-min Loom</h3>
-          <p class="text-slate-300 text-sm">You get a short video with before → after opportunities and next steps.</p>
+          <h3 class="text-white font-semibold mb-2">3) Loom + PDF</h3>
+          <p class="text-slate-300 text-sm">You get a short video and PDF with before → after opportunities and next steps.</p>
         </article>
       </div>
     </div>
@@ -248,16 +266,21 @@ const seo = {
         main_goal: el => el.value ? '' : 'Please select a goal.',
         email: el => {
           if (!el.value.trim()) return 'Please enter your email.';
-          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value) ? '' : 'Enter a valid email.';
+          return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value) ? '' : 'Enter a valid email.';
+        },
+        phone: el => {
+          if (!el.value.trim()) return '';
+          return /^[+()\\d\\s.-]{7,}$/.test(el.value.trim()) ? '' : 'Enter a valid phone number.';
         },
         consent: el => el.checked ? '' : 'Consent is required.'
       };
 
       function validateAll() {
-        var fields = ['business_name','site_url','city','revenue','main_goal','email','consent'];
+        var fields = ['business_name','site_url','city','revenue','main_goal','email','phone','consent'];
         var bad = false;
         fields.forEach(function (name) {
           var el = form.elements[name];
+          if (!el) return;
           var err = validators[name](el);
           msg(el, err);
           if (err) bad = true;

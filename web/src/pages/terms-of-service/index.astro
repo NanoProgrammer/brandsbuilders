@@ -1,11 +1,10 @@
 ---
-// src/pages/terms-of-service.astro
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
   title: 'Terms of Service | BrandsBuilders Agency',
   description:
-    'Terms for our Growth Partner engagement and the Free 72-Hour Growth Sprint. Form-first intake, client-owned accounts, privacy-aware (PIPEDA), Alberta law.',
+    'Terms for our Growth Partner engagement and the 72-Hour Revenue Growth Blueprint. Form-first intake, client-owned accounts, privacy-aware (PIPEDA), Alberta law.',
   canonical: 'https://brandsbuilders.agency/terms-of-service'
 };
 
@@ -23,7 +22,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
           Terms of Service
         </h1>
         <p class="text-xl text-slate-300 mb-4">
-          These Terms govern your access to and use of our Growth Partner engagement and the Free 72-Hour Growth Sprint.
+          These Terms govern your access to and use of our Growth Partner engagement and the 72-Hour Revenue Growth Blueprint.
         </p>
         <p class="text-slate-400">
           Last updated: <span class="text-violet-400">{lastUpdated}</span>
@@ -47,7 +46,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
 
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By submitting an intake form, requesting a sprint, booking a call, signing a proposal, or paying an invoice, you agree to these Terms
+              By submitting an intake form, requesting a Blueprint, booking a call, signing a proposal, or paying an invoice, you agree to these Terms
               (“Terms”). If you accept on behalf of an organization, you confirm you have authority to bind that organization.
             </p>
 
@@ -80,15 +79,13 @@ const contactEmail = 'hello@brandsbuilders.agency';
               Deliverables, milestones, dependencies, and assumptions are defined in the proposal/SOW. Items not listed are <strong>out of scope</strong>.
             </p>
 
-            <h2>5. Free 72-Hour Growth Sprint</h2>
+            <h2>5. 72-Hour Revenue Growth Blueprint</h2>
             <ul>
-              <li><strong>What it is:</strong> a free, limited-slot 3-day sprint focused on one high-impact area (e.g., landing speed/clarity/CTA or GBP visibility).</li>
-              <li><strong>Before sprint:</strong> you complete a short application form (business, goal, industry, URL if available). We review and record a
-                ~2-minute Loom using public data. Acceptance is at our discretion.</li>
-              <li><strong>Access:</strong> initial Loom requires no access. If you approve implementation, you grant temporary collaborator/manager access;
-                you remain full owner and may revoke access at any time.</li>
-              <li><strong>Outputs:</strong> daily short updates and a final before→after Loom on Day 3. Scope is intentionally narrow and non-exhaustive.</li>
-              <li><strong>No charges & no guarantee:</strong> the sprint is free and not an offer of ongoing services. Results and availability are not guaranteed.</li>
+              <li><strong>What it is:</strong> a free, limited-slot 72-hour review focused on 1–2 high-impact opportunities (e.g., landing speed/clarity/CTA, GBP visibility, or paid media efficiency).</li>
+              <li><strong>Before Blueprint:</strong> you complete a short application (business, website URL, city, revenue range, platform, contact preference). We review public signals and record a <strong>2–3 minute Loom</strong> plus a one-page PDF. Acceptance is at our discretion.</li>
+              <li><strong>Access:</strong> the Loom/PDF uses public data only. If you approve implementation, you grant temporary collaborator/manager access; you remain full owner and may revoke access at any time.</li>
+              <li><strong>Outputs:</strong> a concise gap/opportunity summary and a pragmatic 3-step plan for the next 30–90 days.</li>
+              <li><strong>No charges & no guarantee:</strong> the Blueprint is free and not an offer of ongoing services. Results and availability are not guaranteed.</li>
             </ul>
 
             <h2>6. Fees, Deposits & Payments (Growth Partner)</h2>
@@ -125,7 +122,46 @@ const contactEmail = 'hello@brandsbuilders.agency';
               <li><strong>Paid media:</strong> no guarantees of ROAS/volume. We mine queries, add negatives, adjust bids/budgets, and coordinate CRO/A/B to improve efficiency.</li>
             </ul>
 
-            <h2>11. Intellectual Property & Ownership</h2>
+            <!-- NEW GUARANTEE SECTION -->
+            <h2>11. BrandsBuilders Performance™ Guarantee (Optional)</h2>
+            <p>
+              When expressly included in your SOW, we continue iterating within the agreed scope <strong>at no additional service fee</strong> until we reach a mutually-defined
+              <strong>profit threshold</strong>, provided the following <strong>minimum conditions</strong> are continuously met:
+            </p>
+            <ul>
+              <li><strong>Minimum daily ad budget:</strong> CAD $50/day <em>per active channel</em>.</li>
+              <li><strong>Creative supply:</strong> you provide raw content (photos/video). Editing/variants are our responsibility.</li>
+              <li><strong>Active participation:</strong> timely reviews/approvals and uninterrupted budgets (no mid-test pauses).</li>
+            </ul>
+            <p>
+              If these conditions are not met, this guarantee is <strong>suspended</strong> until they are restored. The guarantee applies to service iteration time only and
+              does not cover third-party costs (media spend, tools, etc.).
+            </p>
+            <h3>11.1 Profit Definition</h3>
+            <p>
+              “Profit threshold” means <strong>positive net contribution</strong> after product/service costs and ad spend, as documented in the SOW (e.g., ROAS/MER or per-lead economics).
+            </p>
+            <div class="overflow-x-auto rounded-xl border border-slate-800 mb-4">
+              <table class="min-w-full text-sm">
+                <thead>
+                  <tr class="bg-slate-800/50 text-slate-200">
+                    <th class="text-left px-4 py-3">Concept</th>
+                    <th class="text-left px-4 py-3">Value</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800">
+                  <tr><td class="px-4 py-3">Average sell price</td><td class="px-4 py-3">$25</td></tr>
+                  <tr><td class="px-4 py-3">COGS (product, packaging, etc.)</td><td class="px-4 py-3">$10</td></tr>
+                  <tr><td class="px-4 py-3">Gross profit = 25 − 10</td><td class="px-4 py-3"><strong>$15</strong></td></tr>
+                  <tr><td class="px-4 py-3">Target ROAS = 25 / 15</td><td class="px-4 py-3"><strong>1.67×</strong> (≈167%)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-slate-400 text-sm">
+              Example is illustrative; your economics and thresholds are specified in the SOW.
+            </p>
+
+            <h2>12. Intellectual Property & Ownership</h2>
             <ul>
               <li><strong>Client-owned accounts:</strong> wherever feasible, properties are created in client-owned accounts with appropriate roles.</li>
               <li><strong>Ownership transfer:</strong> upon full payment of amounts due, ownership of final approved deliverables transfers to you,
@@ -134,18 +170,18 @@ const contactEmail = 'hello@brandsbuilders.agency';
               <li><strong>Working files:</strong> non-final explorations/working files are not deliverables unless explicitly included in the SOW.</li>
             </ul>
 
-            <h2>12. Portfolio Use & Case Studies</h2>
+            <h2>13. Portfolio Use & Case Studies</h2>
             <p>
               You grant us a non-exclusive, worldwide, royalty-free license to reference non-confidential final work (screens, public URLs, approved metrics)
               in portfolio, site, and proposals. If you require NDA or delayed publicity, state it in the SOW and we will comply.
             </p>
 
-            <h2>13. Confidentiality</h2>
+            <h2>14. Confidentiality</h2>
             <p>
               Each party will protect the other’s non-public information and use it only to perform obligations under these Terms and the SOW.
             </p>
 
-            <h2>14. Data, Privacy & Consent</h2>
+            <h2>15. Data, Privacy & Consent</h2>
             <p>
               Personal data is handled per our <a href="/privacy-policy" class="text-violet-300 underline">Privacy Policy</a>. We operate with
               <strong>minimal tracking and consent</strong> patterns aligned to Canadian privacy principles (PIPEDA). Where applicable, you are the
@@ -153,50 +189,60 @@ const contactEmail = 'hello@brandsbuilders.agency';
               and representations in your content/ads.
             </p>
 
-            <h2>15. Cancellations, Pauses & Refunds</h2>
+            <!-- NEW POST-ENGAGEMENT SUPPORT SECTION -->
+            <h2>16. Post-Engagement Support</h2>
+            <ul>
+              <li><strong>Starter Local / Pro Local:</strong> 15 days for minor technical adjustments and Q&amp;A.</li>
+              <li><strong>E-commerce Starter / Premium:</strong> 30 days for initial scale guidance and tune-ups.</li>
+            </ul>
+            <p class="text-slate-400 text-sm">
+              Support windows start at the formal hand-off date. Out-of-scope changes and net-new features are quoted separately.
+            </p>
+
+            <h2>17. Cancellations, Pauses & Refunds</h2>
             <ul>
               <li><strong>Cancellation:</strong> you may cancel with written notice. Earned fees (including setup once work has begun) remain due; we deliver paid work-in-progress.</li>
               <li><strong>Pauses:</strong> if a project is inactive 21+ days due to missing inputs, we may pause and re-book; a restart fee may apply.</li>
               <li><strong>Refunds:</strong> payments are non-refundable once work has started, except where required by law.</li>
             </ul>
 
-            <h2>16. Warranties & Disclaimers</h2>
+            <h2>18. Warranties & Disclaimers</h2>
             <ul>
               <li>We warrant that deliverables will substantially conform to the SOW for 30 days after launch (60 days for checkout-blocking e-commerce defects we introduced).</li>
               <li>Except as stated, services are provided “as is”. We do not guarantee specific rankings, revenues, bookings, or ad performance outcomes.</li>
             </ul>
 
-            <h2>17. Limitation of Liability</h2>
+            <h2>19. Limitation of Liability</h2>
             <p>
               To the maximum extent permitted by law, our total liability related to the services is limited to the fees actually paid to us for the specific SOW
               during the <strong>three (3) months</strong> preceding the claim. We are not liable for indirect, incidental, special, punitive, or consequential damages,
               including lost profits or data.
             </p>
 
-            <h2>18. Indemnification</h2>
+            <h2>20. Indemnification</h2>
             <p>
               You agree to indemnify and hold us harmless from claims arising out of your content, products, claims in ads, or misuse of deliverables, and from
               third-party disputes related to your operations or regulatory compliance.
             </p>
 
-            <h2>19. Force Majeure</h2>
+            <h2>21. Force Majeure</h2>
             <p>
               Neither party is liable for delays or failures caused by events beyond reasonable control (e.g., platform outages or policy changes, strikes, natural disasters, governmental actions).
             </p>
 
-            <h2>20. Governing Law & Dispute Resolution</h2>
+            <h2>22. Governing Law & Dispute Resolution</h2>
             <p>
               These Terms are governed by the laws of the Province of Alberta and applicable Canadian federal law. Parties will first attempt good-faith resolution.
               If unresolved, disputes will be submitted to binding arbitration in Alberta, conducted in English, with each party bearing its own costs.
             </p>
 
-            <h2>21. Changes to These Terms</h2>
+            <h2>23. Changes to These Terms</h2>
             <p>
               We may update these Terms from time to time. Material changes will be posted here with an updated “Last updated” date.
               Continued use after changes constitutes acceptance.
             </p>
 
-            <h2>22. Contact</h2>
+            <h2>24. Contact</h2>
             <div class="bg-slate-800/50 rounded-2xl p-6 mt-4">
               <p><strong>BrandsBuilders Agency</strong><br />
               Alberta, Canada<br />
@@ -223,10 +269,10 @@ const contactEmail = 'hello@brandsbuilders.agency';
               </svg>
             </a>
             <a
-              href="/sprint"
+              href="/services/ads#blueprint"
               class="inline-flex items-center gap-3 px-8 py-4 border border-slate-700 text-slate-200 font-semibold rounded-2xl hover:border-violet-500 hover:bg-violet-500/10 transition"
             >
-              Apply — Free 72-Hour Sprint
+              Request Revenue Growth Blueprint
             </a>
           </div>
           <p class="text-xs text-slate-500 mt-4">Hours: 9am–9pm daily (Alberta). Privacy-aware forms (PIPEDA).</p>

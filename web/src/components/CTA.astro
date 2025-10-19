@@ -1,31 +1,70 @@
 ---
 ---
 
-<section id="cta" class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950 py-20">
-  <div class="pointer-events-none absolute inset-0">
-    <div class="absolute top-0 left-0 h-[22rem] w-[22rem] rounded-full bg-violet-600/25 blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 h-[22rem] w-[22rem] rounded-full bg-fuchsia-600/20 blur-3xl"></div>
+<section
+  id="cta"
+  class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950 py-20"
+  aria-labelledby="cta-title"
+>
+  <!-- Background gradient orbs -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div
+      class="absolute top-0 left-0 h-[22rem] w-[22rem] rounded-full bg-violet-600/25 blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-0 right-0 h-[22rem] w-[22rem] rounded-full bg-fuchsia-600/20 blur-3xl"
+    ></div>
   </div>
 
   <div class="container mx-auto px-6 relative z-10">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-4xl lg:text-5xl font-black leading-tight">
+      <h2
+        id="cta-title"
+        class="text-4xl lg:text-5xl font-black leading-tight text-white"
+      >
         Ready to build momentum?
       </h2>
       <p class="mt-4 text-lg text-slate-300">
-        If you’re an owner-led brand with high-value services or products, we’ll help you
-        look credible, load fast and get found locally.
+        If you’re an owner-led Alberta brand with premium services or products,
+        we’ll help you look credible, load fast, and convert visibility into
+        measurable growth.
       </p>
 
       <div class="mt-8 flex flex-wrap gap-3 justify-center">
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 font-semibold text-white hover:opacity-95 transition">
-          Book a call
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4-4 4M21 12H3"/></svg>
+        <a
+          href="/sprint"
+          class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 font-semibold text-white hover:opacity-95 transition"
+          data-umami-event="cta_footer_blueprint"
+        >
+          Get Your Revenue Growth Blueprint
+          <svg
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4-4 4M21 12H3"
+            />
+          </svg>
         </a>
-        <a href="/sprint" class="inline-flex items-center gap-2 rounded-2xl border border-slate-700 px-6 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition">
-          Request Free 3 days sprint
+
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-2xl border border-slate-700 px-6 py-3 text-slate-200 hover:border-violet-500 hover:bg-violet-500/10 transition"
+          data-umami-event="cta_footer_contact"
+        >
+          Book a Call
         </a>
       </div>
+
+      <p class="mt-3 text-sm text-slate-400">
+        Blueprint delivered in 72 hours — Loom video + PDF outlining gaps,
+        opportunities, and clear steps path to growth.
+      </p>
     </div>
   </div>
 </section>

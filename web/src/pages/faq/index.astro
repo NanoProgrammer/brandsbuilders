@@ -1,44 +1,53 @@
 ---
-/* src/pages/faq.astro */
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'FAQ — Growth Partner, Free 72-Hour Sprint, Web, Local SEO & Paid Media | BrandsBuilders',
+  title: 'FAQ — Growth Partner, 72-Hour Revenue Growth Blueprint, Web, Local SEO & Paid Media | BrandsBuilders',
   description:
-    'Straight answers about our Growth Partner model and the Free 72-Hour Growth Sprint. Form-first intake, no public pricing, Canada privacy aware, 9am–9pm daily.',
+    'Straight answers about our Growth Partner model and the 72-Hour Revenue Growth Blueprint. Form-first intake, no public pricing, Canada privacy aware, 9am–9pm daily.',
   keywords:
-    'FAQ, growth partner, free 72-hour sprint, web design Alberta, local SEO FAQ, paid media FAQ, BrandsBuilders',
+    'FAQ, growth partner, revenue growth blueprint, web design Alberta, local SEO FAQ, paid media FAQ, BrandsBuilders',
   canonical: 'https://brandsbuilders.agency/faq'
 };
 
 const faqs = [
   {
-    category: 'Free 72-Hour Growth Sprint',
+    category: '72-Hour Revenue Growth Blueprint',
     questions: [
       {
-        question: 'What is the Free 72-Hour Growth Sprint?',
+        question: 'What is the Revenue Growth Blueprint?',
         answer:
-          'A no-risk 3-day sprint where we identify one high-impact opportunity and show a 2-minute Loom with a before → after improvement path. No contracts, limited slots.'
+          'A no-cost 72-hour assessment where we identify one or two high-impact opportunities and send a 2–3 minute Loom + a one-page PDF with a clear 3-step plan. No contracts, limited Alberta slots.'
       },
       {
         question: 'Who is it for?',
         answer:
-          'Owner-led Alberta SMBs (typically $250K–$1.5M CAD/yr) that want a quick, visible lift in speed, clarity/CTA, or Google Business Profile visibility.'
+          'Owner-led Alberta SMBs (typically $250K–$1.5M CAD/yr) that want visible lift in conversion (speed/clarity/CTA), Local SEO/GBP visibility, or paid media efficiency — and can ship changes within 30–90 days.'
       },
       {
-        question: 'How do I apply?',
+        question: 'How do I request it?',
         answer:
-          'Simple form (name, email, business, website URL if available, main goal, industry). After review, we record a 2-minute Loom using public data. If you want us to implement, we do a short confirmation call and start your 72-hour sprint.'
+          'Quick intake form (business name, website URL, location, revenue range, platform, contact preference). We review public signals and record a Loom within 72 hours. If there’s fit, we book a short call to confirm scope.'
       },
       {
         question: 'Do you need access to my accounts?',
         answer:
-          'Not for the initial Loom. If you decide to proceed with implementation, we request temporary collaborator/manager access (you remain full owner and can remove us anytime).'
+          'Not for the Blueprint. We only use public signals (site, GBP, search results). If you later ask us to implement, we request temporary collaborator/manager access. You remain the owner and can remove us anytime.'
       },
       {
-        question: 'When will I hear back?',
+        question: 'What do I actually receive?',
         answer:
-          'We operate 9am–9pm daily (Alberta). You’ll receive the Loom within 72 hours of submitting the form.'
+          'A 2–3 minute Loom walkthrough plus a concise PDF: (1) gaps/opportunities, (2) quick wins you can ship this week, (3) a pragmatic 3-step plan for the next 30–90 days.'
+      },
+      {
+        question: 'How fast is the turnaround?',
+        answer:
+          'Within 72 hours of submitting the form. We operate 9am–9pm daily (Alberta).'
+      },
+      {
+        question: 'Is the Blueprint really free?',
+        answer:
+          'Yes. It’s our way to show thinking and fit before any commitment. Implementation and ongoing operation are scoped separately if you decide to proceed.'
       }
     ]
   },
@@ -48,17 +57,22 @@ const faqs = [
       {
         question: 'What does BrandsBuilders actually do?',
         answer:
-          'We operate one growth loop for owner-led SMBs: fast web pages that convert, pragmatic Local SEO/GBP, and paid media with clear tracking. One accountable engagement (Growth Partner).'
+          'We operate one growth loop for owner-led SMBs: fast, accessible web pages that convert; pragmatic Local SEO/GBP; and paid media with clean tracking. One accountable engagement (Growth Partner).'
       },
       {
         question: 'Where do you work?',
         answer:
-          'Primarily Alberta (Calgary, Edmonton, Airdrie, Red Deer, Lethbridge). We also support teams across Canada remotely when there’s a clear owner-operator and fast feedback loops.'
+          'Primarily Alberta (Calgary, Edmonton, Airdrie, Red Deer, Lethbridge). We support teams across Canada remotely when there’s a clear owner-operator and fast feedback loops.'
       },
       {
         question: 'How do you decide what to work on first?',
         answer:
           'Audit first: tracking/attribution sanity, page speed, accessibility, on-page SEO and demand capture. If landings aren’t ready, we fix foundations before turning up traffic.'
+      },
+      {
+        question: 'Do you work with existing websites and tools?',
+        answer:
+          'Yes. If your stack meets our performance, accessibility and tracking standards, we operate it. If not, we propose minimal changes or a focused rebuild where it saves time and money long-term.'
       }
     ]
   },
@@ -68,7 +82,7 @@ const faqs = [
       {
         question: 'Do you publish prices or packages?',
         answer:
-          'No. We avoid price anchoring. Investment is aligned privately after a fit call and depends on scope, speed, and channels involved. It’s a single operating model, not a menu of buy-now packages.'
+          'No. We avoid public price anchoring. Investment is aligned privately after a fit call and depends on scope, speed and channels. It’s one operating model — not a menu of buy-now packages.'
       },
       {
         question: 'How are payments structured?',
@@ -78,7 +92,12 @@ const faqs = [
       {
         question: 'Can I hire you for only one thing (e.g., just Ads)?',
         answer:
-          'Only if foundations meet our standards (tracking, landings, speed, accessibility). Otherwise we fix the basics first, then scale ads. We don’t take ad-only gigs that will waste your budget.'
+          'Only if foundations meet our standards (tracking, landings, speed, accessibility). Otherwise we fix basics first, then scale ads. We don’t take ad-only gigs that will waste your budget.'
+      },
+      {
+        question: 'What does “you own everything” mean?',
+        answer:
+          'Domains, hosting accounts, code repositories, content and ad accounts are client-owned. We request collaborator access and document hand-off — no lock-ins.'
       }
     ]
   },
@@ -99,6 +118,11 @@ const faqs = [
         question: 'Who hosts the site and owns the code?',
         answer:
           'You do. We deploy to client-owned accounts (Vercel/Netlify/Cloudflare/Shopify). You own domain, code and content from day one.'
+      },
+      {
+        question: 'Do you handle CRO and form/booking logic?',
+        answer:
+          'Yes. We design forms/flows to reduce friction, wire up tracking, and run light A/B tests on headings, sections and CTAs when volume allows.'
       }
     ]
   },
@@ -108,17 +132,22 @@ const faqs = [
       {
         question: 'Do you guarantee rankings?',
         answer:
-          'No one can. We focus on durable inputs—on-page improvements, GBP hygiene, reviews flow, and measurement. Many SMBs see movement in 30–90 days with fast publishing and steady reviews.'
+          'No one can. We focus on durable inputs — on-page improvements, GBP hygiene, reviews flow and measurement. Most SMBs see movement in 30–90 days when changes publish quickly and reviews flow steadily.'
       },
       {
         question: 'Do you manage Google Business Profile content?',
         answer:
-          'We can operate posts/Q&A and create review prompts/templates. Some clients prefer internal posting with our playbooks—either model works.'
+          'We can operate posts/Q&A and create review prompts/templates. Some clients prefer internal posting with our playbooks — either model works.'
       },
       {
         question: 'What if I have multiple locations?',
         answer:
           'We design a location-hub structure, per-location pages, and a scalable GBP process. Scope and investment adjust by location count.'
+      },
+      {
+        question: 'Do you add schema and track local conversions?',
+        answer:
+          'Yes. We ship LocalBusiness/FAQ schema where relevant and track calls, forms and bookings with GA4 + Search Console goals.'
       }
     ]
   },
@@ -128,32 +157,42 @@ const faqs = [
       {
         question: 'How do you launch ads?',
         answer:
-          'Audit & tracking sanity → keyword/angle research → initial structure → data phase at ~ $50/day minimum to learn → active query mining and negatives. We then optimize bids, budgets and landings based on real data.'
+          'Audit & tracking sanity → keyword/angle research → initial structure → a data phase at ~ $50/day to learn → active query mining and negatives. Then we optimize bids, budgets and landings based on real data.'
       },
       {
         question: 'Do you do CRO and A/B tests as part of ads?',
         answer:
-          'Yes. We run light A/B tests on copy/CTAs/sections and reduce friction on forms/checkout to lift ROAS/MER. Ads and CRO move together—otherwise you’re paying for clicks to a leaky page.'
+          'Yes. We run light A/B tests on copy/CTAs/sections and reduce friction on forms/checkout to lift ROAS/MER. Ads and CRO move together — otherwise you’re paying for clicks to a leaky page.'
       },
       {
         question: 'Will you scale ad spend quickly?',
         answer:
           'Only after the data phase shows signal with clean attribution. We scale deliberately, protect efficiency, and document what changed and why.'
+      },
+      {
+        question: 'Which channels do you run?',
+        answer:
+          'Google Ads (Search, PMax, Shopping, YouTube when justified), Meta (Facebook/Instagram), and Microsoft Advertising when incremental demand exists.'
       }
     ]
   },
   {
-    category: 'Support & After Launch',
+    category: 'Support, Privacy & After Launch',
     questions: [
       {
         question: 'What support do I get?',
         answer:
-          'Operation includes continuous optimization, issue logs, dashboards and insight reports (what changed, impact, next). Emergency fixes and small changes are handled via the ticket queue with defined SLAs.'
+          'Operation includes continuous optimization, issue logs, dashboards and insight reports (what changed, impact, next). Emergency fixes and small changes are handled via a ticket queue with defined SLAs.'
       },
       {
         question: 'What are your hours?',
         answer:
           '9am–9pm daily (Alberta). Emergency support is available for existing clients with critical issues.'
+      },
+      {
+        question: 'How do you handle privacy and data?',
+        answer:
+          'We’re PIPEDA-aware. We collect minimal personal data, use client-owned systems, and provide revocable access. Sensitive credentials are stored in your vault or shared securely — never via email.'
       },
       {
         question: 'What happens if something breaks?',
@@ -176,7 +215,7 @@ const faqs = [
           FAQ
         </h1>
         <p class="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed">
-          Straight answers about our Growth Partner model and the Free 72-Hour Growth Sprint.
+          Straight answers about our Growth Partner model and the 72-Hour Revenue Growth Blueprint.
         </p>
 
         <!-- Search Bar -->
@@ -264,10 +303,10 @@ const faqs = [
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/sprint"
+              href="/services/ads#blueprint"
               class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-violet-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/25"
             >
-              Apply — Free 72-Hour Sprint
+              Request Revenue Growth Blueprint
               <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>

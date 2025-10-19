@@ -1,10 +1,10 @@
 ---
-// Contact.astro — Updated with new business hours (9 AM–9 PM, 7 days a week)
+ // Contact.astro — Updated: Blueprint-led, no “free sprint”, hours 9 AM–9 PM daily
 ---
 
-<section id="contact" class="py-16 sm:py-24 bg-slate-950 relative overflow-hidden">
+<section id="contact" class="py-16 sm:py-24 bg-slate-950 relative overflow-hidden" aria-labelledby="contact-title">
   <!-- Background Elements -->
-  <div class="absolute inset-0 opacity-20 pointer-events-none">
+  <div class="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
     <div class="absolute top-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply blur-3xl animate-float"></div>
     <div class="absolute bottom-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply blur-3xl animate-float" style="animation-delay: 3s;"></div>
   </div>
@@ -12,11 +12,12 @@
   <div class="container mx-auto px-4 sm:px-6 relative z-10">
     <!-- Header -->
     <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 sm:mb-8 tracking-tight">
-        Let's <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">work together</span>
+      <h2 id="contact-title" class="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 sm:mb-8 tracking-tight">
+        Let’s <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">work together</span>
       </h2>
       <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-        We help Alberta owner‑led businesses grow in <span class="text-slate-200">30–90 days</span>. Start with a free 72‑Hour Sprint or book an onboarding call — you’ll get clarity, speed, and a plan.
+        We help Alberta owner-led businesses grow in <span class="text-slate-200">30–90 days</span>.
+        Start with a <span class="text-slate-100 font-semibold">Revenue Growth Blueprint</span> or book an onboarding call — you’ll get clarity, speed, and a plan.
       </p>
     </div>
 
@@ -29,27 +30,39 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
             </svg>
           </div>
-          <h3 class="text-2xl sm:text-3xl font-bold mb-4">Start Your Growth Sprint</h3>
+          <h3 class="text-2xl sm:text-3xl font-bold mb-4">Request Your Revenue Growth Blueprint</h3>
           <p class="text-slate-400 mb-8">
-            3 days. Visible change. No contracts. We’ll fix one high‑impact area and send a 2‑minute Loom with before/after proof.
+            72-hour turnaround. We audit one high-impact area and send a 2–3 minute Loom + PDF with gaps, opportunities, and a clear 3-step plan.
           </p>
         </div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/sprint" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-fuchsia-400/60">
-            Start the 72‑Hour Sprint
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <a
+            href="/sprint"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-fuchsia-400/60"
+            data-umami-event="contact_primary_blueprint"
+          >
+            Get Your Blueprint
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
-          <a href="/onboarding" class="inline-flex items-center gap-3 px-8 py-4 bg-slate-800 text-slate-200 font-bold text-lg rounded-xl hover:bg-slate-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500/60">
+          <a
+            href="/onboarding"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-slate-800 text-slate-200 font-bold text-lg rounded-xl hover:bg-slate-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500/60"
+            data-umami-event="contact_primary_onboarding"
+          >
             Book Onboarding Call
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
           </a>
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-slate-400">
           <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-green-400"></span> Free consultation</div>
-          <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-green-400"></span> 24‑hour response (Normal)</div>
-          <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span> 1‑hour response 9am–9pm (Premium)</div>
+          <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-green-400"></span> 24-hour response (Normal)</div>
+          <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span> 1-hour response 9am–9pm (Premium)</div>
         </div>
       </div>
 
@@ -61,7 +74,9 @@
           <div class="space-y-6">
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
               </div>
               <div>
                 <h4 class="font-semibold">Email</h4>
@@ -71,7 +86,10 @@
 
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
               </div>
               <div>
                 <h4 class="font-semibold">Location</h4>
@@ -90,7 +108,7 @@
           </div>
           <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="p-4 bg-violet-500/10 border border-violet-500/20 rounded-xl text-sm text-violet-300"><strong>Normal Support:</strong> responses within 24 hours.</div>
-            <div class="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-sm text-emerald-300"><strong>Premium Support:</strong> 1‑hour response between 9am and 9pm.</div>
+            <div class="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-sm text-emerald-300"><strong>Premium Support:</strong> 1-hour response between 9am and 9pm.</div>
           </div>
           <div class="mt-3 p-4 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-xl text-sm text-fuchsia-300"><strong>Emergency:</strong> 24/7 for existing clients with critical issues.</div>
         </div>
