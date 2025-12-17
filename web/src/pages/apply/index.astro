@@ -1,0 +1,33 @@
+---
+// src/pages/contact/index.astro
+import Layout from '../../layouts/Layout.astro';
+
+import ContactHero from '../../components/ContactHero.astro';
+import IntakeForm from '../../components/IntakeForm.astro';
+import BookingSection from '../../components/BookingSection';
+import TrustBadges from '../../components/TrustBadges.astro';
+import ContactDetails from '../../components/ContactDetails.astro';
+
+const seo = {
+  title: 'Apply — BrandsBuilders Agency | Alberta',
+  description:
+    'Apply for a Growth Review. We assess fit, goals, and next steps. No sales pressure. Alberta-based.',
+  keywords:
+    'apply digital agency Alberta, growth review Calgary, web design application, marketing audit Alberta',
+  canonical: 'https://brandsbuilders.agency/contact',
+  ogImage: '/og-apply.jpg'
+};
+---
+
+<Layout seo={seo}>
+  <!-- HERO: sets expectation (apply-first) -->
+  <ContactHero />
+
+  <!-- PRIMARY PATH: Application form -->
+  <IntakeForm />
+
+  <!-- SECONDARY PATH: Only for decided leads -->
+  <BookingSection client:only="react" />
+
+  <TrustBadges />
+</Layout>

@@ -5,85 +5,93 @@ export const prerender = true;
 
 export const GET: APIRoute = async () => {
   const base = "https://brandsbuilders.agency";
+  const now = new Date().toISOString();
 
-  // 1) Rutas fijas
+  /* ============================
+     1) RUTAS FIJAS (REALES)
+  ============================ */
   const fixedRoutes = [
     "/",
-    "/about",
+    "/apply",
     "/blog",
-    "/contact",
     "/faq",
-    "/portfolio",
-    "/services",
-    "/services/ads-service",
-    "/services/growth-partner",
-    "/services/local-seo",
-    "/services/web-development",
-    "/testimonials",
+    "/Free-Acquisition-Diagnostic",
+    "/industry/services-home",
+    "/process",
+    "/proof",
+    "/privacy-policy",
+    "/terms-of-service",
     "/thank-you",
-    "/sprint",
   ];
 
-  // 2) Descubrir subpáginas en /services/**/index.astro
-  const serviceFiles = Object.keys(
-    import.meta.glob("./services/**/index.astro", { eager: true })
-    // Alternativa absoluta:
-    // import.meta.glob("/src/pages/services/**/index.astro", { eager: true })
-  );
+  /* ============================
+     2) AUTO-DISCOVERY POR FOLDER
+  ============================ */
+  const pageFiles = [
+    ...Object.keys(import.meta.glob("./industry/**/index.astro", { eager: true })),
+  ];
 
-  const toPath = (filePath: string) =>
-    filePath
-      // normaliza separadores por si el build corre en Windows
+  const toPath = (file: string) =>
+    file
       .replace(/\\/g, "/")
       .replace(/^\.?\/?src\/pages/, "")
       .replace(/\/index\.astro$/, "");
 
-  const servicePaths = serviceFiles
-    .map(toPath)
-    .filter((p) => p !== "/services");
+  const discoveredPaths = pageFiles.map(toPath);
 
-  // 3) Blog y portfolio via astro:content (opcional)
-  let blogPaths: string[] = [];
-  let portfolioPaths: string[] = [];
-  try {
-    // @ts-ignore: import condicional
-    const { getCollection } = await import("astro:content");
-    try {
-      const blog = await getCollection("blog");
-      blogPaths = blog.map((e: { slug: string }) => `/blog/${e.slug}`);
-    } catch {}
-    try {
-      const portfolio = await getCollection("portfolio");
-      portfolioPaths = portfolio.map((e: { slug: string }) => `/portfolio/${e.slug}`);
-    } catch {}
-  } catch {
-    // sin astro:content, seguimos con fixed + services
-  }
+  /* ============================
+     3) BLOG SLUGS (ACTUAL)
+     (mock — mantenlo sincronizado)
+  ============================ */
+  const blogSlugs = [
+    "client-acquisition-systems-alberta",
+  ];
 
-  // 4) Unir y normalizar
-  const allPaths = Array.from(new Set([
-    ...fixedRoutes,
-    ...servicePaths,
-    ...blogPaths,
-    ...portfolioPaths,
-  ])).sort();
+  const blogPaths = blogSlugs.map((s) => `/blog/${s}`);
 
-  // 5) XML
-  const now = new Date().toISOString();
-  const urls = allPaths.map((path) => {
-    const loc = `${base}${path}`;
-    const isHome = path === "/";
-    const isIndex = ["/blog", "/portfolio", "/services"].includes(path) || /^\/services\/?$/.test(path);
-    const priority = isHome ? "1.0" : isIndex ? "0.8" : "0.7";
-    const changefreq = isIndex ? "weekly" : "monthly";
-    return `
+  /* ============================
+     4) UNIFICAR
+  ============================ */
+  const allPaths = Array.from(
+    new Set([
+      ...fixedRoutes,
+      ...discoveredPaths,
+      ...blogPaths,
+    ])
+  ).sort();
+
+  /* ============================
+     5) PRIORIDAD & FREQ
+  ============================ */
+  const priority = (path: string) => {
+    if (path === "/") return "1.0";
+    if (["/apply", "/Free-Acquisition-Diagnostic"].includes(path)) return "0.9";
+    if (["/services-home", "/blog"].includes(path)) return "0.8";
+    if (path.startsWith("/industry/")) return "0.75";
+    if (path.startsWith("/blog/")) return "0.7";
+    return "0.6";
+  };
+
+  const changefreq = (path: string) => {
+    if (path === "/") return "weekly";
+    if (path.startsWith("/blog")) return "weekly";
+    return "monthly";
+  };
+
+  /* ============================
+     6) XML
+  ============================ */
+  const urls = allPaths
+    .map(
+      (path) => `
   <url>
-    <loc>${loc}</loc>
+    <loc>${base}${path}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`;
-  }).join("");
+    <changefreq>${changefreq(path)}</changefreq>
+    <priority>${priority(path)}</priority>
+  </url>`
+    )
+    .join("");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

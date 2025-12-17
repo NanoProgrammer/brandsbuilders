@@ -3,9 +3,9 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Privacy Policy | BrandsBuilders Agency',
+  title: 'Privacy Policy — BrandsBuilders',
   description:
-    'How we collect, use and protect personal information. Form-first intake, minimal tracking, consent aligned to PIPEDA/CASL. Client-owned accounts.',
+    'How BrandsBuilders collects, uses, and protects personal information in accordance with Canadian privacy law (PIPEDA) and CASL.',
   canonical: 'https://brandsbuilders.agency/privacy-policy'
 };
 
@@ -13,196 +13,168 @@ const lastUpdated = '2025-10-13';
 const contactEmail = 'hello@brandsbuilders.agency';
 ---
 <Layout seo={seo}>
-  <!-- Hero Section -->
-  <section class="relative py-24 lg:py-32 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950"></div>
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-    </div>
+  <!-- Header -->
+  <section class="bg-slate-950 py-32">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+        Legal
+      </p>
 
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="text-center max-w-4xl mx-auto">
-        <h1 class="text-5xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent">
-          Privacy Policy
-        </h1>
-        <p class="text-xl text-slate-300 mb-4">
-          Your privacy matters. This explains what we collect, why, and your choices.
-        </p>
-        <p class="text-slate-400">
-          Last updated: <span class="text-violet-400">{lastUpdated}</span>
-        </p>
-      </div>
+      <h1 class="text-5xl font-semibold text-white mb-6">
+        Privacy Policy
+      </h1>
+
+      <p class="text-xl text-slate-400 leading-relaxed max-w-3xl">
+        This policy explains how we collect, use, disclose, and protect
+        personal information in accordance with Canadian privacy law.
+      </p>
+
+      <p class="mt-6 text-sm text-slate-500">
+        Last updated: {lastUpdated}
+      </p>
     </div>
   </section>
 
-  <!-- Privacy Policy Content -->
-  <section class="py-24 bg-slate-950 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=none fill-rule=evenodd%3E%3Cg fill=%23a855f7 fill-opacity=0.4%3E%3Ccircle cx=30 cy=30 r=1/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] bg-repeat"></div>
-    </div>
+  <!-- Content -->
+  <section class="bg-slate-950 py-24">
+    <div class="container mx-auto px-6 max-w-4xl space-y-20 text-slate-300 leading-relaxed">
 
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <div class="glass rounded-3xl p-8 lg:p-12">
-          <div class="prose prose-lg prose-invert max-w-none privacy-content">
+      <p>
+        BrandsBuilders operates a form-first intake model and provides
+        consultation-based growth services. We aim to collect the minimum
+        amount of personal information necessary to evaluate fit, deliver
+        services, and communicate with you responsibly.
+      </p>
 
-            <p class="text-slate-300">
-              We operate a form-first intake and a Free 72-Hour Growth Sprint. We aim for minimal tracking, consent by default, and client-owned accounts wherever possible.
-            </p>
-
-            <h2>1. Who We Are & Roles</h2>
-            <p><strong>BrandsBuilders Agency</strong> (Alberta, Canada). For most activities, we act as a <strong>service provider/processor</strong> to our clients; for this website and our own outreach, we act as a <strong>controller</strong>.</p>
-
-            <h2>2. What We Collect</h2>
-            <h3>Information you provide</h3>
-            <ul>
-              <li><strong>Application forms</strong> (e.g., Free 72-Hour Sprint, Growth Partner): name, email/phone, company, website, city/industry, goals, preferred contact, and access preferences.</li>
-              <li><strong>Contact</strong>: messages sent to <strong>{contactEmail}</strong> or through our site.</li>
-              <li><strong>Newsletter</strong>: email address and consent status.</li>
-              <li><strong>Project delivery</strong>: credentials/roles you grant in client-owned accounts (e.g., GA4, GSC, ad platforms, hosting).</li>
-              <li><strong>Billing</strong>: processed by third-party providers; we don’t store full payment details.</li>
-            </ul>
-
-            <h3>Information we generate or observe</h3>
-            <ul>
-              <li><strong>Loom previews</strong> for the free sprint using public data/screens; no private access required until you approve.</li>
-              <li><strong>Technical</strong>: IP, device, browser, pages, referrers, time on site; collected only to the extent needed for security/analytics.</li>
-            </ul>
-
-            <h2>3. How We Use Information</h2>
-            <ul>
-              <li>Review applications, qualify fit, and operate the Free 72-Hour Growth Sprint.</li>
-              <li>Deliver Growth Partner services (web, Local SEO/GBP, paid media, measurement).</li>
-              <li>Communicate by email/phone/text when you consent or when reasonably expected to fulfil your request (CASL).</li>
-              <li>Security, debugging, and improving our site and processes.</li>
-              <li>Legal compliance and record-keeping.</li>
-            </ul>
-
-            <h2>4. Legal Basis / Consent (PIPEDA &amp; CASL)</h2>
-            <ul>
-              <li><strong>Consent:</strong> intake forms use explicit consent for contact; newsletter uses opt-in with unsubscribe in every email.</li>
-              <li><strong>Legitimate interests:</strong> running a secure site, preventing abuse, and replying to your inquiries.</li>
-              <li>You may withdraw consent anytime via links provided or by emailing <strong>{contactEmail}</strong>.</li>
-            </ul>
-
-            <h2>5. Cookies & Tracking</h2>
-            <p>We avoid heavy third-party tracking. By default we use:</p>
-            <ul>
-              <li><strong>Essential</strong> (required for forms/security).</li>
-              <li><strong>Light analytics</strong> to understand usage (aggregated/limited retention). We prefer first-party or privacy-respecting tools.</li>
-            </ul>
-            <p>You can control cookies in your browser. We do not run interest-based ad trackers on this site.</p>
-
-            <h2>6. Sharing</h2>
-            <ul>
-              <li><strong>Service providers</strong>: hosting/CDN, form handling (e.g., Netlify Forms/Typeform/Google Forms), email delivery, analytics, billing, project tools—under contracts and only for the stated purposes.</li>
-              <li><strong>Access you grant</strong>: collaborator/manager roles in your client-owned accounts (you can remove us anytime).</li>
-              <li><strong>Legal</strong>: when required by law or to protect rights, security, and integrity.</li>
-              <li>No sale of personal information.</li>
-            </ul>
-
-            <h2>7. Retention</h2>
-            <ul>
-              <li><strong>Form submissions</strong>: up to 12 months for non-clients or until you request deletion.</li>
-              <li><strong>Client records</strong>: for the engagement + up to 24 months post-project (or longer if law requires).</li>
-              <li><strong>Analytics logs</strong>: shortest feasible period, typically 90–180 days in aggregated form.</li>
-            </ul>
-
-            <h2>8. Your Rights</h2>
-            <p>You may request access, correction, deletion, or portability, and object/withdraw consent to marketing. We aim to respond within 30 days. Contact: <strong>{contactEmail}</strong>.</p>
-
-            <h2>9. International Transfers</h2>
-            <p>We may use providers with servers in Canada, the U.S., or elsewhere. We apply contractual and technical safeguards appropriate to the sensitivity of the data.</p>
-
-            <h2>10. Security</h2>
-            <ul>
-              <li>HTTPS/SSL, role-based access, least privilege.</li>
-              <li>Secrets stored in client-owned systems where possible; audit of collaborator access.</li>
-              <li>Vendor due diligence and periodic reviews.</li>
-            </ul>
-
-            <h2>11. Children</h2>
-            <p>Our services are not directed to individuals under 18. If we learn we collected data from a minor, we’ll delete it.</p>
-
-            <h2>12. Third-Party Links</h2>
-            <p>External sites have their own policies. Review them before sharing information.</p>
-
-            <h2>13. Free 72-Hour Growth Sprint Notes</h2>
-            <ul>
-              <li>Application form filters fit and provides baseline info.</li>
-              <li>Initial Loom uses only public data; implementation requires temporary access you control.</li>
-              <li>Daily updates and a final before→after Loom are delivered; scope is intentionally narrow.</li>
-            </ul>
-
-            <h2>14. Hours & Contact Preferences</h2>
-            <p>Operating hours: <strong>9:00 AM – 9:00 PM, seven days a week (Alberta)</strong>. You can choose email, phone, or text as your preferred channel on our forms and can change this anytime.</p>
-
-            <h2>15. Changes to This Policy</h2>
-            <p>We may update this policy. Material changes will be posted here with the updated date above.</p>
-
-            <h2>16. Contact</h2>
-            <div class="bg-slate-800/50 rounded-2xl p-6 mt-6">
-              <p><strong>BrandsBuilders Agency</strong><br />
-              Alberta, Canada<br />
-              Email: <a href={`mailto:${contactEmail}`} class="text-violet-300 underline underline-offset-2">{contactEmail}</a></p>
-            </div>
-
-            <h2>17. Compliance Statement</h2>
-            <p>This policy is designed to align with Canadian privacy law, including <strong>PIPEDA</strong>, and with international best practices (e.g., GDPR principles) where applicable. For marketing, we follow <strong>CASL</strong> (opt-in, clear identification, easy unsubscribe).</p>
-
-          </div>
-        </div>
-
-        <!-- Contact CTA -->
-        <div class="glass rounded-3xl p-8 text-center mt-12">
-          <h3 class="text-2xl font-bold text-white mb-4">Questions About Your Privacy?</h3>
-          <p class="text-slate-300 mb-6">
-            We’ll respond by email. Reach us at <span class="text-violet-300 font-semibold">{contactEmail}</span>.
-          </p>
-          <a
-            href={`mailto:${contactEmail}`}
-            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-violet-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-          >
-            Email {contactEmail}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-4-4m4 4l-4 4"></path>
-            </svg>
-          </a>
-        </div>
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">1. Organization</h2>
+        <p>
+          <strong>BrandsBuilders</strong> is based in Alberta, Canada.
+          For our website and outreach activities, we act as the organization
+          responsible for personal information. When delivering services to
+          clients, we may act as a service provider handling information under
+          the client’s direction.
+        </p>
       </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">2. Information We Collect</h2>
+
+        <p class="mb-4"><strong>Information you provide</strong></p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Application and intake forms (name, email, phone, business details).</li>
+          <li>Messages sent through our website or by email.</li>
+          <li>Preferences for contact method and communication.</li>
+          <li>Access you voluntarily grant to client-owned platforms for service delivery.</li>
+        </ul>
+
+        <p class="mt-6 mb-4"><strong>Automatically collected information</strong></p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Basic technical data (IP address, browser type, device).</li>
+          <li>Limited analytics related to page usage and security.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">3. How We Use Information</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>To review applications and assess service fit.</li>
+          <li>To communicate with you regarding your inquiry or engagement.</li>
+          <li>To deliver agreed-upon services.</li>
+          <li>To maintain security, quality, and internal records.</li>
+          <li>To comply with legal and regulatory obligations.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">4. Consent & Canadian Law</h2>
+        <p>
+          We collect, use, and disclose personal information in accordance with
+          the <strong>Personal Information Protection and Electronic Documents Act (PIPEDA)</strong>.
+          Consent is obtained explicitly through our forms or implicitly where
+          reasonably expected to fulfill your request.
+        </p>
+        <p class="mt-4">
+          For electronic communications, we comply with
+          <strong>Canada’s Anti-Spam Legislation (CASL)</strong>.
+          You may unsubscribe or withdraw consent at any time.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">5. Cookies & Analytics</h2>
+        <p>
+          We do not use advertising trackers on this site.
+          Limited analytics may be used to understand site performance and
+          protect against abuse. You can control cookies through your browser.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">6. Disclosure of Information</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Trusted service providers (hosting, email, forms, billing).</li>
+          <li>Platforms you authorize us to access for service delivery.</li>
+          <li>Legal or regulatory authorities when required by law.</li>
+        </ul>
+        <p class="mt-4">
+          We do not sell personal information.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">7. Retention</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Non-client inquiries: up to 12 months.</li>
+          <li>Client records: duration of engagement plus reasonable post-engagement retention.</li>
+          <li>Analytics logs: retained for the shortest feasible period.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">8. Your Rights</h2>
+        <p>
+          Under Canadian law, you may request access to your personal information
+          and request corrections if it is inaccurate or incomplete.
+          Requests can be sent to <strong>{contactEmail}</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">9. Data Location</h2>
+        <p>
+          Some service providers may store or process data outside Canada,
+          including in the United States. We use contractual and technical
+          safeguards appropriate to the sensitivity of the information.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">10. Security</h2>
+        <p>
+          We use administrative, technical, and organizational safeguards
+          appropriate to the sensitivity of the information, including
+          access controls and secure communication methods.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">11. Changes</h2>
+        <p>
+          We may update this policy from time to time.
+          The latest version will always be available on this page.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">12. Contact</h2>
+        <p>
+          <strong>BrandsBuilders</strong><br />
+          Alberta, Canada<br />
+          Email: <a href={`mailto:${contactEmail}`} class="underline">{contactEmail}</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
-
-<style>
-  .privacy-content h2 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: white;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid rgb(139 92 246 / 0.3);
-  }
-  .privacy-content h2:first-child { margin-top: 0; }
-  .privacy-content h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: rgb(196 181 253);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  .privacy-content p {
-    color: rgb(203 213 225);
-    margin-bottom: 1.5rem;
-    line-height: 1.75;
-  }
-  .privacy-content ul {
-    color: rgb(203 213 225);
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-  .privacy-content li { margin-bottom: 0.5rem; line-height: 1.6; }
-  .privacy-content strong { color: rgb(196 181 253); font-weight: 600; }
-</style>

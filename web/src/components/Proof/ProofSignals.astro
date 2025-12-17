@@ -1,0 +1,25 @@
+---
+const signals = [
+  'Mobile Lighthouse scores consistently above 90',
+  'Clean GA4 conversion and attribution setup',
+  'Appointments and calls tied directly to campaigns',
+  'Client ownership of domains, code, and ad accounts',
+  'Speed-to-lead optimized where bookings matter',
+  'No lock-ins, no black-box reporting'
+];
+---
+<section class="bg-slate-950 py-32">
+  <div class="container mx-auto px-6 max-w-2xl space-y-16">
+    <h2 class="text-4xl font-semibold text-white">
+      What we consider real signals
+    </h2>
+
+    <ul class="space-y-8">
+      {signals.map((s) => (
+        <li class="text-xl text-slate-400 leading-relaxed">
+          — {s}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

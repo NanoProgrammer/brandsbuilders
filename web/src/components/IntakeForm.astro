@@ -1,137 +1,74 @@
----
-/* Astro frontmatter optional */
----
+<section id="intake-section" class="bg-slate-950 py-20">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <h2 class="text-2xl font-semibold text-white mb-2">
+      Application
+    </h2>
 
-<section id="intake-section" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl lg:text-5xl font-bold mb-4 text-white">
-        Get your <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Free Growth Blueprint</span>
-      </h2>
-      <p class="text-gray-400 max-w-xl mx-auto">
-        Just the essentials — receive a short Loom audit and your recommended next step.
-      </p>
-    </div>
+    <p class="text-slate-400 mb-8">
+      This is a short screening form. We only respond if there is a clear fit.
+    </p>
 
-    <div class="max-w-2xl mx-auto">
-      <!-- Netlify-ready form -->
-      <form
-        name="blueprint-apply"
-        method="POST"
-        action="/thank-you"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-2xl p-6"
-        novalidate
+    <form
+      name="free-client-acquisition-consulting"
+      method="POST"
+      action="/thank-you"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="space-y-5"
+    >
+      <input type="hidden" name="form-name" value="free-client-acquisition-consulting" />
+      <p class="hidden"><input name="bot-field" /></p>
+
+      <input
+        name="name"
+        required
+        placeholder="Name"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      />
+
+      <input
+        name="email"
+        type="email"
+        required
+        placeholder="Email"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      />
+
+      <input
+        name="business"
+        required
+        placeholder="Business name"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      />
+
+      <input
+        name="website"
+        required
+        placeholder="Website"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      />
+
+      <input
+        name="city"
+        required
+        placeholder="City (Alberta)"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      />
+
+      <textarea
+        name="context"
+        rows="4"
+        placeholder="Briefly describe your service and what feels broken today"
+        class="w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="border border-slate-600 px-6 py-3 text-white hover:border-slate-400 transition"
       >
-        <!-- Netlify hidden marker -->
-        <input type="hidden" name="form-name" value="blueprint-apply" />
-        <!-- Honeypot -->
-        <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        Submit application
+      </button>
+    </form>
 
-        <!-- Row 1: Name + Email -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="name" class="block text-sm text-gray-300 mb-1">Name *</label>
-            <input id="name" name="name" required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-              placeholder="Your full name" />
-          </div>
-          <div>
-            <label for="email" class="block text-sm text-gray-300 mb-1">Email *</label>
-            <input id="email" name="email" type="email" required
-              pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-              placeholder="you@email.com" />
-          </div>
-        </div>
-
-        <!-- Row 2: Single field -->
-        <div class="mb-4">
-          <label for="business" class="block text-sm text-gray-300 mb-1">Business *</label>
-          <input id="business" name="business" required
-            class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-            placeholder="Company name" />
-        </div>
-
-        <!-- Row 3: Website + City -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="website" class="block text-sm text-gray-300 mb-1">Website *</label>
-            <input id="website" name="website" type="url" required
-              pattern="https?://.+"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-              placeholder="https://yourwebsite.com" />
-          </div>
-          <div>
-            <label for="city" class="block text-sm text-gray-300 mb-1">City *</label>
-            <input id="city" name="city" required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-              placeholder="Calgary / Edmonton / Airdrie…" />
-          </div>
-        </div>
-
-        <!-- Row 4: Single field -->
-        <div class="mb-4">
-          <label for="program" class="block text-sm text-gray-300 mb-1">Program *</label>
-          <select id="program" name="program" required
-            class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500">
-            <option value="">Choose one</option>
-            <option value="local">Local (Starter / Pro)</option>
-            <option value="ecommerce">E-commerce (Starter / Premium)</option>
-            <option value="not-sure">Not sure — recommend best fit</option>
-          </select>
-        </div>
-
-        <!-- Row 5: Goal + Budget -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div>
-            <label for="goal" class="block text-sm text-gray-300 mb-1">Main goal *</label>
-            <select id="goal" name="goal" required
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-violet-500 focus:ring-1 focus:ring-violet-500">
-              <option value="">Select one</option>
-              <option value="more-bookings">Increase bookings / calls</option>
-              <option value="lower-cpa">Lower cost per lead (CPA)</option>
-              <option value="more-sales">Increase online sales</option>
-              <option value="improve-roas">Improve ROAS / profit</option>
-              <option value="diagnostic">I need a diagnostic first</option>
-            </select>
-          </div>
-          <div>
-            <label for="budget" class="block text-sm text-gray-300 mb-1">Ad budget (CAD, optional)</label>
-            <input id="budget" name="budget" type="number" min="10" step="10"
-              class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
-              placeholder="e.g., 50" />
-            <p class="text-xs text-slate-500 mt-1">Recommended ≥ $50/day per active channel.</p>
-          </div>
-        </div>
-
-        <!-- Consent -->
-        <div class="mb-6">
-          <label class="flex items-start gap-3">
-            <input type="checkbox" id="consent" name="consent" required
-              class="mt-1 w-4 h-4 text-violet-600 border-gray-600 rounded focus:ring-violet-500 focus:ring-2 bg-gray-800" />
-            <span class="text-sm text-gray-400">
-              I agree to be contacted by BrandsBuilders Agency about my application. We follow CASL & PIPEDA. *
-            </span>
-          </label>
-        </div>
-
-        <!-- reCAPTCHA (Netlify) -->
-        <div class="mb-6">
-          <div data-netlify-recaptcha="true"></div>
-        </div>
-
-        <!-- Submit -->
-        <button type="submit"
-          class="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-500/25">
-          Apply — Free Growth Blueprint
-        </button>
-
-        <p class="text-xs text-slate-500 mt-4 text-center">
-          Prefer email? <a href="mailto:hello@brandsbuilders.agency" class="underline text-violet-300">hello@brandsbuilders.agency</a>
-        </p>
-      </form>
-    </div>
   </div>
 </section>

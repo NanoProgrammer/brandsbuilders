@@ -3,94 +3,57 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Thank You — Quote Request Received | BrandsBuilders Agency',
-  description: 'Thanks for your request! We’ll review your goals and get back to you shortly.',
+  title: 'Request Received — BrandsBuilders',
+  description: 'Your request has been received. We’ll review your information and follow up shortly.',
   canonical: 'https://brandsbuilders.agency/thank-you'
 };
 ---
 
 <Layout seo={seo}>
-  <!-- Hero -->
-  <section class="relative py-24 lg:py-32 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950"></div>
+  <section class="bg-slate-950 min-h-screen flex items-center">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
 
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <!-- Check Icon -->
-        <div class="mx-auto mb-8 w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-400/30">
-          <svg class="w-8 h-8 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-        </div>
+      <p class="text-sm uppercase tracking-widest text-slate-500 mb-6">
+        Submission confirmed
+      </p>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent">
-          Thank You!
-        </h1>
+      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6">
+        Your request has been received
+      </h1>
 
-        <p class="text-lg sm:text-xl text-slate-300 mb-4">
-          We’ve received your quote request. Our team will review your goals and reply shortly.
-        </p>
-        <p class="text-slate-400">
-          Expect a response within <span class="text-violet-300">1 business days</span>.  
-          If it’s urgent, call us directly.
-        </p>
+      <p class="text-lg text-slate-400 mb-10 leading-relaxed">
+        We’re reviewing your information to determine fit and next steps.
+        If there’s alignment, you’ll hear from us shortly.
+      </p>
 
-        <!-- Primary CTAs -->
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold hover:from-violet-700 hover:to-purple-700 transition">
-            Book a Call
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </a>
-          <a href="/services" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-slate-700 text-white/90 hover:border-violet-500 hover:text-white transition">
-            View Services
-          </a>
-        </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 text-left mb-12">
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li><strong class="text-slate-200">Review time:</strong> within 1 business day</li>
+          <li><strong class="text-slate-200">Hours:</strong> 9:00 AM – 9:00 PM (Alberta)</li>
+          <li><strong class="text-slate-200">Contact:</strong> email first unless otherwise requested</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- What happens next -->
-  <section class="py-20 bg-slate-950">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-6">
-        <div class="glass rounded-2xl p-6 border border-slate-800 bg-white/5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center">
-              <span class="text-indigo-300 font-bold">1</span>
-            </div>
-            <h3 class="text-white font-semibold">Discovery Review</h3>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            We validate your business fit, objectives and service package. If more info is needed, we’ll contact you.
-          </p>
-        </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-slate-950 font-medium hover:bg-slate-200 transition"
+        >
+          Return to homepage
+        </a>
 
-        <div class="glass rounded-2xl p-6 border border-slate-800 bg-white/5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center">
-              <span class="text-indigo-300 font-bold">2</span>
-            </div>
-            <h3 class="text-white font-semibold">Call & Scope</h3>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            We’ll set up a call to align goals, deliverables and timeline. Together we’ll finalize the scope of work.
-          </p>
-        </div>
-
-        <div class="glass rounded-2xl p-6 border border-slate-800 bg-white/5">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center">
-              <span class="text-indigo-300 font-bold">3</span>
-            </div>
-            <h3 class="text-white font-semibold">Kickoff</h3>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Once the 50% deposit is received, we’ll reserve your spot and begin with strategy, design and implementation.
-          </p>
-        </div>
+        <a
+          href="/apply"
+          class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition"
+        >
+          View consultation details
+        </a>
       </div>
+
+      <p class="mt-16 text-sm text-slate-500">
+        BrandsBuilders · Alberta, Canada
+      </p>
+
     </div>
   </section>
 </Layout>

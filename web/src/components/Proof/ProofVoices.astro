@@ -1,0 +1,20 @@
+---
+const voices = [
+  'We finally understood what was driving bookings — not just clicks.',
+  'Everything was tied to execution. No fluff.',
+  'The clarity alone justified the investment before scaling.'
+];
+---
+<section class="bg-slate-950 py-32">
+  <div class="container mx-auto px-6 max-w-3xl space-y-24">
+    <h2 class="text-4xl font-semibold text-white">
+      In their words
+    </h2>
+
+    {voices.map((v) => (
+      <blockquote class="text-2xl lg:text-3xl text-slate-300 italic leading-snug">
+        “{v}”
+      </blockquote>
+    ))}
+  </div>
+</section>

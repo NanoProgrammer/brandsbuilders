@@ -1,0 +1,26 @@
+---
+// pages/proof.astro
+import Layout from '../../layouts/Layout.astro';
+
+import ProofHero from '../../components/proof/ProofHero.astro';
+import ProofCases from '../../components/proof/ProofCases.astro';
+import ProofSignals from '../../components/proof/ProofSignals.astro';
+import ProofVoices from '../../components/proof/ProofVoices.astro';
+import ApplyCTA from '../../components/ApplyCTA.astro';
+
+const seo = {
+  title: 'Proof — Real Growth Systems & Client Outcomes | BrandsBuilders',
+  description:
+    'Real examples of growth systems built for owner-led businesses. Websites, funnels, tracking and paid media — shown with context, not vanity metrics.',
+  canonical: 'https://brandsbuilders.agency/proof',
+  ogImage: '/proof-og.jpg'
+};
+---
+
+<Layout seo={seo}>
+  <ProofHero />
+  <ProofCases />
+  <ProofSignals />
+  <ProofVoices />
+  <ApplyCTA />
+</Layout>

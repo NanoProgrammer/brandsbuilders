@@ -1,127 +1,72 @@
-<!-- Process.astro — Growth Partner Alberta (Blueprint-led version) -->
-<section class="py-24 bg-slate-950 relative overflow-hidden" aria-labelledby="process-title">
-  <!-- Background Effects -->
-  <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
-    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full mix-blend-multiply blur-3xl animate-float"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-full mix-blend-multiply blur-3xl animate-float" style="animation-delay: 2s;"></div>
-  </div>
+---
+--- 
+<section class="bg-slate-950 text-white py-20 lg:py-24 border-t border-slate-800">
+  <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
 
-  <div class="container mx-auto px-6 relative z-10">
     <!-- Header -->
-    <div class="text-center mb-20">
-      <h2 id="process-title" class="text-5xl lg:text-7xl font-black mb-8 tracking-tight">
-        Our <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Growth Partner</span> Process
+    <div class="mb-16 text-center lg:text-left">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">
+        How we approach growth
       </h2>
-      <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-        For Alberta owner-led businesses. We operate one growth system end-to-end — from fast proof to scalable revenue — with
-        <span class="text-slate-100">clear milestones, KPIs and full asset ownership</span>.
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0">
+        We don’t start with execution. We start by understanding whether growth
+        is financially viable — and only then decide what to build.
       </p>
     </div>
 
-    <!-- Steps (you can reinsert if needed) -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16"></div>
+    <!-- Steps -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-    <!-- Onboarding Strip -->
-    <div class=" grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
-        <h4 class="font-semibold text-slate-200 mb-2">Onboarding</h4>
-        <p class="text-slate-400 text-sm">
-          Sales call → onboarding scheduled. Centralized form (Notion/Google), access invites, Drive folder, and kick-off checklist.
+      <!-- Step 1 -->
+      <div>
+        <p class="text-sm text-slate-500 mb-2">
+          Phase 1
+        </p>
+        <h3 class="font-medium text-lg mb-2">
+          Clarify the economics
+        </h3>
+        <p class="text-slate-400 leading-relaxed">
+          We assess ticket size, margins, capacity, and constraints to define
+          what acquisition can realistically support.
         </p>
       </div>
 
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
-        <h4 class="font-semibold text-slate-200 mb-2">Access & Ownership</h4>
-        <p class="text-slate-400 text-sm">
-          GBP Manager, GA4/Tag Manager, Ads MCC link, domain/DNS, repo & hosting. Client owns all assets after setup.
+      <!-- Step 2 -->
+      <div>
+        <p class="text-sm text-slate-500 mb-2">
+          Phase 2
+        </p>
+        <h3 class="font-medium text-lg mb-2">
+          Fix the system
+        </h3>
+        <p class="text-slate-400 leading-relaxed">
+          We identify where demand leaks — messaging, routing, tracking, follow-up —
+          and fix those before increasing spend.
         </p>
       </div>
 
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
-        <h4 class="font-semibold text-slate-200 mb-2">Communication</h4>
-        <p class="text-slate-400 text-sm">
-          Daily short updates during blueprint, weekly Looms during setup, and monthly strategy calls in retainer phase.
+      <!-- Step 3 -->
+      <div>
+        <p class="text-sm text-slate-500 mb-2">
+          Phase 3
+        </p>
+        <h3 class="font-medium text-lg mb-2">
+          Scale with control
+        </h3>
+        <p class="text-slate-400 leading-relaxed">
+          Only after the system works do we introduce scale, testing channels
+          and volume without breaking profitability.
         </p>
       </div>
+
     </div>
 
-    <!-- Timeline -->
-    <div class="mt-20" aria-labelledby="timeline-title">
-      <div class="text-center mb-12">
-        <h3 id="timeline-title" class="text-3xl font-bold mb-4">90-Day Growth Timeline</h3>
-        <p class="text-slate-400">
-          Clear milestones from blueprint to scale. Most projects begin with the 72-hour blueprint.
-        </p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-gradient-to-b from-violet-500 to-fuchsia-500 rounded-full" aria-hidden="true"></div>
-        <div class="space-y-16">
-          <div class="flex items-center justify-between">
-            <div class="w-5/12 text-right pr-8">
-              <h4 class="text-xl font-bold">Days 0–3</h4>
-              <p class="text-slate-400">Revenue Growth Blueprint (assessment)</p>
-            </div>
-            <div class="w-6 h-6 bg-violet-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12"></div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="w-5/12"></div>
-            <div class="w-6 h-6 bg-fuchsia-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12 pl-8">
-              <h4 class="text-xl font-bold">Weeks 1–3</h4>
-              <p class="text-slate-400">Foundation & Setup (ownership ready)</p>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="w-5/12 text-right pr-8">
-              <h4 class="text-xl font-bold">Weeks 4–6</h4>
-              <p class="text-slate-400">Design refresh, SEO structure, CRO</p>
-            </div>
-            <div class="w-6 h-6 bg-indigo-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12"></div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="w-5/12"></div>
-            <div class="w-6 h-6 bg-blue-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12 pl-8">
-              <h4 class="text-xl font-bold">Weeks 7–10</h4>
-              <p class="text-slate-400">Ads live, GBP posting, A/B testing</p>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="w-5/12 text-right pr-8">
-              <h4 class="text-xl font-bold">Weeks 11–13</h4>
-              <p class="text-slate-400">Scale, reporting, Blueprint handover</p>
-            </div>
-            <div class="w-6 h-6 bg-emerald-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12"></div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="w-5/12"></div>
-            <div class="w-6 h-6 bg-teal-500 rounded-full border-4 border-slate-950 z-10" aria-hidden="true"></div>
-            <div class="w-5/12 pl-8">
-              <h4 class="text-xl font-bold">Ongoing</h4>
-              <p class="text-slate-400">Support tiers, monthly strategy, upsell roadmap</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTAs -->
-    <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/sprint" class="inline-flex items-center justify-center rounded-xl px-6 py-3 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-semibold shadow-lg shadow-fuchsia-600/20 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-fuchsia-400/60" data-umami-event="cta_process_blueprint">
-        Get Your Revenue Growth Blueprint
-      </a>
-      <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-6 py-3 bg-slate-800 text-slate-200 font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500/60" data-umami-event="cta_process_book_onboarding">
-        Book an Onboarding Call
+    <!-- Ownership note -->
+    <div class="mt-16 pt-4 border-t border-slate-800 max-w-xl">
+      <a class="text-slate-400 hover:underline hover:text-white transition text-md" href="/process">
+        Check How It Works
       </a>
     </div>
+
   </div>
 </section>

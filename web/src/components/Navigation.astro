@@ -1,119 +1,106 @@
 ---
-// Navigation.astro - Updated and Responsive
+// Navigation.astro — Clean, consultive, responsive
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/50">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
   <div class="container mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16 sm:h-20">
+
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 sm:gap-3">
+      <a href="/" class="flex items-center gap-3">
         <div class="h-8 w-8">
-          <img src="/logo.avif" alt="logo">
+          <img src="/logo.avif" alt="BrandsBuilders logo" class="h-full w-full" />
         </div>
-        <span class="text-xl sm:text-2xl font-bold">BrandsBuilders</span>
+        <span class="text-lg sm:text-xl font-medium text-white">
+          BrandsBuilders
+        </span>
       </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-8">
-        <div class="relative group">
-          <p class="text-slate-300 hover:text-violet-400 font-medium transition-colors duration-300 flex items-center gap-1">
-            Services
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </p>
-          <!-- Services Dropdown -->
-          <div class="absolute top-full left-0 mt-2 w-56 bg-slate-900 border border-slate-700 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            <div class="p-2">
-              <a href="/services/web-development" class="block px-4 py-3 text-slate-300 hover:text-violet-400 hover:bg-slate-800/50 rounded-lg transition-colors">Web Development</a>
-              <a href="/services/ads-service" class="block px-4 py-3 text-slate-300 hover:text-violet-400 hover:bg-slate-800/50 rounded-lg transition-colors">Ads Campaign</a>
-              <a href="/services/local-seo" class="block px-4 py-3 text-slate-300 hover:text-violet-400 hover:bg-slate-800/50 rounded-lg transition-colors">Local SEO</a>
-              <a href="/services/growth-partner" class="block px-4 py-3 text-slate-300 hover:text-violet-400 hover:bg-slate-800/50 rounded-lg transition-colors">Growth Partner</a>
-            </div>
-          </div>
-        </div>
-        <a href="/portfolio" class="text-slate-300 hover:text-violet-400 font-medium transition-colors duration-300">Portfolio</a>
-        <a href="/about" class="text-slate-300 hover:text-violet-400 font-medium transition-colors duration-300">About</a>
-        <a href="/testimonials" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">Testimonials</a>
-        <a href="/blog" class="text-slate-300 hover:text-violet-400 font-medium transition-colors duration-300">Blog</a>
-        <a href="/contact" class="px-6 py-3 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-medium rounded-xl hover:from-violet-700 hover:to-fuchsia-700 transition-all duration-300 shadow-lg">
-          Contact
+        <a href="/" class="text-slate-300 hover:text-white transition">
+          Home
+        </a>
+        <a href="/process" class="text-slate-300 hover:text-white transition">
+          How It Works
+        </a>
+        <a href="/proof" class="text-slate-300 hover:text-white transition">
+          Proof
+        </a>
+        <a href="/faq" class="text-slate-300 hover:text-white transition">
+          FAQ
+        </a>
+
+        <!-- Primary CTA -->
+        <a
+          href="/apply"
+          class="ml-4 px-6 py-2.5 border border-slate-600 text-white rounded-lg hover:border-white transition"
+        >
+          Apply for a Consultation
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="lg:hidden w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white" id="mobile-menu-btn">
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="hamburger-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      <button
+        class="lg:hidden w-10 h-10 flex items-center justify-center text-white"
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+      >
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="close-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div class="lg:hidden bg-slate-950 border-t border-slate-800 hidden" id="mobile-menu">
-    <div class="container mx-auto px-4 sm:px-6 py-6">
-      <div class="flex flex-col gap-4">
-        <!-- Services with submenu -->
-        <div class="group">
-          <button class="flex items-center justify-between w-full text-left text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300" id="mobile-services-btn">
-            Services
-            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="services-arrow">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="pl-4 space-y-2 hidden" id="mobile-services-menu">
-            <a href="/services/web-design" class="block text-slate-400 hover:text-violet-400 py-2 transition-colors duration-300">Web Design</a>
-            <a href="/services/branding" class="block text-slate-400 hover:text-violet-400 py-2 transition-colors duration-300">Brand Identity</a>
-            <a href="/services/local-seo" class="block text-slate-400 hover:text-violet-400 py-2 transition-colors duration-300">Local SEO</a>
-            <a href="/services" class="block text-violet-400 font-medium py-2">View All Services</a>
-          </div>
-        </div>
-        <a href="/portfolio" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">Portfolio</a>
-        <a href="/about" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">About</a>
-        <a href="/blog" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">Blog</a> <a href="/testimonials" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">Testimonials</a>
-        <a href="/faq" class="text-slate-300 hover:text-violet-400 font-medium py-2 transition-colors duration-300">FAQ</a>
-        <a href="/contact" class="mt-4 px-6 py-3 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-medium rounded-xl text-center hover:from-violet-700 hover:to-fuchsia-700 transition-all duration-300">
-          Get Quote
-        </a>
-      </div>
+  <div id="mobile-menu" class="lg:hidden hidden bg-slate-950 border-t border-slate-800">
+    <div class="container mx-auto px-4 sm:px-6 py-6 flex flex-col gap-4">
+
+      <a href="/" class="text-slate-300 hover:text-white transition">
+        Home
+      </a>
+      <a href="/process" class="text-slate-300 hover:text-white transition">
+        How It Works
+      </a>
+      <a href="/proof" class="text-slate-300 hover:text-white transition">
+        Proof
+      </a>
+      <a href="/faq" class="text-slate-300 hover:text-white transition">
+        FAQ
+      </a>
+
+      <a
+        href="/apply"
+        class="mt-4 px-6 py-3 border border-slate-600 text-white rounded-lg text-center hover:border-white transition"
+      >
+        Apply for a Consultation
+      </a>
     </div>
   </div>
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
-    const servicesBtn = document.getElementById('mobile-services-btn');
-    const servicesMenu = document.getElementById('mobile-services-menu');
-    const servicesArrow = document.getElementById('services-arrow');
-    
-    // Mobile menu toggle
-    mobileMenuBtn?.addEventListener('click', function() {
-      mobileMenu?.classList.toggle('hidden');
-      hamburgerIcon?.classList.toggle('hidden');
+
+    btn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      openIcon?.classList.toggle('hidden');
       closeIcon?.classList.toggle('hidden');
     });
 
-    // Mobile services submenu toggle
-    servicesBtn?.addEventListener('click', function() {
-      servicesMenu?.classList.toggle('hidden');
-      servicesArrow?.classList.toggle('rotate-180');
-    });
-
-    // Close mobile menu when clicking on links
-    const mobileLinks = mobileMenu?.querySelectorAll('a');
-    mobileLinks?.forEach(link => {
+    menu?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-        hamburgerIcon?.classList.remove('hidden');
-        closeIcon?.classList.add('hidden');
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
       });
     });
   });

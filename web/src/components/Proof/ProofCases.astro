@@ -1,0 +1,59 @@
+---
+const cases = [
+  {
+    industry: 'Dental Clinic',
+    problem: 'Traffic existed, but bookings were inconsistent and attribution was unclear.',
+    change:
+      'We simplified the booking flow, restructured service pages, and implemented appointment-level tracking.',
+    result:
+      'Clear visibility into what drives booked appointments and which services convert.'
+  },
+  {
+    industry: 'HVAC Services',
+    problem:
+      'Ad spend was leaking into low-intent searches with no control over call quality.',
+    change:
+      'Search intent was rebuilt, GBP optimized, and calls tied directly to campaigns.',
+    result:
+      'Higher-quality inbound calls without increasing spend.'
+  },
+  {
+    industry: 'Med Spa',
+    problem:
+      'Paid social traffic existed, but ROI and client value were unclear.',
+    change:
+      'UGC-led messaging paired with simplified landing flows and clean conversion tracking.',
+    result:
+      'Lower CPA and clarity on which offers actually drive revenue.'
+  }
+];
+---
+<section class="bg-slate-950 py-32">
+  <div class="container mx-auto px-6 max-w-3xl space-y-32">
+    <h2 class="text-4xl font-semibold text-white">
+      How proof shows up in practice
+    </h2>
+
+    {cases.map((c) => (
+      <div class="space-y-8">
+        <p class="text-sm uppercase tracking-widest text-slate-400">
+          {c.industry}
+        </p>
+
+        <p class="text-xl text-slate-200">
+          <span class="text-slate-400">Problem — </span>{c.problem}
+        </p>
+
+        <p class="text-xl text-slate-200">
+          <span class="text-slate-400">Change — </span>{c.change}
+        </p>
+
+        <p class="text-xl text-slate-100 font-medium">
+          <span class="text-slate-400">Result — </span>{c.result}
+        </p>
+
+        <div class="h-px bg-slate-800 mt-16"></div>
+      </div>
+    ))}
+  </div>
+</section>

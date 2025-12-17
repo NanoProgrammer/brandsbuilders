@@ -1,0 +1,198 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const seo = {
+  title: 'Free Client Acquisition Consultation | BrandsBuilders',
+  description:
+    'A free working session to identify where your client acquisition system is leaking — and whether it makes financial sense to build a predictable growth system.',
+  canonical: 'https://brandsbuilders.agency/free-client-acquisition-diagnostic'
+};
+
+const bullets = [
+  {
+    title: 'Market demand snapshot',
+    desc: 'We evaluate real intent and demand in your area (search + local visibility) to understand what can be captured.'
+  },
+  {
+    title: 'Funnel leak detection',
+    desc: 'We identify the top drop-off points across clarity, speed, routing, trust, and booking/contact friction.'
+  },
+  {
+    title: 'Channel fit (Search vs Meta)',
+    desc: 'We determine whether Google/Bing is enough, whether Meta is required, and when hybrid makes sense.'
+  },
+  {
+    title: 'Break-even logic',
+    desc: 'We map a simple financial model: ticket, margin, capacity, and what acquisition must achieve to be worth it.'
+  },
+  {
+    title: 'Priority fixes before spend',
+    desc: 'You leave with 3–5 clear fixes that prevent wasted budget before scaling traffic.'
+  }
+];
+
+const faqs = [
+  {
+    q: 'Is this a sales call?',
+    a: 'No. It’s a working session to determine whether building a client acquisition system makes financial sense. If there’s a fit, we can discuss options afterward. If not, we’ll tell you clearly.'
+  },
+  {
+    q: 'Who is this for?',
+    a: 'Owner-led service businesses (typically $300K–$5M+ revenue) with enough margin and capacity to absorb more customers.'
+  },
+  {
+    q: 'Do you need access to my accounts?',
+    a: 'Not for the diagnostic. We can start using public signals (website, search presence, GBP). If you later ask us to implement, we request delegated access.'
+  },
+  {
+    q: 'What do I receive after the call?',
+    a: 'A short written recap with the main leaks, break-even logic, recommended channel path, and the next logical step.'
+  }
+];
+---
+
+<Layout seo={seo}>
+  <!-- Hero -->
+  <section class="bg-slate-950 text-white py-20 lg:py-28 border-b border-slate-800">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="max-w-3xl">
+        <p class="text-sm text-slate-400 mb-4">
+          Free Client Acquisition Consultation
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
+          Clarity before you invest more into marketing
+        </h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-10">
+          A free working session to identify where your current funnel is leaking customers
+          and whether building a predictable acquisition system makes financial sense.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/apply"
+            class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition text-center"
+          >
+            Apply for the consultation →
+          </a>
+          <a
+            href="/process"
+            class="inline-block px-8 py-4 border border-slate-800 rounded-lg text-slate-300 hover:text-white hover:border-slate-600 transition text-center"
+          >
+            See the process
+          </a>
+        </div>
+
+        <p class="mt-6 text-sm text-slate-500">
+          Not a sales call. Not a pitch deck. Just a clear decision path.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+      <div class="mb-12 max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
+          What we review
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          We focus on the decision factors that actually determine whether growth can work —
+          demand, leakage, and financial viability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {bullets.map((b) => (
+          <div class="border border-slate-200 rounded-lg p-6">
+            <h3 class="text-lg font-medium text-slate-900 mb-2">{b.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+      <div class="mb-12 max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
+          How it works
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          The goal is to leave the call with clarity: what to fix first, what to ignore,
+          and what the next logical step is.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Step 1</p>
+          <h3 class="text-lg font-medium text-slate-900 mb-2">You apply</h3>
+          <p class="text-slate-600 leading-relaxed">
+            A short form to confirm fit (business model, revenue range, capacity, and location).
+          </p>
+        </div>
+
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Step 2</p>
+          <h3 class="text-lg font-medium text-slate-900 mb-2">We review</h3>
+          <p class="text-slate-600 leading-relaxed">
+            We pre-check your public signals (site, search presence, GBP) so the call is practical.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Step 3</p>
+          <h3 class="text-lg font-medium text-slate-900 mb-2">You leave with a decision</h3>
+          <p class="text-slate-600 leading-relaxed">
+            A clear recommendation: fix foundations, build a system, or pause until constraints change.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
+          FAQ
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <details class="border border-slate-200 rounded-lg p-6">
+            <summary class="font-medium cursor-pointer text-slate-900">
+              {f.q}
+            </summary>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              {f.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-slate-950 text-white py-20 border-t border-slate-800">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-6">
+        If you want clarity, apply.
+      </h2>
+      <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+        If we’re a fit, you’ll get a clear decision path. If not, you’ll still leave with the right next step.
+      </p>
+      <a
+        href="/apply"
+        class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition"
+      >
+        Apply for the consultation →
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -2,20 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 
 import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Portfolio from '../components/Portfolio.astro';
-import Stats from '../components/Stats.astro';
+import WhyFails from '../components/WhyFails.astro';
 import Process from '../components/Process.astro';
-import CTA from '../components/CTA.astro';
-import Contact from '../components/Contact.astro';
+import ProofPreview from '../components/ProofPreview.astro';
+import DiagnosticPreview from '../components/DiagnosticPreview.astro';
+import ApplyCTA from '../components/ApplyCTA.astro';
 
 const seo = {
-  title: 'BrandsBuilders Agency - Web Design & Digital Marketing in Alberta',
+  title: 'BrandsBuilders — Client Acquisition Consulting for Owner-Led Businesses',
   description:
-    'Professional web design, branding, and digital marketing services for small businesses in Calgary, Edmonton, and Airdrie. Boost your online presence with custom websites,SEM and SEO.',
-  keywords:
-    'web design Alberta, digital marketing Calgary, google ads Edmonton, website development Airdrie, local SEO Alberta, small business web design, meta ads, SEM',
+    'We help owner-led businesses in Alberta evaluate and build client acquisition systems that make financial sense. No packages. No hype. Just clarity.',
   canonical: 'https://brandsbuilders.agency',
   ogImage: '/og-image.jpg'
 };
@@ -23,11 +19,19 @@ const seo = {
 
 <Layout seo={seo}>
   <Hero />
-  <Testimonials />
-  <Portfolio />
-  <Stats />
-  <Services />
+
+  <!-- Why most businesses fail with marketing -->
+  <WhyFails />
+
+  <!-- How we work (high-level, consultive) -->
   <Process />
-  <CTA />
-  <Contact />
+
+  <!-- Proof preview (light credibility, not a showcase) -->
+  <ProofPreview />
+
+  <!-- How our consultation / diagnostic works -->
+  <DiagnosticPreview />
+
+  <!-- Single, final CTA -->
+  <ApplyCTA />
 </Layout>
