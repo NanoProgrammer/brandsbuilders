@@ -19,9 +19,7 @@ export const GET: APIRoute = async () => {
     "/industry/services-home",
     "/process",
     "/proof",
-    "/privacy-policy",
-    "/terms-of-service",
-    "/thank-you",
+    
   ];
 
   /* ============================
