@@ -2,109 +2,126 @@
 import Layout from '../../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Client Acquisition Systems for Dental Clinics — BrandsBuilders',
+  title: 'Website Due Diligence for Dental Clinics — BrandsBuilders',
   description:
-    'Client acquisition systems for dental clinics in Alberta. We analyze demand, conversion friction, and unit economics before scaling ads.',
-  canonical: 'https://brandsbuilders.agency/industry/dental-clinics',
+    'We help dental clinics in Alberta identify hidden website, tracking, and booking-flow risks before investing in more traffic or ads.',
+  canonical: 'https://brandsbuilders/industry/dental-clinics'
 };
 ---
 
 <Layout seo={seo}>
 
-  <!-- HERO -->
-  <section class="bg-slate-950 py-24">
-    <div class="container mx-auto px-6 max-w-4xl">
+<!-- HERO (CRO FIRST VIEWPORT) -->
+<section class="bg-slate-950 py-6 lg:py-12">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
 
+    <!-- LEFT -->
+    <div>
       <span class="block text-sm text-slate-400 mb-4">
         Industry · Dental Clinics
       </span>
 
-      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-        Client acquisition systems for dental clinics
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight">
+        Know if your dental website is ready to scale — before spending more
       </h1>
 
-      <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
-        We help dental clinics in Alberta understand where patient demand
-        actually comes from, why inquiries don’t convert consistently,
-        and whether scaling acquisition is financially sound —
-        before increasing spend.
+      <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
+        We run a Website Due Diligence Audit to determine whether your website,
+        tracking, and booking flow can profitably support increased patient acquisition —
+        or if hidden leaks must be fixed first.
       </p>
 
+      <a
+        href="/apply"
+        class="inline-block px-7 py-3 border border-slate-600 text-white rounded-lg hover:border-white transition"
+      >
+        Apply for Free Audit →
+      </a>
     </div>
-  </section>
 
-  <!-- PROBLEMS -->
-  <section class="bg-slate-950 pb-20">
-    <div class="container mx-auto px-6 max-w-4xl">
+    <!-- RIGHT IMAGE -->
+    <div class="flex justify-center lg:justify-end">
+      <figure class="w-full max-w-md border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
+        <picture>
+          <source type="image/webp" srcset="/industry/dental-hero.webp" />
+          <img
+            src="/industry/dental-hero.webp"
+            alt="Dental clinic website booking flow"
+            width="640"
+            height="420"
+            loading="eager"
+            decoding="async"
+            class="w-full h-auto object-cover"
+          />
+        </picture>
+      </figure>
+    </div>
 
-      <h2 class="text-2xl font-medium text-white mb-6">
-        Common dental growth problems
-      </h2>
+  </div>
+</section>
 
-      <ul class="space-y-4 text-slate-400 leading-relaxed">
-        <li>• New patient leads with low treatment intent</li>
-        <li>• Phones ringing but bookings not closing</li>
-        <li>• High ad costs driven by local competition</li>
-        <li>• No clarity on cost per acquired patient</li>
-        <li>• Inconsistent flow between hygiene and high-value treatments</li>
+<!-- PROBLEMS -->
+<section class="bg-slate-950 pb-20">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-2xl font-medium text-white mb-6">
+      Common issues we find in dental websites
+    </h2>
+
+    <ul class="space-y-4 text-slate-400 leading-relaxed">
+      <li>• Paid traffic landing on slow or unclear pages</li>
+      <li>• Website visits that don’t turn into booked appointments</li>
+      <li>• Missing or inaccurate GA4 / call / booking tracking</li>
+      <li>• No visibility on cost per acquired patient</li>
+      <li>• Websites that require rebuilds to add booking or CRM</li>
+    </ul>
+  </div>
+</section>
+
+<!-- AUDIT -->
+<section class="bg-slate-950 pb-24">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-2xl font-medium text-white mb-6">
+      What the Website Due Diligence Audit evaluates
+    </h2>
+
+    <div class="space-y-4 text-slate-400 leading-relaxed">
+      <ul class="space-y-3">
+        <li>• Core Web Vitals and mobile performance</li>
+        <li>• GA4, call, and booking tracking accuracy</li>
+        <li>• Patient journey friction from visit → call → booking</li>
+        <li>• Ownership and scalability risks</li>
       </ul>
 
+      <p>
+        The outcome is simple: a clear <strong>Go / Fix / No-Go</strong> recommendation
+        before scaling traffic.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- DIAGNOSTIC -->
-  <section class="bg-slate-950 pb-24">
-    <div class="container mx-auto px-6 max-w-4xl">
+<!-- CTA -->
+<section class="bg-slate-950 pb-32">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
+      <h3 class="text-2xl font-medium text-white mb-4">
+        Want clarity before increasing patient acquisition?
+      </h3>
 
-      <h2 class="text-2xl font-medium text-white mb-6">
-        What our free diagnostic evaluates
-      </h2>
+      <p class="text-slate-400 mb-6 leading-relaxed">
+        Apply for a free Website Due Diligence Audit.
+        You’ll receive a clear verdict on whether your website is ready to scale —
+        or what must be fixed first.
+      </p>
 
-      <div class="space-y-4 text-slate-400 leading-relaxed">
-        <p>
-          Our diagnostic focuses on structural clarity — not surface metrics.
-        </p>
-
-        <ul class="space-y-3">
-          <li>• Local demand for core and elective treatments</li>
-          <li>• Funnel friction from ad → landing → call → booking</li>
-          <li>• Trust signals affecting patient decision-making</li>
-          <li>• Financial logic: acquisition cost vs lifetime value</li>
-        </ul>
-
-        <p>
-          The goal is simple: understand whether growth is controlled
-          or quietly leaking margin.
-        </p>
-      </div>
-
+      <a
+        href="/apply"
+        class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
+      >
+        Apply for Free Audit →
+      </a>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-slate-950 pb-32">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-      <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
-        <h3 class="text-2xl font-medium text-white mb-4">
-          Want clarity before scaling your clinic?
-        </h3>
-
-        <p class="text-slate-400 mb-6 leading-relaxed">
-          Apply for a free client acquisition diagnostic.
-          We’ll map demand, identify conversion leaks,
-          and explain whether scaling makes financial sense.
-        </p>
-
-        <a
-          href="/contact"
-          class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-        >
-          Apply for Free Diagnostic →
-        </a>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
 </Layout>

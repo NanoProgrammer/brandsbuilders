@@ -1,17 +1,17 @@
 ---
-// src/pages/terms-of-service.astro
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
   title: 'Terms of Service — BrandsBuilders',
   description:
-    'Terms governing consultation, growth services, and use of the BrandsBuilders website, governed by Alberta and Canadian law.',
+    'Terms governing website due diligence audits, system optimization, and growth services provided by BrandsBuilders, governed by Alberta and Canadian law.',
   canonical: 'https://brandsbuilders.agency/terms-of-service'
 };
 
-const lastUpdated = '2025-10-13';
+const lastUpdated = '2026-01-13';
 const contactEmail = 'hello@brandsbuilders.agency';
 ---
+
 <Layout seo={seo}>
   <!-- Header -->
   <section class="bg-slate-950 py-32">
@@ -26,7 +26,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
 
       <p class="text-xl text-slate-400 leading-relaxed max-w-3xl">
         These Terms govern your use of the BrandsBuilders website,
-        consultations, and growth services.
+        website due diligence audits, consultations, and system optimization services.
       </p>
 
       <p class="mt-6 text-sm text-slate-500">
@@ -40,9 +40,10 @@ const contactEmail = 'hello@brandsbuilders.agency';
     <div class="container mx-auto px-6 max-w-4xl space-y-20 text-slate-300 leading-relaxed">
 
       <p>
-        BrandsBuilders provides consultation-based growth services to
-        owner-led businesses. By submitting a form, requesting a consultation,
-        engaging our services, or using this website, you agree to these Terms.
+        BrandsBuilders provides website due diligence audits, conversion diagnostics,
+        system optimization, and controlled growth services to owner-led businesses.
+        By submitting a form, requesting a consultation, engaging our services,
+        or using this website, you agree to these Terms.
       </p>
 
       <div>
@@ -58,10 +59,11 @@ const contactEmail = 'hello@brandsbuilders.agency';
       <div>
         <h2 class="text-2xl font-semibold text-white mb-4">2. Services</h2>
         <p>
-          Services may include consultation, website development, conversion
-          optimization, local search optimization, paid media strategy,
-          and related measurement activities. Services are provided only as
-          described in a written proposal or statement of work (SOW).
+          Services may include website due diligence audits, conversion and
+          funnel diagnostics, website and booking-flow optimization,
+          tracking and measurement setup, and controlled acquisition scaling.
+          Services are delivered only as described in a written proposal
+          or statement of work (SOW).
         </p>
         <p class="mt-4">
           We do not offer standardized packages. Scope, timelines, assumptions,
@@ -73,12 +75,12 @@ const contactEmail = 'hello@brandsbuilders.agency';
         <h2 class="text-2xl font-semibold text-white mb-4">3. Consultations & Free Diagnostics</h2>
         <p>
           Consultations or diagnostics offered at no cost are limited in scope
-          and provided at our discretion. They are not guarantees of results,
-          performance, or acceptance into a paid engagement.
+          and provided at our discretion. They are not guarantees of acceptance
+          into a paid engagement.
         </p>
         <p class="mt-4">
           Any recommendations provided are informational and based on publicly
-          available data unless otherwise agreed.
+          available data unless otherwise agreed in writing.
         </p>
       </div>
 
@@ -87,8 +89,8 @@ const contactEmail = 'hello@brandsbuilders.agency';
         <ul class="list-disc pl-6 space-y-2">
           <li>Fees are outlined in the applicable proposal or SOW.</li>
           <li>Invoices are payable according to stated terms.</li>
-          <li>Third-party costs (advertising spend, software, domains) are
-              paid directly by the client unless otherwise agreed.</li>
+          <li>Third-party costs (advertising spend, software, domains)
+              are paid directly by the client unless otherwise agreed.</li>
           <li>Late payments may result in paused services.</li>
         </ul>
       </div>
@@ -102,17 +104,40 @@ const contactEmail = 'hello@brandsbuilders.agency';
         </ul>
       </div>
 
+      <!-- UPDATED GUARANTEE SECTION -->
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">6. No Guarantees</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">6. Performance Guarantee</h2>
         <p>
-          We do not guarantee specific outcomes, including rankings, traffic,
-          revenue, bookings, or advertising performance. Results depend on
-          multiple factors outside our control.
+          Certain paid engagements may include a conditional performance
+          guarantee as defined in the applicable proposal or SOW.
+          Guarantee terms, required execution conditions, and measurement
+          criteria are outlined per engagement.
+        </p>
+        <p class="mt-4">
+          The guarantee applies only when agreed execution conditions
+          are met, including continuous campaign operation, required
+          spend levels, timely content delivery, and implementation
+          of recommended system changes.
+        </p>
+        <p class="mt-4">
+          If guarantee conditions are not met due to external factors,
+          business constraints, paused execution, or deviation from
+          recommendations, the guarantee becomes void.
         </p>
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">7. Intellectual Property</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">7. No Absolute Guarantees</h2>
+        <p>
+          Except where explicitly stated in a written proposal,
+          BrandsBuilders does not guarantee specific rankings,
+          traffic volume, revenue, bookings, or advertising performance.
+          Results depend on multiple factors outside our control.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-white mb-4">8. Intellectual Property</h2>
         <p>
           Upon full payment, ownership of final deliverables transfers to you,
           excluding third-party assets, open-source components, and internal
@@ -122,7 +147,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">8. Confidentiality</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">9. Confidentiality</h2>
         <p>
           Both parties agree to protect confidential information and use it
           solely for the purposes of the engagement.
@@ -130,7 +155,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">9. Privacy</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">10. Privacy</h2>
         <p>
           Personal information is handled in accordance with our
           <a href="/privacy-policy" class="underline ml-1">Privacy Policy</a>,
@@ -139,7 +164,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">10. Limitation of Liability</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">11. Limitation of Liability</h2>
         <p>
           To the maximum extent permitted by law, our total liability arising
           from any engagement is limited to the fees paid to us for the
@@ -148,7 +173,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">11. Termination</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">12. Termination</h2>
         <p>
           Either party may terminate an engagement in accordance with the
           applicable SOW. Fees earned prior to termination remain payable.
@@ -156,7 +181,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">12. Governing Law</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">13. Governing Law</h2>
         <p>
           These Terms are governed by the laws of the Province of Alberta and
           applicable Canadian federal law.
@@ -164,7 +189,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">13. Changes</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">14. Changes</h2>
         <p>
           We may update these Terms from time to time. Continued use of the
           website or services after changes are posted constitutes acceptance.
@@ -172,7 +197,7 @@ const contactEmail = 'hello@brandsbuilders.agency';
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-white mb-4">14. Contact</h2>
+        <h2 class="text-2xl font-semibold text-white mb-4">15. Contact</h2>
         <p>
           <strong>BrandsBuilders</strong><br />
           Alberta, Canada<br />

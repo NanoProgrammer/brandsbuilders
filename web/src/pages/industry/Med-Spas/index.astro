@@ -2,108 +2,124 @@
 import Layout from '../../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Client Acquisition Systems for Med Spas — BrandsBuilders',
+  title: 'Website Due Diligence for Medical Spas — BrandsBuilders',
   description:
-    'Client acquisition systems for medical spas in Alberta. We analyze demand, funnel leaks, and financial logic before scaling ads.',
-  canonical: 'https://brandsbuilders.agency/industry/med-spas',
+    'We help medical spas in Alberta uncover hidden website, tracking, and consultation-booking risks before investing in more traffic or ads.',
+  canonical: 'https://brandsbuilders.agency/industry/med-spas'
 };
 ---
 
 <Layout seo={seo}>
 
-  <!-- HERO -->
-  <section class="bg-slate-950 py-24">
-    <div class="container mx-auto px-6 max-w-4xl">
+<!-- HERO -->
+<section class="bg-slate-950 py-8 lg:py-16">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center">
 
+    <!-- LEFT -->
+    <div>
       <span class="block text-sm text-slate-400 mb-4">
         Industry · Medical Spas
       </span>
 
       <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-        Client acquisition systems for medical spas
+        Know if your med spa website is ready to scale — before spending more
       </h1>
 
-      <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
-        We help med spas in Alberta understand where qualified demand actually
-        comes from, why consultations don’t convert consistently, and whether
-        scaling makes financial sense — before increasing ad spend.
+      <p class="text-lg text-slate-400 leading-relaxed max-w-xl mb-8">
+        We run a Website Due Diligence Audit to determine whether your website,
+        tracking, and consultation booking flow can profitably support increased demand —
+        or if hidden leaks must be fixed first.
       </p>
 
+      <a
+        href="/apply"
+        class="inline-block border border-slate-600 px-6 py-3 text-white hover:border-white transition"
+      >
+        Apply for Free Audit →
+      </a>
     </div>
-  </section>
 
-  <!-- PROBLEMS -->
-  <section class="bg-slate-950 pb-20">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-      <h2 class="text-2xl font-medium text-white mb-6">
-        Common med spa growth problems we see
-      </h2>
-
-      <ul class="space-y-4 text-slate-400 leading-relaxed">
-        <li>• Paid ads generating low-quality or price-sensitive leads</li>
-        <li>• Consultations booked but not converting into treatments</li>
-        <li>• Heavy competition driving CPMs up in Meta Ads</li>
-        <li>• No clarity on lifetime value vs acquisition cost</li>
-        <li>• Offers that attract attention but not commitment</li>
-      </ul>
-
+    <!-- IMAGE -->
+    <div class="relative flex justify-center lg:justify-end">
+      <img
+        src="/industry/hero-medspa.webp"
+        alt="Medical spa website performance audit preview"
+        width="640"
+        height="420"
+        class="rounded-xl border border-slate-800 shadow-lg object-cover"
+        loading="eager"
+        decoding="async"
+      />
     </div>
-  </section>
 
-  <!-- DIAGNOSTIC -->
-  <section class="bg-slate-950 pb-24">
-    <div class="container mx-auto px-6 max-w-4xl">
+  </div>
+</section>
 
-      <h2 class="text-2xl font-medium text-white mb-6">
-        What our free diagnostic covers
-      </h2>
+<!-- PROBLEMS -->
+<section class="bg-slate-950 pb-20 border-t border-slate-800">
+  <div class="container mx-auto px-6 max-w-4xl">
 
-      <div class="space-y-4 text-slate-400 leading-relaxed">
-        <p>
-          Our diagnostic focuses on demand quality, conversion friction,
-          and financial viability — not vanity metrics.
-        </p>
+    <h2 class="text-2xl font-medium text-white mb-6">
+      Common med spa website issues
+    </h2>
 
-        <ul class="space-y-3">
-          <li>• Local demand and intent for your treatments</li>
-          <li>• Funnel clarity from ad → landing → consult</li>
-          <li>• Trust and authority signals impacting booking rates</li>
-          <li>• Break-even logic per patient and per package</li>
-        </ul>
+    <ul class="space-y-4 text-slate-400 leading-relaxed">
+      <li>• Paid traffic landing on slow or unclear pages</li>
+      <li>• Website visits that don’t convert into consultations</li>
+      <li>• Missing or broken booking / form tracking</li>
+      <li>• No visibility on cost per booked consultation</li>
+      <li>• Websites that cannot scale with CRM or booking systems</li>
+    </ul>
 
-        <p>
-          This allows you to decide if scaling is safe — or premature.
-        </p>
-      </div>
+  </div>
+</section>
 
+<!-- AUDIT -->
+<section class="bg-slate-950 pb-24">
+  <div class="container mx-auto px-6 max-w-4xl">
+
+    <h2 class="text-2xl font-medium text-white mb-6">
+      What the Website Due Diligence Audit evaluates
+    </h2>
+
+    <ul class="space-y-3 text-slate-400 leading-relaxed">
+      <li>• Core Web Vitals and mobile performance</li>
+      <li>• GA4 and consultation booking tracking accuracy</li>
+      <li>• Visitor journey friction from visit → form → booking</li>
+      <li>• Website ownership and scalability risks</li>
+    </ul>
+
+    <p class="mt-4 text-slate-400">
+      The result: a clear <strong>Go / Fix / No-Go</strong> recommendation before scaling traffic.
+    </p>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-slate-950 pb-32">
+  <div class="container mx-auto px-6 max-w-4xl">
+
+    <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
+      <h3 class="text-2xl font-medium text-white mb-4">
+        Want clarity before scaling consultations?
+      </h3>
+
+      <p class="text-slate-400 mb-6 leading-relaxed">
+        Apply for a free Website Due Diligence Audit.
+        Receive a clear verdict on whether your website is ready to scale —
+        or what must be fixed first.
+      </p>
+
+      <a
+        href="/apply"
+        class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
+      >
+        Apply for Free Audit →
+      </a>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="bg-slate-950 pb-32">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-      <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
-        <h3 class="text-2xl font-medium text-white mb-4">
-          Want clarity before scaling your med spa?
-        </h3>
-
-        <p class="text-slate-400 mb-6 leading-relaxed">
-          Apply for a free client acquisition diagnostic.
-          We’ll map demand, identify funnel leaks, and explain
-          whether growth makes financial sense for your clinic.
-        </p>
-
-        <a
-          href="/contact"
-          class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-        >
-          Apply for Free Diagnostic →
-        </a>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
 </Layout>

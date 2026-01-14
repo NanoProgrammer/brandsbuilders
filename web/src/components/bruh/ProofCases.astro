@@ -1,59 +1,106 @@
 ---
 const cases = [
   {
-    industry: 'Dental Clinic',
-    problem: 'Traffic existed, but bookings were inconsistent and attribution was unclear.',
-    change:
-      'We simplified the booking flow, restructured service pages, and implemented appointment-level tracking.',
-    result:
-      'Clear visibility into what drives booked appointments and which services convert.'
+    name: 'Artilate Chocolate',
+    stack: 'E-commerce · Website · GA4 · Google Search',
+    hero: '/proof/artilate-hero.webp',
+    gallery: [
+      '/proof/artilate-1.webp',
+      '/proof/artilate-2.webp'
+    ],
+    problem: 'Traffic existed but purchase attribution and funnel leakage were unclear.',
+    change: 'Built a high-performance e-commerce site, implemented GA4 purchase tracking, and optimized technical SEO.',
+    result: 'Clear visibility from visit → product → checkout → purchase, with measurable conversion paths.'
   },
   {
-    industry: 'HVAC Services',
-    problem:
-      'Ad spend was leaking into low-intent searches with no control over call quality.',
-    change:
-      'Search intent was rebuilt, GBP optimized, and calls tied directly to campaigns.',
-    result:
-      'Higher-quality inbound calls without increasing spend.'
+    name: 'GrillsGuard',
+    stack: 'Local Services · Website · GA4 · Google Ads · GBP',
+    hero: '/proof/grillsguard-hero.webp',
+    gallery: [
+      '/proof/grillsguard-1.webp',
+      '/proof/grillsguard-2.webp'
+    ],
+    problem: 'Ad spend leaked into low-intent clicks and calls were not tied to campaigns.',
+    change: 'Rebuilt landing pages, implemented GA4 call tracking, and connected Google Ads conversions.',
+    result: 'Higher-quality inbound calls with controlled cost per lead.'
   },
   {
-    industry: 'Med Spa',
-    problem:
-      'Paid social traffic existed, but ROI and client value were unclear.',
-    change:
-      'UGC-led messaging paired with simplified landing flows and clean conversion tracking.',
-    result:
-      'Lower CPA and clarity on which offers actually drive revenue.'
+    name: 'Gaplets',
+    stack: 'SaaS · Product UI · GA4 · Paid Acquisition',
+    hero: '/proof/gaplets-hero.webp',
+    gallery: [
+      '/proof/gaplets-1.webp',
+      '/proof/gaplets-2.webp'
+    ],
+    problem: 'Activation drop-offs were invisible and paid ROI could not be validated.',
+    change: 'Designed onboarding flows and implemented event-level GA4 activation tracking.',
+    result: 'Full activation funnel visibility and confident acquisition scaling.'
   }
 ];
 ---
-<section class="bg-slate-950 py-32">
-  <div class="container mx-auto px-6 max-w-3xl space-y-32">
+<section class="bg-slate-950 py-28">
+  <div class="container mx-auto px-6 max-w-6xl space-y-28">
+
     <h2 class="text-4xl font-semibold text-white">
-      How proof shows up in practice
+      Work that’s visible — not theoretical
     </h2>
 
     {cases.map((c) => (
-      <div class="space-y-8">
-        <p class="text-sm uppercase tracking-widest text-slate-400">
-          {c.industry}
-        </p>
+      <div class="space-y-10">
 
-        <p class="text-xl text-slate-200">
-          <span class="text-slate-400">Problem — </span>{c.problem}
-        </p>
+        <!-- HERO IMAGE -->
+        <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+          <img
+            src={c.hero}
+            alt={`${c.name} interface`}
+            class="w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
 
-        <p class="text-xl text-slate-200">
-          <span class="text-slate-400">Change — </span>{c.change}
-        </p>
+        <!-- CASE HEADER -->
+        <div>
+          <p class="text-sm uppercase tracking-widest text-slate-400">
+            {c.name}
+          </p>
+          <p class="text-slate-500 text-sm mt-1">
+            {c.stack}
+          </p>
+        </div>
 
-        <p class="text-xl text-slate-100 font-medium">
-          <span class="text-slate-400">Result — </span>{c.result}
-        </p>
+        <!-- GALLERY -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {c.gallery.map((img) => (
+            <div class="rounded-lg overflow-hidden border border-slate-800 bg-slate-900">
+              <img
+                src={img}
+                alt=""
+                class="w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
 
-        <div class="h-px bg-slate-800 mt-16"></div>
+        <!-- TEXT -->
+        <div class="space-y-4 max-w-3xl">
+          <p class="text-xl text-slate-200">
+            <span class="text-slate-400">Problem — </span>{c.problem}
+          </p>
+          <p class="text-xl text-slate-200">
+            <span class="text-slate-400">Change — </span>{c.change}
+          </p>
+          <p class="text-xl text-slate-100 font-medium">
+            <span class="text-slate-400">Result — </span>{c.result}
+          </p>
+        </div>
+
+        <div class="h-px bg-slate-800"></div>
+
       </div>
     ))}
+
   </div>
 </section>

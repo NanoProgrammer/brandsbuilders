@@ -8,7 +8,7 @@ export const GET: APIRoute = async () => {
   const now = new Date().toISOString();
 
   /* ============================
-     1) RUTAS FIJAS (REALES)
+     1) RUTAS FIJAS
   ============================ */
   const fixedRoutes = [
     "/",
@@ -19,11 +19,11 @@ export const GET: APIRoute = async () => {
     "/industry/services-home",
     "/process",
     "/proof",
-    
+    "/about",
   ];
 
   /* ============================
-     2) AUTO-DISCOVERY POR FOLDER
+     2) AUTO-DISCOVERY INDUSTRY
   ============================ */
   const pageFiles = [
     ...Object.keys(import.meta.glob("./industry/**/index.astro", { eager: true })),
@@ -38,8 +38,7 @@ export const GET: APIRoute = async () => {
   const discoveredPaths = pageFiles.map(toPath);
 
   /* ============================
-     3) BLOG SLUGS (ACTUAL)
-     (mock — mantenlo sincronizado)
+     3) BLOG SLUGS
   ============================ */
   const blogSlugs = [
     "client-acquisition-systems-alberta",
@@ -64,7 +63,7 @@ export const GET: APIRoute = async () => {
   const priority = (path: string) => {
     if (path === "/") return "1.0";
     if (["/apply", "/Free-Acquisition-Diagnostic"].includes(path)) return "0.9";
-    if (["/services-home", "/blog"].includes(path)) return "0.8";
+    if (path === "/industry/services-home") return "0.8";
     if (path.startsWith("/industry/")) return "0.75";
     if (path.startsWith("/blog/")) return "0.7";
     return "0.6";

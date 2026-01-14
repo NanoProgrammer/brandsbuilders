@@ -8,12 +8,12 @@ export default function BookingSection() {
         </p>
 
         <a
-          href="https://cal.com/brandsbuilders/15min"
+          href="https://cal.com/brandsbuilders/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-4 border border-slate-700 px-5 py-2 text-white hover:border-slate-500 transition"
         >
-          Book a 15-minute call →
+          Book Free Website Audit →
         </a>
       </div>
     </section>
