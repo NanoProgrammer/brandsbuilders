@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Image } from "astro:assets";
-import heroAudit from "../../assets/hero-website-audit.jpg";
 
 const seo = {
   title: 'Free Website Due Diligence Audit | BrandsBuilders',
@@ -9,6 +7,7 @@ const seo = {
     'A free working session to uncover website performance, tracking, and conversion risks before you invest more traffic or ad spend.',
   canonical: 'https://brandsbuilders.agency/free-website-audit'
 };
+
 
 const bullets = [
   {
@@ -21,11 +20,11 @@ const bullets = [
   },
   {
     title: 'Tracking & attribution check',
-    desc: 'We verify GA4, form, call, and booking tracking to ensure decisions are based on real data — not guesses.'
+    desc: 'We verify GA4, form, call, and booking tracking to ensure future decisions are based on real data — not guesses.'
   },
   {
     title: 'Scalability & structure review',
-    desc: 'We assess whether your website can support booking systems, CRM, or paid traffic without requiring a rebuild.'
+    desc: 'We assess whether your website can support booking systems, CRM, or paid traffic without requiring a full rebuild.'
   },
   {
     title: 'Ownership & risk audit',
@@ -33,10 +32,11 @@ const bullets = [
   }
 ];
 
+
 const faqs = [
   {
     q: 'Is this a sales call?',
-    a: 'No. It is a working session to evaluate whether your website is ready to scale safely. You receive a clear Go / No-Go verdict.'
+    a: 'No. It is a working session to evaluate whether your website is ready to scale safely. You receive a clear Go / No-Go verdict. Implementation is discussed only if it makes sense.'
   },
   {
     q: 'Who is this audit for?',
@@ -44,34 +44,31 @@ const faqs = [
   },
   {
     q: 'Do you need access to my accounts?',
-    a: 'No. The audit starts using public signals. Access is requested only if you later proceed with implementation.'
+    a: 'No. The audit starts using public signals such as your website, search presence, and visible tracking behavior. Access is requested only if you later proceed with implementation.'
   },
   {
     q: 'What do I receive after the call?',
-    a: 'A short written recap outlining discovered risks, priority fixes, and a clear recommendation.'
+    a: 'A short written recap outlining discovered risks, priority fixes, and a clear recommendation: scale safely, fix foundations, or pause.'
   }
 ];
+
 ---
 
 <Layout seo={seo}>
-
-  <!-- HERO (LCP OPTIMIZED) -->
-  <section class="bg-slate-950 py-6 lg:py-12">
-    <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Text -->
-      <div>
+  <!-- Hero -->
+  <section class="bg-slate-950 text-white py-20 lg:py-28 border-b border-slate-800">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="max-w-3xl">
         <p class="text-sm text-slate-400 mb-4">
           Free Website Due Diligence Audit
         </p>
-
-        <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-          Know if your website is ready for growth — before spending more
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
+          Clarity before you invest more into marketing
         </h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-10">
+          A free working session to uncover hidden website performance, tracking,
+and conversion risks before you invest more traffic or ad spend.
 
-        <p class="text-lg text-slate-400 leading-relaxed max-w-xl mb-8">
-          A free working session to uncover hidden website performance,
-          tracking, and conversion risks before investing in more traffic or ads.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
@@ -79,9 +76,8 @@ const faqs = [
             href="/apply"
             class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition text-center"
           >
-            Apply for the audit →
+            Apply for the consultation →
           </a>
-
           <a
             href="/process"
             class="inline-block px-8 py-4 border border-slate-800 rounded-lg text-slate-300 hover:text-white hover:border-slate-600 transition text-center"
@@ -91,35 +87,23 @@ const faqs = [
         </div>
 
         <p class="mt-6 text-sm text-slate-500">
-          No pitch. No pressure. Just clarity.
+          Not a sales call. Not a pitch deck. Just a clear decision path.
         </p>
       </div>
-
-      <!-- Image -->
-      <div class="flex justify-center lg:justify-end">
-        <Image
-          src={heroAudit}
-          alt="Website performance and conversion audit dashboard"
-          width={620}
-          height={440}
-          priority
-          class="rounded-xl border border-slate-800 object-cover"
-        />
-      </div>
-
     </div>
   </section>
 
-  <!-- WHAT IT EVALUATES -->
-  <section class="bg-white py-20 border-t border-slate-200">
-    <div class="container mx-auto px-6 max-w-6xl">
-
+  <!-- What you get -->
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
       <div class="mb-12 max-w-3xl">
         <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
           What the audit evaluates
+
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          We focus on the factors that determine whether scaling is safe — not guesswork.
+          We focus on the decision factors that actually determine whether growth can work —
+          demand, leakage, and financial viability.
         </p>
       </div>
 
@@ -131,25 +115,28 @@ const faqs = [
           </div>
         ))}
       </div>
-
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="bg-white py-20 border-t border-slate-200">
-    <div class="container mx-auto px-6 max-w-6xl">
-
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-10 text-slate-900">
-        How it works
-      </h2>
+  <!-- How it works -->
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+      <div class="mb-12 max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
+          How it works
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          The goal is to leave the call with clarity: what to fix first, what to ignore,
+          and what the next logical step is.
+        </p>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
         <div>
           <p class="text-sm text-slate-500 mb-2">Step 1</p>
           <h3 class="text-lg font-medium text-slate-900 mb-2">You apply</h3>
           <p class="text-slate-600 leading-relaxed">
-            A short form to confirm fit and context.
+            A short form to confirm fit (business model, revenue range, capacity, and location).
           </p>
         </div>
 
@@ -157,29 +144,29 @@ const faqs = [
           <p class="text-sm text-slate-500 mb-2">Step 2</p>
           <h3 class="text-lg font-medium text-slate-900 mb-2">We review</h3>
           <p class="text-slate-600 leading-relaxed">
-            We analyze your site and public signals before the call.
+            We pre-check your public signals (site, search presence, GBP) so the call is practical.
           </p>
         </div>
 
         <div>
           <p class="text-sm text-slate-500 mb-2">Step 3</p>
-          <h3 class="text-lg font-medium text-slate-900 mb-2">You get clarity</h3>
+          <h3 class="text-lg font-medium text-slate-900 mb-2">You leave with a decision</h3>
           <p class="text-slate-600 leading-relaxed">
-            You receive a Go / No-Go decision and priority fixes.
+            A clear recommendation: fix foundations, build a system, or pause until constraints change.
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="bg-white py-20 border-t border-slate-200">
-    <div class="container mx-auto px-6 max-w-5xl">
-
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-10 text-slate-900">
-        FAQ
-      </h2>
+  <section class="bg-white py-20 border-b border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <div class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
+          FAQ
+        </h2>
+      </div>
 
       <div class="space-y-4">
         {faqs.map((f) => (
@@ -193,30 +180,24 @@ const faqs = [
           </details>
         ))}
       </div>
-
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- Final CTA -->
   <section class="bg-slate-950 text-white py-20 border-t border-slate-800">
-    <div class="container mx-auto px-6 max-w-5xl text-center">
-
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
       <h2 class="text-2xl sm:text-3xl font-semibold mb-6">
-        Ready for clarity?
+        If you want clarity, apply.
       </h2>
-
       <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        If you're planning to invest in growth, this audit prevents costly mistakes.
+        If we’re a fit, you’ll get a clear decision path. If not, you’ll still leave with the right next step.
       </p>
-
       <a
         href="/apply"
         class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition"
       >
         Book Free Website Audit →
       </a>
-
     </div>
   </section>
-
 </Layout>
