@@ -3,11 +3,9 @@ const cases = [
   {
     name: 'Artilate Chocolate',
     stack: 'E-commerce · Website · GA4 · Google Search',
-    hero: '/proof/artilate-hero.webp',
-    gallery: [
-      '/proof/artilate-1.webp',
-      '/proof/artilate-2.webp'
-    ],
+    slug: 'artilate',
+    hero: 'artilate-hero',
+    gallery: ['artilate-1', 'artilate-2'],
     problem: 'Traffic existed but purchase attribution and funnel leakage were unclear.',
     change: 'Built a high-performance e-commerce site, implemented GA4 purchase tracking, and optimized technical SEO.',
     result: 'Clear visibility from visit → product → checkout → purchase, with measurable conversion paths.'
@@ -15,11 +13,9 @@ const cases = [
   {
     name: 'GrillsGuard',
     stack: 'Local Services · Website · GA4 · Google Ads · GBP',
-    hero: '/proof/grillsguard-hero.webp',
-    gallery: [
-      '/proof/grillsguard-1.webp',
-      '/proof/grillsguard-2.webp'
-    ],
+    slug: 'grillsguard',
+    hero: 'grillsguard-hero',
+    gallery: ['grillsguard-1', 'grillsguard-2'],
     problem: 'Ad spend leaked into low-intent clicks and calls were not tied to campaigns.',
     change: 'Rebuilt landing pages, implemented GA4 call tracking, and connected Google Ads conversions.',
     result: 'Higher-quality inbound calls with controlled cost per lead.'
@@ -27,17 +23,16 @@ const cases = [
   {
     name: 'Gaplets',
     stack: 'SaaS · Product UI · GA4 · Paid Acquisition',
-    hero: '/proof/gaplets-hero.webp',
-    gallery: [
-      '/proof/gaplets-1.webp',
-      '/proof/gaplets-2.webp'
-    ],
+    slug: 'gaplets',
+    hero: 'gaplets-hero',
+    gallery: ['gaplets-1', 'gaplets-2'],
     problem: 'Activation drop-offs were invisible and paid ROI could not be validated.',
     change: 'Designed onboarding flows and implemented event-level GA4 activation tracking.',
     result: 'Full activation funnel visibility and confident acquisition scaling.'
   }
 ];
 ---
+
 <section class="bg-slate-950 py-28">
   <div class="container mx-auto px-6 max-w-6xl space-y-28">
 
@@ -48,15 +43,44 @@ const cases = [
     {cases.map((c) => (
       <div class="space-y-10">
 
-        <!-- HERO IMAGE -->
+        <!-- HERO IMAGE (OPTIMIZED) -->
         <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-          <img
-            src={c.hero}
-            alt={`${c.name} interface`}
-            class="w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
+          <picture>
+
+            <!-- AVIF -->
+            <source
+              type="image/avif"
+              srcset={`
+                /proof/${c.hero}-480.avif 480w,
+                /proof/${c.hero}-768.avif 768w,
+                /proof/${c.hero}-1200.avif 1200w
+              `}
+              sizes="(min-width:1024px) 960px, 100vw"
+            />
+
+            <!-- WebP -->
+            <source
+              type="image/webp"
+              srcset={`
+                /proof/${c.hero}-480.webp 480w,
+                /proof/${c.hero}-768.webp 768w,
+                /proof/${c.hero}-1200.webp 1200w
+              `}
+              sizes="(min-width:1024px) 960px, 100vw"
+            />
+
+            <!-- Fallback -->
+            <img
+              src={`/proof/${c.hero}-768.webp`}
+              width="768"
+              height="432"
+              alt={`${c.name} interface`}
+              loading="eager"
+              decoding="async"
+              class="w-full object-cover"
+            />
+
+          </picture>
         </div>
 
         <!-- CASE HEADER -->
@@ -69,12 +93,12 @@ const cases = [
           </p>
         </div>
 
-        <!-- GALLERY -->
+        <!-- GALLERY (UNCHANGED) -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           {c.gallery.map((img) => (
             <div class="rounded-lg overflow-hidden border border-slate-800 bg-slate-900">
               <img
-                src={img}
+                src={`/proof/${img}.webp`}
                 alt=""
                 class="w-full object-cover"
                 loading="lazy"
