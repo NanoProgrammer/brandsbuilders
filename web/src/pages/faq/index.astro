@@ -2,40 +2,40 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'FAQ — Client Acquisition Consulting | BrandsBuilders',
+  title: 'FAQ — Customer Leak Scan & Growth Systems | BrandsBuilders',
   description:
-    'Clear answers about our consultation process, how we evaluate growth opportunities, and what working together actually looks like.',
+    'Clear answers about our free Customer Leak Scan call, how we identify lost leads on your website, and what working together looks like.',
   canonical: 'https://brandsbuilders.ca/faq'
 };
 
 const faqs = [
   {
-    category: 'The Website Audit',
+    category: 'The Customer Leak Scan',
     questions: [
       {
-        question: 'What is the Website Due Diligence Audit?',
+        question: 'What is the Customer Leak Scan?',
         answer:
-          'It is a structured review of your website’s performance, tracking, structure, and ownership. The goal is to determine whether your website is ready to safely handle more traffic — or if hidden risks need fixing first.'
+          'It is a free 20–30 minute live call where we review your website and identify where potential customers are dropping off due to performance, tracking, structure, or ownership issues.'
       },
       {
         question: 'Is this a sales call?',
         answer:
-          'No. The audit is a working session. You receive a clear Go / No-Go verdict on whether your website is ready to scale. Implementation is discussed only if it genuinely makes sense.'
+          'No. The call is a working session. You receive a clear Go / No-Go verdict on whether your website is ready to scale safely. Implementation is discussed only if it genuinely makes sense.'
       },
       {
-        question: 'Who is the audit for?',
+        question: 'Who is the Customer Leak Scan for?',
         answer:
-          'Owner-led service businesses in Alberta that are planning to invest in growth and want clarity before spending more on ads, SEO, or redesigns.'
+          'Owner-led service businesses in Alberta that already have a website and want to understand whether it is capturing customers — or quietly losing them.'
       },
       {
-        question: 'Is the audit free?',
+        question: 'Is the call free?',
         answer:
-          'Yes. The audit exists to determine fit and uncover risks early. There is no obligation to proceed afterward.'
+          'Yes. The purpose of the call is to determine fit and uncover leaks early. There is no obligation to proceed afterward.'
       },
       {
         question: 'Do you review anything before the call?',
         answer:
-          'Yes. We review your website, Core Web Vitals, public search presence, and basic tracking signals in advance so the session is practical and focused.'
+          'Yes. We pre-check your website performance, Core Web Vitals, public search presence, and basic tracking signals so the session is practical and focused.'
       }
     ]
   },
@@ -45,17 +45,17 @@ const faqs = [
       {
         question: 'What does BrandsBuilders actually do?',
         answer:
-          'We help businesses turn their websites into high-performance, fully owned growth assets. That may involve optimization, rebuilding, or system design — but only after risks are clearly identified.'
+          'We help businesses turn their websites into high-performance, fully owned growth systems. That may involve optimization or rebuilding — but only after leaks and risks are clearly identified.'
       },
       {
         question: 'Do you sell standalone services?',
         answer:
-          'No. We do not sell isolated tactics like “just ads” or “just design.” Sending traffic to weak foundations wastes budget. Foundations come first.'
+          'No. We do not sell isolated tactics like “just ads” or “just design.” Sending traffic to a leaking foundation wastes budget. Foundations come first.'
       },
       {
-        question: 'How do you decide what happens after the audit?',
+        question: 'How do you decide what happens after the scan?',
         answer:
-          'If the website is already strong, we explain how to scale safely. If risks are found, we outline the minimum work required to fix them. If growth is premature, we say so.'
+          'If the website is already strong, we explain how to scale safely. If leaks are found, we outline the minimum work required to fix them. If growth is premature, we say so.'
       },
       {
         question: 'Can you work with my existing website?',
@@ -100,12 +100,12 @@ const faqs = [
       {
         question: 'Do you guarantee results?',
         answer:
-          'We do not promise outcomes before foundations are fixed. What we guarantee is clarity: you will know exactly whether your website is safe to scale — and what to do next.'
+          'We do not promise outcomes before foundations are fixed. What we guarantee is clarity: you will know exactly whether your website is capturing customers — and what to do next.'
       },
       {
-        question: 'How long does fixing take if risks are found?',
+        question: 'How long does fixing take if leaks are found?',
         answer:
-          'Most website foundation fixes take between 2–4 weeks depending on scope. Exact timelines are explained after the audit.'
+          'Most foundation fixes take between 2–4 weeks depending on scope. Exact timelines are explained after the scan.'
       },
       {
         question: 'Do you only work in Alberta?',
@@ -127,8 +127,8 @@ const faqs = [
         Frequently asked questions
       </h1>
       <p class="text-lg text-slate-600">
-        Clear answers about how we work, what to expect, and how to decide
-        whether investing in client acquisition makes sense.
+        Clear answers about the Customer Leak Scan, how we work,
+        and how to decide whether fixing your website foundation makes sense.
       </p>
     </div>
   </section>
@@ -137,14 +137,14 @@ const faqs = [
   <section class="bg-white py-20">
     <div class="container mx-auto px-4 max-w-4xl">
 
-      {faqs.map((category, categoryIndex) => (
+      {faqs.map((category) => (
         <div class="mb-16">
           <h2 class="text-2xl font-semibold mb-8 text-slate-900">
             {category.category}
           </h2>
 
           <div class="space-y-4">
-            {category.questions.map((faq, index) => (
+            {category.questions.map((faq) => (
               <details class="border border-slate-200 rounded-lg p-6">
                 <summary class="font-medium cursor-pointer text-slate-900">
                   {faq.question}
@@ -161,13 +161,13 @@ const faqs = [
       <!-- Final CTA -->
       <div class="mt-20 text-center border-t border-slate-200 pt-10">
         <p class="text-slate-700 mb-6">
-          If you still have questions, the consultation is the best place to address them.
+          Still have questions? The free Customer Leak Scan call is the best place to get clarity.
         </p>
         <a
           href="/apply"
           class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-slate-900 hover:border-slate-900 transition"
         >
-          Apply for a Consultation →
+          Book Free Call →
         </a>
       </div>
 
