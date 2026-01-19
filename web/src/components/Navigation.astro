@@ -65,25 +65,3 @@
   </div>
 </nav>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const openIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    btn?.addEventListener('click', () => {
-      menu?.classList.toggle('hidden');
-      openIcon?.classList.toggle('hidden');
-      closeIcon?.classList.toggle('hidden');
-    });
-
-    menu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
-    });
-  });
-</script>
