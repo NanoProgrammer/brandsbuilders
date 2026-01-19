@@ -73,18 +73,26 @@ import '../styles/global.css';
     "areaServed":["Calgary","Edmonton","Airdrie"]
   })} />
 
-  <!-- Google Analytics (async, non-blocking) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXEQQW4KHT"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WXEQQW4KHT');
-  </script>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" />
 </head>
+<script>
+  // Load Google Analytics only after first paint
+  window.addEventListener('load', () => {
+    const s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXEQQW4KHT';
+    s.async = true;
+    document.head.appendChild(s);
+
+    s.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WXEQQW4KHT');
+    };
+  });
+</script>
 
 <body class="gradient-bg text-white overflow-x-hidden">
   <Navigation />
