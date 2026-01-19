@@ -21,12 +21,36 @@
 
       <!-- Case 1 — Artilate -->
       <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-        <img
-          src="/proof/artilate-hero.webp"
-          alt="Artilate Chocolate e-commerce website"
-          class="w-full h-40 object-cover border-b border-slate-800"
-          loading="lazy"
-        />
+       <picture>
+  <source
+    type="image/avif"
+    srcset="
+      /proof/artilate-hero-480.avif 480w,
+      /proof/artilate-hero.avif 1024w
+    "
+    sizes="(min-width: 768px) 340px, 100vw"
+  />
+
+  <source
+    type="image/webp"
+    srcset="
+      /proof/artilate-hero-480.webp 480w,
+      /proof/artilate-hero.webp 1024w
+    "
+    sizes="(min-width: 768px) 340px, 100vw"
+  />
+
+  <img
+    src="/proof/artilate-hero.webp"
+    width="768"
+    height="432"
+    alt="Artilate Chocolate e-commerce website"
+    loading="lazy"
+    decoding="async"
+    class="w-full h-40 object-cover border-b border-slate-800"
+  />
+</picture>
+
         <div class="p-6">
           <p class="text-sm text-slate-400 mb-2">
             E-commerce · Alberta
@@ -51,12 +75,39 @@
 
       <!-- Case 2 — GrillsGuard -->
       <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-        <img
-          src="/proof/grillsguard-hero.webp"
-          alt="GrillsGuard service business website"
-          class="w-full h-40 object-cover border-b border-slate-800"
-          loading="lazy"
-        />
+        <picture>
+  <!-- AVIF -->
+  <source
+    type="image/avif"
+    srcset="
+      /proof/grillsguard-hero-480.avif 480w,
+      /proof/grillsguard-hero.avif 1024w
+    "
+    sizes="(min-width: 768px) 340px, 100vw"
+  />
+
+  <!-- WebP fallback -->
+  <source
+    type="image/webp"
+    srcset="
+      /proof/grillsguard-hero-480.webp 480w,
+      /proof/grillsguard-hero.webp 1024w
+    "
+    sizes="(min-width: 768px) 340px, 100vw"
+  />
+
+  <!-- Final fallback -->
+  <img
+    src="/proof/grillsguard-hero-768.webp"
+    width="768"
+    height="432"
+    alt="GrillsGuard service business website"
+    loading="lazy"
+    decoding="async"
+    class="w-full h-40 object-cover border-b border-slate-800"
+  />
+</picture>
+
         <div class="p-6">
           <p class="text-sm text-slate-400 mb-2">
             Local service · Calgary
