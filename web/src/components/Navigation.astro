@@ -5,15 +5,25 @@
   <div class="container mx-auto px-6">
     <div class="flex items-center justify-between h-16 sm:h-20">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <img 
-          src="/logo.webp" 
-          alt="BrandsBuilders logo"
-          class="h-18 sm:h-36 w-auto transition hover:opacity-90"
-        />
-        <span class="sr-only">BrandsBuilders</span>
-      </a>
+      <!-- Preload in <head> -->
+<link rel="preload" as="image" href="/logo.webp" type="image/webp">
+
+<!-- Logo -->
+<a href="/" class="flex items-center">
+  <img
+    src="/logo.webp"
+    alt="BrandsBuilders logo"
+    width="360"
+    height="140"
+    class="h-28 sm:h-36 w-auto transition hover:opacity-90"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    sizes="(min-width: 640px) 9rem, 4.5rem"
+  />
+  
+</a>
+
 
       <!-- Desktop Nav -->
       <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
