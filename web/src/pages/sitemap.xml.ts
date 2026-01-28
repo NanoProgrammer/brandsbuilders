@@ -42,6 +42,8 @@ export const GET: APIRoute = async () => {
   ============================ */
   const blogSlugs = [
     "client-acquisition-systems-alberta",
+    "when-growth-does-not-make-sense",
+    "why-ads-fail-local-businesses"
   ];
 
   const blogPaths = blogSlugs.map((s) => `/blog/${s}`);
