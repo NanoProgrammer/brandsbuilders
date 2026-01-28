@@ -19,13 +19,17 @@ export const GET: APIRoute = async () => {
     "/process",
     "/proof",
     "/about",
+    "/industry/services-home",
+    "/industry/Dental-Clinics",
+    "/industry/HVAC",
+    "/industry/Med-Spas",
   ];
 
   /* ============================
      2) AUTO-DISCOVERY INDUSTRY
   ============================ */
   const pageFiles = [
-    ...Object.keys(import.meta.glob("https://brandsbuilders.ca/industry/**/index.astro", { eager: true })),
+    ...Object.keys(import.meta.glob("/industry/**/index.astro", { eager: true })),
   ];
 
   const toPath = (file: string) =>
