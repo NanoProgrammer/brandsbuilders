@@ -25,7 +25,7 @@ export const GET: APIRoute = async () => {
      2) AUTO-DISCOVERY INDUSTRY
   ============================ */
   const pageFiles = [
-    ...Object.keys(import.meta.glob("/industry/**/index.astro", { eager: true })),
+    ...Object.keys(import.meta.glob("./industry/**/index.astro", { eager: true })),
   ];
 
   const toPath = (file: string) =>
