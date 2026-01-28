@@ -4,7 +4,7 @@ import type { APIRoute } from "astro";
 export const prerender = true;
 
 export const GET: APIRoute = async () => {
-  const base = "https://brandsbuilders.agency";
+  const base = "https://brandsbuilders.ca";
   const now = new Date().toISOString();
 
   /* ============================
