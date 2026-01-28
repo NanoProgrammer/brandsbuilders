@@ -2,174 +2,301 @@
 import Layout from '../../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Service Business Customer Leak Scan — BrandsBuilders',
+  title: 'Customer Leak Scan for Service Businesses — BrandsBuilders',
   description:
-    'We help Alberta service businesses uncover where their websites are losing customers before investing more in traffic or ad spend.',
+    'We help Alberta service businesses uncover where their websites are losing customers before investing more in traffic or ads.',
   canonical: 'https://brandsbuilders.ca/industry/services-home'
 };
 ---
 
 <Layout seo={seo}>
 
-  <!-- HERO -->
-  <section class="bg-slate-950 py-8 lg:py-16">
-    <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center">
+<!-- HERO -->
+<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
 
-      <!-- LEFT -->
-      <div>
-        <span class="block text-sm text-slate-400 mb-4">
-          Services
-        </span>
+  <!-- neutral ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/20"></div>
+  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
 
-        <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-          See where your website is losing customers
-        </h1>
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
 
-        <p class="text-lg text-slate-400 leading-relaxed max-w-xl">
-          We help Alberta service businesses uncover hidden performance,
-          tracking, and conversion leaks — before increasing traffic or ad spend.
-        </p>
+    <!-- LEFT -->
+    <div class="reveal">
+      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
+        Service Businesses · Alberta
+      </span>
+
+      <h1 class="text-5xl font-semibold leading-tight">
+        Stop losing customers  
+        <span class="text-fuchsia-300">before they ever contact you</span>.
+      </h1>
+
+      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        A free Customer Leak Scan reveals whether your website,
+        tracking, and booking flows capture demand —
+        or quietly let customers slip away.
+      </p>
+
+      <div class="mt-10">
+        <a href="/apply"
+          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                 shadow-lg shadow-fuchsia-600/30
+                 hover:translate-y-[-1px] transition">
+          Book Free Leak Scan →
+        </a>
       </div>
 
-      <!-- RIGHT IMAGE -->
-      <div class="relative flex justify-center lg:justify-end">
+      <p class="mt-5 text-sm text-slate-500">
+        No pitch. No pressure. Just clarity.
+      </p>
+    </div>
+
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative reveal">
+
+      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
         <img
           src="/industry/hero-services.webp"
-          alt="Website customer leak scan dashboard"
-          width="640"
-          height="420"
-          class="rounded-xl border border-slate-800 shadow-lg object-cover"
+          alt="Customer acquisition diagnostic dashboard"
+          class="w-full object-cover"
           loading="eager"
           decoding="async"
         />
       </div>
 
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="bg-slate-950 pb-20 border-t border-slate-800">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-      <h2 class="text-2xl font-medium text-white mb-6">
-        Who this is for
-      </h2>
-
-      <ul class="space-y-4 text-slate-400 leading-relaxed">
-        <li>• Service businesses getting traffic but inconsistent bookings</li>
-        <li>• Owners unsure if their website is helping or hurting growth</li>
-        <li>• Teams planning to run ads without technical clarity</li>
-        <li>• Businesses preparing to scale — not guess</li>
-      </ul>
+      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
+        Performance · Tracking · Conversion
+      </div>
 
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="bg-slate-950 pb-20">
-    <div class="container mx-auto px-6 max-w-4xl">
+  </div>
+</section>
 
-      <h2 class="text-2xl font-medium text-white mb-6">
+
+
+<!-- WHO IT'S FOR -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
+      Who this is built for
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Getting website visits but inconsistent bookings.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Unsure if your website helps or hurts growth.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Planning to run ads without technical clarity.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Ready to scale — not guess.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- HOW IT WORKS -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16">
+
+    <!-- LEFT -->
+    <div class="reveal">
+      <h2 class="text-3xl font-semibold text-white mb-6">
         How we work
       </h2>
 
-      <div class="space-y-4 text-slate-400 leading-relaxed">
-        <p>
-          We don’t start with redesigns or ads.
-          We start with a free Customer Leak Scan call.
+      <p class="text-slate-400 mb-8">
+        We don’t start with redesigns or ads.
+        We start by diagnosing reality.
+      </p>
+
+      <ul class="space-y-6 text-slate-300">
+
+        <li class="flex gap-4">
+          <span class="text-orange-400">▸</span>
+          Core Web Vitals and mobile performance
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-pink-400">▸</span>
+          GA4 and conversion tracking verification
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-fuchsia-400">▸</span>
+          Visitor → call → booking friction
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-emerald-400">▸</span>
+          Ownership and scalability risk review
+        </li>
+
+      </ul>
+
+      <p class="mt-8 text-slate-400">
+        You leave with a clear <strong class="text-white">Go / Fix / No-Go</strong> verdict
+        before spending more.
+      </p>
+    </div>
+
+
+    <!-- RIGHT PANEL -->
+    <div class="relative reveal">
+
+      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
+
+        <p class="text-sm text-slate-400 mb-3">
+          Typical diagnostic snapshot
         </p>
 
-        <ul class="space-y-3">
-          <li>• Core Web Vitals and mobile performance</li>
-          <li>• GA4 and conversion tracking accuracy</li>
-          <li>• Visitor → call → booking journey friction</li>
-          <li>• Website ownership and scalability risks</li>
-        </ul>
+        <div class="space-y-3 text-slate-300 text-sm">
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Mobile Speed</span>
+            <span class="text-emerald-400">Good</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Tracking Setup</span>
+            <span class="text-pink-400">Missing</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Booking Flow</span>
+            <span class="text-fuchsia-400">High Friction</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Ownership Risk</span>
+            <span class="text-emerald-400">Clear</span>
+          </div>
+        </div>
 
-        <p>
-          Only once your foundation is proven solid
-          do we discuss fixing or scaling.
-        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- INDUSTRIES -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
+      Industries we specialize in
+    </h2>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+
+      <a href="/industry/hvac"
+        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-sky-400 transition">
+        <h3 class="text-lg font-medium text-white mb-2">HVAC & Home Services</h3>
+        <p class="text-slate-400 text-sm">Urgent booking-driven demand.</p>
+      </a>
+
+      <a href="/industry/dental"
+        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-emerald-400 transition">
+        <h3 class="text-lg font-medium text-white mb-2">Dental Clinics</h3>
+        <p class="text-slate-400 text-sm">Patient trust and conversion.</p>
+      </a>
+
+      <a href="/industry/med-spa"
+        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-pink-400 transition">
+        <h3 class="text-lg font-medium text-white mb-2">Medical Spas</h3>
+        <p class="text-slate-400 text-sm">High-value consultation demand.</p>
+      </a>
+
+      <div class="reveal border border-slate-800 p-6 rounded-xl bg-slate-900/40">
+        <h3 class="text-lg font-medium text-white mb-2">More industries soon</h3>
+        <p class="text-slate-500 text-sm">Landscaping · Plumbing · Roofing</p>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INDUSTRIES -->
-  <section class="bg-slate-950 pb-24">
-    <div class="container mx-auto px-6 max-w-4xl">
 
-      <h2 class="text-2xl font-medium text-white mb-8">
-        Industries we work with
-      </h2>
 
-      <div class="grid sm:grid-cols-2 gap-6">
+<!-- CTA -->
+<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
 
-        <a
-          href="/industry/hvac"
-          class="block border border-slate-800 p-6 rounded-lg hover:border-slate-600 transition"
-        >
-          <h3 class="text-lg font-medium text-white mb-2">
-            HVAC & Home Services
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Booking-driven service demand.
-          </p>
-        </a>
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/15 via-pink-500/15 to-fuchsia-600/15 blur-3xl"></div>
 
-        <a
-          href="/industry/dental"
-          class="block border border-slate-800 p-6 rounded-lg hover:border-slate-600 transition"
-        >
-          <h3 class="text-lg font-medium text-white mb-2">
-            Dental Clinics
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Patient trust and appointment conversion.
-          </p>
-        </a>
+  <div class="relative container mx-auto px-6 max-w-4xl reveal">
 
-        <a
-          href="/industry/med-spa"
-          class="block border border-slate-800 p-6 rounded-lg hover:border-slate-600 transition"
-        >
-          <h3 class="text-lg font-medium text-white mb-2">
-            Medical Spas
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Consultation booking and competitive markets.
-          </p>
-        </a>
+    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
+      Start with clarity, not guesswork
+    </h2>
 
-      </div>
+    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+      Book your free Customer Leak Scan
+      and know exactly what to fix before scaling.
+    </p>
 
-    </div>
-  </section>
+    <a
+      href="/apply"
+      class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+             text-white shadow-lg shadow-fuchsia-600/30
+             hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+    >
+      Book Free Leak Scan →
+    </a>
 
-  <!-- CTA -->
-  <section class="bg-slate-950 pb-32">
-    <div class="container mx-auto px-6 max-w-4xl">
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
 
-      <div class="bg-slate-900 border border-slate-800 p-8 rounded-lg">
-        <h3 class="text-2xl font-medium text-white mb-4">
-          Start with clarity
-        </h3>
+  </div>
+</section>
 
-        <p class="text-slate-400 mb-6 leading-relaxed">
-          Book a free Customer Leak Scan call.
-          Get a clear Go / No-Go verdict on whether your website
-          is ready to scale safely.
-        </p>
 
-        <a
-          href="/apply"
-          class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-        >
-          Book Free Call →
-        </a>
-      </div>
 
-    </div>
-  </section>
+<!-- Reveal animation -->
+<script is:inline>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+<style is:global>
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
+                transform 700ms cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
 
 </Layout>

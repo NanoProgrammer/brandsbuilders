@@ -1,185 +1,150 @@
 ---
-/* ProofPreview.astro — Real proof, real projects */
+// ProofPreview.astro
 ---
+<section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
 
-<section class="bg-slate-950 text-white py-20 lg:py-28 border-t border-slate-800">
-  <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+  <!-- background glow -->
+  <div class="absolute -top-40 -left-20 w-80 h-80 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
+
+  <div class="relative container mx-auto px-6 max-w-6xl">
 
     <!-- Header -->
-    <div class="mb-14 text-center lg:text-left">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">
-        Proof through real systems — not promises
+    <div class="mb-14 reveal">
+      <h2 class="text-3xl lg:text-4xl font-semibold">
+        Proof, not promises.
       </h2>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0">
-        We don’t sell theory. We design, build, and operate real acquisition
-        systems — across e-commerce, service businesses, and SaaS.
+      <p class="mt-4 text-slate-400 max-w-3xl">
+        Real code. Real performance. Real ownership.
+        Every system is built to load fast, track correctly, and scale.
       </p>
     </div>
 
-    <!-- Proof cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Projects -->
+    <div class="grid md:grid-cols-3 gap-10">
 
-      <!-- Case 1 — Artilate -->
-      <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-       <picture>
-  <source
-    type="image/avif"
-    srcset="
-      /proof/artilate-hero-480.avif 480w,
-      /proof/artilate-hero-768.avif 768w,
-      /proof/artilate-hero-1200.avif 1200w
-    "
-    sizes="(min-width: 768px) 340px, 100vw"
-  />
+      <!-- Artilate -->
+      <a href="https://artilate.com" target="_blank" class="reveal group block">
+        <div class="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-600 transition">
 
-  <source
-    type="image/webp"
-    srcset="
-      /proof/artilate-hero-480.webp 480w,
-      /proof/artilate-hero-768.webp 768w,
-      /proof/artilate-hero-1200.webp 1200w
-    "
-    sizes="(min-width: 768px) 340px, 100vw"
-  />
+          <picture>
+            <source type="image/avif" srcset="/proof/artilate-hero-480.avif 480w, /proof/artilate-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <source type="image/webp" srcset="/proof/artilate-hero-480.webp 480w, /proof/artilate-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <img src="/proof/artilate-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="Artilate Chocolate website"/>
+          </picture>
 
-  <img
-    src="/proof/artilate-hero-768.webp"
-    width="768"
-    height="432"
-    alt="Artilate Chocolate e-commerce website"
-    loading="lazy"
-    decoding="async"
-    class="w-full h-40 object-cover border-b border-slate-800"
-  />
-</picture>
+          <div class="p-6">
+            <p class="text-xs text-slate-400">E-commerce · Alberta</p>
+            <h3 class="mt-1 font-semibold">Artilate Chocolate</h3>
 
+            <p class="mt-2 text-slate-400 text-sm">
+              Direct-to-consumer store built for speed, CRO structure and GA4 tracking.
+            </p>
 
-        <div class="p-6">
-          <p class="text-sm text-slate-400 mb-2">
-            E-commerce · Alberta
-          </p>
-          <h3 class="font-medium text-lg mb-2">
-            Artilate.com — Direct-to-consumer chocolate brand
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Built a performance-first e-commerce system with fast checkout,
-            conversion-focused product pages, and analytics-ready tracking.
-          </p>
-          <a
-            href="https://artilate.com"
-            target="_blank"
-            rel="noopener"
-            class="text-sm text-white underline hover:text-slate-300 transition"
-          >
-            Visit site →
-          </a>
+            <!-- Metrics -->
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Lighthouse 92+</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">GA4 Events</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Stripe Checkout</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 2 — GrillsGuard -->
-      <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-        <picture>
-  <!-- AVIF -->
-  <source
-    type="image/avif"
-    srcset="
-      /proof/grillsguard-hero-480.avif 480w,
-      /proof/grillsguard-hero-768.avif 768w,
-      /proof/grillsguard-hero-1200.avif 1200w
-    "
-    sizes="(min-width: 768px) 340px, 100vw"
-  />
+      <!-- GrillsGuard -->
+      <a href="https://grillsguard.com" target="_blank" class="reveal group block">
+        <div class="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-600 transition">
 
-  <!-- WebP fallback -->
-  <source
-    type="image/webp"
-    srcset="
-      /proof/grillsguard-hero-480.webp 480w,
-      /proof/grillsguard-hero-768.webp 768w,
-      /proof/grillsguard-hero-1200.webp 1200w
-    "
-    sizes="(min-width: 768px) 340px, 100vw"
-  />
+          <picture>
+            <source type="image/avif" srcset="/proof/grillsguard-hero-480.avif 480w, /proof/grillsguard-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <source type="image/webp" srcset="/proof/grillsguard-hero-480.webp 480w, /proof/grillsguard-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <img src="/proof/grillsguard-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="GrillsGuard website"/>
+          </picture>
 
-  <!-- Final fallback -->
-  <img
-    src="/proof/grillsguard-hero-768.webp"
-    width="768"
-    height="432"
-    alt="GrillsGuard service business website"
-    loading="lazy"
-    decoding="async"
-    class="w-full h-40 object-cover border-b border-slate-800"
-  />
-</picture>
+          <div class="p-6">
+            <p class="text-xs text-slate-400">Service · Calgary</p>
+            <h3 class="mt-1 font-semibold">GrillsGuard</h3>
 
-        <div class="p-6">
-          <p class="text-sm text-slate-400 mb-2">
-            Local service · Calgary
-          </p>
-          <h3 class="font-medium text-lg mb-2">
-            GrillsGuard.com — Service booking funnel
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Designed a high-clarity service website focused on fast trust,
-            instant quote flow, and frictionless booking logic.
-          </p>
-          <a
-            href="https://www.grillsguard.com"
-            target="_blank"
-            rel="noopener"
-            class="text-sm text-white underline hover:text-slate-300 transition"
-          >
-            Visit site →
-          </a>
+            <p class="mt-2 text-slate-400 text-sm">
+              Mobile-first booking funnel optimized for trust and local SEO.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Lighthouse 95+</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Booking Funnel</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Local SEO</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Case 3 — Gaplets -->
-      <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-        <img
-          src="/proof/gaplets-hero.webp"
-          alt="Gaplets SaaS dashboard"
-          class="w-full h-40 object-cover border-b border-slate-800"
-          loading="lazy"
-        />
-        <div class="p-6">
-          <p class="text-sm text-slate-400 mb-2">
-            SaaS platform
-          </p>
-          <h3 class="font-medium text-lg mb-2">
-            Gaplets.com — Appointment replacement system
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Built a multi-integration SaaS with OAuth, webhooks,
-            dashboards, and subscription infrastructure.
-          </p>
-          <a
-            href="https://gaplets.com"
-            target="_blank"
-            rel="noopener"
-            class="text-sm text-white underline hover:text-slate-300 transition"
-          >
-            Visit platform →
-          </a>
+      <!-- Gaplets -->
+      <a href="https://gaplets.com" target="_blank" class="reveal group block">
+        <div class="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-600 transition">
+
+          <picture>
+            <source type="image/avif" srcset="/proof/gaplets-hero-480.avif 480w, /proof/gaplets-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <source type="image/webp" srcset="/proof/gaplets-hero-480.webp 480w, /proof/gaplets-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
+            <img src="/proof/gaplets-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="Gaplets SaaS platform"/>
+          </picture>
+
+          <div class="p-6">
+            <p class="text-xs text-slate-400">SaaS Platform</p>
+            <h3 class="mt-1 font-semibold">Gaplets</h3>
+
+            <p class="mt-2 text-slate-400 text-sm">
+              OAuth integrations, dashboards, automation and subscriptions.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">OAuth Systems</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Automation</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Stripe Billing</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </a>
 
     </div>
 
-    <!-- Footer CTA -->
-    <div class="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-slate-800 pt-8">
-      <p class="text-slate-400 max-w-2xl">
-        Different industries. Same principle: clarity first, system second, scale last.
+    <!-- Bottom CTA -->
+    <div class="reveal mt-14 text-center">
+      <p class="text-slate-400 mb-6">
+        Want to see full breakdowns, before/after metrics, and live demos?
       </p>
 
-      <a
-        href="/proof"
-        class="inline-block text-sm font-medium text-white border border-slate-600 px-5 py-2.5 rounded-lg hover:border-white transition"
-      >
-        See detailed breakdowns →
+      <a href="/proof"
+         class="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-medium text-white
+                bg-[linear-gradient(135deg,#ff7e00,#ff007a,#a800ff)]
+                hover:opacity-95 transition">
+        View Full Proof →
       </a>
     </div>
 
   </div>
 </section>
+
+
+<!-- Reveal -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal-active');
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

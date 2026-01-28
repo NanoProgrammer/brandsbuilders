@@ -3,10 +3,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 import ContactHero from '../../components/ContactHero.astro';
-import IntakeForm from '../../components/IntakeForm.astro';
 import BookingSection from '../../components/BookingSection';
 import TrustBadges from '../../components/TrustBadges.astro';
-import ContactDetails from '../../components/ContactDetails.astro';
 
 const seo = {
   title: 'Apply — BrandsBuilders Agency | Alberta',
@@ -23,8 +21,7 @@ const seo = {
   <!-- HERO: sets expectation (apply-first) -->
   <ContactHero />
 
-  <!-- PRIMARY PATH: Application form -->
-  <IntakeForm />
+  
 
   <!-- SECONDARY PATH: Only for decided leads -->
   <BookingSection client:only="react" />

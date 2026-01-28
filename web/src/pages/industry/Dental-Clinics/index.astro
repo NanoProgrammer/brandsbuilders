@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Dental Website Patient Leak Scan — BrandsBuilders',
+  title: 'Dental Patient Leak Scan — BrandsBuilders',
   description:
     'We help dental clinics in Alberta uncover where their website is losing potential patients before investing more in ads or traffic.',
   canonical: 'https://brandsbuilders.ca/industry/Dental-Clinics'
@@ -12,115 +12,233 @@ const seo = {
 <Layout seo={seo}>
 
 <!-- HERO -->
-<section class="bg-slate-950 py-6 lg:py-12">
-  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
+<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
+
+  <!-- ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-32 right-[-120px] w-[520px] h-[520px] rounded-full bg-orange-500/15 blur-[140px]"></div>
+
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
 
     <!-- LEFT -->
-    <div>
-      <span class="block text-sm text-slate-400 mb-4">
+    <div class="reveal">
+
+      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
         Industry · Dental Clinics
       </span>
 
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight">
-        See where your dental website is losing patients
+      <h1 class="text-5xl font-semibold leading-tight">
+        New patients should  
+        <span class="text-fuchsia-300">book appointments</span>,  
+        not disappear.
       </h1>
 
-      <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
-        We run a free 20–30 minute Patient Leak Scan to reveal whether your website,
-        tracking, and booking flow are capturing demand —
-        or letting new patients slip away.
+      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        A free 20–30 minute Patient Leak Scan to uncover where
+        your dental website, tracking, and booking flow
+        quietly lose potential patients.
       </p>
 
-      <a
-        href="/apply"
-        class="inline-block px-7 py-3 border border-slate-600 text-white rounded-lg hover:border-white transition"
-      >
-        Book Free Call →
-      </a>
+      <div class="mt-10">
+        <a href="/apply"
+          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                 shadow-lg shadow-fuchsia-600/30
+                 hover:translate-y-[-1px] transition">
+          Book Free Patient Scan →
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm text-slate-500">
+        No pitch. Just diagnostic clarity.
+      </p>
+
     </div>
 
-    <!-- RIGHT IMAGE -->
-    <div class="flex justify-center lg:justify-end">
-      <figure class="w-full max-w-md border border-slate-800 rounded-xl overflow-hidden bg-slate-900/40">
-        <picture>
-          <source type="image/webp" srcset="/industry/dental-hero.webp" />
-          <img
-            src="/industry/dental-hero.webp"
-            alt="Dental clinic booking website"
-            width="640"
-            height="420"
-            loading="eager"
-            decoding="async"
-            class="w-full h-auto object-cover"
-          />
-        </picture>
-      </figure>
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative reveal">
+
+      <!-- glow frame -->
+      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
+
+      <!-- image -->
+      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
+        <img
+          src="/industry/dental-hero.webp"
+          alt="Dental clinic booking website"
+          class="w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <!-- floating badge -->
+      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
+        Core Web Vitals · Booking Flow · Tracking
+      </div>
+
     </div>
 
   </div>
 </section>
+
+
 
 <!-- PROBLEMS -->
-<section class="bg-slate-950 pb-20">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <h2 class="text-2xl font-medium text-white mb-6">
-      Common patient leaks we find in dental websites
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
+      Common patient leaks in dental websites
     </h2>
 
-    <ul class="space-y-4 text-slate-400 leading-relaxed">
-      <li>• Paid traffic landing on slow or confusing pages</li>
-      <li>• Website visits that don’t turn into booked appointments</li>
-      <li>• Missing or inaccurate GA4, call, or booking tracking</li>
-      <li>• No visibility on real cost per acquired patient</li>
-      <li>• Websites that require rebuilds to add booking or CRM</li>
-    </ul>
+    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Slow mobile pages that lose paid traffic before it loads.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Website visits that never turn into booked appointments.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Missing GA4, call, or booking tracking — no visibility.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        No clarity on real cost per acquired patient.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Booking or CRM tools that require full site rebuilds.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Agency-owned websites creating hidden dependency risk.
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- SCAN -->
-<section class="bg-slate-950 pb-24">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <h2 class="text-2xl font-medium text-white mb-6">
-      What happens in the Patient Leak Scan call
-    </h2>
 
-    <div class="space-y-4 text-slate-400 leading-relaxed">
-      <ul class="space-y-3">
-        <li>• Core Web Vitals and mobile performance check</li>
-        <li>• GA4, call, and booking tracking verification</li>
-        <li>• Patient journey friction from visit → call → booking</li>
-        <li>• Ownership and scalability risks</li>
+
+<!-- SCAN CONTENT -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-start">
+
+    <!-- LEFT INFO -->
+    <div class="reveal">
+      <h2 class="text-3xl font-semibold text-white mb-6">
+        What happens in the Patient Leak Scan
+      </h2>
+
+      <p class="text-slate-400 mb-8">
+        We review the exact signals that determine whether
+        your website captures or leaks new patient demand.
+      </p>
+
+      <ul class="space-y-6 text-slate-300">
+
+        <li class="flex gap-4">
+          <span class="text-fuchsia-400">▸</span>
+          Core Web Vitals and mobile performance
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-orange-400">▸</span>
+          GA4, call, and booking tracking verification
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-emerald-400">▸</span>
+          Patient journey friction from visit → call → booking
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-sky-400">▸</span>
+          Ownership and scalability risk review
+        </li>
+
       </ul>
 
-      <p>
-        You leave with a clear <strong>Go / Fix / No-Go</strong> recommendation
-        before investing more in ads or traffic.
+      <p class="mt-8 text-slate-400">
+        You leave with a clear <strong class="text-white">Go / Fix / No-Go</strong> recommendation
+        before investing in more traffic.
       </p>
     </div>
+
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative reveal">
+
+      <div class="absolute -inset-4 bg-gradient-to-br from-fuchsia-500/20 to-orange-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
+
+        <p class="text-sm text-slate-400 mb-3">
+          Example diagnostic output
+        </p>
+
+        <div class="space-y-3 text-slate-300 text-sm">
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Mobile Speed</span>
+            <span class="text-emerald-400">Good</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Tracking Setup</span>
+            <span class="text-orange-400">Missing</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Booking Flow</span>
+            <span class="text-fuchsia-400">High Friction</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Ownership Risk</span>
+            <span class="text-emerald-400">Clear</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
+
+
 <!-- CTA -->
-<section class="bg-slate-950 pb-32">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
-      <h3 class="text-2xl font-medium text-white mb-4">
-        Want clarity before increasing patient acquisition?
-      </h3>
+<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
 
-      <p class="text-slate-400 mb-6 leading-relaxed">
-        Book a free Patient Leak Scan call.
-        You’ll see exactly whether your website is capturing patients —
-        or what must be fixed first.
-      </p>
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/15 via-pink-500/15 to-fuchsia-600/15 blur-3xl"></div>
 
-      <a
-        href="/apply"
-        class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-      >
-        Book Free Call →
-      </a>
-    </div>
+  <div class="relative container mx-auto px-6 max-w-4xl reveal">
+
+    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
+      Want to know what your website is really costing you?
+    </h2>
+
+    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+      Book a free Patient Leak Scan and see exactly
+      where new patients are slipping away.
+    </p>
+
+    <a
+      href="/apply"
+      class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+             text-white shadow-lg shadow-fuchsia-600/30
+             hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+    >
+      Book Free Patient Scan →
+    </a>
+
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
+
   </div>
 </section>
 

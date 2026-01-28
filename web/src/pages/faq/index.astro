@@ -15,27 +15,27 @@ const faqs = [
       {
         question: 'What is the Customer Leak Scan?',
         answer:
-          'It is a free 20–30 minute live call where we review your website and identify where potential customers are dropping off due to performance, tracking, structure, or ownership issues.'
+          'It’s a free 20–30 minute live diagnostic call. We review your website and pinpoint where real customers drop off — usually due to speed, tracking gaps, unclear routing, or ownership risks.'
       },
       {
         question: 'Is this a sales call?',
         answer:
-          'No. The call is a working session. You receive a clear Go / No-Go verdict on whether your website is ready to scale safely. Implementation is discussed only if it genuinely makes sense.'
+          'No. It’s a working session. You’ll leave with a clear Go / No-Go verdict on whether scaling makes sense right now. We talk implementation only if the foundation is genuinely the constraint.'
       },
       {
         question: 'Who is the Customer Leak Scan for?',
         answer:
-          'Owner-led service businesses in Alberta that already have a website and want to understand whether it is capturing customers — or quietly losing them.'
+          'Owner-led Alberta service businesses with demand and capacity — who want clarity on whether their website is converting attention into calls, bookings, or qualified leads.'
       },
       {
         question: 'Is the call free?',
         answer:
-          'Yes. The purpose of the call is to determine fit and uncover leaks early. There is no obligation to proceed afterward.'
+          'Yes. The goal is fit + clarity. No obligation, no pressure.'
       },
       {
         question: 'Do you review anything before the call?',
         answer:
-          'Yes. We pre-check your website performance, Core Web Vitals, public search presence, and basic tracking signals so the session is practical and focused.'
+          'Yes. We pre-check Core Web Vitals signals, basic search presence, and obvious tracking issues so the call stays practical and fast.'
       }
     ]
   },
@@ -45,22 +45,22 @@ const faqs = [
       {
         question: 'What does BrandsBuilders actually do?',
         answer:
-          'We help businesses turn their websites into high-performance, fully owned growth systems. That may involve optimization or rebuilding — but only after leaks and risks are clearly identified.'
+          'We build performance-first growth systems: fast websites, clean tracking, clear routing, and foundations that can safely handle traffic. If the foundation is already strong, we tell you exactly how to scale without wasting spend.'
       },
       {
         question: 'Do you sell standalone services?',
         answer:
-          'No. We do not sell isolated tactics like “just ads” or “just design.” Sending traffic to a leaking foundation wastes budget. Foundations come first.'
+          'No. We don’t sell isolated tactics like “just ads” or “just design.” Sending traffic to a leaking system burns budget. Foundation comes first.'
       },
       {
         question: 'How do you decide what happens after the scan?',
         answer:
-          'If the website is already strong, we explain how to scale safely. If leaks are found, we outline the minimum work required to fix them. If growth is premature, we say so.'
+          'We give a verdict and a priority list. If the site is strong: we explain the next scaling path. If leaks exist: we outline the minimum work to fix them. If it’s premature: we say so.'
       },
       {
         question: 'Can you work with my existing website?',
         answer:
-          'Yes — if it meets performance, tracking, and ownership standards. If not, we recommend only the changes required to reach a safe foundation.'
+          'Yes — if it meets performance, tracking, and ownership standards. If not, we recommend the smallest set of changes required to reach a safe foundation.'
       }
     ]
   },
@@ -70,12 +70,12 @@ const faqs = [
       {
         question: 'What if we are not a fit?',
         answer:
-          'We will tell you directly. Not every business should invest in growth at every stage. Clarity is the goal.'
+          'We’ll tell you directly. Not every business should invest in growth at every stage. The goal is clarity — not closing a deal.'
       },
       {
         question: 'Is there a long-term contract?',
         answer:
-          'No lock-ins. Work proceeds only when it makes sense, phase by phase.'
+          'No lock-ins. Work happens phase by phase, only when it makes sense.'
       }
     ]
   },
@@ -85,12 +85,12 @@ const faqs = [
       {
         question: 'Who owns the website and data?',
         answer:
-          'You do. Domain, hosting, analytics, and code are owned by you. We work with delegated access only.'
+          'You do. Domain, hosting, analytics, ad accounts, and code are owned by you. We operate with delegated access only.'
       },
       {
         question: 'What happens if we stop working together?',
         answer:
-          'You keep everything. No platform lock-in. No dependency.'
+          'You keep everything. No platform lock-in, no dependency, no hostage systems.'
       }
     ]
   },
@@ -100,78 +100,207 @@ const faqs = [
       {
         question: 'Do you guarantee results?',
         answer:
-          'We do not promise outcomes before foundations are fixed. What we guarantee is clarity: you will know exactly whether your website is capturing customers — and what to do next.'
+          'We don’t promise outcomes before foundations are fixed. What we guarantee is clarity: you’ll know whether your website is capturing customers — and exactly what to change next.'
       },
       {
         question: 'How long does fixing take if leaks are found?',
         answer:
-          'Most foundation fixes take between 2–4 weeks depending on scope. Exact timelines are explained after the scan.'
+          'Most foundation work takes 2–4 weeks depending on scope. You’ll get a clear timeline after the scan based on what’s actually required.'
       },
       {
         question: 'Do you only work in Alberta?',
         answer:
-          'Our focus is Alberta-based owner-led businesses. We occasionally work outside Alberta when fast decision-making and ownership access are clear.'
+          'Our focus is Alberta. We occasionally work outside Alberta when ownership access is clear and decision-making is fast.'
       }
     ]
   }
 ];
 
+// simple slug for anchor ids
+const toId = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 ---
 
 <Layout seo={seo}>
 
-  <!-- Hero -->
-  <section class="bg-white py-20 border-b border-slate-200">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
-        Frequently asked questions
-      </h1>
-      <p class="text-lg text-slate-600">
-        Clear answers about the Customer Leak Scan, how we work,
-        and how to decide whether fixing your website foundation makes sense.
-      </p>
+  <!-- HERO (dark, editorial, not generic) -->
+  <section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+    <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
+    <div class="absolute -bottom-72 left-1/2 -translate-x-1/2 w-[980px] h-[980px] rounded-full bg-fuchsia-500/10 blur-[190px]"></div>
+
+    <div class="relative container mx-auto px-6 max-w-6xl">
+      <div class="reveal max-w-4xl">
+        <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">FAQ</p>
+
+        <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05]">
+          Clear answers —
+          <span class="text-fuchsia-300">no agency noise</span>.
+        </h1>
+
+        <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+          If you’re considering a Customer Leak Scan, this page explains exactly what it is,
+          what we look for, and what “working together” actually means.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Live diagnostic</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Go / No-Go verdict</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Ownership first</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Performance-first</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="bg-white py-20">
-    <div class="container mx-auto px-4 max-w-4xl">
+  <!-- BODY -->
+  <section class="bg-slate-950 py-16">
+    <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-12 gap-10 items-start">
 
-      {faqs.map((category) => (
-        <div class="mb-16">
-          <h2 class="text-2xl font-semibold mb-8 text-slate-900">
-            {category.category}
-          </h2>
+      <!-- Sticky category nav -->
+      <aside class="lg:col-span-4 lg:sticky lg:top-24">
+        <div class="reveal rounded-2xl border border-slate-800 bg-slate-900/35 p-6">
+          <p class="text-xs uppercase tracking-widest text-slate-500">Categories</p>
 
-          <div class="space-y-4">
-            {category.questions.map((faq) => (
-              <details class="border border-slate-200 rounded-lg p-6">
-                <summary class="font-medium cursor-pointer text-slate-900">
-                  {faq.question}
-                </summary>
-                <p class="mt-4 text-slate-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </details>
+          <nav class="mt-4 space-y-2">
+            {faqs.map((c) => (
+              <a
+                href={`#${toId(c.category)}`}
+                class="block rounded-lg px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 transition border border-transparent hover:border-slate-700"
+              >
+                {c.category}
+              </a>
             ))}
+          </nav>
+
+          <div class="mt-6 pt-6 border-t border-slate-800 text-sm text-slate-400">
+            Prefer direct clarity?
+            <a href="/apply" class="text-fuchsia-300 hover:text-fuchsia-200 transition"> Book the scan</a>.
           </div>
         </div>
-      ))}
+      </aside>
 
-      <!-- Final CTA -->
-      <div class="mt-20 text-center border-t border-slate-200 pt-10">
-        <p class="text-slate-700 mb-6">
-          Still have questions? The free Customer Leak Scan call is the best place to get clarity.
-        </p>
-        <a
-          href="/apply"
-          class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-slate-900 hover:border-slate-900 transition"
-        >
-          Book Free Call →
-        </a>
+      <!-- FAQ content -->
+      <div class="lg:col-span-8 space-y-14">
+        {faqs.map((category) => (
+          <section id={toId(category.category)} class="reveal scroll-mt-28">
+            <div class="flex items-end justify-between gap-6 flex-wrap">
+              <h2 class="text-3xl font-semibold text-white">
+                {category.category}
+              </h2>
+              <div class="h-px flex-1 bg-slate-800/80 min-w-[120px]"></div>
+            </div>
+
+            <div class="mt-6 space-y-4">
+              {category.questions.map((faq) => (
+                <details class="faq rounded-2xl border border-slate-800 bg-slate-900/35 p-6 hover:bg-slate-900/55 transition">
+                  <summary class="flex items-center justify-between gap-6 cursor-pointer select-none text-white font-medium text-lg">
+                    <span>{faq.question}</span>
+                    <span class="chev inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-800 bg-slate-950/50 text-slate-300">
+                      +
+                    </span>
+                  </summary>
+
+                  <div class="mt-4 pr-10">
+                    <p class="text-slate-300 leading-relaxed text-lg">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <!-- Final CTA -->
+        <div class="reveal mt-10 rounded-2xl border border-slate-800 bg-slate-900/35 p-10 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-pink-500/10 to-fuchsia-600/10 blur-2xl"></div>
+
+          <div class="relative">
+            <h3 class="text-3xl font-semibold text-white">
+              Still unsure? Get a verdict.
+            </h3>
+
+            <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
+              The Customer Leak Scan is the fastest way to stop guessing.
+              You’ll leave with a clear priority list — and whether scaling makes sense right now.
+            </p>
+
+            <a
+              href="/apply"
+              class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+                     bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                     text-white shadow-lg shadow-fuchsia-600/30
+                     hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+            >
+              Book Free Leak Scan →
+            </a>
+
+            <p class="mt-5 text-sm text-slate-400">
+              Not a pitch. A diagnostic.
+            </p>
+          </div>
+        </div>
+
       </div>
-
     </div>
   </section>
+
+  <!-- Motion: reveal + details micro-anim -->
+  <script is:inline>
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+
+    // Improve <details> animation without breaking semantics
+    document.querySelectorAll('details.faq').forEach((d) => {
+      d.addEventListener('toggle', () => {
+        d.classList.toggle('open', d.open);
+      });
+    });
+  </script>
+
+  <style is:global>
+    /* reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* details micro motion */
+    details.faq .chev {
+      transition: transform 260ms cubic-bezier(.2,.8,.2,1), border-color 260ms, color 260ms;
+    }
+    details.faq.open .chev {
+      transform: rotate(45deg);
+      border-color: rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+    }
+    details.faq > summary::-webkit-details-marker { display: none; }
+
+    /* accessibility */
+    details.faq:focus-within {
+      outline: 2px solid rgba(236,72,153,.35);
+      outline-offset: 4px;
+      border-radius: 16px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      details.faq .chev { transition: none; }
+    }
+  </style>
 
 </Layout>

@@ -11,120 +11,233 @@ const seo = {
 
 <Layout seo={seo}>
 
-  <!-- HERO -->
-  <section class="bg-slate-950 py-8 lg:py-16">
-    <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center">
+<!-- HERO -->
+<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
 
-      <!-- TEXT -->
-      <div>
-        <span class="block text-sm text-slate-400 mb-4">
-          Industry · HVAC Services
-        </span>
+  <!-- cool ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-sky-950/40"></div>
+  <div class="absolute -top-40 right-[-100px] w-[520px] h-[520px] rounded-full bg-sky-500/15 blur-[150px]"></div>
 
-        <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-          See where your HVAC website is losing bookings
-        </h1>
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
 
-        <p class="text-lg text-slate-400 leading-relaxed max-w-xl">
-          We run a free 20–30 minute Booking Leak Scan to reveal whether your website,
-          tracking, and call flow are capturing demand —
-          or letting service jobs slip away.
-        </p>
+    <!-- LEFT -->
+    <div class="reveal">
 
-        <div class="mt-8">
-          <a
-            href="/apply"
-            class="inline-block border border-slate-600 px-6 py-3 text-white hover:border-white transition"
-          >
-            Book Free Call →
-          </a>
-        </div>
+      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
+        Industry · HVAC Services
+      </span>
+
+      <h1 class="text-5xl font-semibold leading-tight">
+        When systems fail,  
+        <span class="text-sky-300">customers call fast</span>.
+      </h1>
+
+      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        A free 20–30 minute Booking Leak Scan to uncover where
+        your HVAC website and call flow
+        lose urgent service bookings.
+      </p>
+
+      <div class="mt-10">
+        <a href="/apply"
+          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500
+                 shadow-lg shadow-sky-600/30
+                 hover:translate-y-[-1px] transition">
+          Book Free Booking Scan →
+        </a>
       </div>
 
-      <!-- IMAGE -->
-      <div class="relative flex justify-center lg:justify-end">
+      <p class="mt-5 text-sm text-slate-500">
+        No pitch. Just diagnostic clarity.
+      </p>
+
+    </div>
+
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative reveal">
+
+      <!-- glow frame -->
+      <div class="absolute -inset-4 bg-gradient-to-br from-sky-500/20 to-cyan-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
         <img
           src="/industry/hero-hvac.webp"
           alt="HVAC booking website"
-          width="640"
-          height="420"
-          class="rounded-xl border border-slate-800 shadow-lg object-cover"
+          class="w-full object-cover"
           loading="eager"
           decoding="async"
         />
       </div>
 
+      <!-- floating badge -->
+      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
+        Call Flow · Tracking · Urgency
+      </div>
+
     </div>
-  </section>
 
-  <!-- PROBLEMS -->
-  <section class="bg-slate-950 pb-20 border-t border-slate-800">
-    <div class="container mx-auto px-6 max-w-4xl">
+  </div>
+</section>
 
-      <h2 class="text-2xl font-medium text-white mb-6">
-        Common booking leaks in HVAC websites
+
+
+<!-- PROBLEMS -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
+      Common booking leaks in HVAC websites
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Paid traffic landing on slow pages that don't load on mobile.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Emergency visitors leaving before calling.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Missing call tracking and lost attribution.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        No visibility on real cost per booked job.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Booking or dispatch systems that require site rebuilds.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Agency-owned websites creating dependency risk.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SCAN CONTENT -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-start">
+
+    <!-- LEFT INFO -->
+    <div class="reveal">
+      <h2 class="text-3xl font-semibold text-white mb-6">
+        What happens in the Booking Leak Scan
       </h2>
 
-      <ul class="space-y-4 text-slate-400 leading-relaxed">
-        <li>• Paid traffic landing on slow or confusing pages</li>
-        <li>• Website visits that don’t turn into booked service calls</li>
-        <li>• Missing or broken call / form tracking</li>
-        <li>• No visibility on real cost per booked job</li>
-        <li>• Websites that can’t scale with booking or CRM systems</li>
+      <p class="text-slate-400 mb-8">
+        We review the real signals that determine whether
+        your website captures or leaks urgent service demand.
+      </p>
+
+      <ul class="space-y-6 text-slate-300">
+
+        <li class="flex gap-4">
+          <span class="text-sky-400">▸</span>
+          Core Web Vitals and mobile performance
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-cyan-400">▸</span>
+          GA4 and call tracking verification
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-blue-400">▸</span>
+          Visitor friction from visit → call → dispatch
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-emerald-400">▸</span>
+          Ownership and scalability risk review
+        </li>
+
       </ul>
 
+      <p class="mt-8 text-slate-400">
+        You leave with a clear <strong class="text-white">Go / Fix / No-Go</strong> recommendation
+        before investing in more traffic.
+      </p>
     </div>
-  </section>
 
-  <!-- SCAN -->
-  <section class="bg-slate-950 pb-24">
-    <div class="container mx-auto px-6 max-w-4xl">
 
-      <h2 class="text-2xl font-medium text-white mb-6">
-        What happens in the Booking Leak Scan call
-      </h2>
+    <!-- RIGHT VISUAL PANEL -->
+    <div class="relative reveal">
 
-      <div class="space-y-4 text-slate-400 leading-relaxed">
-        <ul class="space-y-3">
-          <li>• Core Web Vitals and mobile performance check</li>
-          <li>• GA4, call, and booking tracking verification</li>
-          <li>• Customer journey friction from visit → call → booking</li>
-          <li>• Ownership and scalability risks</li>
-        </ul>
+      <div class="absolute -inset-4 bg-gradient-to-br from-sky-500/20 to-cyan-500/20 blur-2xl rounded-3xl"></div>
 
-        <p>
-          You leave with a clear <strong>Go / Fix / No-Go</strong> recommendation
-          before investing more in ads or traffic.
-        </p>
-      </div>
+      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
 
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-slate-950 pb-32">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-      <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
-        <h3 class="text-2xl font-medium text-white mb-4">
-          Want clarity before increasing HVAC bookings?
-        </h3>
-
-        <p class="text-slate-400 mb-6 leading-relaxed">
-          Book a free Booking Leak Scan call.
-          You’ll see exactly whether your website is capturing service demand —
-          or what must be fixed first.
+        <p class="text-sm text-slate-400 mb-3">
+          Example diagnostic output
         </p>
 
-        <a
-          href="/apply"
-          class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-        >
-          Book Free Call →
-        </a>
-      </div>
+        <div class="space-y-3 text-slate-300 text-sm">
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Mobile Speed</span>
+            <span class="text-emerald-400">Good</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Call Tracking</span>
+            <span class="text-pink-400">Missing</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Dispatch Flow</span>
+            <span class="text-sky-400">High Friction</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Ownership Risk</span>
+            <span class="text-emerald-400">Clear</span>
+          </div>
+        </div>
 
+      </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
+
+  <div class="absolute inset-0 bg-gradient-to-r from-sky-500/15 via-cyan-500/15 to-blue-500/15 blur-3xl"></div>
+
+  <div class="relative container mx-auto px-6 max-w-4xl reveal">
+
+    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
+      Want to stop losing emergency bookings?
+    </h2>
+
+    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+      Book a free Booking Leak Scan and see exactly
+      where service demand is slipping away.
+    </p>
+
+    <a
+      href="/apply"
+      class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500
+             text-white shadow-lg shadow-sky-600/30
+             hover:translate-y-[-1px] hover:shadow-sky-600/40 transition"
+    >
+      Book Free Booking Scan →
+    </a>
+
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
+
+  </div>
+</section>
 
 </Layout>

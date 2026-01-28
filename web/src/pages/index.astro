@@ -2,16 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 
 import Hero from '../components/Hero.astro';
-import WhyFails from '../components/WhyFails.astro';
-import Process from '../components/Process.astro';
+import WhyItMatters from '../components/WhyItMatters.astro';
+import SystemBlocks from '../components/SystemBlocks.astro';
 import ProofPreview from '../components/ProofPreview.astro';
-import DiagnosticPreview from '../components/DiagnosticPreview.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQPreview from '../components/FAQPreview.astro';
 import ApplyCTA from '../components/ApplyCTA.astro';
 
 const seo = {
-  title: 'BrandsBuilders — Client Acquisition Consulting for Owner-Led Businesses',
+  title: 'BrandsBuilders — Code-Based Websites Built for Speed, Tracking & Growth',
   description:
-    'We help owner-led businesses in Alberta evaluate and build client acquisition systems that make financial sense. No packages. No hype. Just clarity.',
+    'We build code-based websites that load fast, track correctly, and turn traffic into customers. Built in Astro. Ownership included. Deadlines guaranteed.',
   canonical: 'https://brandsbuilders.ca',
   ogImage: '/og.webp'
 };
@@ -19,19 +20,10 @@ const seo = {
 
 <Layout seo={seo}>
   <Hero />
-
-  <!-- Why most businesses fail with marketing -->
-  <WhyFails />
-
-  <!-- How we work (high-level, consultive) -->
-  <Process />
-
-  <!-- Proof preview (light credibility, not a showcase) -->
+  <WhyItMatters />
+  <SystemBlocks />
   <ProofPreview />
-
-  <!-- How our consultation / diagnostic works -->
-  <DiagnosticPreview />
-
-  <!-- Single, final CTA -->
+  <Testimonials />
+  <FAQPreview />
   <ApplyCTA />
 </Layout>

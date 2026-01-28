@@ -4,27 +4,26 @@ import Layout from '../../layouts/Layout.astro';
 const seo = {
   title: 'Free Customer Leak Scan Call | BrandsBuilders',
   description:
-    'A free 20–30 minute working session to uncover where your website is losing potential customers before you invest more in ads or growth.',
+    'A free 20–30 minute working session to uncover where your website is losing potential customers before investing in ads or growth.',
   canonical: 'https://brandsbuilders.ca/free-customer-leak-scan',
-  ogImage: '/hero/hero-diagram.webp'
 };
 
 const bullets = [
   {
     title: 'Website performance snapshot',
-    desc: 'We review Core Web Vitals, mobile speed, and load behavior to see whether your site keeps visitors engaged or loses them.'
+    desc: 'We review Core Web Vitals, mobile speed, and load behavior to see whether your site holds attention or leaks visitors.'
   },
   {
     title: 'Conversion friction detection',
-    desc: 'We identify where visitors drop off across messaging clarity, trust signals, and booking or contact flows.'
+    desc: 'We identify where visitors drop off across offer clarity, trust signals, and booking or contact flows.'
   },
   {
     title: 'Tracking & attribution check',
-    desc: 'We verify GA4, form, call, and booking tracking so future decisions are based on real data — not guesses.'
+    desc: 'We verify GA4, form, call, and booking tracking so decisions are based on data — not assumptions.'
   },
   {
     title: 'Scalability & structure review',
-    desc: 'We assess whether your website can support booking systems, CRM, or paid traffic without requiring a full rebuild.'
+    desc: 'We assess whether your website can support paid traffic and CRM systems without requiring a rebuild.'
   },
   {
     title: 'Ownership & risk check',
@@ -35,7 +34,7 @@ const bullets = [
 const faqs = [
   {
     q: 'Is this a sales call?',
-    a: 'No. This is a working session to identify where your website is losing potential customers. You receive a clear Go / No-Go verdict. Implementation is discussed only if it genuinely makes sense.'
+    a: 'No. This is a working diagnostic session. You receive a clear Go / No-Go verdict. Implementation is discussed only if it genuinely makes sense.'
   },
   {
     q: 'Who is this call for?',
@@ -43,158 +42,208 @@ const faqs = [
   },
   {
     q: 'Do you need access to my accounts?',
-    a: 'No. The scan starts using public signals such as your website, search presence, and visible tracking behavior. Access is requested only if you later proceed with implementation.'
+    a: 'No. We begin using public signals only. Access is requested later only if implementation proceeds.'
   },
   {
     q: 'What do I receive after the call?',
-    a: 'A short written recap outlining discovered leaks, priority fixes, and a clear recommendation: scale safely, fix foundations, or pause.'
+    a: 'A short written recap outlining discovered leaks, priority fixes, and a clear recommendation: fix foundations, scale safely, or pause.'
   }
 ];
-
 ---
 
 <Layout seo={seo}>
-  <!-- Hero -->
-  <section class="bg-slate-950 text-white py-20 lg:py-28 border-b border-slate-800">
-    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-      <div class="max-w-3xl">
-        <p class="text-sm text-slate-400 mb-4">
-          Free Customer Leak Scan Call
-        </p>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
-          See where your website is losing customers
-        </h1>
-        <p class="text-lg text-slate-400 leading-relaxed mb-10">
-          A free 20–30 minute working session to uncover hidden performance,
-          tracking, and conversion leaks before you invest more in ads or growth.
-        </p>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="/apply"
-            class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition text-center"
-          >
-            Book Free Call →
-          </a>
-          <a
-            href="/process"
-            class="inline-block px-8 py-4 border border-slate-800 rounded-lg text-slate-300 hover:text-white hover:border-slate-600 transition text-center"
-          >
-            See the process
-          </a>
-        </div>
+<!-- HERO -->
+<section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
 
-        <p class="mt-6 text-sm text-slate-500">
-          This is a clarity call — not a sales pitch.
-        </p>
-      </div>
-    </div>
-  </section>
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
 
-  <!-- What you get -->
-  <section class="bg-white py-20 border-b border-slate-200">
-    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
-      <div class="mb-12 max-w-3xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
-          What we identify in the call
-        </h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
-          We focus on the real decision factors that determine whether
-          your website is capturing demand — or leaking it.
-        </p>
-      </div>
+  <div class="relative container mx-auto px-6 max-w-5xl reveal">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {bullets.map((b) => (
-          <div class="border border-slate-200 rounded-lg p-6">
-            <h3 class="text-lg font-medium text-slate-900 mb-2">{b.title}</h3>
-            <p class="text-slate-600 leading-relaxed">{b.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+      Free Customer Leak Scan
+    </p>
 
-  <!-- How it works -->
-  <section class="bg-white py-20 border-b border-slate-200">
-    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
-      <div class="mb-12 max-w-3xl">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
-          How it works
-        </h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
-          The goal is simple: leave the call knowing exactly
-          what to fix, what to ignore, and what the next step is.
-        </p>
-      </div>
+    <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05]">
+      See where your website  
+      <span class="text-fuchsia-300">quietly loses customers</span>.
+    </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
-          <p class="text-sm text-slate-500 mb-2">Step 1</p>
-          <h3 class="text-lg font-medium text-slate-900 mb-2">You book</h3>
-          <p class="text-slate-600 leading-relaxed">
-            A short form to confirm fit and collect your website link.
-          </p>
-        </div>
+    <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+      A free 20–30 minute working session to uncover performance,
+      tracking, and conversion leaks before you invest in traffic.
+    </p>
 
-        <div>
-          <p class="text-sm text-slate-500 mb-2">Step 2</p>
-          <h3 class="text-lg font-medium text-slate-900 mb-2">We pre-check</h3>
-          <p class="text-slate-600 leading-relaxed">
-            We review your public website and search presence so the call is practical.
-          </p>
-        </div>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="/apply"
+        class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+               bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+               text-white shadow-lg shadow-fuchsia-600/30
+               hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition">
+        Book Free Leak Scan →
+      </a>
 
-        <div>
-          <p class="text-sm text-slate-500 mb-2">Step 3</p>
-          <h3 class="text-lg font-medium text-slate-900 mb-2">You get clarity</h3>
-          <p class="text-slate-600 leading-relaxed">
-            A clear recommendation: fix leaks, scale safely, or pause.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="bg-white py-20 border-b border-slate-200">
-    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-      <div class="mb-10">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-900">
-          FAQ
-        </h2>
-      </div>
-
-      <div class="space-y-4">
-        {faqs.map((f) => (
-          <details class="border border-slate-200 rounded-lg p-6">
-            <summary class="font-medium cursor-pointer text-slate-900">
-              {f.q}
-            </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">
-              {f.a}
-            </p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="bg-slate-950 text-white py-20 border-t border-slate-800">
-    <div class="container mx-auto px-4 sm:px-6 max-w-5xl text-center">
-      <h2 class="text-2xl sm:text-3xl font-semibold mb-6">
-        Ready to see what your website is really costing you?
-      </h2>
-      <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-        Book your free Customer Leak Scan call and leave with a clear next step.
-      </p>
-      <a
-        href="/apply"
-        class="inline-block px-8 py-4 border border-slate-600 rounded-lg text-white hover:border-white transition"
-      >
-        Book Free Call →
+      <a href="/process"
+        class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+               border border-slate-700 text-slate-300
+               hover:text-white hover:border-slate-500 transition">
+        See the process
       </a>
     </div>
-  </section>
+
+    <p class="mt-6 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- WHAT YOU GET -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl">
+
+    <div class="mb-14 max-w-3xl reveal">
+      <h2 class="text-3xl font-semibold text-white mb-4">
+        What we uncover in the call
+      </h2>
+      <p class="text-lg text-slate-400">
+        The real decision factors that determine whether
+        your website captures demand — or leaks it.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {bullets.map((b) => (
+        <div class="reveal border border-slate-800 bg-slate-900/40 rounded-xl p-7">
+          <h3 class="text-lg font-medium text-white mb-2">{b.title}</h3>
+          <p class="text-slate-400 leading-relaxed">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl">
+
+    <div class="mb-14 max-w3xl reveal">
+      <h2 class="text-3xl font-semibold text-white mb-4">
+        How it works
+      </h2>
+      <p class="text-lg text-slate-400">
+        Leave the call knowing exactly what to fix,
+        what to ignore, and what comes next.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      {[
+        ['Step 1', 'You book', 'A short form to confirm fit and collect your website link.'],
+        ['Step 2', 'We pre-check', 'We review your public website and search presence before the call.'],
+        ['Step 3', 'You get clarity', 'A clear recommendation: fix leaks, scale safely, or pause.']
+      ].map(([step, title, desc]) => (
+        <div class="reveal">
+          <p class="text-sm text-slate-500 mb-2">{step}</p>
+          <h3 class="text-lg font-medium text-white mb-2">{title}</h3>
+          <p class="text-slate-400 leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
+      FAQ
+    </h2>
+
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="reveal border border-slate-800 bg-slate-900/40 rounded-xl p-6">
+          <summary class="font-medium cursor-pointer text-white">
+            {f.q}
+          </summary>
+          <p class="mt-4 text-slate-400 leading-relaxed">
+            {f.a}
+          </p>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
+
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/15 via-pink-500/15 to-fuchsia-600/15 blur-3xl"></div>
+
+  <div class="relative container mx-auto px-6 max-w-4xl text-center reveal">
+
+    <h2 class="text-4xl font-semibold">
+      Ready to see what your website is really costing you?
+    </h2>
+
+    <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
+      Book your free Customer Leak Scan and leave
+      with a clear next step.
+    </p>
+
+    <a href="/apply"
+      class="inline-flex items-center justify-center mt-10 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+             text-white shadow-lg shadow-fuchsia-600/30
+             hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition">
+      Book Free Leak Scan →
+    </a>
+
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- Reveal animation -->
+<script is:inline>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+<style is:global>
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
+                transform 700ms cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity:1; transform:none; transition:none; }
+  }
+</style>
+
 </Layout>

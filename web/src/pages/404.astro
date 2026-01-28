@@ -1,52 +1,96 @@
 ---
-// src/pages/404.astro
 import Layout from '../layouts/Layout.astro';
 
 const seo = {
   title: 'Page Not Found — BrandsBuilders',
   description: 'The page you’re looking for doesn’t exist. Return to the homepage or request a consultation.',
-  canonical: 'https://brandsbuilders.agency/404'
 };
 ---
 
 <Layout seo={seo}>
-  <section class="bg-slate-950 min-h-screen flex items-center">
-    <div class="container mx-auto px-6 max-w-3xl text-center">
 
-      <p class="text-sm uppercase tracking-widest text-slate-500 mb-6">
-        404 — Not Found
-      </p>
+<section class="relative bg-slate-950 min-h-screen flex items-center overflow-hidden">
 
-      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6">
-        This page doesn’t exist
-      </h1>
+  <!-- ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/20"></div>
+  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
 
-      <p class="text-lg text-slate-400 mb-12 leading-relaxed">
-        The link may be outdated, or the page was removed.
-        If you’re looking for help with client acquisition or growth systems,
-        you can start below.
-      </p>
+  <div class="relative container mx-auto px-6 max-w-3xl text-center reveal">
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/"
-          class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-slate-950 font-medium hover:bg-slate-200 transition"
-        >
-          Go to homepage
-        </a>
+    <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+      404 — Not Found
+    </p>
 
-        <a
-          href="/apply"
-          class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition"
-        >
-          Apply for a consultation
-        </a>
-      </div>
+    <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6">
+      This page doesn’t exist
+    </h1>
 
-      <p class="mt-16 text-sm text-slate-500">
-        BrandsBuilders · Alberta, Canada
-      </p>
+    <p class="text-lg text-slate-300 mb-12 leading-relaxed">
+      The link may be outdated, or the page was removed.
+      If you’re looking for help with client acquisition or growth systems,
+      you can start below.
+    </p>
+
+    <!-- actions -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+      <a
+        href="/"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-xl
+               bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+               text-white font-semibold shadow-lg shadow-fuchsia-600/30
+               hover:translate-y-[-1px] transition"
+      >
+        Go to homepage →
+      </a>
+
+      <a
+        href="/apply"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-xl
+               border border-slate-700 text-slate-300
+               hover:border-fuchsia-400 hover:text-white transition"
+      >
+        Apply for a consultation
+      </a>
 
     </div>
-  </section>
+
+    <p class="mt-14 text-sm text-slate-500">
+      BrandsBuilders · Alberta, Canada
+    </p>
+
+  </div>
+</section>
+
+
+<!-- Reveal animation -->
+<script is:inline>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+<style is:global>
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
+                transform 700ms cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
 </Layout>

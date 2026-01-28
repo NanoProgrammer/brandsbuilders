@@ -1,26 +1,359 @@
 ---
-// pages/proof.astro
 import Layout from '../../layouts/Layout.astro';
 
-import ProofHero from '../../components/bruh/ProofHero.astro';
-import ProofCases from '../../components/bruh/ProofCases.astro';
-import ProofSignals from '../../components/bruh/ProofSignals.astro';
-import ProofVoices from '../../components/bruh/ProofVoices.astro';
-import ApplyCTA from '../../components/ApplyCTA.astro';
-
 const seo = {
-  title: 'Proof — Real Growth Systems & Client Outcomes | BrandsBuilders',
+  title: 'Process — Customer Leak Scan → Fix → Scale | BrandsBuilders',
   description:
-    'Real growth systems built for owner-led businesses. Websites, GA4, Google Ads, and Search — shown with operational context, not vanity metrics.',
-  canonical: 'https://brandsbuilders.ca/proof',
-  ogImage: '/proof-og.jpg'
+    'We diagnose where your website loses customers, rebuild the foundation, then enable safe scaling with measurable outcomes.',
+  canonical: 'https://brandsbuilders.ca/process'
 };
+
+const cases = [
+  {
+    name: 'Artilate Chocolate',
+    stack: 'E-commerce · Website · GA4 · Google Search',
+    slug: 'artilate',
+    hero: 'artilate-hero',
+    gallery: ['artilate-1', 'artilate-2'],
+    problem: 'Traffic existed but purchase attribution and funnel leakage were unclear.',
+    change: 'Built a high-performance e-commerce site, implemented GA4 purchase tracking, and optimized technical SEO.',
+    result: 'Clear visibility from visit → product → checkout → purchase, with measurable conversion paths.'
+  },
+  {
+    name: 'GrillsGuard',
+    stack: 'Local Services · Website · GA4 · Google Ads · GBP',
+    slug: 'grillsguard',
+    hero: 'grillsguard-hero',
+    gallery: ['grillsguard-1', 'grillsguard-2'],
+    problem: 'Ad spend leaked into low-intent clicks and calls were not tied to campaigns.',
+    change: 'Rebuilt landing pages, implemented GA4 call tracking, and connected Google Ads conversions.',
+    result: 'Higher-quality inbound calls with controlled cost per lead.'
+  },
+  {
+    name: 'Gaplets',
+    stack: 'SaaS · Product UI · GA4 · Paid Acquisition',
+    slug: 'gaplets',
+    hero: 'gaplets-hero',
+    gallery: ['gaplets-1', 'gaplets-2'],
+    problem: 'Activation drop-offs were invisible and paid ROI could not be validated.',
+    change: 'Designed onboarding flows and implemented event-level GA4 activation tracking.',
+    result: 'Full activation funnel visibility and confident acquisition scaling.'
+  }
+];
+
+const signals = [
+  'Mobile Lighthouse scores consistently above 90 (real devices, not desktop-only screenshots)',
+  'GA4 conversion + attribution setup you can trust (events, UTMs, and clean sources)',
+  'Calls / bookings tied to campaigns — not “we think it came from Ads”',
+  'Client ownership of domains, code, analytics and ad accounts (always)',
+  'Speed-to-lead optimized where bookings matter (routing + friction removal)',
+  'No lock-ins, no black-box reporting, no “agency dashboards”'
+];
+
+const voices = [
+  'We finally understood what was driving bookings — not just clicks.',
+  'Everything was tied to execution. No fluff.',
+  'The clarity alone justified the investment before scaling.'
+];
 ---
 
 <Layout seo={seo}>
-  <ProofHero />
-  <ProofCases />
-  <ProofSignals />
-  <ProofVoices />
-  <ApplyCTA />
+
+  <!-- HERO: editorial + stage, no split, no repetition -->
+  <section class="relative bg-slate-950 text-white pt-12 pb-20 overflow-hidden border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/35"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[820px] h-[820px] rounded-full bg-orange-500/10 blur-[160px]"></div>
+    <div class="absolute -bottom-52 left-1/2 -translate-x-1/2 w-[920px] h-[920px] rounded-full bg-fuchsia-500/10 blur-[180px]"></div>
+
+    <div class="relative container mx-auto px-6 max-w-6xl">
+      <div class="reveal">
+        <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+          Process
+        </p>
+
+        <h1 class="text-5xl lg:text-6xl font-semibold text-white leading-[1.05] max-w-5xl">
+          Fix the leaks first —
+          <span class="text-fuchsia-300">then</span> scale traffic safely.
+        </h1>
+
+        <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+          The Customer Leak Scan is a live diagnostic call.
+          We inspect performance, tracking, routing and ownership — in real time —
+          and you leave with a clear <span class="text-white">Go / No-Go</span> verdict.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Live screen-share</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Speed + CWV</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">GA4 + attribution</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Funnel friction</span>
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Ownership check</span>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="/apply"
+            class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+                   bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                   text-white shadow-lg shadow-fuchsia-600/25
+                   hover:translate-y-[-1px] hover:shadow-fuchsia-600/35 transition"
+          >
+            Book Free Leak Scan →
+          </a>
+
+          <a
+            href="#work"
+            class="inline-flex items-center justify-center px-10 py-4 rounded-xl border border-slate-700
+                   text-slate-200 hover:border-white hover:text-white transition"
+          >
+            See visual proof
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- WORK / CASES: redesigned layout, non-repetitive, with sticky meta -->
+  <section id="work" class="relative bg-slate-950 py-28">
+    <div class="container mx-auto px-6 max-w-6xl">
+
+      <div class="reveal flex items-end justify-between gap-10 flex-wrap">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">Proof</p>
+          <h2 class="text-4xl font-semibold text-white">
+            Work that’s visible — not theoretical
+          </h2>
+          <p class="mt-5 text-lg text-slate-400 max-w-3xl">
+            Interfaces, tracking and outcomes — shown visually. No “trust me”. No agency fluff.
+          </p>
+        </div>
+
+        <div class="text-sm text-slate-500">
+          <span class="inline-block px-3 py-2 rounded-lg border border-slate-800 bg-slate-900/30">
+            Built for performance + ownership
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-16 space-y-24">
+        {cases.map((c, idx) => (
+          <article class="reveal">
+            <div class={`grid lg:grid-cols-12 gap-10 items-start ${idx % 2 === 0 ? '' : ''}`}>
+
+              <!-- Sticky meta (adds rhythm, avoids same layout feel) -->
+              <div class="lg:col-span-4 lg:sticky lg:top-24">
+                <p class="text-sm uppercase tracking-widest text-slate-400">
+                  {c.name}
+                </p>
+                <p class="text-slate-500 text-sm mt-2">
+                  {c.stack}
+                </p>
+
+                <div class="mt-8 space-y-4">
+                  <p class="text-lg text-slate-300">
+                    <span class="text-slate-500">Problem — </span>{c.problem}
+                  </p>
+                  <p class="text-lg text-slate-300">
+                    <span class="text-slate-500">Change — </span>{c.change}
+                  </p>
+                  <p class="text-lg text-white font-medium">
+                    <span class="text-slate-500">Result — </span>{c.result}
+                  </p>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/30 text-slate-300 text-xs">Performance</span>
+                  <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/30 text-slate-300 text-xs">Tracking</span>
+                  <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/30 text-slate-300 text-xs">Clarity</span>
+                </div>
+              </div>
+
+              <!-- Visuals -->
+              <div class="lg:col-span-8 space-y-6">
+                <!-- HERO IMAGE (optimized) -->
+                <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl group">
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcset={`
+                        /proof/${c.hero}-480.avif 480w,
+                        /proof/${c.hero}-768.avif 768w,
+                        /proof/${c.hero}-1200.avif 1200w
+                      `}
+                      sizes="(min-width:1024px) 900px, 100vw"
+                    />
+                    <source
+                      type="image/webp"
+                      srcset={`
+                        /proof/${c.hero}-480.webp 480w,
+                        /proof/${c.hero}-768.webp 768w,
+                        /proof/${c.hero}-1200.webp 1200w
+                      `}
+                      sizes="(min-width:1024px) 900px, 100vw"
+                    />
+                    <img
+                      src={`/proof/${c.hero}-768.webp`}
+                      width="768"
+                      height="432"
+                      alt={`${c.name} interface`}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      class="w-full object-cover transition duration-500 group-hover:scale-[1.01]"
+                    />
+                  </picture>
+                </div>
+
+                <!-- Gallery: now with hover depth + varied grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {c.gallery.map((img) => (
+                    <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900/60 hover:bg-slate-900 transition shadow-[0_0_0_0_rgba(0,0,0,0)] hover:shadow-2xl">
+                      <img
+                        src={`/proof/${img}.webp`}
+                        alt=""
+                        class="w-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ))}
+
+                  <!-- 1 extra “detail tile” to break repetition -->
+                  <div class="hidden md:block rounded-xl border border-slate-800 bg-slate-900/40 p-5">
+                    <p class="text-xs uppercase tracking-widest text-slate-500">What changed</p>
+                    <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                      Faster load, clean event tracking, clearer routing, and conversions you can actually trust.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="h-px bg-slate-800/80"></div>
+              </div>
+
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIGNALS: redesigned as “system checklist”, not a boring list -->
+  <section class="bg-slate-950 py-24 border-t border-slate-800">
+    <div class="container mx-auto px-6 max-w-6xl">
+
+      <div class="reveal grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4">
+          <h2 class="text-4xl font-semibold text-white">
+            Real signals we care about
+          </h2>
+          <p class="mt-5 text-slate-400 text-lg leading-relaxed">
+            Not “impressions”. Not “reach”.
+            These are operational signals that tell you growth is safe.
+          </p>
+        </div>
+
+        <div class="lg:col-span-8">
+          <ul class="grid md:grid-cols-2 gap-4">
+            {signals.map((s) => (
+              <li class="rounded-xl border border-slate-800 bg-slate-900/40 p-6 hover:bg-slate-900/55 transition">
+                <p class="text-slate-300 text-lg leading-relaxed">
+                  <span class="text-fuchsia-300">✓</span> {s}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VOICES: redesigned (varied size + divider rhythm) -->
+  <section class="bg-slate-950 py-24 border-t border-slate-800">
+    <div class="container mx-auto px-6 max-w-6xl">
+
+      <div class="reveal flex items-end justify-between flex-wrap gap-8">
+        <h2 class="text-4xl font-semibold text-white">
+          In their words
+        </h2>
+        <p class="text-slate-500 text-sm max-w-xl">
+          Short. Direct. Outcome-focused.
+        </p>
+      </div>
+
+      <div class="mt-14 space-y-10">
+        {voices.map((v, i) => (
+          <blockquote class={`reveal rounded-2xl border border-slate-800 bg-slate-900/35 p-10 hover:bg-slate-900/50 transition`}>
+            <p class={`text-slate-200 leading-snug ${i === 0 ? 'text-3xl' : 'text-2xl lg:text-3xl'} italic`}>
+              “{v}”
+            </p>
+          </blockquote>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPLY CTA: keep your component style, add better motion + less generic copy -->
+  <section class="relative bg-slate-950 text-white py-28 overflow-hidden border-t border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-r from-orange-500/18 via-pink-500/18 to-fuchsia-600/18 blur-3xl"></div>
+
+    <div class="relative container mx-auto px-6 max-w-4xl text-center reveal">
+      <h2 class="text-3xl lg:text-4xl font-semibold">
+        Want the truth about your website?
+      </h2>
+
+      <p class="mt-5 text-slate-300 max-w-2xl mx-auto text-lg">
+        Book a free Customer Leak Scan.  
+        You’ll get a clear verdict and a prioritized fix list — before you spend on ads.
+      </p>
+
+      <a
+        href="/apply"
+        class="inline-flex items-center justify-center mt-10 px-10 py-4 rounded-xl font-semibold
+               bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+               text-white shadow-lg shadow-fuchsia-600/30
+               hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+      >
+        Book Free Leak Scan →
+      </a>
+
+      <p class="mt-6 text-sm text-slate-400">
+        Not a pitch. A diagnostic.
+      </p>
+    </div>
+  </section>
+
+  <!-- REAL reveal animation (non-bullshit) -->
+  <script is:inline>
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  </script>
+
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+
 </Layout>

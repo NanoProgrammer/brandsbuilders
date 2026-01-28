@@ -12,113 +12,232 @@ const seo = {
 <Layout seo={seo}>
 
 <!-- HERO -->
-<section class="bg-slate-950 py-8 lg:py-16">
-  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center">
+<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
+
+  <!-- ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-32 left-[-120px] w-[520px] h-[520px] rounded-full bg-pink-500/15 blur-[140px]"></div>
+
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
 
     <!-- LEFT -->
-    <div>
-      <span class="block text-sm text-slate-400 mb-4">
+    <div class="reveal">
+
+      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
         Industry · Medical Spas
       </span>
 
-      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-        See where your med spa website is losing consultations
+      <h1 class="text-5xl font-semibold leading-tight">
+        High-value clients should  
+        <span class="text-fuchsia-300">book consultations</span>,  
+        not bounce.
       </h1>
 
-      <p class="text-lg text-slate-400 leading-relaxed max-w-xl mb-8">
-        We run a free 20–30 minute Consultation Leak Scan to reveal whether your website,
-        tracking, and booking flow are capturing demand —
-        or letting high-value consultations slip away.
+      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        A free 20–30 minute Consultation Leak Scan to uncover where
+        your med spa website, tracking, and booking flow
+        quietly lose high-ticket clients.
       </p>
 
-      <a
-        href="/apply"
-        class="inline-block border border-slate-600 px-6 py-3 text-white hover:border-white transition"
-      >
-        Book Free Call →
-      </a>
+      <div class="mt-10">
+        <a href="/apply"
+          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-orange-500
+                 shadow-lg shadow-fuchsia-600/30
+                 hover:translate-y-[-1px] transition">
+          Book Free Consultation Scan →
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm text-slate-500">
+        No pitch. Just diagnostic clarity.
+      </p>
+
     </div>
 
-    <!-- IMAGE -->
-    <div class="relative flex justify-center lg:justify-end">
-      <img
-        src="/industry/hero-medspa.webp"
-        alt="Medical spa consultation booking website"
-        width="640"
-        height="420"
-        class="rounded-xl border border-slate-800 shadow-lg object-cover"
-        loading="eager"
-        decoding="async"
-      />
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative reveal">
+
+      <!-- glow frame -->
+      <div class="absolute -inset-4 bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 blur-2xl rounded-3xl"></div>
+
+      <!-- image -->
+      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
+        <img
+          src="/industry/hero-medspa.webp"
+          alt="Medical spa consultation booking website"
+          class="w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <!-- floating badge -->
+      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
+        Consultation Flow · Tracking · Speed
+      </div>
+
     </div>
 
   </div>
 </section>
 
-<!-- PROBLEMS -->
-<section class="bg-slate-950 pb-20 border-t border-slate-800">
-  <div class="container mx-auto px-6 max-w-4xl">
 
-    <h2 class="text-2xl font-medium text-white mb-6">
+
+<!-- PROBLEMS -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-5xl">
+
+    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
       Common consultation leaks in med spa websites
     </h2>
 
-    <ul class="space-y-4 text-slate-400 leading-relaxed">
-      <li>• Paid traffic landing on slow or confusing pages</li>
-      <li>• Website visits that don’t convert into booked consultations</li>
-      <li>• Missing or broken form / booking tracking</li>
-      <li>• No visibility on real cost per booked consultation</li>
-      <li>• Websites that cannot scale with CRM or booking systems</li>
-    </ul>
+    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
 
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Paid traffic landing on slow, beauty-heavy pages that never load on mobile.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Visitors browsing treatments but never booking a consultation.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Missing form or booking tracking — no visibility on conversion.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        No clarity on real cost per booked consultation.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Booking systems that require expensive website rebuilds.
+      </div>
+
+      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
+        Agency-owned websites creating long-term dependency risk.
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- SCAN -->
-<section class="bg-slate-950 pb-24">
-  <div class="container mx-auto px-6 max-w-4xl">
 
-    <h2 class="text-2xl font-medium text-white mb-6">
-      What happens in the Consultation Leak Scan call
-    </h2>
 
-    <ul class="space-y-3 text-slate-400 leading-relaxed">
-      <li>• Core Web Vitals and mobile performance check</li>
-      <li>• GA4 and consultation booking tracking verification</li>
-      <li>• Visitor journey friction from visit → form → booking</li>
-      <li>• Website ownership and scalability risks</li>
-    </ul>
+<!-- SCAN CONTENT -->
+<section class="bg-slate-950 py-24 border-b border-slate-800">
+  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-start">
 
-    <p class="mt-4 text-slate-400">
-      You leave with a clear <strong>Go / Fix / No-Go</strong> recommendation
-      before investing more in ads or traffic.
-    </p>
+    <!-- LEFT INFO -->
+    <div class="reveal">
+      <h2 class="text-3xl font-semibold text-white mb-6">
+        What happens in the Consultation Leak Scan
+      </h2>
 
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-slate-950 pb-32">
-  <div class="container mx-auto px-6 max-w-4xl">
-
-    <div class="border border-slate-800 p-8 rounded-lg bg-slate-900">
-      <h3 class="text-2xl font-medium text-white mb-4">
-        Want clarity before increasing consultation bookings?
-      </h3>
-
-      <p class="text-slate-400 mb-6 leading-relaxed">
-        Book a free Consultation Leak Scan call.
-        You’ll see exactly whether your website is capturing consultation demand —
-        or what must be fixed first.
+      <p class="text-slate-400 mb-8">
+        We review the real signals that determine whether
+        your website captures or leaks consultation demand.
       </p>
 
-      <a
-        href="/apply"
-        class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
-      >
-        Book Free Call →
-      </a>
+      <ul class="space-y-6 text-slate-300">
+
+        <li class="flex gap-4">
+          <span class="text-fuchsia-400">▸</span>
+          Core Web Vitals and mobile performance
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-pink-400">▸</span>
+          GA4 and consultation booking tracking
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-orange-400">▸</span>
+          Visitor journey friction from visit → treatment → booking
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-emerald-400">▸</span>
+          Ownership and scalability risk review
+        </li>
+
+      </ul>
+
+      <p class="mt-8 text-slate-400">
+        You leave with a clear <strong class="text-white">Go / Fix / No-Go</strong> recommendation
+        before investing in more traffic.
+      </p>
     </div>
+
+
+    <!-- RIGHT VISUAL PANEL -->
+    <div class="relative reveal">
+
+      <div class="absolute -inset-4 bg-gradient-to-br from-pink-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
+
+        <p class="text-sm text-slate-400 mb-3">
+          Example diagnostic output
+        </p>
+
+        <div class="space-y-3 text-slate-300 text-sm">
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Mobile Speed</span>
+            <span class="text-emerald-400">Good</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Booking Tracking</span>
+            <span class="text-pink-400">Missing</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span>Consultation Flow</span>
+            <span class="text-fuchsia-400">High Friction</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Ownership Risk</span>
+            <span class="text-emerald-400">Clear</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
+
+  <div class="absolute inset-0 bg-gradient-to-r from-pink-500/15 via-fuchsia-500/15 to-orange-500/15 blur-3xl"></div>
+
+  <div class="relative container mx-auto px-6 max-w-4xl reveal">
+
+    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
+      Want to know what your website is really costing you?
+    </h2>
+
+    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+      Book a free Consultation Leak Scan and see exactly
+      where high-value clients are slipping away.
+    </p>
+
+    <a
+      href="/apply"
+      class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-pink-500 via-fuchsia-500 to-orange-500
+             text-white shadow-lg shadow-fuchsia-600/30
+             hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+    >
+      Book Free Consultation Scan →
+    </a>
+
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
 
   </div>
 </section>

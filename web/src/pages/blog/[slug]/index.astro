@@ -1,92 +1,15 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import { POSTS } from '../../../data/posts.js';
 
-/* === DATA === */
-const POSTS = {
-  'client-acquisition-systems-alberta': {
-    title: 'Client acquisition systems for Alberta service businesses',
-    excerpt:
-      'How demand, funnel structure, and financial logic interact — and why most local businesses struggle to scale profitably.',
-    content: `
-      <p>
-        Most service businesses don’t fail because of poor execution.
-        They fail because they try to scale demand without understanding
-        how acquisition, conversion, and unit economics interact.
-      </p>
-
-      <h2>Demand comes first</h2>
-      <p>
-        Before sending traffic, you must understand whether real demand
-        exists in your area and how competitive that demand actually is.
-      </p>
-
-      <h2>Funnels leak quietly</h2>
-      <p>
-        Most funnels don’t collapse — they bleed.
-        Small friction points compound and kill conversion.
-      </p>
-
-      <h2>Financial logic decides everything</h2>
-      <p>
-        Scaling only works when margins, acquisition cost,
-        and capacity align.
-      </p>
-    `,
-    date: '2025-01-15',
-    readTime: '6 min read',
-    category: 'Acquisition Systems',
-  },
-};
-
-/* === REQUIRED BY ASTRO === */
 export function getStaticPaths() {
-  const POSTS = {
-  'client-acquisition-systems-alberta': {
-    title: 'Client acquisition systems for Alberta service businesses',
-    excerpt:
-      'How demand, funnel structure, and financial logic interact — and why most local businesses struggle to scale profitably.',
-    content: `
-      <p>
-        Most service businesses don’t fail because of poor execution.
-        They fail because they try to scale demand without understanding
-        how acquisition, conversion, and unit economics interact.
-      </p>
-
-      <h2>Demand comes first</h2>
-      <p>
-        Before sending traffic, you must understand whether real demand
-        exists in your area and how competitive that demand actually is.
-      </p>
-
-      <h2>Funnels leak quietly</h2>
-      <p>
-        Most funnels don’t collapse — they bleed.
-        Small friction points compound and kill conversion.
-      </p>
-
-      <h2>Financial logic decides everything</h2>
-      <p>
-        Scaling only works when margins, acquisition cost,
-        and capacity align.
-      </p>
-    `,
-    date: '2025-01-15',
-    readTime: '6 min read',
-    category: 'Acquisition Systems',
-  },
-};
-  return Object.keys(POSTS).map((slug) => ({
-    params: { slug },
-  }));
+  return Object.keys(POSTS).map(slug => ({ params: { slug } }));
 }
 
-/* === PAGE LOGIC === */
 const { slug } = Astro.params;
 const post = POSTS[slug];
 
-if (!post) {
-  return Astro.redirect('/404');
-}
+if (!post) return Astro.redirect('/404');
 
 const seo = {
   title: `${post.title} — BrandsBuilders`,
@@ -95,79 +18,161 @@ const seo = {
 };
 ---
 
-
-
 <Layout seo={seo}>
 
-  <!-- HEADER -->
-  <section class="bg-slate-950 py-24">
-    <div class="container mx-auto px-6 max-w-3xl">
+<!-- HERO HEADER -->
+<section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
 
-      <nav class="mb-6 text-sm text-slate-500">
-        <a href="/" class="hover:text-white">Home</a>
-        <span class="mx-2">/</span>
-        <a href="/blog" class="hover:text-white">Insights</a>
-      </nav>
+  <!-- ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
 
-      <span class="block text-sm text-slate-400 mb-4">
-        {post.category} · {post.readTime}
+  <div class="relative container mx-auto px-6 max-w-4xl reveal">
+
+    <!-- breadcrumb -->
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-white transition">Insights</a>
+    </nav>
+
+    <!-- meta -->
+    <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400 mb-5">
+      <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300">
+        {post.category}
       </span>
-
-      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-        {post.title}
-      </h1>
-
-      <p class="text-lg text-slate-400 leading-relaxed">
-        {post.excerpt}
-      </p>
-
+      <span>•</span>
+      <span>{post.readTime}</span>
+      <span>•</span>
+      <span>
+        {new Date(post.date).toLocaleDateString('en-CA', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </span>
     </div>
-  </section>
 
-  <!-- CONTENT -->
-  <section class="bg-slate-950 pb-24">
-    <div class="container mx-auto px-6 max-w-3xl">
+    <!-- title -->
+    <h1 class="text-4xl sm:text-5xl font-semibold leading-tight max-w-4xl">
+      {post.title}
+    </h1>
 
-      <article class="prose prose-invert prose-lg max-w-none">
-        <div set:html={post.content} />
-      </article>
+    <!-- excerpt -->
+    <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-3xl">
+      {post.excerpt}
+    </p>
 
-      <!-- DIVIDER -->
-      <div class="border-t border-slate-800 my-16"></div>
+  </div>
+</section>
 
-      <!-- CTA -->
-      <div class="bg-slate-900 border border-slate-800 p-8 rounded-lg">
-        <h3 class="text-2xl font-medium text-white mb-4">
+
+<!-- ARTICLE BODY -->
+<section class="bg-slate-950 py-16">
+  <div class="container mx-auto px-6 max-w-3xl">
+
+    <article class="prose-system reveal">
+      <div set:html={post.content} />
+    </article>
+
+    <!-- divider -->
+    <div class="my-16 h-px bg-slate-800/80"></div>
+
+    <!-- CTA -->
+    <div class="reveal relative rounded-2xl border border-slate-800 bg-slate-900/35 p-10 overflow-hidden text-center">
+
+      <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-pink-500/10 to-fuchsia-600/10 blur-2xl"></div>
+
+      <div class="relative">
+        <h3 class="text-3xl font-semibold text-white">
           Want clarity before you scale?
         </h3>
 
-        <p class="text-slate-400 mb-6 leading-relaxed">
-          We offer a free client acquisition diagnostic that maps demand,
-          identifies funnel leaks, and explains whether scaling
-          makes financial sense — before you spend more on ads.
+        <p class="mt-4 text-slate-300 text-lg max-w-xl mx-auto">
+          Book a free Customer Leak Scan and get a clear verdict
+          on whether your website is ready for real acquisition.
         </p>
 
         <a
-          href="/contact"
-          class="inline-block px-6 py-3 border border-slate-600 text-white hover:border-white transition"
+          href="/apply"
+          class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                 text-white shadow-lg shadow-fuchsia-600/30
+                 hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
         >
-          Apply for Free Diagnostic →
+          Book Free Leak Scan →
         </a>
+
+        <p class="mt-5 text-sm text-slate-400">
+          Not a pitch. A diagnostic.
+        </p>
       </div>
-
     </div>
-  </section>
 
-</Layout>
+  </div>
+</section>
 
-<style>
-  .prose h2 {
-    font-size: 1.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+
+<!-- Reveal animation -->
+<script is:inline>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+
+<!-- Global styles for article typography -->
+<style is:global>
+  /* reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
+                transform 700ms cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
   }
 
-  .prose p {
-    line-height: 1.7;
+  /* article typography system */
+  .prose-system {
+    color: #cbd5e1; /* slate-300 */
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .prose-system h2 {
+    color: white;
+    font-size: 1.75rem;
+    margin-top: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .prose-system p {
+    margin-bottom: 1.3rem;
+  }
+
+  .prose-system strong {
+    color: white;
+  }
+
+  .prose-system a {
+    color: #f472b6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 </style>
+
+</Layout>

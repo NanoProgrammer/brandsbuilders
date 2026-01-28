@@ -1,38 +1,106 @@
-<section class="bg-slate-950 py-8">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <h1 class="text-3xl sm:text-4xl font-semibold text-white leading-tight">
-      Free Customer Leak Scan
-      <br />
-      to see where your website
-      <br />
-      is losing bookings.
-    </h1>
+<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
 
-    <p class="mt-6 text-md text-slate-400 leading-relaxed">
-      In a 20–30 minute working session, we review your website’s performance,
-      tracking, messaging clarity, and booking flow to uncover hidden
-      customer leakage — <strong class="text-slate-300">before</strong> you invest
-      more in traffic or ads.
-    </p>
+  <!-- ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-40 right-[-120px] w-[600px] h-[600px] rounded-full bg-orange-500/15 blur-[140px]"></div>
 
-    <p class="mt-6 text-slate-400">
-      No pitches. No pressure. Just clarity.
-    </p>
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-center py-16">
 
-    <div class="mt-10">
-      <a
-        href="#intake-section"
-        class="inline-block border border-slate-700 px-6 py-3 text-white hover:border-slate-500 transition"
-      >
-        Book free Customer Leak Scan →
-      </a>
+    <!-- LEFT TEXT -->
+    <div class="reveal">
+
+      <p class="text-sm uppercase tracking-widest text-slate-400 mb-5">
+        Free Customer Leak Scan
+      </p>
+
+      <h1 class="text-5xl font-semibold leading-tight">
+        Your website should  
+        <span class="text-fuchsia-300">capture demand</span>,  
+        not leak it.
+      </h1>
+
+      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        A free 20–30 minute live diagnostic to uncover
+        where performance, tracking, and messaging
+        quietly lose customers.
+      </p>
+
+      <!-- bullet summary -->
+      <ul class="mt-8 space-y-4 text-slate-300 text-sm">
+        <li class="flex gap-3"><span class="text-fuchsia-400">▸</span> Core Web Vitals & speed</li>
+        <li class="flex gap-3"><span class="text-orange-400">▸</span> Conversion routing & friction</li>
+        <li class="flex gap-3"><span class="text-emerald-400">▸</span> Tracking & attribution clarity</li>
+        <li class="flex gap-3"><span class="text-sky-400">▸</span> Ownership & platform risks</li>
+      </ul>
+
+      <p class="mt-6 text-sm text-slate-500">
+        No pitch. Just clarity.
+      </p>
     </div>
 
-    <p class="mt-4 text-sm text-slate-500">
-      Want details first?{" "}
-      <a href="/free-customer-leak-scan" class="underline hover:text-slate-300">
-        See how the scan works
-      </a>
-    </p>
+
+    <!-- RIGHT : IMAGE + FORM -->
+    <div class="relative reveal">
+
+      <!-- glow frame -->
+      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
+
+      <div class="relative border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
+
+    
+
+        <!-- FORM -->
+        <form
+          name="customer-leak-scan"
+          method="POST"
+          action="/thank-you"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="p-6 space-y-4"
+        >
+          <input type="hidden" name="form-name" value="customer-leak-scan" />
+          <p class="hidden"><input name="bot-field" /></p>
+
+          <input name="name" required placeholder="Name"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+
+          <input name="email" type="email" required placeholder="Email"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+
+          <input name="business" required placeholder="Business name"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+
+          <input name="website" required placeholder="Website URL"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+
+          <textarea
+            name="context"
+            rows="3"
+            placeholder="Briefly describe what feels broken"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md"
+          ></textarea>
+
+          <button type="submit"
+            class="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold
+                   bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                   shadow-lg shadow-fuchsia-600/30
+                   hover:translate-y-[-1px] transition">
+            Submit application →
+          </button>
+
+          <p class="text-xs text-slate-500 text-center pt-2">
+            You’ll receive a reply within 1 business day.
+          </p>
+
+        </form>
+      </div>
+
+      <!-- floating label -->
+      <div class="absolute -bottom-5 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-300 shadow-xl">
+        Performance · Tracking · Conversion
+      </div>
+
+    </div>
+
   </div>
 </section>

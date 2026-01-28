@@ -1,105 +1,178 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { POSTS } from '../../data/posts.js';
 
-// Temporary data (luego CMS / markdown)
-const blogPosts = [
-  {
-    slug: 'client-acquisition-systems-alberta',
-    title: 'Client acquisition systems for Alberta service businesses',
-    excerpt:
-      'How demand, funnel structure, and financial logic interact — and why most local businesses struggle to scale profitably.',
-    date: '2025-01-15',
-    readTime: '7 min read',
-    category: 'Acquisition Systems',
-  },
-  {
-    slug: 'why-ads-fail-local-businesses',
-    title: 'Why ads fail for most local businesses',
-    excerpt:
-      'The real reasons campaigns don’t work have less to do with platforms and more to do with economics, clarity, and trust.',
-    date: '2025-01-10',
-    readTime: '6 min read',
-    category: 'Strategy',
-  },
-  {
-    slug: 'when-growth-does-not-make-sense',
-    title: 'When growth does not make financial sense',
-    excerpt:
-      'A breakdown of break-even logic and why scaling traffic can quietly destroy margins.',
-    date: '2025-01-05',
-    readTime: '5 min read',
-    category: 'Financial Logic',
-  }
-];
+/* Build listing from single source of truth */
+const blogPosts = Object.entries(POSTS).map(([slug, post]) => ({
+  slug,
+  title: post.title,
+  excerpt: post.excerpt,
+  date: post.date,
+  readTime: post.readTime,
+  category: post.category
+}));
 
 const seo = {
   title: 'Insights — BrandsBuilders | Client Acquisition & Growth Systems',
   description:
-    'Thoughtful insights on client acquisition systems, funnel diagnostics, and financial logic for Alberta-based service businesses.',
+    'Frameworks and breakdowns on acquisition systems, funnel diagnostics, and financial logic for Alberta service businesses.',
   canonical: 'https://brandsbuilders.ca/blog'
 };
 ---
 
 <Layout seo={seo}>
 
-  <!-- HERO -->
-  <section class="bg-slate-950 py-24">
-    <div class="container mx-auto px-6 max-w-3xl">
-      <h1 class="text-4xl sm:text-5xl font-semibold text-white mb-6">
-        Insights on growth, systems, and acquisition
-      </h1>
+<!-- HERO -->
+<section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
 
-      <p class="text-slate-400 text-lg leading-relaxed">
-        Notes, frameworks, and breakdowns on how client acquisition actually
-        works for local and service businesses in Alberta.
-        No trends. No hacks. Just clarity.
-      </p>
-    </div>
-  </section>
+  <!-- controlled ambient glow -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
+  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
 
-  <!-- POSTS -->
-  <section class="bg-slate-950 pb-28">
-    <div class="container mx-auto px-6 max-w-3xl space-y-12">
+  <div class="relative container mx-auto px-6 max-w-5xl reveal">
 
-      {blogPosts.map(post => (
-        <article class="border-b border-slate-800 pb-10">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-3">
-            <span>{post.category}</span>
-            <span>•</span>
-            <span>{post.readTime}</span>
-            <span>•</span>
-            <span>
-              {new Date(post.date).toLocaleDateString('en-CA', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </span>
-          </div>
+    <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+      Insights
+    </p>
 
-          <h2 class="text-2xl font-medium text-white mb-3">
-            <a
-              href={`/blog/${post.slug}`}
-              class="hover:underline underline-offset-4"
-            >
-              {post.title}
-            </a>
-          </h2>
+    <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05]">
+      Notes on systems,  
+      <span class="text-fuchsia-300">growth and clarity</span>.
+    </h1>
 
-          <p class="text-slate-400 leading-relaxed mb-4">
-            {post.excerpt}
-          </p>
+    <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+      Frameworks and breakdowns on how acquisition actually works for
+      Alberta service businesses. No hacks. No trends. Just systems.
+    </p>
 
+  </div>
+</section>
+
+
+<!-- POSTS -->
+<section class="bg-slate-950 py-20">
+  <div class="container mx-auto px-6 max-w-5xl space-y-14">
+
+    {blogPosts.map((post) => (
+      <article class="reveal group">
+
+        <!-- metadata row -->
+        <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 mb-3">
+
+          <!-- category badge -->
+          <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300">
+            {post.category}
+          </span>
+
+          <span>•</span>
+          <span>{post.readTime}</span>
+          <span>•</span>
+          <span>
+            {new Date(post.date).toLocaleDateString('en-CA', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </span>
+        </div>
+
+        <!-- title -->
+        <h2 class="text-2xl lg:text-3xl font-medium text-white mb-3">
           <a
             href={`/blog/${post.slug}`}
-            class="text-sm text-slate-300 hover:text-white transition"
+            class="underline-offset-4 decoration-slate-700 group-hover:underline group-hover:decoration-fuchsia-400 transition"
           >
-            Read →
+            {post.title}
           </a>
-        </article>
-      ))}
+        </h2>
 
-    </div>
-  </section>
+        <!-- excerpt -->
+        <p class="text-slate-400 leading-relaxed text-lg max-w-3xl mb-4">
+          {post.excerpt}
+        </p>
+
+        <!-- read link -->
+        <a
+          href={`/blog/${post.slug}`}
+          class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition"
+        >
+          Read article
+          <span class="group-hover:translate-x-1 transition">→</span>
+        </a>
+
+        <!-- divider -->
+        <div class="mt-10 h-px bg-slate-800/80"></div>
+
+      </article>
+    ))}
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
+
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/15 via-pink-500/15 to-fuchsia-600/15 blur-3xl"></div>
+
+  <div class="relative container mx-auto px-6 max-w-4xl text-center reveal">
+
+    <h2 class="text-3xl lg:text-4xl font-semibold">
+      Want clarity on your own system?
+    </h2>
+
+    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+      The Customer Leak Scan shows exactly where your website
+      wins or loses customers — before you scale traffic.
+    </p>
+
+    <a
+      href="/apply"
+      class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
+             bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+             text-white shadow-lg shadow-fuchsia-600/30
+             hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
+    >
+      Book Free Leak Scan →
+    </a>
+
+    <p class="mt-5 text-sm text-slate-400">
+      Not a pitch. A diagnostic.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- reveal animation -->
+<script is:inline>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+<style is:global>
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
+                transform 700ms cubic-bezier(.2,.8,.2,1);
+    will-change: transform, opacity;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
 
 </Layout>
