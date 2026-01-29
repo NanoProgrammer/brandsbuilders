@@ -1,3 +1,17 @@
+
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17710658719/wq67CJeHgskbEJ_pjP1B',
+
+  });
+  return false;
+}
+
 export default function BookingSection() {
   return (
     <section className="bg-slate-950 py-20 border-b border-slate-800">
@@ -19,6 +33,7 @@ export default function BookingSection() {
             className="inline-flex mt-4 px-8 py-3 rounded-xl font-semibold
                        border border-slate-600 text-white
                        hover:border-slate-400 transition"
+                       onclick="return gtag_report_conversion();"
           >
             Book Free Leak Scan →
           </a>

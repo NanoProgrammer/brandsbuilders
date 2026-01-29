@@ -15,13 +15,13 @@ const seo = {
   canonical: 'https://brandsbuilders.ca/apply',
   ogImage: '/og.webp'
 };
+
+
 ---
 
 <Layout seo={seo}>
   <!-- HERO: sets expectation (apply-first) -->
   <ContactHero />
-
-  
 
   <!-- SECONDARY PATH: Only for decided leads -->
   <BookingSection client:only="react" />
