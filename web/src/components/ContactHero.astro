@@ -26,31 +26,30 @@ function gtag_report_conversion(url) {
     <div class="reveal">
 
       <p class="text-sm uppercase tracking-widest text-slate-400 mb-5">
-        Free Customer Leak Scan
+        Upfront Website Build
       </p>
 
       <h1 class="text-5xl font-semibold leading-tight">
-        Your website should  
-        <span class="text-fuchsia-300">capture demand</span>,  
-        not leak it.
+        I’ll build your website  
+        <span class="text-fuchsia-300">before you pay</span>.
       </h1>
 
       <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
-        A free 20–30 minute live diagnostic to uncover
-        where performance, tracking, and messaging
-        quietly lose customers.
+        I design and build the actual website upfront —
+        focused on performance, conversion, and ownership.
+        You review it first. Then you decide.
       </p>
 
       <!-- bullet summary -->
       <ul class="mt-8 space-y-4 text-slate-300 text-sm">
-        <li class="flex gap-3"><span class="text-fuchsia-400">▸</span> Core Web Vitals & speed</li>
-        <li class="flex gap-3"><span class="text-orange-400">▸</span> Conversion routing & friction</li>
-        <li class="flex gap-3"><span class="text-emerald-400">▸</span> Tracking & attribution clarity</li>
-        <li class="flex gap-3"><span class="text-sky-400">▸</span> Ownership & platform risks</li>
+        <li class="flex gap-3"><span class="text-fuchsia-400">▸</span> Built before commitment</li>
+        <li class="flex gap-3"><span class="text-orange-400">▸</span> Conversion-focused structure</li>
+        <li class="flex gap-3"><span class="text-emerald-400">▸</span> Tracking-ready foundation</li>
+        <li class="flex gap-3"><span class="text-sky-400">▸</span> Full ownership — no lock-ins</li>
       </ul>
 
       <p class="mt-6 text-sm text-slate-500">
-        No pitch. Just clarity.
+        If you like it, you pay. If you don’t, you don’t pay for it.
       </p>
     </div>
 
@@ -63,18 +62,16 @@ function gtag_report_conversion(url) {
 
       <div class="relative border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
 
-    
-
         <!-- FORM -->
         <form
-          name="customer-leak-scan"
+          name="upfront-website-build"
           method="POST"
           action="/thank-you"
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="p-6 space-y-4"
         >
-          <input type="hidden" name="form-name" value="customer-leak-scan" />
+          <input type="hidden" name="form-name" value="upfront-website-build" />
           <p class="hidden"><input name="bot-field" /></p>
 
           <input name="name" required placeholder="Name"
@@ -86,13 +83,13 @@ function gtag_report_conversion(url) {
           <input name="business" required placeholder="Business name"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
 
-          <input name="website" required placeholder="Website URL"
+          <input name="website" placeholder="Current website (if any)"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
 
           <textarea
             name="context"
             rows="3"
-            placeholder="Briefly describe what feels broken"
+            placeholder="What’s not working with your current site?"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md"
           ></textarea>
 
@@ -101,13 +98,13 @@ function gtag_report_conversion(url) {
                    bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
                    shadow-lg shadow-fuchsia-600/30
                    hover:translate-y-[-1px] transition"
-                   onclick="return gtag_report_conversion();"
-            >
-            Submit application →
+            onclick="return gtag_report_conversion();"
+          >
+            Apply for upfront build →
           </button>
 
           <p class="text-xs text-slate-500 text-center pt-2">
-            You’ll receive a reply within 1 business day.
+            You’ll hear back within 1 business day.
           </p>
 
         </form>
@@ -115,7 +112,7 @@ function gtag_report_conversion(url) {
 
       <!-- floating label -->
       <div class="absolute -bottom-5 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-300 shadow-xl">
-        Performance · Tracking · Conversion
+        Built first · You decide
       </div>
 
     </div>
