@@ -20,41 +20,32 @@ function gtag_report_conversion(url) {
   <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
   <div class="absolute -top-40 right-[-120px] w-[600px] h-[600px] rounded-full bg-orange-500/15 blur-[140px]"></div>
 
-  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-center py-16">
+  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-center py-12">
 
     <!-- LEFT TEXT -->
     <div class="reveal">
 
       <p class="text-sm uppercase tracking-widest text-slate-400 mb-5">
-        Upfront Website Build
+        Rebooking & Reactivation System
       </p>
 
       <h1 class="text-5xl font-semibold leading-tight">
-        I’ll build your website  
-        <span class="text-fuchsia-300">before you pay</span>.
+        Turn past clients into  
+        <span class="text-fuchsia-300">new bookings</span>.
       </h1>
 
       <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
-        I design and build the actual website upfront —
-        focused on performance, conversion, and ownership.
-        You review it first. Then you decide.
+        We build your reactivation and rebooking flows —
+        email, SMS, scripts and campaigns —
+        done for you, based on real customer language.
       </p>
 
-      <!-- bullet summary -->
-      <ul class="mt-8 space-y-4 text-slate-300 text-sm">
-        <li class="flex gap-3"><span class="text-fuchsia-400">▸</span> Built before commitment</li>
-        <li class="flex gap-3"><span class="text-orange-400">▸</span> Conversion-focused structure</li>
-        <li class="flex gap-3"><span class="text-emerald-400">▸</span> Tracking-ready foundation</li>
-        <li class="flex gap-3"><span class="text-sky-400">▸</span> Full ownership — no lock-ins</li>
-      </ul>
+    
 
-      <p class="mt-6 text-sm text-slate-500">
-        If you like it, you pay. If you don’t, you don’t pay for it.
-      </p>
     </div>
 
 
-    <!-- RIGHT : IMAGE + FORM -->
+    <!-- RIGHT : FORM -->
     <div class="relative reveal">
 
       <!-- glow frame -->
@@ -62,16 +53,15 @@ function gtag_report_conversion(url) {
 
       <div class="relative border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
 
-        <!-- FORM -->
         <form
-          name="upfront-website-build"
+          name="rebooking-system-qualification"
           method="POST"
           action="/thank-you"
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="p-6 space-y-4"
         >
-          <input type="hidden" name="form-name" value="upfront-website-build" />
+          <input type="hidden" name="form-name" value="rebooking-system-qualification" />
           <p class="hidden"><input name="bot-field" /></p>
 
           <input name="name" required placeholder="Name"
@@ -80,18 +70,15 @@ function gtag_report_conversion(url) {
           <input name="email" type="email" required placeholder="Email"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
 
+            <input name="Phone" type="tel" required placeholder="Phone"
+            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+
           <input name="business" required placeholder="Business name"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
+          
 
           <input name="website" placeholder="Current website (if any)"
             class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-
-          <textarea
-            name="context"
-            rows="3"
-            placeholder="What’s not working with your current site?"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md"
-          ></textarea>
 
           <button type="submit"
             class="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold
@@ -100,21 +87,17 @@ function gtag_report_conversion(url) {
                    hover:translate-y-[-1px] transition"
             onclick="return gtag_report_conversion();"
           >
-            Apply for upfront build →
+            Check qualification →
           </button>
 
           <p class="text-xs text-slate-500 text-center pt-2">
-            You’ll hear back within 1 business day.
+            Reply within 1 business day.
           </p>
 
         </form>
       </div>
 
-      <!-- floating label -->
-      <div class="absolute -bottom-5 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-300 shadow-xl">
-        Built first · You decide
-      </div>
-
+   
     </div>
 
   </div>

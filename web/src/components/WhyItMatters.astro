@@ -1,166 +1,79 @@
----
-// WhyItMatters.astro
----
-<section class="relative bg-slate-950 text-white py-24 overflow-hidden">
+<section id="why" class="bg-slate-950 text-white py-28 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-6">
 
-  <!-- Background glows -->
-  <div class="absolute -top-32 -left-20 w-80 h-80 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-40 -right-20 w-96 h-96 bg-orange-500/30 rounded-full blur-3xl"></div>
+    <div class="grid lg:grid-cols-12 gap-16 items-start">
 
-  <div class="relative container mx-auto px-6 max-w-6xl">
+      <!-- LEFT MAIN -->
+      <div class="lg:col-span-7">
 
-    <!-- Header -->
-    <div class="mb-16 reveal">
-      <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight">
-        Your website matters more than your ads
-      </h2>
-      <p class="mt-4 text-slate-400 max-w-3xl">
-        Ads amplify what already exists.  
-        If your site is slow, unclear, or tracking is broken — traffic leaks.
-      </p>
-    </div>
+        <h2 class="text-3xl font-semibold tracking-tight">
+          Most revenue loss is invisible
+        </h2>
 
-    <!-- Grid -->
-    <div class="grid md:grid-cols-3 gap-10">
+        <p class="mt-5 text-slate-400 max-w-xl">
+          Not from ads. Not from competitors.
+          From clients who would have come back — but weren’t contacted.
+        </p>
 
-      <!-- SPEED -->
-      <div class="reveal group relative rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden hover:border-slate-600 transition">
+        <div class="mt-14 space-y-12">
 
-        <!-- SVG -->
-        <div class="h-36 flex items-center justify-center border-b border-slate-800 bg-slate-950/40">
-          <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none">
-            <defs>
-              <linearGradient id="gradSpeed" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ff7e00"/>
-                <stop offset="0.6" stop-color="#ff007a"/>
-                <stop offset="1" stop-color="#a800ff"/>
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="42" stroke="url(#gradSpeed)" stroke-width="6" opacity="0.3"/>
-            <path d="M50 10 A40 40 0 0 1 90 50" stroke="url(#gradSpeed)" stroke-width="6" stroke-linecap="round"/>
-            <circle cx="50" cy="50" r="6" fill="url(#gradSpeed)"/>
-            <path d="M50 50 L80 35" stroke="white" stroke-width="3" stroke-linecap="round"/>
-          </svg>
+          <div>
+            <p class="font-medium">Past clients go silent</p>
+            <p class="mt-2 text-slate-400 text-sm max-w-lg">
+              No structured reactivation — so they never return.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Follow-up is inconsistent</p>
+            <p class="mt-2 text-slate-400 text-sm max-w-lg">
+              Leads and visits don’t convert into repeat bookings.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">No-shows are unprotected</p>
+            <p class="mt-2 text-slate-400 text-sm max-w-lg">
+              Appointments disappear without confirmation flow.
+            </p>
+          </div>
+
         </div>
 
-        <div class="p-6">
-          <p class="text-sm font-medium text-fuchsia-400">Speed</p>
-          <h3 class="mt-2 font-semibold">Conversion + cheaper traffic</h3>
-          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-            Faster websites reduce bounce, build trust, and lower ad costs.
-            Speed is a profit lever.
-          </p>
-        </div>
-
-        <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
-          <div class="absolute -top-24 -right-24 w-48 h-48 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
-        </div>
       </div>
 
+      <!-- RIGHT BALANCE PANEL -->
+      <div class="lg:col-span-5">
 
-      <!-- TRACKING -->
-      <div class="reveal group relative rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden hover:border-slate-600 transition">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/30 p-10">
 
-        <div class="h-36 flex items-center justify-center border-b border-slate-800 bg-slate-950/40">
-          <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none">
-            <defs>
-              <linearGradient id="gradTrack" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ff7e00"/>
-                <stop offset="0.6" stop-color="#ff007a"/>
-                <stop offset="1" stop-color="#a800ff"/>
-              </linearGradient>
-            </defs>
-            <rect x="12" y="12" width="76" height="76" rx="10" stroke="url(#gradTrack)" stroke-width="5" opacity="0.3"/>
-            <path d="M28 68 L44 52 L56 60 L72 40" stroke="url(#gradTrack)" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="28" cy="68" r="4" fill="url(#gradTrack)"/>
-            <circle cx="44" cy="52" r="4" fill="url(#gradTrack)"/>
-            <circle cx="56" cy="60" r="4" fill="url(#gradTrack)"/>
-            <circle cx="72" cy="40" r="4" fill="url(#gradTrack)"/>
-          </svg>
-        </div>
-
-        <div class="p-6">
-          <p class="text-sm font-medium text-orange-400">Tracking</p>
-          <h3 class="mt-2 font-semibold">Decisions, not guesses</h3>
-          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-            If GA4 events are wrong, every optimization is guessing.
-            We align tracking to real outcomes.
+          <p class="text-sm text-slate-400">
+            The hidden pattern
           </p>
-        </div>
 
-        <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
-          <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-orange-500/30 rounded-full blur-3xl"></div>
-        </div>
-      </div>
-
-
-      <!-- STRUCTURE -->
-      <div class="reveal group relative rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden hover:border-slate-600 transition">
-
-        <div class="h-36 flex items-center justify-center border-b border-slate-800 bg-slate-950/40">
-          <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none">
-            <defs>
-              <linearGradient id="gradStruct" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ff7e00"/>
-                <stop offset="0.6" stop-color="#ff007a"/>
-                <stop offset="1" stop-color="#a800ff"/>
-              </linearGradient>
-            </defs>
-            <rect x="18" y="18" width="24" height="24" rx="4" stroke="url(#gradStruct)" stroke-width="4"/>
-            <rect x="58" y="18" width="24" height="24" rx="4" stroke="url(#gradStruct)" stroke-width="4"/>
-            <rect x="38" y="58" width="24" height="24" rx="4" stroke="url(#gradStruct)" stroke-width="4"/>
-            <path d="M30 42 L50 58 L70 42" stroke="url(#gradStruct)" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <div class="p-6">
-          <p class="text-sm font-medium text-fuchsia-400">Structure</p>
-          <h3 class="mt-2 font-semibold">Scale without rebuilds</h3>
-          <p class="mt-3 text-slate-400 text-sm leading-relaxed">
-            Sites that break when you grow kill momentum.
-            We build for the next stage.
+          <p class="mt-6 text-2xl font-semibold leading-snug">
+            Most businesses don’t lose customers once.
           </p>
+
+          <p class="mt-3 text-2xl font-semibold text-slate-500">
+            They lose them repeatedly —
+          </p>
+
+          <p class="mt-3 text-2xl font-semibold bg-clip-text text-transparent
+            bg-[linear-gradient(90deg,#ff7e00,#ff007a,#a800ff)]">
+            by not rebooking them.
+          </p>
+
+          <div class="mt-8 h-px w-full bg-slate-800"></div>
+
+          <p class="mt-6 text-sm text-slate-400">
+            This is a systems problem — not a traffic problem.
+          </p>
+
         </div>
 
-        <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
-          <div class="absolute top-1/2 left-1/2 w-48 h-48 bg-fuchsia-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
       </div>
 
     </div>
-
-    <!-- Bottom line -->
-    <div class="reveal mt-14 border border-slate-800 rounded-xl bg-slate-900/40 p-6 text-slate-300">
-     <p class="mt-2 text-slate-400 max-w-3xl">
-  That’s why you don’t pay until you see it working.
-</p>
-    </div>
-
   </div>
 </section>
-
-
-<!-- Reveal animation -->
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal-active');
-      }
-    });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => io.observe(el));
-</script>
-
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity .6s ease, transform .6s ease;
-  }
-  .reveal-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>

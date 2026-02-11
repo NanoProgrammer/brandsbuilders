@@ -2,227 +2,206 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Process — Upfront Website Build → Fix → Scale | BrandsBuilders',
+  title: 'DFY Rebooking & Reactivation Engine | BrandsBuilders',
   description:
-    'We build your website upfront, fix the foundation if needed, and enable safe scaling once the system is proven.',
-  canonical: 'https://brandsbuilders.ca/process'
+    'Done-for-you rebooking, client reactivation, SMS/email flows, and conversion systems for Alberta service businesses. Built from real customer language and behavior data.',
+  canonical: 'https://brandsbuilders.ca/rebooking-system',
 };
+
+const pillars = [
+  {
+    title: 'Customer language research',
+    desc: 'We analyze your reviews, testimonials, and public feedback to extract real customer words, pains, objections, and desired outcomes — used directly in copy and campaigns.'
+  },
+  {
+    title: 'Pain & demand mapping',
+    desc: 'We map what clients complain about, fear, and want most — so messaging and offers match buying triggers, not assumptions.'
+  },
+  {
+    title: 'Offer & message design',
+    desc: 'Headlines, hooks, and booking triggers are built from voice-of-customer data — not generic marketing templates.'
+  },
+  {
+    title: 'Brand & owner alignment',
+    desc: 'Website and campaigns are aligned with brand tone, owner positioning, and client preference signals.'
+  },
+  {
+    title: 'Reactivation campaigns',
+    desc: 'Step-by-step past-client reactivation flows via email and SMS designed to generate bookings quickly.'
+  },
+  {
+    title: 'Rebooking & recurrence engine',
+    desc: 'Follow-up and reminder systems that increase repeat bookings and client lifetime value.'
+  }
+];
+
+const steps = [
+  ['Step 1 — Research',
+   'Review mining & language extraction',
+   'We scan reviews, testimonials, and feedback to extract pain points, triggers, and buying language.'],
+
+  ['Step 2 — Customer psychology map',
+   'Pain, fear, and outcome model',
+   'We map what clients want solved, what they fear, and what makes them book now.'],
+
+  ['Step 3 — Message & copy system',
+   'Website + email + SMS copy',
+   'Messaging is built using real customer language and objections.'],
+
+  ['Step 4 — Brand & design alignment',
+   'Structure based on trust signals',
+   'Layout and flow are built around brand tone, owner authority, and client preferences.'],
+
+  ['Step 5 — Script & template build',
+   'Email + SMS + booking scripts',
+   'We create ready-to-use scripts and templates for campaigns and follow-ups.'],
+
+  ['Step 6 — Reactivation campaign',
+   'Past client booking push',
+   'Multi-step reactivation sequences launch to generate bookings.'],
+
+  ['Step 7 — Rebooking engine',
+   'Recurrence & reminder flows',
+   'Structured flows increase repeat visits and reduce drop-off.'],
+
+  ['Step 8 — Show-up protection',
+   'Confirmation & reminder flows',
+   'SMS + email sequences reduce no-shows and empty slots.']
+];
+
+const faqs = [
+  {
+    q: 'Do you write the campaign copy?',
+    a: 'Yes. Copy is built from real customer language extracted from reviews and testimonials — not generic marketing text.'
+  },
+  {
+    q: 'Do you build email and SMS flows?',
+    a: 'Yes. We design structured multi-step SMS and email flows for reactivation, reminders, and rebooking.'
+  },
+  {
+    q: 'Is this only for new leads?',
+    a: 'No. The system focuses first on past clients and missed opportunities — the highest ROI segment.'
+  },
+  {
+    q: 'Do you design scripts and templates?',
+    a: 'Yes. Campaign scripts, follow-up templates, and booking messages are included.'
+  },
+  {
+    q: 'Is the website redesigned too?',
+    a: 'If needed. Only when structure or trust flow blocks bookings — otherwise we optimize instead of rebuilding.'
+  }
+];
 ---
 
 <Layout seo={seo}>
 
 <!-- HERO -->
-<section class="relative bg-slate-950 text-white pt-24 pb-32 overflow-hidden border-b border-slate-800">
+<section class="relative bg-slate-950 text-white pt-24 pb-16 border-b border-slate-800">
 
-  <!-- background glow -->
   <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
-  <div class="absolute left-1/2 top-[-120px] -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/15 blur-[160px] rounded-full"></div>
 
-  <div class="relative container mx-auto px-6 max-w-5xl text-center">
+  <div class="relative container mx-auto px-6 max-w-5xl reveal">
 
-    <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">
-      Process
+    <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
+      DFY Rebooking & Reactivation Engine
     </p>
 
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
-      Build first.  
-      <span class="block text-fuchsia-400">Decide after.</span>
+    <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05]">
+      We turn past clients  
+      <span class="text-fuchsia-300">into new bookings</span>.
     </h1>
 
-    <p class="mt-6 text-xl text-slate-300 max-w-3xl mx-auto">
-      We build your website upfront as a real system —
-      performance, tracking, structure, and ownership.
-      You review the work first, then decide whether to proceed.
+    <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+      Built from real customer language, real pain points,
+      and real behavior — implemented as done-for-you
+      email, SMS, rebooking, and reactivation systems.
     </p>
 
-    <div class="mt-8 flex justify-center gap-4">
+    <div class="mt-10 flex gap-4 flex-wrap">
       <a href="/apply"
-        class="px-8 py-4 rounded-lg font-medium text-white bg-gradient-to-r from-orange-500 to-fuchsia-600 hover:opacity-90 transition">
-        Apply for upfront build →
+        class="inline-flex px-10 py-4 rounded-xl font-semibold
+               bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600">
+        Check qualification →
       </a>
-      <a href="#process"
-        class="px-8 py-4 rounded-lg border border-slate-600 text-slate-300 hover:border-white hover:text-white transition">
-        See the process
+
+      <a href="/proof"
+        class="inline-flex px-10 py-4 rounded-xl border border-slate-700 text-slate-300">
+        See proof
       </a>
     </div>
 
   </div>
 </section>
 
-<!-- SECTION 1 : UPFRONT BUILD -->
-<section id="process" class="bg-slate-950 border-t border-slate-800 py-24">
-  <div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-14 items-center">
 
-    <!-- text -->
-    <div>
-      <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">
-        Phase 1
-      </p>
-      <h2 class="text-3xl font-semibold text-white mb-6">
-        Upfront website build
-      </h2>
-      <p class="text-slate-400 text-lg leading-relaxed">
-        We build the website first — not a mockup, not a proposal.
-        A real, working foundation designed for performance and growth.
-      </p>
-
-      <ul class="mt-6 space-y-3 text-slate-300">
-        <li>• Performance-first architecture</li>
-        <li>• Clean tracking & event wiring</li>
-        <li>• Conversion-focused structure</li>
-        <li>• Full ownership from day one</li>
-      </ul>
-    </div>
-
-    <!-- visual frame -->
-    <div class="relative">
-      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl"></div>
-      <img
-        src="/images/upfront-build-preview.webp"
-        alt="Upfront Website Build Preview"
-        class="relative rounded-xl border border-slate-800 shadow-2xl"
-        loading="lazy"
-      />
-    </div>
-
-  </div>
+<!-- PILLARS -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+<div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-8">
+{pillars.map(p => (
+<div class="reveal border border-slate-800 bg-slate-900/40 rounded-xl p-7">
+<h3 class="text-white text-lg font-medium mb-2">{p.title}</h3>
+<p class="text-slate-400">{p.desc}</p>
+</div>
+))}
+</div>
 </section>
 
-<!-- SECTION 2 : PROCESS FLOW -->
-<section class="bg-slate-950 border-t border-slate-800 py-24 relative overflow-hidden">
 
-  <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 400">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0 H0 V40" fill="none" stroke="#334155" stroke-width="1"/>
-      </pattern>
-    </defs>
-    <rect width="800" height="400" fill="url(#grid)" />
-  </svg>
+<!-- PROCESS -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+<div class="container mx-auto px-6 max-w-6xl">
+<h2 class="text-3xl font-semibold text-white mb-12 reveal">
+Full execution process
+</h2>
 
-  <div class="relative container mx-auto px-6 max-w-5xl text-center">
-    <h2 class="text-3xl font-semibold text-white mb-6">
-      Build → Verify → Scale
-    </h2>
-    <p class="text-slate-400 text-lg max-w-3xl mx-auto">
-      No guessing. No premature scaling.
-      Each step earns the next.
-    </p>
-
-    <div class="mt-16 flex flex-col md:flex-row justify-center gap-10">
-
-      <div class="text-slate-300">
-        <span class="text-fuchsia-400 font-semibold">01</span>
-        <p class="mt-2">Upfront Build</p>
-      </div>
-
-      <div class="text-slate-300">
-        <span class="text-orange-400 font-semibold">02</span>
-        <p class="mt-2">Foundation Verification</p>
-      </div>
-
-      <div class="text-slate-300">
-        <span class="text-emerald-400 font-semibold">03</span>
-        <p class="mt-2">Safe Scaling</p>
-      </div>
-
-    </div>
-  </div>
+<div class="grid md:grid-cols-2 gap-10">
+{steps.map(([step,title,desc]) => (
+<div class="reveal">
+<p class="text-sm text-slate-500">{step}</p>
+<h3 class="text-lg text-white font-medium mb-2">{title}</h3>
+<p class="text-slate-400">{desc}</p>
+</div>
+))}
+</div>
+</div>
 </section>
 
-<!-- SECTION 3 : FOUNDATION -->
-<section class="bg-slate-950 border-t border-slate-800 py-24">
-  <div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-14 items-center">
 
-    <!-- svg -->
-    <div class="relative order-2 md:order-1">
-      <svg viewBox="0 0 400 400" class="w-full opacity-80">
-        <defs>
-          <linearGradient id="tech" x1="0" x2="1" y1="0" y2="1">
-            <stop stop-color="#f97316"/>
-            <stop offset="1" stop-color="#ec4899"/>
-          </linearGradient>
-        </defs>
-        <rect x="40" y="40" width="320" height="320" rx="20"
-          stroke="url(#tech)" stroke-width="3" fill="none"/>
-        <circle cx="200" cy="200" r="60" stroke="url(#tech)" stroke-width="3" fill="none"/>
-        <path d="M200 40 V120 M200 280 V360 M40 200 H120 M280 200 H360"
-          stroke="url(#tech)" stroke-width="3"/>
-      </svg>
-    </div>
+<!-- FAQ -->
+<section class="bg-slate-950 py-20 border-b border-slate-800">
+<div class="container mx-auto px-6 max-w-5xl">
+<h2 class="text-3xl font-semibold text-white mb-10 reveal">FAQ</h2>
 
-    <div class="order-1 md:order-2">
-      <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">
-        Phase 2
-      </p>
-      <h2 class="text-3xl font-semibold text-white mb-6">
-        Verify the foundation
-      </h2>
-      <p class="text-slate-400 text-lg leading-relaxed">
-        We validate performance, tracking, structure, and ownership.
-        If improvements are needed, they’re clearly defined and executed.
-      </p>
-
-      <ul class="mt-6 space-y-3 text-slate-300">
-        <li>• Core Web Vitals targets</li>
-        <li>• GA4 events aligned to outcomes</li>
-        <li>• Conversion clarity</li>
-        <li>• No lock-in, full control</li>
-      </ul>
-    </div>
-
-  </div>
+<div class="space-y-4">
+{faqs.map(f => (
+<details class="reveal border border-slate-800 bg-slate-900/40 rounded-xl p-6">
+<summary class="text-white font-medium cursor-pointer">{f.q}</summary>
+<p class="mt-4 text-slate-400">{f.a}</p>
+</details>
+))}
+</div>
+</div>
 </section>
 
-<!-- SECTION 4 : SCALE -->
-<section class="bg-slate-950 border-t border-slate-800 py-24 text-center">
-
-  <p class="text-sm uppercase tracking-widest text-slate-400 mb-4">
-    Phase 3
-  </p>
-
-  <h2 class="text-3xl font-semibold text-white mb-6">
-    Scale with confidence
-  </h2>
-
-  <p class="text-slate-400 text-lg max-w-3xl mx-auto">
-    Once the system is proven, you can scale ads, SEO,
-    and campaigns knowing every click lands on
-    a reliable growth engine.
-  </p>
-
-  <div class="mt-12 inline-block px-8 py-4 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-200">
-    Performance Verified · Tracking Trusted · Structure Ready
-  </div>
-
-</section>
 
 <!-- CTA -->
-<section class="relative bg-slate-950 py-28 border-t border-slate-800 overflow-hidden text-center">
+<section class="bg-slate-950 py-24 text-center">
+<div class="container mx-auto px-6 max-w-4xl reveal">
+<h2 class="text-4xl text-white font-semibold">
+Install your rebooking engine
+</h2>
 
-  <div class="absolute inset-0 bg-gradient-to-br from-orange-900/40 via-slate-950 to-fuchsia-900/40"></div>
+<p class="mt-6 text-slate-300 text-lg">
+We only implement where recurrence and database size justify ROI.
+</p>
 
-  <div class="relative container mx-auto px-6 max-w-4xl">
+<a href="/apply"
+class="inline-flex mt-10 px-10 py-4 rounded-xl font-semibold
+bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600">
+Check qualification →
+</a>
 
-    <h2 class="text-3xl font-semibold text-white mb-6">
-      Ready to see it built?
-    </h2>
-
-    <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
-      Apply to have your website built upfront.
-      You decide after reviewing the work.
-    </p>
-
-    <a href="/apply"
-      class="inline-block px-10 py-4 rounded-lg font-medium text-white bg-gradient-to-r from-orange-500 to-fuchsia-600 hover:opacity-90 transition">
-      Apply for upfront build →
-    </a>
-
-    <p class="mt-6 text-sm text-slate-500">
-      No pitch. No pressure. No obligation.
-    </p>
-
-  </div>
+</div>
 </section>
 
 </Layout>

@@ -1,21 +1,18 @@
----
-// ProofPreview.astro
----
 <section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
 
-  <!-- background glow -->
-  <div class="absolute -top-40 -left-20 w-80 h-80 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
+  <!-- soft background glow -->
+  <div class="absolute -top-40 -left-20 w-80 h-80 bg-fuchsia-600/20 rounded-full blur-3xl"></div>
 
   <div class="relative container mx-auto px-6 max-w-6xl">
 
     <!-- Header -->
     <div class="mb-14 reveal">
       <h2 class="text-3xl lg:text-4xl font-semibold">
-        Proof, not promises.
+        Real systems. Real businesses.
       </h2>
       <p class="mt-4 text-slate-400 max-w-3xl">
-        Real code. Real performance. Real ownership.
-        Every system is built to load fast, track correctly, and scale.
+        These are real projects where booking, conversion and client-flow systems were implemented —
+        not just design work.
       </p>
     </div>
 
@@ -29,7 +26,10 @@
           <picture>
             <source type="image/avif" srcset="/proof/artilate-hero-480.avif 480w, /proof/artilate-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
             <source type="image/webp" srcset="/proof/artilate-hero-480.webp 480w, /proof/artilate-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
-            <img src="/proof/artilate-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="Artilate Chocolate website"/>
+            <img src="/proof/artilate-hero-768.webp"
+                 class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500"
+                 loading="lazy"
+                 alt="Artilate Chocolate website"/>
           </picture>
 
           <div class="p-6">
@@ -37,14 +37,14 @@
             <h3 class="mt-1 font-semibold">Artilate Chocolate</h3>
 
             <p class="mt-2 text-slate-400 text-sm">
-              Direct-to-consumer store built for speed, CRO structure and GA4 tracking.
+              Conversion-focused purchase flow, trust structure, and event tracking
+              tied to real orders.
             </p>
 
-            <!-- Metrics -->
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Lighthouse 92+</span>
-              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">GA4 Events</span>
-              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Stripe Checkout</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Conversion Flow</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Event Tracking</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Revenue Signals</span>
             </div>
           </div>
         </div>
@@ -57,7 +57,10 @@
           <picture>
             <source type="image/avif" srcset="/proof/grillsguard-hero-480.avif 480w, /proof/grillsguard-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
             <source type="image/webp" srcset="/proof/grillsguard-hero-480.webp 480w, /proof/grillsguard-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
-            <img src="/proof/grillsguard-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="GrillsGuard website"/>
+            <img src="/proof/grillsguard-hero-768.webp"
+                 class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500"
+                 loading="lazy"
+                 alt="GrillsGuard website"/>
           </picture>
 
           <div class="p-6">
@@ -65,13 +68,14 @@
             <h3 class="mt-1 font-semibold">GrillsGuard</h3>
 
             <p class="mt-2 text-slate-400 text-sm">
-              Mobile-first booking funnel optimized for trust and local SEO.
+              Local booking funnel optimized for call and appointment conversion —
+              built around service demand capture.
             </p>
 
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Lighthouse 95+</span>
               <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Booking Funnel</span>
-              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Local SEO</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Local Intent</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Trust Structure</span>
             </div>
           </div>
         </div>
@@ -84,21 +88,25 @@
           <picture>
             <source type="image/avif" srcset="/proof/gaplets-hero-480.avif 480w, /proof/gaplets-hero-768.avif 768w" sizes="(min-width:768px) 33vw, 100vw"/>
             <source type="image/webp" srcset="/proof/gaplets-hero-480.webp 480w, /proof/gaplets-hero-768.webp 768w" sizes="(min-width:768px) 33vw, 100vw"/>
-            <img src="/proof/gaplets-hero-768.webp" class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500" loading="lazy" alt="Gaplets SaaS platform"/>
+            <img src="/proof/gaplets-hero-768.webp"
+                 class="h-44 w-full object-cover opacity-90 group-hover:scale-105 transition duration-500"
+                 loading="lazy"
+                 alt="Gaplets SaaS platform"/>
           </picture>
 
           <div class="p-6">
-            <p class="text-xs text-slate-400">SaaS Platform</p>
+            <p class="text-xs text-slate-400">Scheduling SaaS</p>
             <h3 class="mt-1 font-semibold">Gaplets</h3>
 
             <p class="mt-2 text-slate-400 text-sm">
-              OAuth integrations, dashboards, automation and subscriptions.
+              Appointment flow, cancellation recovery logic,
+              and automated client replacement system.
             </p>
 
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">OAuth Systems</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Booking Logic</span>
               <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Automation</span>
-              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Stripe Billing</span>
+              <span class="px-2 py-1 rounded bg-slate-800/80 text-slate-300">Recovery Flow</span>
             </div>
           </div>
         </div>
@@ -109,42 +117,16 @@
     <!-- Bottom CTA -->
     <div class="reveal mt-14 text-center">
       <p class="text-slate-400 mb-6">
-        Want to see full breakdowns, before/after metrics, and live demos?
+        See deeper breakdowns and system details
       </p>
 
       <a href="/proof"
          class="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-medium text-white
-                bg-[linear-gradient(135deg,#ff7e00,#ff007a,#a800ff)]
-                hover:opacity-95 transition">
+         bg-[linear-gradient(135deg,#ff7e00,#ff007a,#a800ff)]
+         hover:opacity-95 transition">
         View Full Proof →
       </a>
     </div>
 
   </div>
 </section>
-
-
-<!-- Reveal -->
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal-active');
-      }
-    });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => io.observe(el));
-</script>
-
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity .6s ease, transform .6s ease;
-  }
-  .reveal-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>

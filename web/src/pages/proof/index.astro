@@ -2,55 +2,55 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Proof — Upfront Website Builds & Real Outcomes | BrandsBuilders',
+  title: 'Proof — Reactivation & Rebooking Systems That Generate Bookings | BrandsBuilders',
   description:
-    'Real websites, real systems, real outcomes. Proof of execution from upfront website builds focused on performance, tracking, and ownership.',
+    'Real businesses, real systems, real booking outcomes. Proof of client reactivation and rebooking engines generating measurable results.',
   canonical: 'https://brandsbuilders.ca/proof'
 };
 
 const cases = [
   {
     name: 'Artilate Chocolate',
-    stack: 'E-commerce · Website · GA4 · Google Search',
+    stack: 'Direct-to-consumer · Repeat buyers · Email base',
     hero: 'artilate-hero',
     gallery: ['artilate-1', 'artilate-2'],
-    problem: 'Traffic existed, but purchase attribution and funnel clarity were missing.',
-    change: 'Built a high-performance e-commerce website with clean GA4 purchase tracking and technical SEO.',
-    result: 'Clear visibility from visit → product → checkout → purchase, with trusted conversion paths.'
+    problem: 'Past buyers existed but there was no structured reactivation or repeat purchase flow.',
+    change: 'Installed structured follow-up and reactivation sequences tied to past buyers.',
+    result: 'Repeat purchase behavior increased with measurable re-order activity.'
   },
   {
     name: 'GrillsGuard',
-    stack: 'Local Services · Website · GA4 · Google Ads · GBP',
+    stack: 'Local services · One-time jobs · Repeat cycles',
     hero: 'grillsguard-hero',
-    gallery: ['grillsguard-1', 'grillsguard-2'],
-    problem: 'Inbound calls were not tied to campaigns and ad spend quality was unclear.',
-    change: 'Rebuilt service pages, implemented call tracking, and connected Ads conversions.',
-    result: 'Higher-quality inbound calls with controlled cost per lead.'
+    gallery: ['grillsguard-1'],
+    problem: 'Completed jobs were not converted into repeat seasonal bookings.',
+    change: 'Implemented repeat-service triggers and client rebooking reminders.',
+    result: 'More returning customers and higher repeat job scheduling.'
   },
   {
     name: 'Gaplets',
-    stack: 'SaaS · Product UI · GA4 · Paid Acquisition',
+    stack: 'Appointments · Slots · Cancellation recovery',
     hero: 'gaplets-hero',
     gallery: ['gaplets-1', 'gaplets-2'],
-    problem: 'Activation drop-offs were invisible and acquisition ROI could not be validated.',
-    change: 'Designed onboarding flows and implemented event-level activation tracking.',
-    result: 'Full activation funnel visibility and confident acquisition decisions.'
+    problem: 'Canceled bookings created empty revenue slots.',
+    change: 'Built automated replacement and reactivation flows.',
+    result: 'Open slots converted into replacement bookings.'
   }
 ];
 
 const signals = [
-  'Mobile Lighthouse scores consistently above 90 on real devices',
-  'GA4 events and attribution wired to actual business outcomes',
-  'Calls and bookings tied to campaigns — not assumptions',
-  'Client ownership of domains, code, analytics, and ad accounts',
-  'Conversion routing optimized where speed-to-lead matters',
-  'No lock-ins, no black-box dashboards, no dependencies'
+  'Past-client databases converted into booked appointments',
+  'Repeat visit and repeat job rates increased',
+  'Show-up rates improved with confirmation flows',
+  'Cancellation slots recovered with replacement campaigns',
+  'Booking gains measured within first 60 days',
+  'Done-for-you implementation — not DIY software'
 ];
 
 const voices = [
-  'We finally understood what was driving bookings — not just traffic.',
-  'Everything was execution-focused. No fluff.',
-  'Seeing the system built made the decision easy.'
+  'We got bookings from clients we thought were gone.',
+  'The system paid for itself faster than expected.',
+  'We didn’t need more ads — we needed activation.'
 ];
 ---
 
@@ -66,15 +66,15 @@ const voices = [
     </p>
 
     <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05] max-w-5xl">
-      Real work.
-      <span class="text-fuchsia-300">Built systems.</span>
-      Real outcomes.
+      Real businesses.  
+      <span class="text-fuchsia-300">Reactivated clients.</span>  
+      Real bookings.
     </h1>
 
     <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
-      This is not theory or mockups.
-      These are websites and systems we actually built —
-      focused on performance, tracking, and ownership.
+      These are real companies where rebooking and reactivation systems
+      were installed to generate repeat appointments,
+      recovered slots, and measurable booking gains.
     </p>
 
     <div class="mt-10 flex gap-4 flex-wrap">
@@ -84,7 +84,7 @@ const voices = [
                bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
                text-white hover:opacity-90 transition"
       >
-        Apply for upfront build →
+        Check qualification →
       </a>
     </div>
   </div>
@@ -103,23 +103,23 @@ const voices = [
 
           <div class="mt-8 space-y-4">
             <p class="text-slate-300">
-              <span class="text-slate-500">Problem — </span>{c.problem}
+              <span class="text-slate-500">Before — </span>{c.problem}
             </p>
             <p class="text-slate-300">
-              <span class="text-slate-500">Build — </span>{c.change}
+              <span class="text-slate-500">System — </span>{c.change}
             </p>
             <p class="text-white font-medium">
-              <span class="text-slate-500">Outcome — </span>{c.result}
+              <span class="text-slate-500">Result — </span>{c.result}
             </p>
           </div>
         </div>
 
-        <!-- VISUALS -->
+        <!-- VISUALS (REAL IMAGES — KEEP) -->
         <div class="lg:col-span-8 space-y-6">
           <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
             <img
               src={`/proof/${c.hero}-768.webp`}
-              alt={`${c.name} website`}
+              alt={`${c.name} system`}
               loading={idx === 0 ? 'eager' : 'lazy'}
               class="w-full object-cover"
             />
@@ -169,12 +169,12 @@ const voices = [
 <section class="bg-slate-950 py-28 border-t border-slate-800 text-center">
   <div class="container mx-auto px-6 max-w-4xl reveal">
     <h2 class="text-3xl font-semibold text-white">
-      Want to see it built?
+      Want results like these?
     </h2>
 
     <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
-      Apply to have your website built upfront.
-      Review the work first. Decide after.
+      Check if your business qualifies
+      for the rebooking & reactivation system.
     </p>
 
     <a
@@ -183,11 +183,11 @@ const voices = [
              bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
              text-white hover:opacity-90 transition"
     >
-      Apply for upfront build →
+      Check qualification →
     </a>
 
     <p class="mt-6 text-sm text-slate-400">
-      No pitch. No pressure.
+      Fit check only. No pressure.
     </p>
   </div>
 </section>

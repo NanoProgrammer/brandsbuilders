@@ -1,60 +1,43 @@
----
-// FAQPreview.astro
----
-<section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
+<section class="relative bg-slate-950 text-white py-24 border-t border-slate-800">
 
-  <div class="absolute -top-32 right-0 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl"></div>
-
-  <div class="relative container mx-auto px-6 max-w-5xl">
+  <div class="container mx-auto px-6 max-w-5xl">
 
     <div class="mb-14 reveal">
       <h2 class="text-3xl font-semibold">
         Common questions
       </h2>
       <p class="mt-4 text-slate-400">
-        Straight answers. No fluff.
+        About the rebooking & reactivation system.
       </p>
     </div>
 
     <div class="space-y-6">
 
-      <details class="reveal group border border-slate-800 rounded-xl bg-slate-900/40 p-6 hover:border-slate-600 transition">
-        <summary class="cursor-pointer font-medium flex justify-between items-center">
-          Why not WordPress or Shopify?
-          <span class="text-slate-500 group-open:rotate-180 transition">⌄</span>
+      <details class="reveal border border-slate-800 rounded-xl bg-slate-900/40 p-6">
+        <summary class="cursor-pointer font-medium">
+          Is this marketing or operations?
         </summary>
-        <p class="mt-4 text-slate-400 leading-relaxed">
-          Templates and page builders introduce performance and tracking limits.
-          We build clean code so your website becomes a real business asset.
+        <p class="mt-4 text-slate-400">
+          Operations. We install booking, reactivation, and follow-up systems —
+          not ad campaigns.
         </p>
       </details>
 
-      <details class="reveal group border border-slate-800 rounded-xl bg-slate-900/40 p-6 hover:border-slate-600 transition">
-        <summary class="cursor-pointer font-medium flex justify-between items-center">
-          Who owns the website?
-          <span class="text-slate-500 group-open:rotate-180 transition">⌄</span>
+      <details class="reveal border border-slate-800 rounded-xl bg-slate-900/40 p-6">
+        <summary class="cursor-pointer font-medium">
+          Do I need new leads for this to work?
         </summary>
-        <p class="mt-4 text-slate-400 leading-relaxed">
-          You own domain, hosting and full source code.
-          No lock-in. No dependency.
+        <p class="mt-4 text-slate-400">
+          No. The first gains usually come from your existing client database.
         </p>
       </details>
 
-      <details class="reveal group border border-slate-800 rounded-xl bg-slate-900/40 p-6 hover:border-slate-600 transition">
-        <summary class="cursor-pointer font-medium flex justify-between items-center">
-          Do you guarantee performance?
-          <span class="text-slate-500 group-open:rotate-180 transition">⌄</span>
-        </summary>
-        <p class="mt-4 text-slate-400 leading-relaxed">
-          Yes. Core Web Vitals and Lighthouse targets are guaranteed.
-          If not reached, partial refund + continued fixes until achieved.
-        </p>
-      </details>
+      
 
     </div>
 
     <div class="reveal mt-10">
-      <a href="/faq" class="text-slate-400 hover:text-white transition underline">
+      <a href="/faq" class="text-slate-400 hover:text-white underline transition">
         View full FAQ →
       </a>
     </div>

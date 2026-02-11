@@ -1,140 +1,89 @@
----
-// Testimonials.astro
----
 <section class="relative bg-slate-950 text-white py-24 overflow-hidden border-t border-slate-800">
 
-  <!-- Ambient glows -->
-  <div class="absolute -top-32 -left-16 w-80 h-80 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-32 -right-16 w-80 h-80 bg-orange-500/30 rounded-full blur-3xl"></div>
+  <div class="absolute -top-32 -left-16 w-80 h-80 bg-fuchsia-600/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -right-16 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl"></div>
 
   <div class="relative container mx-auto px-6 max-w-6xl">
 
-    <!-- Header -->
     <div class="mb-14 reveal">
       <h2 class="text-3xl lg:text-4xl font-semibold">
-        What clients say
+        What business owners notice first
       </h2>
       <p class="mt-4 text-slate-400">
-        Real systems. Real performance. Real ownership.
+        Not prettier pages — more booked activity and returning clients.
       </p>
     </div>
 
-    <!-- Grid -->
     <div class="grid md:grid-cols-3 gap-10">
 
-      <!-- CARD -->
-      <div class="reveal group relative rounded-xl border border-slate-800 overflow-hidden bg-slate-900/40 hover:border-slate-600 transition">
-
-        
-
-        <!-- Fade overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
-
-        <!-- Content -->
-        <div class="relative p-6">
-
-          <!-- Logo circle -->
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-white/90 shrink-0">
-
-              <img src="/logos/artilate-logo.svg"
-                   alt="Artilate logo"
-                   class="w-full h-full object-contain p-1"
-                   loading="lazy" />
-            </div>
-
-            <div>
-              <p class="font-medium">Artilate Chocolate</p>
-              <p class="text-xs text-slate-400">E-commerce · Alberta</p>
-            </div>
+      <!-- Artilate -->
+      <div class="reveal rounded-xl border border-slate-800 bg-slate-900/40 p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-white/90">
+            <img src="/logos/artilate-logo.svg" class="w-full h-full object-contain p-1" loading="lazy"/>
           </div>
-
-          <p class="text-slate-200 italic leading-relaxed">
-            “Our new website loads insanely fast and finally tracks conversions properly.
-            Night and day difference.”
-          </p>
-
-          <div class="mt-4 text-xs inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400">
-            Lighthouse 92+ · GA4 Events
+          <div>
+            <p class="font-medium">Artilate Chocolate</p>
+            <p class="text-xs text-slate-400">Retail · Alberta</p>
           </div>
+        </div>
+
+        <p class="text-slate-200 italic leading-relaxed">
+          “What changed was not the site — it was the client flow.
+          We finally had structured follow-up and repeat purchase triggers.”
+        </p>
+
+        <div class="mt-4 text-xs px-3 py-1 rounded bg-slate-800 text-slate-300 inline-block">
+          Repeat purchase flow installed
         </div>
       </div>
 
-
-      <!-- CARD -->
-      <div class="reveal group relative rounded-xl border border-slate-800 overflow-hidden bg-slate-900/40 hover:border-slate-600 transition">
-
-        
-
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
-
-        <div class="relative p-6">
-
-          <!-- Logo circle -->
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-slate-900 shrink-0">
-              <img src="/logos/grillsguard-logo.avif"
-                   alt="GrillsGuard logo"
-                   class="w-full h-full object-contain p-1"
-                   loading="lazy" />
-            </div>
-
-            <div>
-              <p class="font-medium">GrillsGuard</p>
-              <p class="text-xs text-slate-400">Service · Calgary</p>
-            </div>
+      <!-- GrillsGuard -->
+      <div class="reveal rounded-xl border border-slate-800 bg-slate-900/40 p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-slate-900">
+            <img src="/logos/grillsguard-logo.avif" class="w-full h-full object-contain p-1" loading="lazy"/>
           </div>
-
-          <p class="text-slate-200 italic leading-relaxed">
-            “We went from a slow template to a real system.
-            Everything is fast, clean, and we own it.”
-          </p>
-
-          <div class="mt-4 text-xs inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400">
-            Lighthouse 95+ · Booking Funnel
+          <div>
+            <p class="font-medium">GrillsGuard</p>
+            <p class="text-xs text-slate-400">Service · Calgary</p>
           </div>
+        </div>
+
+        <p class="text-slate-200 italic leading-relaxed">
+          “Booking behavior improved once reminders and follow-ups were automated.
+          Less manual chasing, more confirmed jobs.”
+        </p>
+
+        <div class="mt-4 text-xs px-3 py-1 rounded bg-slate-800 text-slate-300 inline-block">
+          Booking confirmation system
         </div>
       </div>
 
-
-      <!-- CARD -->
-      <div class="reveal group relative rounded-xl border border-slate-800 overflow-hidden bg-slate-900/40 hover:border-slate-600 transition">
-
-      
-
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
-
-        <div class="relative p-6">
-
-          <!-- Logo circle -->
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-slate-900 shrink-0">
-              <img src="/logos/gaplets-logo.ico"
-                   alt="Gaplets logo"
-                   class="w-full h-full object-contain p-1"
-                   loading="lazy" />
-            </div>
-
-            <div>
-              <p class="font-medium">Gaplets</p>
-              <p class="text-xs text-slate-400">SaaS Platform</p>
-            </div>
+      <!-- Gaplets -->
+      <div class="reveal rounded-xl border border-slate-800 bg-slate-900/40 p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-700 bg-slate-900">
+            <img src="/logos/gaplets-logo.ico" class="w-full h-full object-contain p-1" loading="lazy"/>
           </div>
-
-          <p class="text-slate-200 italic leading-relaxed">
-            “Finally someone who understands performance and tracking —
-            not just design.”
-          </p>
-
-          <div class="mt-4 text-xs inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300">
-            OAuth · Dashboards · Automation
+          <div>
+            <p class="font-medium">Gaplets</p>
+            <p class="text-xs text-slate-400">Scheduling SaaS</p>
           </div>
+        </div>
+
+        <p class="text-slate-200 italic leading-relaxed">
+          “The cancellation recovery and replacement logic is what makes the system valuable.
+          Empty slots stopped being silent losses.”
+        </p>
+
+        <div class="mt-4 text-xs px-3 py-1 rounded bg-slate-800 text-slate-300 inline-block">
+          Slot recovery automation
         </div>
       </div>
 
     </div>
 
-    <!-- Proof link -->
     <div class="mt-12 text-center">
       <a href="/proof" class="text-slate-400 hover:text-white underline transition">
         View full case studies →
