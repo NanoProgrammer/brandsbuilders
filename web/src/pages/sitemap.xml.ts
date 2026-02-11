@@ -15,7 +15,7 @@ export const GET: APIRoute = async () => {
     "/apply",
     "/blog",
     "/faq",
-    "/free-customer-leak-scan",
+    "/rebooking-system",
     "/process",
     "/proof",
     "/about",
