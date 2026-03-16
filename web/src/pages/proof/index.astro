@@ -2,194 +2,245 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Proof — Reactivation & Rebooking Systems That Generate Bookings | BrandsBuilders',
+  title: 'Proof — Portfolio of Booking, Website & Reactivation Systems | BrandsBuilders',
   description:
-    'Real businesses, real systems, real booking outcomes. Proof of client reactivation and rebooking engines generating measurable results.',
+    'Selected projects and proof of systems built for real businesses — websites, reactivation flows, and booking recovery engines.',
   canonical: 'https://brandsbuilders.ca/proof'
 };
 
 const cases = [
   {
     name: 'Artilate Chocolate',
-    stack: 'Direct-to-consumer · Repeat buyers · Email base',
+    url: 'https://artilate.com',
+    label: 'Visit website',
+    stack: 'Luxury chocolate brand · E-commerce · Brand website',
     hero: 'artilate-hero',
     gallery: ['artilate-1', 'artilate-2'],
-    problem: 'Past buyers existed but there was no structured reactivation or repeat purchase flow.',
-    change: 'Installed structured follow-up and reactivation sequences tied to past buyers.',
-    result: 'Repeat purchase behavior increased with measurable re-order activity.'
+    problem: 'The business needed a stronger digital presence and clearer structure to support product discovery, trust, and repeat buying.',
+    change: 'Built a polished brand website experience with stronger presentation, clearer navigation, and a more premium online presence.',
+    result: 'A more professional storefront that supports brand perception, product visibility, and future conversion growth.'
   },
   {
     name: 'GrillsGuard',
-    stack: 'Local services · One-time jobs · Repeat cycles',
+    url: 'https://www.grillsguard.com/',
+    label: 'Visit website',
+    stack: 'Local services · Lead generation · Service website',
     hero: 'grillsguard-hero',
     gallery: ['grillsguard-1'],
-    problem: 'Completed jobs were not converted into repeat seasonal bookings.',
-    change: 'Implemented repeat-service triggers and client rebooking reminders.',
-    result: 'More returning customers and higher repeat job scheduling.'
+    problem: 'The business needed a stronger website presence to present the service clearly and turn visitors into qualified leads.',
+    change: 'Designed and structured a dedicated service website focused on clarity, trust, and conversion.',
+    result: 'A more credible online presence with a cleaner path from visit to inquiry.'
   },
   {
-    name: 'Gaplets',
-    stack: 'Appointments · Slots · Cancellation recovery',
+    name: 'Gaplet',
+    url: 'https://gaplet.com',
+    label: 'Visit website',
+    stack: 'SaaS · Appointment recovery · Booking system',
     hero: 'gaplets-hero',
     gallery: ['gaplets-1', 'gaplets-2'],
-    problem: 'Canceled bookings created empty revenue slots.',
-    change: 'Built automated replacement and reactivation flows.',
-    result: 'Open slots converted into replacement bookings.'
+    problem: 'Canceled bookings created empty revenue slots and there was no clear system to recover lost opportunities.',
+    change: 'Built a booking recovery and replacement-flow concept around automated reactivation and open-slot recovery.',
+    result: 'A product experience designed to help service businesses recover lost revenue from cancellations.'
   }
 ];
 
 const signals = [
-  'Past-client databases converted into booked appointments',
-  'Repeat visit and repeat job rates increased',
-  'Show-up rates improved with confirmation flows',
-  'Cancellation slots recovered with replacement campaigns',
-  'Booking gains measured within first 60 days',
-  'Done-for-you implementation — not DIY software'
-];
-
-const voices = [
-  'We got bookings from clients we thought were gone.',
-  'The system paid for itself faster than expected.',
-  'We didn’t need more ads — we needed activation.'
+  'Real business websites built with clear positioning',
+  'Portfolio pieces tied to real business use cases',
+  'Conversion-focused structure, not just visual design',
+  'Brand, service, and SaaS projects in one portfolio',
+  'Built to support trust, bookings, and growth',
+  'Done-for-you implementation — not DIY templates'
 ];
 ---
 
 <Layout seo={seo}>
 
-<!-- HERO -->
-<section class="relative bg-slate-950 text-white pt-16 pb-24 overflow-hidden border-b border-slate-800">
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/35"></div>
+  <!-- HERO -->
+  <section class="relative bg-slate-950 text-white pt-16 pb-24 overflow-hidden border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/35"></div>
 
-  <div class="relative container mx-auto px-6 max-w-6xl reveal">
-    <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">
-      Proof
-    </p>
+    <div class="relative container mx-auto px-6 max-w-6xl reveal">
+      <p class="text-sm uppercase tracking-[0.2em] text-slate-400 mb-6">
+        Selected Work
+      </p>
 
-    <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05] max-w-5xl">
-      Real businesses.  
-      <span class="text-fuchsia-300">Reactivated clients.</span>  
-      Real bookings.
-    </h1>
+      <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05] max-w-5xl">
+        Real projects.  
+        <span class="text-fuchsia-300">Real businesses.</span>  
+        Real websites & systems.
+      </h1>
 
-    <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
-      These are real companies where rebooking and reactivation systems
-      were installed to generate repeat appointments,
-      recovered slots, and measurable booking gains.
-    </p>
+      <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
+        A curated portfolio of websites, SaaS concepts, and reactivation systems
+        built to help businesses look better, convert better, and recover more revenue.
+      </p>
 
-    <div class="mt-10 flex gap-4 flex-wrap">
-      <a
-        href="/apply"
-        class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
-               bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-               text-white hover:opacity-90 transition"
-      >
-        Check qualification →
-      </a>
-    </div>
-  </div>
-</section>
+      <div class="mt-10 flex gap-4 flex-wrap">
+        <a
+          href="#projects"
+          class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+                 bg-white text-slate-950 hover:bg-slate-200 transition"
+        >
+          View projects ↓
+        </a>
 
-<!-- CASES -->
-<section class="bg-slate-950 py-28">
-  <div class="container mx-auto px-6 max-w-6xl space-y-24">
-    {cases.map((c, idx) => (
-      <article class="reveal grid lg:grid-cols-12 gap-12 items-start">
-
-        <!-- META -->
-        <div class="lg:col-span-4 lg:sticky lg:top-24">
-          <p class="text-sm uppercase tracking-widest text-slate-400">{c.name}</p>
-          <p class="text-slate-500 text-sm mt-2">{c.stack}</p>
-
-          <div class="mt-8 space-y-4">
-            <p class="text-slate-300">
-              <span class="text-slate-500">Before — </span>{c.problem}
-            </p>
-            <p class="text-slate-300">
-              <span class="text-slate-500">System — </span>{c.change}
-            </p>
-            <p class="text-white font-medium">
-              <span class="text-slate-500">Result — </span>{c.result}
-            </p>
-          </div>
-        </div>
-
-        <!-- VISUALS (REAL IMAGES — KEEP) -->
-        <div class="lg:col-span-8 space-y-6">
-          <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
-            <img
-              src={`/proof/${c.hero}-768.webp`}
-              alt={`${c.name} system`}
-              loading={idx === 0 ? 'eager' : 'lazy'}
-              class="w-full object-cover"
-            />
-          </div>
-
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {c.gallery.map((img) => (
-              <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900/60">
-                <img src={`/proof/${img}.webp`} alt="" loading="lazy" />
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </article>
-    ))}
-  </div>
-</section>
-
-<!-- SIGNALS -->
-<section class="bg-slate-950 py-24 border-t border-slate-800">
-  <div class="container mx-auto px-6 max-w-6xl reveal grid md:grid-cols-2 gap-6">
-    {signals.map((s) => (
-      <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-6">
-        <p class="text-slate-300 text-lg">
-          <span class="text-fuchsia-300">✓</span> {s}
-        </p>
+        <a
+          href="/apply"
+          class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                 text-white hover:opacity-90 transition"
+        >
+          Check qualification →
+        </a>
       </div>
-    ))}
-  </div>
-</section>
 
-<!-- VOICES -->
-<section class="bg-slate-950 py-24 border-t border-slate-800">
-  <div class="container mx-auto px-6 max-w-6xl space-y-10">
-    {voices.map((v) => (
-      <blockquote class="reveal rounded-2xl border border-slate-800 bg-slate-900/35 p-10">
-        <p class="text-2xl lg:text-3xl italic text-slate-200">
-          “{v}”
-        </p>
-      </blockquote>
-    ))}
-  </div>
-</section>
+      <div class="mt-14 grid sm:grid-cols-3 gap-4 max-w-4xl">
+        {cases.map((c) => (
+          <a
+            href={c.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-fuchsia-400/40 hover:bg-slate-900 transition"
+          >
+            <p class="text-white font-medium">{c.name}</p>
+            <p class="text-sm text-slate-400 mt-2">{c.stack}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-<!-- CTA -->
-<section class="bg-slate-950 py-28 border-t border-slate-800 text-center">
-  <div class="container mx-auto px-6 max-w-4xl reveal">
-    <h2 class="text-3xl font-semibold text-white">
-      Want results like these?
-    </h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="bg-slate-950 py-28">
+    <div class="container mx-auto px-6 max-w-6xl space-y-24">
+      {cases.map((c, idx) => (
+        <article class="reveal grid lg:grid-cols-12 gap-12 items-start">
 
-    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
-      Check if your business qualifies
-      for the rebooking & reactivation system.
-    </p>
+          <!-- META -->
+          <div class="lg:col-span-4 lg:sticky lg:top-24">
+            <p class="text-sm uppercase tracking-widest text-slate-400">{c.name}</p>
+            <p class="text-slate-500 text-sm mt-2">{c.stack}</p>
 
-    <a
-      href="/apply"
-      class="inline-flex items-center justify-center mt-10 px-10 py-4 rounded-xl font-semibold
-             bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-             text-white hover:opacity-90 transition"
-    >
-      Check qualification →
-    </a>
+            <div class="mt-8 space-y-4">
+              <p class="text-slate-300">
+                <span class="text-slate-500">Challenge — </span>{c.problem}
+              </p>
+              <p class="text-slate-300">
+                <span class="text-slate-500">Built — </span>{c.change}
+              </p>
+              <p class="text-white font-medium">
+                <span class="text-slate-500">Outcome — </span>{c.result}
+              </p>
+            </div>
 
-    <p class="mt-6 text-sm text-slate-400">
-      Fit check only. No pressure.
-    </p>
-  </div>
-</section>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold
+                       bg-white text-slate-950 hover:bg-slate-200 transition"
+              >
+                {c.label} ↗
+              </a>
+
+              <a
+                href="/apply"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold
+                       border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-900 transition"
+              >
+                Work with me
+              </a>
+            </div>
+
+            <p class="mt-4 text-sm text-slate-500 break-all">
+              {c.url}
+            </p>
+          </div>
+
+          <!-- VISUALS -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+              <img
+                src={`/proof/${c.hero}-768.webp`}
+                alt={`${c.name} website preview`}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                class="w-full object-cover"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {c.gallery.map((img) => (
+                <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900/60">
+                  <img src={`/proof/${img}.webp`} alt={`${c.name} gallery image`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- SIGNALS -->
+  <section class="bg-slate-950 py-24 border-t border-slate-800">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="mb-10 reveal">
+        <p class="text-sm uppercase tracking-widest text-slate-400">What these projects show</p>
+        <h2 class="mt-3 text-3xl font-semibold text-white max-w-3xl">
+          Not just design — positioning, structure, and conversion thinking.
+        </h2>
+      </div>
+
+      <div class="reveal grid md:grid-cols-2 gap-6">
+        {signals.map((s) => (
+          <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-6">
+            <p class="text-slate-300 text-lg">
+              <span class="text-fuchsia-300">✓</span> {s}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-slate-950 py-28 border-t border-slate-800 text-center">
+    <div class="container mx-auto px-6 max-w-4xl reveal">
+      <h2 class="text-3xl font-semibold text-white">
+        Need a website or a booking-focused system like this?
+      </h2>
+
+      <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
+        I build custom websites and business systems designed to improve trust,
+        presentation, and lead flow.
+      </p>
+
+      <div class="mt-10 flex justify-center gap-4 flex-wrap">
+        <a
+          href="/apply"
+          class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
+                 text-white hover:opacity-90 transition"
+        >
+          Check qualification →
+        </a>
+
+        <a
+          href="#projects"
+          class="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold
+                 border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-900 transition"
+        >
+          Browse projects
+        </a>
+      </div>
+
+      <p class="mt-6 text-sm text-slate-400">
+        Custom-built. No generic templates.
+      </p>
+    </div>
+  </section>
 
 </Layout>
