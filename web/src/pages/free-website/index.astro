@@ -354,9 +354,11 @@ const seo = {
     const f=document.querySelectorAll('#appForm input[required],#appForm select[required]');
     let v=true;f.forEach(x=>{if(!(x as HTMLInputElement).value){v=false;(x as HTMLElement).style.borderColor='#ff5c3a'}});
     if(!v)return;
+    // Meta Pixel: registrar Lead
+    if(typeof fbq !== 'undefined') fbq('track', 'Lead');
     (this as HTMLButtonElement).textContent='Application Sent \u2713';
     (this as HTMLElement).style.background='#2dd4a0';
     (this as HTMLElement).style.boxShadow='0 4px 30px rgba(45,212,160,.25)';
     (this as HTMLButtonElement).disabled=true;
-  });
+});
 </script>
