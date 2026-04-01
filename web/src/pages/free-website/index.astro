@@ -22,7 +22,7 @@ const seo = {
     <span>Limited to <strong>10 businesses</strong> — applications close <strong>April 10</strong></span>
   </div>
 
-  <h1 style="position:relative">
+  <h1 style="position:relative text-white">
     We'll build your website<br/>
     <span class="lp-gr">for free. No catch.</span>
   </h1>
@@ -198,7 +198,27 @@ const seo = {
 </Layout>
 
 <style>
-:root{--lp-grad:linear-gradient(135deg,#ff5c3a,#e8366d,#c724b1,#9b59ff);--lp-grad-sub:linear-gradient(135deg,rgba(255,92,58,.1),rgba(232,54,109,.1),rgba(199,36,177,.06));--lp-card:#14111f;--lp-bdr:#1e1a2e;--lp-dim:#847f99;--lp-org:#ff5c3a;--lp-pnk:#e8366d;--lp-mag:#c724b1;--lp-grn:#2dd4a0}
+  /* Global text colors for landing page */
+.lp-hero h1, .lp-stitle, .lp-form-h2,
+.lp-feat h3, .lp-step h4, .lp-q h4,
+.lp-pov h4, .lp-tauthor strong {
+  color: #eae8f2;
+}
+
+.lp-feat p, .lp-step p, .lp-q p,
+.lp-ssub, .lp-hero-p, .lp-label,
+.lp-pov span, .lp-fnote, .lp-cd-label,
+.lp-spots-label, .lp-spots-note,
+.lp-tauthor span, .lp-tstat-l {
+  color: var(--lp-dim);
+}
+
+.lp-pill, .lp-stat strong, .lp-spots-count,
+.lp-proof-text strong, .lp-cd-box .u {
+  color: #eae8f2;
+}
+:root{
+  --lp-grad:linear-gradient(135deg,#ff5c3a,#e8366d,#c724b1,#9b59ff);--lp-grad-sub:linear-gradient(135deg,rgba(255,92,58,.1),rgba(232,54,109,.1),rgba(199,36,177,.06));--lp-card:#14111f;--lp-bdr:#1e1a2e;--lp-dim:#847f99;--lp-org:#ff5c3a;--lp-pnk:#e8366d;--lp-mag:#c724b1;--lp-grn:#2dd4a0}
 .lp-row{display:flex;gap:1rem}
 .lp-row>div{flex:1}
 @media(max-width:640px){.lp-row{flex-direction:column}}
@@ -216,7 +236,7 @@ const seo = {
 .lp-ub-dot{width:8px;height:8px;border-radius:50%;background:#ff4444;animation:lp-ubp 1.5s infinite}
 @keyframes lp-ubp{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,68,68,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(255,68,68,0)}}
 
-.lp-hero h1{font-weight:900;font-size:clamp(2.8rem,6.5vw,4.8rem);line-height:1.02;letter-spacing:-.045em;margin-bottom:1.5rem}
+.lp-hero h1{font-weight:900;font-size:clamp(2.8rem,6.5vw,4.8rem);line-height:1.02;letter-spacing:-.045em;margin-bottom:1.5rem;color:#eae8f2}
 .lp-gr{background:var(--lp-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .lp-gr-text{background:var(--lp-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}
 .lp-hero-p{font-size:1.1rem;line-height:1.7;color:var(--lp-dim);max-width:600px;margin:0 auto 2.5rem}
