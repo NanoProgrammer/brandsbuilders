@@ -204,6 +204,14 @@ const seo = {
 .lp-pov h4, .lp-tauthor strong {
   color: #eae8f2;
 }
+/* FIX: overflow horizontal en móvil */
+html, body {
+  overflow-x: hidden;
+}
+
+.lp-hero {
+  overflow: hidden; /* contiene los blobs */
+}
 
 .lp-feat p, .lp-step p, .lp-q p,
 .lp-ssub, .lp-hero-p, .lp-label,
