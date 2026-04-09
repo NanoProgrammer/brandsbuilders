@@ -378,15 +378,35 @@ html, body {
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.1});
   document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
   // Form
-  document.getElementById('submitBtn')?.addEventListener('click',function(){
-    const f=document.querySelectorAll('#appForm input[required],#appForm select[required]');
-    let v=true;f.forEach(x=>{if(!(x as HTMLInputElement).value){v=false;(x as HTMLElement).style.borderColor='#ff5c3a'}});
-    if(!v)return;
-    // Meta Pixel: registrar Lead
-    if(typeof fbq !== 'undefined') fbq('track', 'Lead');
-    (this as HTMLButtonElement).textContent='Application Sent \u2713';
-    (this as HTMLElement).style.background='#2dd4a0';
-    (this as HTMLElement).style.boxShadow='0 4px 30px rgba(45,212,160,.25)';
-    (this as HTMLButtonElement).disabled=true;
+  // Form
+document.getElementById('appForm')?.addEventListener('submit', function(e) {
+  const fields = document.querySelectorAll('#appForm input[required], #appForm select[required]');
+  let valid = true;
+  fields.forEach(x => {
+    if (!(x as HTMLInputElement).value) {
+      valid = false;
+      (x as HTMLElement).style.borderColor = '#ff5c3a';
+    } else {
+      (x as HTMLElement).style.borderColor = '';
+    }
+  });
+
+  if (!valid) {
+    e.preventDefault();
+    return;
+  }
+
+  // Meta Pixel
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+
+  const btn = document.getElementById('submitBtn') as HTMLButtonElement;
+  if (btn) {
+    btn.textContent = 'Application Sent ✓';
+    btn.style.background = '#2dd4a0';
+    btn.style.boxShadow = '0 4px 30px rgba(45,212,160,.25)';
+    btn.disabled = true;
+  }
+
+  // Dejar que el submit nativo continúe hacia Netlify
 });
 </script>
