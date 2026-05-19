@@ -2,45 +2,67 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Proof — Portfolio of Booking, Website & Reactivation Systems | BrandsBuilders',
+  title: 'Our Work — Calgary Business Websites | BrandsBuilders',
   description:
-    'Selected projects and proof of systems built for real businesses — websites, reactivation flows, and booking recovery engines.',
+    'Real websites built for real Calgary businesses. See the portfolio — from service companies to food brands to retail stores.',
   canonical: 'https://brandsbuilders.ca/proof'
 };
 
-const cases = [
+/* ── FEATURED (case-study format) ── */
+const featured = [
   {
-    name: 'Artilate Chocolate',
+    name: 'Refresh Exteriors',
+    url: 'https://refreshedexterior.com',
+    label: 'Visit site',
+    stack: 'Window Cleaning & Snow Removal · Calgary, AB',
+    hero: '/images/portfolio/refresh-exteriors.png',
+    problem:
+      'No online presence to capture the growing number of people searching Google for window cleaning and snow removal in Calgary.',
+    change:
+      'Built a custom multi-page website with service breakdowns, a booking flow, and on-page SEO targeting Calgary-specific searches.',
+    result:
+      'A professional site that shows up on Google, builds instant trust, and turns visitors into booked jobs.'
+  },
+  {
+    name: 'Artilate',
     url: 'https://artilate.com',
-    label: 'Visit website',
-    stack: 'Luxury chocolate brand · E-commerce · Brand website',
-    hero: 'artilate-hero',
-    gallery: ['artilate-1', 'artilate-2'],
-    problem: 'The business needed a stronger digital presence and clearer structure to support product discovery, trust, and repeat buying.',
-    change: 'Built a polished brand website experience with stronger presentation, clearer navigation, and a more premium online presence.',
-    result: 'A more professional storefront that supports brand perception, product visibility, and future conversion growth.'
+    label: 'Visit site',
+    stack: 'Handcrafted Colombian Chocolate · Calgary & Area',
+    hero: '/images/portfolio/artilate.png',
+    problem:
+      'The brand needed a stronger digital presence to support product discovery, build trust, and drive repeat buying.',
+    change:
+      'Designed a polished brand website with premium presentation, clear navigation, and a story-driven layout that reflects the craft behind the product.',
+    result:
+      'A more professional storefront that elevates brand perception and supports long-term growth.'
+  }
+];
+
+/* ── GRID (simpler portfolio cards) ── */
+const grid = [
+  {
+    name: 'Brain Freeze Fruit',
+    stack: 'Natural Freezies & Latin Foods · Calgary',
+    url: 'https://behealthyhappy.ca',
+    image: '/images/portfolio/behealthyhappy.png'
   },
   {
-    name: 'GrillsGuard',
-    url: 'https://www.grillsguard.com/',
-    label: 'Visit website',
-    stack: 'Local services · Lead generation · Service website',
-    hero: 'grillsguard-hero',
-    gallery: ['grillsguard-1'],
-    problem: 'The business needed a stronger website presence to present the service clearly and turn visitors into qualified leads.',
-    change: 'Designed and structured a dedicated service website focused on clarity, trust, and conversion.',
-    result: 'A more credible online presence with a cleaner path from visit to inquiry.'
+    name: 'Kelly & Sons YYC',
+    stack: 'Local Service Business · Calgary',
+    url: 'https://kellyandsonsyyc.ca',
+    image: '/images/portfolio/kellyandsons.png'
   },
   {
-    name: 'Gaplet',
-    url: 'https://gaplet.com',
-    label: 'Visit website',
-    stack: 'SaaS · Appointment recovery · Booking system',
-    hero: 'gaplets-hero',
-    gallery: ['gaplets-1', 'gaplets-2'],
-    problem: 'Canceled bookings created empty revenue slots and there was no clear system to recover lost opportunities.',
-    change: 'Built a booking recovery and replacement-flow concept around automated reactivation and open-slot recovery.',
-    result: 'A product experience designed to help service businesses recover lost revenue from cancellations.'
+    name: 'Vaulted YYC',
+    stack: 'Retro Games & Pokémon · Calgary',
+    url: null,
+    image: '/images/portfolio/vaulted.png'
+  },
+  {
+    name: 'Bavarian Nuts YYC',
+    stack: 'Roasted Nuts & Snacks · Calgary',
+    url: null,
+    image: '/images/portfolio/bavarian-nuts.png'
   }
 ];
 
@@ -48,7 +70,7 @@ const signals = [
   'Real business websites built with clear positioning',
   'Portfolio pieces tied to real business use cases',
   'Conversion-focused structure, not just visual design',
-  'Brand, service, and SaaS projects in one portfolio',
+  'Brand, service, and retail projects in one portfolio',
   'Built to support trust, bookings, and growth',
   'Done-for-you implementation — not DIY templates'
 ];
@@ -66,14 +88,14 @@ const signals = [
       </p>
 
       <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05] max-w-5xl">
-        Real projects.  
-        <span class="text-fuchsia-300">Real businesses.</span>  
+        Real projects.
+        <span class="text-fuchsia-300">Real businesses.</span>
         Real websites & systems.
       </h1>
 
       <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
-        A curated portfolio of websites, SaaS concepts, and reactivation systems
-        built to help businesses look better, convert better, and recover more revenue.
+        Every site here was built from scratch for a real local business —
+        no templates, no page builders, no fluff.
       </p>
 
       <div class="mt-10 flex gap-4 flex-wrap">
@@ -96,7 +118,7 @@ const signals = [
       </div>
 
       <div class="mt-14 grid sm:grid-cols-3 gap-4 max-w-4xl">
-        {cases.map((c) => (
+        {[...featured, grid[0]].map((c) => (
           <a
             href={c.url}
             target="_blank"
@@ -111,14 +133,14 @@ const signals = [
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- FEATURED CASE STUDIES -->
   <section id="projects" class="bg-slate-950 py-28">
     <div class="container mx-auto px-6 max-w-6xl space-y-24">
-      {cases.map((c, idx) => (
+      {featured.map((c, idx) => (
         <article class="reveal grid lg:grid-cols-12 gap-12 items-start">
 
           <!-- META -->
-          <div class="lg:col-span-4 lg:sticky lg:top-24">
+          <div class={`lg:col-span-4 lg:sticky lg:top-24 ${idx % 2 !== 0 ? 'lg:order-2' : ''}`}>
             <p class="text-sm uppercase tracking-widest text-slate-400">{c.name}</p>
             <p class="text-slate-500 text-sm mt-2">{c.stack}</p>
 
@@ -160,27 +182,61 @@ const signals = [
           </div>
 
           <!-- VISUALS -->
-          <div class="lg:col-span-8 space-y-6">
+          <div class={`lg:col-span-8 space-y-6 ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
             <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
               <img
-                src={`/proof/${c.hero}-768.webp`}
+                src={c.hero}
                 alt={`${c.name} website preview`}
                 loading={idx === 0 ? 'eager' : 'lazy'}
                 class="w-full object-cover"
               />
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {c.gallery.map((img) => (
-                <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-900/60">
-                  <img src={`/proof/${img}.webp`} alt={`${c.name} gallery image`} loading="lazy" />
-                </div>
-              ))}
-            </div>
           </div>
 
         </article>
       ))}
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="bg-slate-950 py-24 border-t border-slate-800">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="mb-12 reveal">
+        <p class="text-sm uppercase tracking-widest text-slate-400">More work</p>
+        <h2 class="mt-3 text-3xl font-semibold text-white max-w-3xl">
+          Same quality. <span class="text-fuchsia-300">Every project.</span>
+        </h2>
+      </div>
+
+      <div class="reveal grid sm:grid-cols-2 gap-6">
+        {grid.map((p) => (
+          <div class="group rounded-2xl border border-slate-800 bg-slate-900/40 overflow-hidden
+                      hover:border-fuchsia-400/30 hover:bg-slate-900/60 transition">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                src={p.image}
+                alt={`${p.name} website`}
+                loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+            <div class="p-5">
+              <p class="text-white font-medium">{p.name}</p>
+              <p class="text-sm text-slate-400 mt-1">{p.stack}</p>
+              {p.url && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block mt-3 text-sm font-semibold text-fuchsia-400 hover:text-white transition"
+                >
+                  Visit site →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -210,12 +266,12 @@ const signals = [
   <section class="bg-slate-950 py-28 border-t border-slate-800 text-center">
     <div class="container mx-auto px-6 max-w-4xl reveal">
       <h2 class="text-3xl font-semibold text-white">
-        Need a website or a booking-focused system like this?
+        Need a website like these for your business?
       </h2>
 
       <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
-        I build custom websites and business systems designed to improve trust,
-        presentation, and lead flow.
+        Custom-built websites designed to improve trust,
+        presentation, and lead flow. No templates.
       </p>
 
       <div class="mt-10 flex justify-center gap-4 flex-wrap">
