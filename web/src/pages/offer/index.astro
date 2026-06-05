@@ -241,9 +241,9 @@ const seo = {
         <p>You don't pay. That's the guarantee. We work through revisions until you love it — and if we still can't make you happy, you walk away owing nothing.</p>
       </div>
       <div class="obj-card">
-  <h4>Do I pay anything monthly after?</h4>
-  <p>Nothing to us. Hosting is on us. The only ongoing cost is your domain (~$15/year), which you pay directly to the registrar and own outright. No lock-in, no hidden fees.</p>
-</div>
+        <h4>Do I pay anything monthly after?</h4>
+        <p>Nothing to us. Hosting is on us. The only ongoing cost is your domain (~$15/year), which you pay directly to the registrar and own outright. No lock-in, no hidden fees.</p>
+      </div>
       <div class="obj-card">
         <h4>What do you need from me?</h4>
         <p>A 15-minute call, your logo if you have one, and photos if you want them. We handle all copy, design, development, and launch.</p>
@@ -810,6 +810,7 @@ const seo = {
     });
     if (!ok) { e.preventDefault(); return; }
     (window as any).fbq?.('track', 'Lead');
+    (window as any).oaiq?.('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
     if (btn) {
       btn.textContent = "✓ Sent — we'll call within 24 hours";
       btn.style.background = '#00e5a0';
