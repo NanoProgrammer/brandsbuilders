@@ -1,58 +1,35 @@
 ---
-export interface Props {
-  title?: string;
-}
-
-const {
-  title = 'Why Alberta service businesses choose our system',
-} = Astro.props;
 ---
-
-<section class="bg-slate-950 py-20">
+<section class="bg-gray-50 py-16 border-y border-gray-200">
   <div class="container mx-auto px-6 max-w-4xl">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-10">
-      {title}
+    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+      Why home services companies choose this system
     </h2>
-
-    <div class="space-y-8 text-slate-400 leading-relaxed">
-      
+    <div class="grid md:grid-cols-2 gap-8">
       <div>
-        <h3 class="text-white font-medium mb-2">
-          We don’t just build websites — we build booking & retention systems
-        </h3>
-        <p>
-          Most service businesses don’t have a traffic problem — they have a
-          show-up, recurrence, and reactivation problem.  
-          We design the website, flows, and campaigns to increase bookings,
-          repeat visits, and client lifetime value — not just clicks.
+        <h3 class="font-semibold text-gray-900 mb-2">Not marketing — operations</h3>
+        <p class="text-gray-600 leading-relaxed">
+          We install booking and lead recovery systems, not ad campaigns. The revenue comes from leads and customers you already have.
         </p>
       </div>
-
       <div>
-        <h3 class="text-white font-medium mb-2">
-          Copy & structure based on real client language
-        </h3>
-        <p>
-          We analyze your reviews, testimonials, and market feedback to extract
-          real customer language, pain points, and decision triggers — then use
-          that in website copy, email campaigns, SMS flows, and scripts.
-          No generic messaging. Only market-matched positioning.
+        <h3 class="font-semibold text-gray-900 mb-2">Live in 2 weeks, not 2 months</h3>
+        <p class="text-gray-600 leading-relaxed">
+          We handle all setup and integration. You focus on running your business while the system captures leads around the clock.
         </p>
       </div>
-
-     
-
       <div>
-        <h3 class="text-white font-medium mb-2">
-          Reactivation & show-up flows included
-        </h3>
-        <p>
-          We implement email and SMS sequences, reminder flows, reactivation
-          campaigns, and booking protection logic — designed to generate
-          bookings in the first 60 days and help the system pay for itself.
+        <h3 class="font-semibold text-gray-900 mb-2">Money-back guarantee</h3>
+        <p class="text-gray-600 leading-relaxed">
+          5 recovered leads booked in your calendar within 30 days — or your money back. We put skin in the game.
         </p>
       </div>
-
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-2">Monthly reporting included</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Every month you see exactly how many leads were recovered, calls captured, and the revenue impact of the system.
+        </p>
+      </div>
     </div>
   </div>
 </section>

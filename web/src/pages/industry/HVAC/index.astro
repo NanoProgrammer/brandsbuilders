@@ -1,224 +1,31 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-
-const seo = {
-  title: 'HVAC Rebooking & Reactivation System | BrandsBuilders',
-  description:
-    'Done-for-you rebooking and reactivation system for HVAC companies to increase repeat service calls, maintenance bookings, and recovered job slots from existing customers.',
-  canonical: 'https://brandsbuilders.ca/industry/hvac'
-};
+const seo = { title: 'HVAC Revenue Efficiency System | BrandsBuilders', description: 'Missed-call protection, show-up optimization, and past client reactivation for HVAC companies. $1,000/mo. Live in 2 weeks.', canonical: 'https://brandsbuilders.ca/industry/hvac' };
 ---
-
 <Layout seo={seo}>
-
-<!-- HERO -->
-<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
-
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-sky-950/40"></div>
-  <div class="absolute -top-40 right-[-100px] w-[520px] h-[520px] rounded-full bg-sky-500/15 blur-[150px]"></div>
-
-  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
-
-    <!-- LEFT -->
-    <div class="reveal">
-
-      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
-        Industry · HVAC Services
-      </span>
-
-      <h1 class="text-5xl font-semibold leading-tight">
-        More repeat service calls.  
-        Fewer empty slots.  
-        <span class="text-sky-300">More booked jobs.</span>
-      </h1>
-
-      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
-        We install a done-for-you rebooking and customer reactivation system
-        that turns your past customer database into new booked jobs
-        and recovered schedule capacity.
-      </p>
-
-      <div class="mt-10">
-        <a href="/apply"
-          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
-                 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500
-                 shadow-lg shadow-sky-600/30 hover:translate-y-[-1px] transition">
-          Check company qualification →
-        </a>
-      </div>
-
-      <p class="mt-5 text-sm text-slate-500">
-        First booking gains usually come from existing customers.
-      </p>
-
-    </div>
-
-    <!-- RIGHT -->
-    <div class="relative reveal">
-
-      <div class="absolute -inset-4 bg-gradient-to-br from-sky-500/20 to-cyan-500/20 blur-2xl rounded-3xl"></div>
-
-      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
-        <img
-          src="/industry/hero-hvac.webp"
-          alt="HVAC service booking system"
-          class="w-full object-cover"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-
-      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
-        Reactivation · Recall · Slot Recovery
-      </div>
-
-    </div>
-
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-700 text-sm font-medium mb-6">Industry · HVAC</div>
+    <h1 class="text-4xl font-bold text-gray-900 leading-tight">Stop losing HVAC jobs to missed calls and no-shows.</h1>
+    <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-3xl">Every missed call is a $300–$3,000 service call walking to your competitor. Our system captures those leads automatically, reminds customers about booked jobs, and reactivates past clients for seasonal maintenance.</p>
+    <div class="mt-8"><a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition">Check If You Qualify →</a></div>
   </div>
 </section>
-
-<!-- PROBLEMS -->
-<section class="bg-slate-950 py-24 border-b border-slate-800">
-  <div class="container mx-auto px-6 max-w-5xl">
-
-    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
-      Where HVAC revenue quietly leaks
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Past customers are never contacted for seasonal service.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Maintenance recall is inconsistent or manual.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Cancellations create silent empty job slots.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        No structured rebooking triggers after service visits.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Dispatch calendars have recoverable gaps.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Customer database is stored — but not activated.
-      </div>
-
+<section class="bg-gray-50 py-16 border-y border-gray-200">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Where HVAC revenue leaks</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white border border-gray-200 rounded-xl p-6"><p class="text-gray-700">Missed calls during busy hours go straight to voicemail — and competitors.</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6"><p class="text-gray-700">Customers forget scheduled maintenance and no-show without reminders.</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6"><p class="text-gray-700">Past customers with aging systems never get contacted for seasonal service.</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6"><p class="text-gray-700">Dispatch gaps from cancellations stay unfilled.</p></div>
     </div>
   </div>
 </section>
-
-<!-- WHAT WE INSTALL -->
-<section class="bg-slate-950 py-24 border-b border-slate-800">
-  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-start">
-
-    <div class="reveal">
-      <h2 class="text-3xl font-semibold text-white mb-6">
-        What we install for HVAC companies
-      </h2>
-
-      <p class="text-slate-400 mb-8">
-        Not marketing campaigns.
-        A working rebooking and recovery engine.
-      </p>
-
-      <ul class="space-y-6 text-slate-300">
-
-        <li class="flex gap-4">
-          <span class="text-sky-400">▸</span>
-          Past-customer reactivation campaigns
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-cyan-400">▸</span>
-          Seasonal maintenance recall flows
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-blue-400">▸</span>
-          Post-service rebooking triggers
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-emerald-400">▸</span>
-          Cancellation & empty-slot recovery sequences
-        </li>
-
-      </ul>
-
-      <p class="mt-8 text-slate-400">
-        Designed to generate measurable booked jobs
-        within the first 60 days.
-      </p>
-    </div>
-
-    <div class="relative reveal">
-      <div class="absolute -inset-4 bg-gradient-to-br from-sky-500/20 to-cyan-500/20 blur-2xl rounded-3xl"></div>
-
-      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
-        <p class="text-sm text-slate-400 mb-3">
-          System impact areas
-        </p>
-
-        <div class="space-y-3 text-slate-300 text-sm">
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>Repeat service</span>
-            <span class="text-emerald-400">Increased</span>
-          </div>
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>Maintenance recall</span>
-            <span class="text-emerald-400">Automated</span>
-          </div>
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>Empty slots</span>
-            <span class="text-emerald-400">Recovered</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Database usage</span>
-            <span class="text-emerald-400">Activated</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<section class="bg-gray-900 text-white py-16 text-center">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <h2 class="text-3xl font-bold mb-4">$1,000/mo. Live in 2 weeks. 5 leads in 30 days or money back.</h2>
+    <a href="/apply" class="inline-block mt-4 px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Check Qualification →</a>
   </div>
 </section>
-
-<!-- CTA -->
-<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
-
-  <div class="absolute inset-0 bg-gradient-to-r from-sky-500/15 via-cyan-500/15 to-blue-500/15 blur-3xl"></div>
-
-  <div class="relative container mx-auto px-6 max-w-4xl reveal">
-
-    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
-      Want your customer database activated?
-    </h2>
-
-    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
-      Check if your HVAC company qualifies for the
-      rebooking and reactivation system.
-    </p>
-
-    <a href="/apply"
-       class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
-       bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500
-       shadow-lg shadow-sky-600/30 hover:translate-y-[-1px] transition">
-      Check qualification →
-    </a>
-
-    <p class="mt-5 text-sm text-slate-400">
-      No pitch. No pressure. Fit check only.
-    </p>
-
-  </div>
-</section>
-
 </Layout>

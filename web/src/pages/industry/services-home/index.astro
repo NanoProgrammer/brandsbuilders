@@ -1,263 +1,33 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-
-const seo = {
-  title: 'Client Reactivation & Rebooking System for Service Businesses | BrandsBuilders',
-  description:
-    'Done-for-you client reactivation and rebooking system for Alberta service businesses to increase repeat jobs, show-up rates, and booked appointments in the first 60 days.',
-  canonical: 'https://brandsbuilders.ca/industry/services-home'
-};
+const seo = { title: 'Revenue Efficiency System for Home Services | BrandsBuilders', description: 'Missed-call protection, show-up optimization, and client reactivation for plumbing, restoration, roofing, pest control, and garage door companies.', canonical: 'https://brandsbuilders.ca/industry/services-home' };
 ---
-
 <Layout seo={seo}>
-
-<!-- HERO -->
-<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
-
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/20"></div>
-  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
-
-  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center py-24">
-
-    <!-- LEFT -->
-    <div class="reveal">
-      <span class="inline-block px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm mb-5">
-        Alberta Service Businesses
-      </span>
-
-      <h1 class="text-5xl font-semibold leading-tight">
-        More repeat jobs.  
-        Fewer no-shows.  
-        <span class="text-fuchsia-300">More booked slots.</span>
-      </h1>
-
-      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
-        We install a done-for-you rebooking and client reactivation system
-        that turns your past customers and cancellations
-        into new paid appointments — without your team managing campaigns.
-      </p>
-
-      <div class="mt-10">
-        <a href="/apply"
-          class="inline-flex items-center px-10 py-4 rounded-xl font-semibold
-                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-                 shadow-lg shadow-fuchsia-600/30 hover:translate-y-[-1px] transition">
-          Check business qualification →
-        </a>
-      </div>
-
-      <p class="mt-5 text-sm text-slate-500">
-        Most early booking gains come from your existing client base.
-      </p>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="relative reveal">
-
-      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
-
-      <div class="relative border border-slate-800 rounded-2xl overflow-hidden bg-slate-900">
-        <img
-          src="/industry/hero-services.webp"
-          alt="Service business rebooking system"
-          class="w-full object-cover"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-
-      <div class="absolute -bottom-6 -right-2 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 shadow-xl">
-        Reactivation · Show-Up · Repeat Jobs
-      </div>
-
-    </div>
-
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-50 text-orange-700 text-sm font-medium mb-6">Home Services</div>
+    <h1 class="text-4xl font-bold text-gray-900 leading-tight">Stop losing jobs to missed calls and no-shows.</h1>
+    <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-3xl">We install a done-for-you system that captures missed calls via instant SMS, reduces no-shows with smart reminders, and reactivates past clients for quick revenue wins.</p>
+    <div class="mt-8"><a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition">Check If You Qualify →</a></div>
   </div>
 </section>
-
-<!-- PROBLEM -->
-<section class="bg-slate-950 py-24 border-b border-slate-800">
-  <div class="container mx-auto px-6 max-w-5xl">
-
-    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
-      Most service revenue is lost after the first job
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-8 text-slate-300">
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Past customers are never contacted again.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Follow-up depends on memory — not systems.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        No-show and cancellation slots stay empty.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Repeat work is left to chance.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Client databases sit unused.
-      </div>
-
-      <div class="reveal border border-slate-800 rounded-xl p-6 bg-slate-900/40">
-        Staff are too busy to run reactivation manually.
-      </div>
-
+<section class="bg-gray-50 py-16 border-y border-gray-200">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Industries we serve</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/industry/HVAC" class="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-300 transition"><h3 class="font-semibold text-gray-900">HVAC</h3><p class="text-gray-500 text-sm mt-1">Service calls + seasonal maintenance</p></a>
+      <div class="bg-white border border-gray-200 rounded-xl p-5"><h3 class="font-semibold text-gray-900">Plumbing</h3><p class="text-gray-500 text-sm mt-1">Emergency + scheduled service</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5"><h3 class="font-semibold text-gray-900">Restoration</h3><p class="text-gray-500 text-sm mt-1">Water, fire, mold jobs</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5"><h3 class="font-semibold text-gray-900">Roofing</h3><p class="text-gray-500 text-sm mt-1">Inspections + repairs + installs</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5"><h3 class="font-semibold text-gray-900">Pest Control</h3><p class="text-gray-500 text-sm mt-1">Recurring service + seasonal</p></div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5"><h3 class="font-semibold text-gray-900">Garage Door</h3><p class="text-gray-500 text-sm mt-1">Repair + installation</p></div>
     </div>
   </div>
 </section>
-
-<!-- WHAT WE INSTALL -->
-<section class="bg-slate-950 py-24 border-b border-slate-800">
-  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16">
-
-    <div class="reveal">
-      <h2 class="text-3xl font-semibold text-white mb-6">
-        What the system installs
-      </h2>
-
-      <p class="text-slate-400 mb-8">
-        Not marketing busywork.
-        A working rebooking engine.
-      </p>
-
-      <ul class="space-y-6 text-slate-300">
-
-        <li class="flex gap-4">
-          <span class="text-orange-400">▸</span>
-          Past-client reactivation campaigns
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-pink-400">▸</span>
-          Repeat service triggers & reminders
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-fuchsia-400">▸</span>
-          Appointment confirmation & show-up flows
-        </li>
-
-        <li class="flex gap-4">
-          <span class="text-emerald-400">▸</span>
-          Cancellation & open-slot recovery
-        </li>
-
-      </ul>
-
-      <p class="mt-8 text-slate-400">
-        Designed to generate measurable bookings
-        within the first 60 days.
-      </p>
-    </div>
-
-    <!-- PANEL -->
-    <div class="relative reveal">
-
-      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
-
-      <div class="relative border border-slate-800 rounded-2xl p-6 bg-slate-900/60">
-
-        <p class="text-sm text-slate-400 mb-3">
-          Impact areas
-        </p>
-
-        <div class="space-y-3 text-slate-300 text-sm">
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>Repeat bookings</span>
-            <span class="text-emerald-400">Increased</span>
-          </div>
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>No-show rate</span>
-            <span class="text-emerald-400">Reduced</span>
-          </div>
-          <div class="flex justify-between border-b border-slate-800 pb-2">
-            <span>Client lifetime value</span>
-            <span class="text-emerald-400">Higher</span>
-          </div>
-          <div class="flex justify-between">
-            <span>Empty slots</span>
-            <span class="text-emerald-400">Recovered</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+<section class="bg-gray-900 text-white py-16 text-center">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <h2 class="text-3xl font-bold mb-4">$1,000/mo. Live in 2 weeks. Guaranteed results.</h2>
+    <a href="/apply" class="inline-block mt-4 px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Check Qualification →</a>
   </div>
 </section>
-
-<!-- INDUSTRIES -->
-<section class="bg-slate-950 py-24 border-b border-slate-800">
-  <div class="container mx-auto px-6 max-w-5xl">
-
-    <h2 class="text-3xl font-semibold text-white mb-10 reveal">
-      Systems adapted by industry
-    </h2>
-
-    <div class="grid sm:grid-cols-2 gap-6">
-
-      <a href="/industry/hvac"
-        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-sky-400 transition">
-        <h3 class="text-lg font-medium text-white mb-2">HVAC & Home Services</h3>
-        <p class="text-slate-400 text-sm">Urgent jobs + repeat maintenance.</p>
-      </a>
-
-      <a href="/industry/dental"
-        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-emerald-400 transition">
-        <h3 class="text-lg font-medium text-white mb-2">Dental Clinics</h3>
-        <p class="text-slate-400 text-sm">Patient reactivation & recall.</p>
-      </a>
-
-      <a href="/industry/med-spas"
-        class="reveal block border border-slate-800 p-6 rounded-xl bg-slate-900/40 hover:border-pink-400 transition">
-        <h3 class="text-lg font-medium text-white mb-2">Medical Spas</h3>
-        <p class="text-slate-400 text-sm">Consultation & treatment series.</p>
-      </a>
-
-      <div class="reveal border border-slate-800 p-6 rounded-xl bg-slate-900/40">
-        <h3 class="text-lg font-medium text-white mb-2">More coming</h3>
-        <p class="text-slate-500 text-sm">Physio · Pest · Specialty clinics</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="relative bg-slate-950 py-28 overflow-hidden text-center">
-
-  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/15 via-pink-500/15 to-fuchsia-600/15 blur-3xl"></div>
-
-  <div class="relative container mx-auto px-6 max-w-4xl reveal">
-
-    <h2 class="text-3xl lg:text-4xl font-semibold text-white">
-      Want your client base activated?
-    </h2>
-
-    <p class="mt-5 text-slate-300 text-lg max-w-2xl mx-auto">
-      Check if your service business qualifies
-      for the rebooking system.
-    </p>
-
-    <a href="/apply"
-       class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
-       bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-       shadow-lg shadow-fuchsia-600/30 hover:translate-y-[-1px] transition">
-      Check qualification →
-    </a>
-
-    <p class="mt-5 text-sm text-slate-400">
-      Fit check only. No pressure.
-    </p>
-
-  </div>
-</section>
-
 </Layout>

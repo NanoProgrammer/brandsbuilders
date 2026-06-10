@@ -1,240 +1,42 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
 const seo = {
-  title: 'FAQ — Rebooking & Client Reactivation System | BrandsBuilders',
-  description:
-    'Clear answers about our done-for-you rebooking and client reactivation system, how it works, who it’s for, and how bookings are generated.',
+  title: 'FAQ — Revenue Efficiency System | BrandsBuilders',
+  description: 'Common questions about the Revenue Efficiency System for home services businesses.',
   canonical: 'https://brandsbuilders.ca/faq'
 };
-
 const faqs = [
-  {
-    category: 'The Rebooking System',
-    questions: [
-      {
-        question: 'What is the rebooking & reactivation system?',
-        answer:
-          'It is a done-for-you system that reactivates past clients, increases repeat bookings, and improves show-up rate using structured campaigns and follow-up flows — not more ads.'
-      },
-      {
-        question: 'Is this marketing or software?',
-        answer:
-          'Neither. It is an implemented system. We design and install the flows, campaigns, and triggers for you. You are not managing tools or learning platforms.'
-      },
-      {
-        question: 'Where do the bookings come from?',
-        answer:
-          'From your existing client database, recent customers, past inquiries, and missed follow-ups — not cold traffic.'
-      },
-      {
-        question: 'How fast can results appear?',
-        answer:
-          'Most systems are designed to generate measurable booking activity within the first 60 days, often sooner depending on database size and service type.'
-      }
-    ]
-  },
-  {
-    category: 'Who It Is For',
-    questions: [
-      {
-        question: 'Who is this designed for?',
-        answer:
-          'Alberta service businesses typically doing $300K–$3M+ per year with an existing client base and repeatable services.'
-      },
-      {
-        question: 'Is this for new businesses?',
-        answer:
-          'No. If you do not yet have a client database or past customers, there is nothing to reactivate.'
-      },
-      {
-        question: 'Which industries work best?',
-        answer:
-          'Fitness and coaching studios, med-aesthetic clinics, physio and specialty clinics, HVAC and home services, pest control, and other recurring or repeat-service businesses.'
-      },
-      {
-        question: 'What if my services are one-time only?',
-        answer:
-          'Then this system is usually not a fit. It works best where repeat visits or recurring services are normal.'
-      }
-    ]
-  },
-  {
-    category: 'How Implementation Works',
-    questions: [
-      {
-        question: 'What do you actually implement?',
-        answer:
-          'Client reactivation campaigns, repeat-booking triggers, show-up protection flows, and structured follow-up sequences — connected to your booking and contact systems.'
-      },
-      {
-        question: 'Do I have to run campaigns myself?',
-        answer:
-          'No. We design and set up the flows and campaign logic. Your team only handles normal client communication and service delivery.'
-      },
-      {
-        question: 'Does this replace my booking software?',
-        answer:
-          'No. We work with your existing booking or CRM tools when possible and add structure around them.'
-      },
-      {
-        question: 'Do you need access to my client list?',
-        answer:
-          'Yes — secure access is required to implement reactivation and follow-up campaigns properly.'
-      }
-    ]
-  },
-  {
-    category: 'Risk & Guarantees',
-    questions: [
-      {
-        question: 'Do you guarantee bookings?',
-        answer:
-          'We guarantee minimum booking outcomes when a business qualifies and implementation conditions are met. If minimum thresholds are not reached, refund and continued work terms apply.'
-      },
-      {
-        question: 'Why do you offer guarantees?',
-        answer:
-          'Because this is a system built around measurable booking outcomes — not vague marketing activity.'
-      },
-      {
-        question: 'Is there financial risk on my side?',
-        answer:
-          'Risk is reduced through qualification, minimum outcome guarantees, and short-term booking targets.'
-      }
-    ]
-  },
-  {
-    category: 'Engagement & Control',
-    questions: [
-      {
-        question: 'Is there a long-term contract?',
-        answer:
-          'No long lock-ins. Engagement is based on implementation and outcome phases.'
-      },
-      {
-        question: 'Who owns the client data and systems?',
-        answer:
-          'You do. We work with delegated access only. Your data and client relationships remain fully yours.'
-      },
-      {
-        question: 'What if we are not a fit?',
-        answer:
-          'We will say so directly. Not every business benefits from reactivation systems at every stage.'
-      }
-    ]
-  }
+  { q: 'What is the Revenue Efficiency System?', a: 'A done-for-you system with three components: missed-call protection (instant SMS to every missed call), show-up optimization (automated appointment reminders), and past client reactivation (one-time outreach to your database). It turns more inbound leads into booked jobs.' },
+  { q: 'What does missed-call protection do?', a: 'When a customer calls and you can\'t answer, our system sends an instant SMS within seconds. It keeps the conversation alive, answers questions, and automatically guides the lead toward booking in your calendar — 24/7.' },
+  { q: 'What is the Revenue Recovery Guarantee?', a: 'You will see a minimum of 5 recovered leads booked in your calendar within 30 days of going live — or your money back. No conditions.' },
+  { q: 'How fast can I go live?', a: '2 weeks from qualification to live system. We handle all setup, integration, and testing.' },
+  { q: 'Who is this for?', a: 'Home services businesses (HVAC, plumbing, restoration, roofing, pest control, garage door) generating $500K+ per year with real inbound call volume.' },
+  { q: 'Do I have to manage anything?', a: 'No. We build, install, and manage the system. You just answer the phone when it rings and show up to jobs.' },
+  { q: 'What does past client reactivation include?', a: 'A one-time email and SMS outreach to your past client list with a small free offer to get them back through the door — so you can upsell on-site. Quick revenue wins in the first 30 days.' },
+  { q: 'Is there a contract?', a: 'Month-to-month. No long-term lock-in. The system pays for itself — you stay because it works.' },
+  { q: 'What reporting do I get?', a: 'Monthly reporting on leads recovered, calls captured, appointments booked, and revenue impact.' },
 ];
-
-const toId = (s) =>
-  s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 ---
-
 <Layout seo={seo}>
-
-<!-- HERO -->
-<section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
-
-  <div class="relative container mx-auto px-6 max-w-6xl">
-    <div class="reveal max-w-4xl">
-      <p class="text-sm uppercase tracking-widest text-slate-400 mb-6">FAQ</p>
-
-      <h1 class="text-5xl lg:text-6xl font-semibold leading-[1.05]">
-        Rebooking system —
-        <span class="text-fuchsia-300">clear answers</span>.
-      </h1>
-
-      <p class="mt-7 text-xl text-slate-300 leading-relaxed max-w-3xl">
-        How the reactivation and repeat-booking system works,
-        who it’s for, and how bookings are generated in the first 60 days.
-      </p>
-
-      <div class="mt-10 flex flex-wrap gap-3">
-        <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Reactivation</span>
-        <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Repeat bookings</span>
-        <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">Show-up rate</span>
-        <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300 text-sm">60-day outcomes</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BODY stays exactly your same structure -->
-<!-- (no layout changes — only content updated) -->
-
-<section class="bg-slate-950 py-16">
-  <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-12 gap-10 items-start">
-
-    <!-- NAV -->
-    <aside class="lg:col-span-4 lg:sticky lg:top-24">
-      <div class="reveal rounded-2xl border border-slate-800 bg-slate-900/35 p-6">
-        <p class="text-xs uppercase tracking-widest text-slate-500">Categories</p>
-
-        <nav class="mt-4 space-y-2">
-          {faqs.map((c) => (
-            <a
-              href={`#${toId(c.category)}`}
-              class="block rounded-lg px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-900/60 transition"
-            >
-              {c.category}
-            </a>
-          ))}
-        </nav>
-
-        <div class="mt-6 pt-6 border-t border-slate-800 text-sm text-slate-400">
-          Want to check fit?
-          <a href="/apply" class="text-fuchsia-300 hover:text-fuchsia-200 transition"> Apply here</a>.
-        </div>
-      </div>
-    </aside>
-
-    <!-- FAQ CONTENT (unchanged renderer) -->
-    <div class="lg:col-span-8 space-y-14">
-      {faqs.map((category) => (
-        <section id={toId(category.category)} class="reveal scroll-mt-28">
-          <h2 class="text-3xl font-semibold text-white mb-6">
-            {category.category}
-          </h2>
-
-          <div class="space-y-4">
-            {category.questions.map((faq) => (
-              <details class="faq rounded-2xl border border-slate-800 bg-slate-900/35 p-6 hover:bg-slate-900/55 transition">
-                <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg">
-                  <span>{faq.question}</span>
-                  <span class="chev">+</span>
-                </summary>
-                <p class="mt-4 text-slate-300 leading-relaxed text-lg">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </section>
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h1>
+    <p class="text-lg text-gray-600 mb-12">About the Revenue Efficiency System.</p>
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="bg-gray-50 border border-gray-200 rounded-xl p-5 group">
+          <summary class="cursor-pointer font-medium text-gray-900 flex justify-between items-center">
+            {f.q}
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
+        </details>
       ))}
-
-      <!-- CTA -->
-      <div class="reveal mt-10 rounded-2xl border border-slate-800 bg-slate-900/35 p-10 text-center">
-        <h3 class="text-3xl font-semibold text-white">
-          Check if your business qualifies
-        </h3>
-
-        <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
-          We only install the system where recurrence and reactivation make financial sense.
-        </p>
-
-        <a
-          href="/apply"
-          class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
-                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-                 text-white hover:opacity-95 transition"
-        >
-          Qualification check →
-        </a>
-      </div>
-
+    </div>
+    <div class="mt-12 bg-gray-900 text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Still have questions?</h2>
+      <a href="/apply" class="inline-block mt-2 px-8 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Get in Touch →</a>
     </div>
   </div>
 </section>
-
 </Layout>

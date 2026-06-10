@@ -1,30 +1,18 @@
 ---
-// src/pages/contact/index.astro
 import Layout from '../../layouts/Layout.astro';
-
 import ContactHero from '../../components/ContactHero.astro';
 import BookingSection from '../../components/BookingSection';
 import TrustBadges from '../../components/TrustBadges.astro';
 
 const seo = {
-  title: 'Apply — BrandsBuilders Agency | Alberta',
-  description:
-    'Apply for a Growth Review. We assess fit, goals, and next steps. No sales pressure. Alberta-based.',
-  keywords:
-    'apply digital agency Alberta, growth review Calgary, web design application, marketing audit Alberta',
+  title: 'Apply — Revenue Efficiency System | BrandsBuilders',
+  description: 'Check if your home services business qualifies for the Revenue Efficiency System. Missed-call protection, show-up optimization, and client reactivation. $1,000/mo.',
   canonical: 'https://brandsbuilders.ca/apply',
   ogImage: '/og.webp'
 };
-
-
 ---
-
 <Layout seo={seo}>
-  <!-- HERO: sets expectation (apply-first) -->
   <ContactHero />
-
-  <!-- SECONDARY PATH: Only for decided leads -->
   <BookingSection client:only="react" />
-
   <TrustBadges />
 </Layout>

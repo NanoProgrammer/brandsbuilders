@@ -1,88 +1,43 @@
 ---
-// Footer.astro
 ---
-<footer class="relative bg-slate-950 text-white overflow-hidden border-t border-slate-800">
-
-  <!-- Ambient glow -->
-  <div class="absolute -top-40 left-1/2 w-[700px] h-[700px] -translate-x-1/2 bg-fuchsia-600/20 rounded-full blur-3xl"></div>
-
-  <div class="relative container mx-auto px-6 pt-16 pb-10 max-w-7xl">
-
-  
-
-
-    <!-- Main footer grid -->
+<footer class="bg-slate-950 text-white border-t border-slate-800">
+  <div class="container mx-auto px-6 pt-14 pb-8 max-w-6xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-      <!-- Brand -->
       <div>
-        <img src="/logo.webp" alt="BrandsBuilders logo" class="h-30 w-auto " />
-        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-          We help Alberta service businesses build
-          high-performance acquisition systems that
-          convert traffic into customers.
-        </p>
-        <p class="text-slate-500 text-xs">
-          Serving Alberta — Calgary · Airdrie · Edmonton
+        <img src="/logo.webp" alt="BrandsBuilders" class="h-24 w-auto mb-4" />
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Revenue efficiency systems for home services businesses across Western Canada.
         </p>
       </div>
-
-      <!-- Insights -->
       <div>
-        <h4 class="text-sm font-semibold mb-4 tracking-wide">Insights</h4>
-        <ul class="space-y-3 text-slate-400 text-sm">
-          <li><a href="/proof" class="hover:text-white transition">Case Studies</a></li>
-          <li><a href="/process" class="hover:text-white transition">Process</a></li>
-          <li><a href="/about" class="hover:text-white transition">About us</a></li>
+        <h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-300">System</h4>
+        <ul class="space-y-2.5 text-slate-400 text-sm">
+          <li><a href="/#how-it-works" class="hover:text-white transition">How It Works</a></li>
+          <li><a href="/proof" class="hover:text-white transition">Proof</a></li>
           <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
         </ul>
       </div>
-
-      <!-- Industries -->
       <div>
-        <h4 class="text-sm font-semibold mb-4 tracking-wide">Industries</h4>
-        <ul class="space-y-3 text-slate-400 text-sm">
-          <li><a href="/industry/Dental-Clinics" class="hover:text-white transition">Dental Clinics</a></li>
-          <li><a href="/industry/Med-Spas" class="hover:text-white transition">Med Spas</a></li>
+        <h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-300">Industries</h4>
+        <ul class="space-y-2.5 text-slate-400 text-sm">
           <li><a href="/industry/HVAC" class="hover:text-white transition">HVAC</a></li>
-          <li><a href="/industry/services-home" class="hover:text-white transition">Home Services</a></li>
+          <li><a href="/industry/services-home" class="hover:text-white transition">Plumbing & Home Services</a></li>
         </ul>
       </div>
-
-      <!-- Contact / Social -->
       <div>
-        <h4 class="text-sm font-semibold mb-4 tracking-wide">Connect</h4>
-        <ul class="space-y-3 text-slate-400 text-sm">
-          <li>
-            <a href="mailto:admin@brandsbuilders.ca" class="hover:text-white transition">
-              admin@brandsbuilders.ca
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/brandsbuildersca/" class="hover:text-white transition">
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/BrandsBuilders_" class="hover:text-white transition">
-              X (Twitter)
-            </a>
-          </li>
-                <li><a href="/blog" class="hover:text-white transition">Blog</a></li>
+        <h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-300">Contact</h4>
+        <ul class="space-y-2.5 text-slate-400 text-sm">
+          <li><a href="mailto:admin@brandsbuilders.ca" class="hover:text-white transition">admin@brandsbuilders.ca</a></li>
+          <li><a href="/about" class="hover:text-white transition">About Us</a></li>
         </ul>
       </div>
-
     </div>
-
-    <!-- Bottom bar -->
-    <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-      <p>© {new Date().getFullYear()} BrandsBuilders. All rights reserved.</p>
-
+    <div class="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>&copy; {new Date().getFullYear()} BrandsBuilders. All rights reserved.</p>
       <div class="flex gap-6">
-        <a href="/privacy-policy" class="hover:text-white transition">Privacy Policy</a>
+        <a href="/privacy-policy" class="hover:text-white transition">Privacy</a>
         <a href="/terms-of-service" class="hover:text-white transition">Terms</a>
       </div>
     </div>
-
   </div>
 </footer>

@@ -1,178 +1,27 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { POSTS } from '../../../data/posts.js';
-
-export function getStaticPaths() {
-  return Object.keys(POSTS).map(slug => ({ params: { slug } }));
-}
-
+export function getStaticPaths() { return Object.keys(POSTS).map(slug => ({ params: { slug } })); }
 const { slug } = Astro.params;
 const post = POSTS[slug];
-
 if (!post) return Astro.redirect('/404');
-
-const seo = {
-  title: `${post.title} — BrandsBuilders`,
-  description: post.excerpt,
-  canonical: `https://brandsbuilders.ca/blog/${slug}`,
-};
+const seo = { title: `${post.title} — BrandsBuilders`, description: post.excerpt, canonical: `https://brandsbuilders.ca/blog/${slug}` };
 ---
-
 <Layout seo={seo}>
-
-<!-- HERO HEADER -->
-<section class="relative bg-slate-950 text-white pt-24 pb-16 overflow-hidden border-b border-slate-800">
-
-  <!-- ambient glow -->
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
-  <div class="absolute -top-52 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/10 blur-[170px]"></div>
-
-  <div class="relative container mx-auto px-6 max-w-4xl reveal">
-
-    <!-- breadcrumb -->
-    <nav class="text-sm text-slate-500 mb-6">
-      <a href="/" class="hover:text-white transition">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/blog" class="hover:text-white transition">Insights</a>
-    </nav>
-
-    <!-- meta -->
-    <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400 mb-5">
-      <span class="px-3 py-1 rounded-full border border-slate-800 bg-slate-900/40 text-slate-300">
-        {post.category}
-      </span>
-      <span>•</span>
-      <span>{post.readTime}</span>
-      <span>•</span>
-      <span>
-        {new Date(post.date).toLocaleDateString('en-CA', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })}
-      </span>
-    </div>
-
-    <!-- title -->
-    <h1 class="text-4xl sm:text-5xl font-semibold leading-tight max-w-4xl">
-      {post.title}
-    </h1>
-
-    <!-- excerpt -->
-    <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-3xl">
-      {post.excerpt}
-    </p>
-
-  </div>
-</section>
-
-
-<!-- ARTICLE BODY -->
-<section class="bg-slate-950 py-16">
+<section class="bg-white py-20">
   <div class="container mx-auto px-6 max-w-3xl">
-
-    <article class="prose-system reveal">
-      <div set:html={post.content} />
-    </article>
-
-    <!-- divider -->
-    <div class="my-16 h-px bg-slate-800/80"></div>
-
-    <!-- CTA -->
-    <div class="reveal relative rounded-2xl border border-slate-800 bg-slate-900/35 p-10 overflow-hidden text-center">
-
-      <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-pink-500/10 to-fuchsia-600/10 blur-2xl"></div>
-
-      <div class="relative">
-        <h3 class="text-3xl font-semibold text-white">
-          Want clarity before you scale?
-        </h3>
-
-        <p class="mt-4 text-slate-300 text-lg max-w-xl mx-auto">
-          Book a free Customer Leak Scan and get a clear verdict
-          on whether your website is ready for real acquisition.
-        </p>
-
-        <a
-          href="/apply"
-          class="inline-flex items-center justify-center mt-8 px-10 py-4 rounded-xl font-semibold
-                 bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-                 text-white shadow-lg shadow-fuchsia-600/30
-                 hover:translate-y-[-1px] hover:shadow-fuchsia-600/40 transition"
-        >
-          Book Free Leak Scan →
-        </a>
-
-        <p class="mt-5 text-sm text-slate-400">
-          Not a pitch. A diagnostic.
-        </p>
-      </div>
+    <nav class="text-sm text-gray-500 mb-6"><a href="/" class="hover:text-gray-700">Home</a> / <a href="/blog" class="hover:text-gray-700">Insights</a></nav>
+    <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+      <span class="px-2 py-0.5 rounded bg-gray-100 text-xs font-medium">{post.category}</span>
+      <span>{post.readTime}</span>
     </div>
-
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
+    <p class="text-xl text-gray-600 mb-10">{post.excerpt}</p>
+    <article class="prose prose-gray max-w-none"><div set:html={post.content} /></article>
+    <div class="mt-16 bg-gray-900 text-white rounded-xl p-8 text-center">
+      <h3 class="text-2xl font-bold mb-3">Ready to recover lost revenue?</h3>
+      <a href="/apply" class="inline-block mt-2 px-8 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Check Qualification →</a>
+    </div>
   </div>
 </section>
-
-
-<!-- Reveal animation -->
-<script is:inline>
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
-      }
-    }
-  }, { threshold: 0.12 });
-  els.forEach(el => io.observe(el));
-</script>
-
-
-<!-- Global styles for article typography -->
-<style is:global>
-  /* reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 700ms cubic-bezier(.2,.8,.2,1),
-                transform 700ms cubic-bezier(.2,.8,.2,1);
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-  }
-
-  /* article typography system */
-  .prose-system {
-    color: #cbd5e1; /* slate-300 */
-    font-size: 1.125rem;
-    line-height: 1.8;
-  }
-
-  .prose-system h2 {
-    color: white;
-    font-size: 1.75rem;
-    margin-top: 2.8rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-
-  .prose-system p {
-    margin-bottom: 1.3rem;
-  }
-
-  .prose-system strong {
-    color: white;
-  }
-
-  .prose-system a {
-    color: #f472b6;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-</style>
-
 </Layout>

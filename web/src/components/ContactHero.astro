@@ -1,103 +1,74 @@
-<section class="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
-
+<section class="bg-white py-12">
 <script>
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17710658719/wq67CJeHgskbEJ_pjP1B',
-      'transaction_id': '',
-      'event_callback': callback
-  });
+  var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } };
+  gtag('event', 'conversion', { 'send_to': 'AW-17710658719/wq67CJeHgskbEJ_pjP1B', 'transaction_id': '', 'event_callback': callback });
   return false;
 }
 </script>
+  <div class="container mx-auto px-6 max-w-5xl grid lg:grid-cols-2 gap-14 items-start">
 
-  <!-- ambient glow -->
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/30"></div>
-  <div class="absolute -top-40 right-[-120px] w-[600px] h-[600px] rounded-full bg-orange-500/15 blur-[140px]"></div>
-
-  <div class="relative container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-16 items-center py-12">
-
-    <!-- LEFT TEXT -->
-    <div class="reveal">
-
-      <p class="text-sm uppercase tracking-widest text-slate-400 mb-5">
-        Rebooking & Reactivation System
-      </p>
-
-      <h1 class="text-5xl font-semibold leading-tight">
-        Turn past clients into  
-        <span class="text-fuchsia-300">new bookings</span>.
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-50 text-orange-700 text-sm font-medium mb-6">
+        Revenue Efficiency System
+      </div>
+      <h1 class="text-4xl font-bold text-gray-900 leading-tight">
+        Stop losing revenue to missed calls and no-shows.
       </h1>
-
-      <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
-        We build your reactivation and rebooking flows —
-        email, SMS, scripts and campaigns —
-        done for you, based on real customer language.
+      <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+        We install your missed-call protection, show-up optimization, and past client reactivation — live in 2 weeks.
       </p>
 
-    
-
-    </div>
-
-
-    <!-- RIGHT : FORM -->
-    <div class="relative reveal">
-
-      <!-- glow frame -->
-      <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/20 to-fuchsia-500/20 blur-2xl rounded-3xl"></div>
-
-      <div class="relative border border-slate-800 rounded-2xl bg-slate-900/60 overflow-hidden">
-
-        <form
-          name="rebooking-system-qualification"
-          method="POST"
-          action="/thank-you"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="p-6 space-y-4"
-        >
-          <input type="hidden" name="form-name" value="rebooking-system-qualification" />
-          <p class="hidden"><input name="bot-field" /></p>
-
-          <input name="name" required placeholder="Name"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-
-          <input name="email" type="email" required placeholder="Email"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-
-            <input name="Phone" type="tel" required placeholder="Phone"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-
-          <input name="business" required placeholder="Business name"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-          
-
-          <input name="website" placeholder="Current website (if any)"
-            class="w-full bg-slate-950 border border-slate-700 px-4 py-3 text-white rounded-md" />
-
-          <button type="submit"
-            class="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold
-                   bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-600
-                   shadow-lg shadow-fuchsia-600/30
-                   hover:translate-y-[-1px] transition"
-            onclick="return gtag_report_conversion();"
-          >
-            Check qualification →
-          </button>
-
-          <p class="text-xs text-slate-500 text-center pt-2">
-            Reply within 1 business day.
-          </p>
-
-        </form>
+      <div class="mt-8 space-y-4">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Instant SMS response to every missed call — 24/7</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Reduce no-shows by up to 33% with smart reminders</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Reactivate past clients for quick revenue wins</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700 font-medium">5 recovered leads in 30 days or your money back</span>
+        </div>
       </div>
 
-   
+      <p class="mt-6 text-sm text-gray-500">$1,000/mo · Live in 2 weeks · Monthly reporting included</p>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+      <div class="bg-gray-900 text-white px-6 py-4">
+        <p class="font-semibold">Check if you qualify</p>
+        <p class="text-sm text-gray-400">Takes 30 seconds. We respond within 1 business day.</p>
+      </div>
+      <form name="revenue-efficiency-qualification" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="p-6 space-y-4">
+        <input type="hidden" name="form-name" value="revenue-efficiency-qualification" />
+        <p class="hidden"><input name="bot-field" /></p>
+        <input name="name" required placeholder="Your name" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        <input name="email" type="email" required placeholder="Email" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        <input name="phone" type="tel" required placeholder="Phone" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        <input name="business" required placeholder="Business name" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        <select name="industry" required class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+          <option value="" disabled selected>Industry</option>
+          <option>HVAC</option>
+          <option>Plumbing</option>
+          <option>Restoration</option>
+          <option>Roofing</option>
+          <option>Pest Control</option>
+          <option>Garage Door</option>
+          <option>Other Home Services</option>
+        </select>
+        <input name="website" placeholder="Website (optional)" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        <button type="submit" class="w-full px-6 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition" onclick="return gtag_report_conversion();">
+          Check Qualification →
+        </button>
+        <p class="text-xs text-gray-500 text-center">For businesses with $500K+/year revenue.</p>
+      </form>
     </div>
 
   </div>

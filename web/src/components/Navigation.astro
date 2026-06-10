@@ -1,72 +1,27 @@
 ---
-// Navigation.astro
 ---
-<nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
   <div class="container mx-auto px-6">
     <div class="flex items-center justify-between h-16 sm:h-20">
 
-      <!-- Preload in <head> -->
-<link rel="preload" as="image" href="/logo.webp" type="image/webp">
+      <link rel="preload" as="image" href="/logo.webp" type="image/webp">
+      <a href="/" class="flex items-center">
+        <img src="/logo.webp" alt="BrandsBuilders" width="360" height="140"
+          class="h-20 sm:h-28 w-auto" loading="eager" decoding="async" fetchpriority="high" />
+      </a>
 
-<!-- Logo -->
-<a href="/" class="flex items-center">
-  <img
-    src="/logo.webp"
-    alt="BrandsBuilders logo"
-    width="360"
-    height="140"
-    class="h-28 sm:h-36 w-auto transition hover:opacity-90"
-    loading="eager"
-    decoding="async"
-    fetchpriority="high"
-    sizes="(min-width: 640px) 9rem, 4.5rem"
-  />
-  
-</a>
-
-
-      <!-- Desktop Nav -->
-      <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
-
-        <a href="/" class="text-slate-300 hover:text-white transition">
-          Home
-        </a>
-        <a href="/about" class="text-slate-300 hover:text-white transition">
-          About us
-        </a>
-
-        <a href="/process" class="text-slate-300 hover:text-white transition">
-          Process
-        </a>
-
-        <a href="/proof" class="text-slate-300 hover:text-white transition">
-          Proof
-        </a>
-
-        <a href="/faq" class="text-slate-300 hover:text-white transition">
-          FAQ
-        </a>
-
-        <!-- Primary CTA -->
-        <a
-          href="/apply"
-          class="ml-3 px-7 py-3 rounded-xl font-semibold text-white
-                 bg-[linear-gradient(135deg,#ff7e00,#ff007a,#a800ff)]
-                 shadow-[0_0_20px_rgba(255,0,122,.15)]
-                 hover:shadow-[0_0_26px_rgba(255,0,122,.35)]
-                 hover:scale-[1.01]
-                 transition-all duration-300"
-        >
-          Apply Now →
+      <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <a href="/#how-it-works" class="text-slate-300 hover:text-white transition">How It Works</a>
+        <a href="/proof" class="text-slate-300 hover:text-white transition">Proof</a>
+        <a href="/faq" class="text-slate-300 hover:text-white transition">FAQ</a>
+        <a href="/about" class="text-slate-300 hover:text-white transition">About</a>
+        <a href="/apply"
+          class="ml-2 px-6 py-2.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition">
+          Get Started →
         </a>
       </div>
 
-      <!-- Mobile Button -->
-      <button
-        class="lg:hidden w-10 h-10 flex items-center justify-center text-white"
-        id="mobile-menu-btn"
-        aria-label="Toggle menu"
-      >
+      <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white" id="mobile-menu-btn" aria-label="Toggle menu">
         <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -77,33 +32,14 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden hidden bg-slate-950 border-t border-slate-800/80">
-    <div class="container mx-auto px-6 py-6 flex flex-col gap-5 text-sm font-medium">
-
-      <a href="/" class="text-slate-300 hover:text-white transition">
-        Home
-      </a>
-      <a href="/process" class="text-slate-300 hover:text-white transition">
-        Process
-      </a>
-      <a href="/proof" class="text-slate-300 hover:text-white transition">
-        Proof
-      </a>
-      <a href="/faq" class="text-slate-300 hover:text-white transition">
-        FAQ
-      </a>
-      <a href="/about" class="text-slate-300 hover:text-white transition">
-        About us
-      </a>
-
-      <a
-        href="/apply"
-        class="mt-2 text-center px-7 py-3 rounded-xl font-semibold text-white
-               bg-[linear-gradient(135deg,#ff7e00,#ff007a,#a800ff)]
-               shadow-[0_0_20px_rgba(255,0,122,.35)]"
-      >
-        Book Free Leak Scan
+  <div id="mobile-menu" class="lg:hidden hidden bg-slate-950 border-t border-slate-800">
+    <div class="container mx-auto px-6 py-5 flex flex-col gap-4 text-sm font-medium">
+      <a href="/#how-it-works" class="text-slate-300 hover:text-white transition">How It Works</a>
+      <a href="/proof" class="text-slate-300 hover:text-white transition">Proof</a>
+      <a href="/faq" class="text-slate-300 hover:text-white transition">FAQ</a>
+      <a href="/about" class="text-slate-300 hover:text-white transition">About</a>
+      <a href="/apply" class="mt-2 text-center px-6 py-3 rounded-lg font-semibold text-white bg-orange-600">
+        Get Started →
       </a>
     </div>
   </div>
@@ -115,13 +51,11 @@
     const menu = document.getElementById('mobile-menu');
     const openIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
-
     btn?.addEventListener('click', () => {
       menu?.classList.toggle('hidden');
       openIcon?.classList.toggle('hidden');
       closeIcon?.classList.toggle('hidden');
     });
-
     menu?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.add('hidden');
