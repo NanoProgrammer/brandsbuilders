@@ -7,8 +7,9 @@ export interface Props {
     canonical?: string;
     ogImage?: string;
   };
+   hideNavigation?: boolean;
 }
-const { seo } = Astro.props;
+const { seo, hideNavigation = false } = Astro.props;
 
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
@@ -87,8 +88,8 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=820302531124359&ev=PageView&noscript=1"/></noscript>
 
 <body class="bg-white text-gray-800 overflow-x-hidden">
-  <Navigation />
-  <main class="pt-16 sm:pt-20">
+  {!hideNavigation && <Navigation />}
+    <main class={hideNavigation ? "" : "pt-16 sm:pt-20"}>
     <slot />
   </main>
   <Footer />
