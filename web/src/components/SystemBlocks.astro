@@ -1,80 +1,89 @@
 ---
+const items = [
+  {
+    n: '1',
+    title: 'High-Conversion Website',
+    desc: 'A full build or rebuild focused on turning visitors into leads — not just looking good. Live in 2–3 weeks.',
+    color: 'orange'
+  },
+  {
+    n: '2',
+    title: 'Google Ads or Meta Ads',
+    desc: 'One platform, run for you: campaigns, targeting, copy, and static creatives. We pick the platform that fits your business.',
+    color: 'blue'
+  },
+  {
+    n: '3',
+    title: 'Basic Creative Testing',
+    desc: '2–3 ad variations tested every month. We script and edit — you just record the raw footage or send photos.',
+    color: 'violet'
+  },
+  {
+    n: '4',
+    title: 'Dedicated Phone Number',
+    desc: 'Every lead that comes from your marketing is tracked and attributed. No more guessing where customers came from.',
+    color: 'emerald'
+  },
+  {
+    n: '5',
+    title: 'Missed-Call Protection',
+    desc: 'A missed call automatically triggers an SMS that keeps the conversation alive and recovers the lead — 24/7.',
+    color: 'rose'
+  },
+  {
+    n: '6',
+    title: 'Monthly Reporting',
+    desc: 'Leads generated, cost per lead, source, and conversions — every month, in plain numbers.',
+    color: 'amber'
+  },
+];
+
+const colorMap: Record<string, string> = {
+  orange: 'bg-orange-100 text-orange-600',
+  blue: 'bg-blue-100 text-blue-700',
+  violet: 'bg-violet-100 text-violet-700',
+  emerald: 'bg-emerald-100 text-emerald-700',
+  rose: 'bg-rose-100 text-rose-700',
+  amber: 'bg-amber-100 text-amber-700',
+};
 ---
-<section id="how-it-works" class="bg-white py-20">
+<section id="offer" class="bg-white py-20">
   <div class="container mx-auto px-6 max-w-5xl">
 
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-        Three levers. One system. More booked jobs.
+        One offer. Everything you need to grow.
       </h2>
       <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-        We install all three — you just answer the phone when it rings.
+        No tiers, no upsells, no confusing packages. Here's exactly what's included.
       </p>
     </div>
 
-    <div class="space-y-6">
-
-      <!-- Lever 1 -->
-      <div class="bg-white rounded-xl border-2 border-orange-200 p-8 md:p-10">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-xl">1</div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Missed-Call Protection</h3>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Instant SMS within seconds of a missed call. Keeps the conversation alive, answers questions, and automatically guides the lead toward booking. Captures and converts missed calls directly into your calendar.
-            </p>
-            <div class="inline-flex items-center gap-2 text-sm font-medium text-orange-700 bg-orange-50 px-3 py-1.5 rounded-md">
-              Goal: Recover lost leads automatically, 24/7
-            </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {items.map((item) => (
+        <div class="bg-white rounded-xl border border-gray-200 p-7 hover:border-orange-200 transition">
+          <div class={`flex-shrink-0 w-12 h-12 rounded-xl ${colorMap[item.color]} flex items-center justify-center font-bold text-lg mb-4`}>
+            {item.n}
           </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{item.desc}</p>
         </div>
-      </div>
-
-      <!-- Lever 2 -->
-      <div class="bg-white rounded-xl border border-gray-200 p-8 md:p-10">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xl">2</div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Show-Up Optimization</h3>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Pre-appointment emails and SMS reminders at 24 hours and 2 hours before each job. No more driving to a house with nobody home.
-            </p>
-            <div class="inline-flex items-center gap-2 text-sm font-medium text-blue-700 bg-blue-50 px-3 py-1.5 rounded-md">
-              Goal: Reduce no-shows by up to 33%
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bonus -->
-      <div class="bg-green-50 rounded-xl border border-green-200 p-8 md:p-10">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center text-green-700 font-bold text-lg">🎁</div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Bonus — Past Client Reactivation</h3>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              One-time outreach to your past client list via email and SMS with a small free offer to get them back through the door — so you can upsell on-site.
-            </p>
-            <div class="inline-flex items-center gap-2 text-sm font-medium text-green-700 bg-green-100 px-3 py-1.5 rounded-md">
-              Goal: Generate quick revenue wins in the first 30 days
-            </div>
-          </div>
-        </div>
-      </div>
-
+      ))}
     </div>
 
     <!-- Pricing box -->
     <div class="mt-14 bg-gray-900 text-white rounded-xl p-8 md:p-10 text-center">
-      <div class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">All-in monthly</div>
-      <div class="text-5xl font-bold mb-2">$1,000<span class="text-xl font-normal text-gray-400">/mo</span></div>
-      <p class="text-gray-400 mb-6">Monthly reporting on leads recovered, calls captured, and revenue impact.</p>
+      <div class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-2">Flat monthly fee</div>
+      <div class="text-5xl font-bold mb-2">$1,500<span class="text-xl font-normal text-gray-400">/mo</span></div>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto">
+        Covers the website, ad management, creative testing, tracked number, missed-call protection, and monthly reporting.
+      </p>
       <a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
-        Check If You Qualify →
+        Get Started →
       </a>
-      <div class="mt-6 inline-flex items-center gap-2 text-sm text-green-400 font-medium bg-green-400/10 px-4 py-2 rounded-lg">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        Revenue Recovery Guarantee: 5 recovered leads booked in 30 days — or your money back.
+      <div class="mt-6 inline-flex items-center gap-2 text-sm text-gray-300 bg-white/10 px-4 py-2 rounded-lg max-w-xl">
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Ad spend is billed directly to you (not included in the $1,500). We recommend $500–$1,500/mo to start.
       </div>
     </div>
 

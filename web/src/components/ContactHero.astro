@@ -10,64 +10,55 @@ function gtag_report_conversion(url) {
 
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-50 text-orange-700 text-sm font-medium mb-6">
-        Revenue Efficiency System
+        Tier 1 — High-Conversion System
       </div>
       <h1 class="text-4xl font-bold text-gray-900 leading-tight">
-        Stop losing revenue to missed calls and no-shows.
+        A website that converts, ads that bring leads, and a system that never lets a call slip through.
       </h1>
       <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-        We install your missed-call protection, show-up optimization, and past client reactivation — live in 2 weeks.
+        One flat monthly fee covers the build, the ads, and the lead recovery — so you stop guessing and start seeing real numbers.
       </p>
 
       <div class="mt-8 space-y-4">
         <div class="flex items-start gap-3">
           <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Instant SMS response to every missed call — 24/7</span>
+          <span class="text-gray-700">High-conversion website, live in 2–3 weeks</span>
         </div>
         <div class="flex items-start gap-3">
           <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Reduce no-shows by up to 33% with smart reminders</span>
+          <span class="text-gray-700">Google or Meta Ads, managed for you</span>
         </div>
         <div class="flex items-start gap-3">
           <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Reactivate past clients for quick revenue wins</span>
+          <span class="text-gray-700">Dedicated tracked number + missed-call SMS recovery</span>
         </div>
         <div class="flex items-start gap-3">
           <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700 font-medium">5 recovered leads in 30 days or your money back</span>
+          <span class="text-gray-700 font-medium">Monthly reporting: leads, cost per lead, source, conversions</span>
         </div>
       </div>
 
-      <p class="mt-6 text-sm text-gray-500">$1,000/mo · Live in 2 weeks · Monthly reporting included</p>
+      <p class="mt-6 text-sm text-gray-500">$1,500/mo flat · Ad spend billed directly to you ($500–$1,500/mo recommended) · Month-to-month</p>
     </div>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
       <div class="bg-gray-900 text-white px-6 py-4">
-        <p class="font-semibold">Check if you qualify</p>
-        <p class="text-sm text-gray-400">Takes 30 seconds. We respond within 1 business day.</p>
+        <p class="font-semibold">See if you're a fit</p>
+        <p class="text-sm text-gray-400">Takes 30 seconds. We respond within 12 hours.</p>
       </div>
-      <form name="revenue-efficiency-qualification" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="p-6 space-y-4">
-        <input type="hidden" name="form-name" value="revenue-efficiency-qualification" />
+      <form name="tier1-qualification" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="p-6 space-y-4">
+        <input type="hidden" name="form-name" value="tier1-qualification" />
         <p class="hidden"><input name="bot-field" /></p>
         <input name="name" required placeholder="Your name" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
         <input name="email" type="email" required placeholder="Email" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
         <input name="phone" type="tel" required placeholder="Phone" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
         <input name="business" required placeholder="Business name" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
-        <select name="industry" required class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-          <option value="" disabled selected>Industry</option>
-          <option>HVAC</option>
-          <option>Plumbing</option>
-          <option>Restoration</option>
-          <option>Roofing</option>
-          <option>Pest Control</option>
-          <option>Garage Door</option>
-          <option>Other Home Services</option>
-        </select>
-        <input name="website" placeholder="Website (optional)" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+        
+        <input name="website" placeholder="Current website (optional)" class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
         <button type="submit" class="w-full px-6 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition" onclick="return gtag_report_conversion();">
-          Check Qualification →
+          Get Started →
         </button>
-        <p class="text-xs text-gray-500 text-center">For businesses with $500K+/year revenue.</p>
+        <p class="text-xs text-gray-500 text-center">Best fit for businesses ready to invest $2,000+/mo total (service fee + ad spend).</p>
       </form>
     </div>
 

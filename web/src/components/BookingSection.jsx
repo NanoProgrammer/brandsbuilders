@@ -10,7 +10,7 @@ export default function BookingSection() {
         <div className="bg-gray-50 border border-gray-200 rounded-xl px-8 py-8">
           <p className="text-gray-900 text-lg font-medium">Prefer to talk first?</p>
           <p className="text-gray-600 text-sm mt-2 max-w-md mx-auto">
-            Book a short call. We'll check fit and see if the Revenue Efficiency System makes sense for your business.
+            Book a short call. We'll check fit and see if the $1,500/mo system makes sense for your business.
           </p>
           <div className="mt-5 flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer" onClick={gtagReportConversion}

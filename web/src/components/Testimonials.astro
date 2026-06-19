@@ -1,60 +1,44 @@
 ---
+const reviews = [
+  { name: 'Heaven Artisan GF', tag: 'Local Guide', text: "I've had the chance to work with this young professional, and I can confidently say he's the real deal. He actually listens, understands the day-to-day challenges we face, and delivers solutions that are practical, efficient, and tailored — not generic. He doesn't just talk strategy, he executes." },
+  { name: 'Abdul B.', tag: 'Local Guide', text: 'Great developer, straightforward. Clean layout and helped increase revenue for my business.' },
+  { name: 'Jordan', tag: 'Local Guide', text: 'Was great working with Santiago. Would absolutely recommend 100%.' },
+  { name: 'Sofia Gonzalez', text: 'Great experience! Very professional, fast, and delivered exactly what I wanted. The website looks amazing and works perfectly.' },
+  { name: 'Justice Rayy', text: 'Local, friendly, and brings results over the expectation. Highly recommended.' },
+  { name: 'Fabian Aguilar', text: "I didn't have too much expectations at first, but the outcome was amazing — great webpage and quick quality results." },
+  { name: 'Igor Rupyshev', tag: 'Local Guide', text: 'Built me an amazing website. 100% recommended.' },
+  { name: 'Abby', text: 'Great website.' },
+];
 ---
 <section class="bg-white py-20">
   <div class="container mx-auto px-6 max-w-5xl">
 
     <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">What business owners notice first</h2>
-      <p class="mt-4 text-lg text-gray-600">Not prettier pages — more booked jobs and returning clients.</p>
+      <div class="inline-flex items-center gap-1.5 mb-3 text-yellow-400" aria-label="5 out of 5 stars">
+        {Array.from({ length: 5 }).map(() => (
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        ))}
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Verified Google Reviews</h2>
+      <p class="mt-4 text-lg text-gray-600">Real feedback from real clients — not stock testimonials.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
-            <img src="/logos/artilate-logo.svg" class="w-6 h-6 object-contain" loading="lazy" alt=""/>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {reviews.map((r) => (
+        <div class="bg-gray-50 rounded-xl border border-gray-200 p-6 flex flex-col">
+          <div class="flex items-center gap-1 mb-3 text-yellow-400">
+            {Array.from({ length: 5 }).map(() => (
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
           </div>
-          <div>
-            <p class="font-medium text-gray-900 text-sm">Artilate Chocolate</p>
-            <p class="text-xs text-gray-500">Retail · Alberta</p>
-          </div>
-        </div>
-        <p class="text-gray-700 italic leading-relaxed text-sm">
-          "What changed was not the site — it was the client flow. We finally had structured follow-up and repeat purchase triggers."
-        </p>
-      </div>
-
-      <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-            <img src="/logos/grillsguard-logo.avif" class="w-6 h-6 object-contain" loading="lazy" alt=""/>
-          </div>
-          <div>
-            <p class="font-medium text-gray-900 text-sm">GrillsGuard</p>
-            <p class="text-xs text-gray-500">Service · Calgary</p>
+          <p class="text-gray-700 text-sm leading-relaxed flex-1">"{r.text}"</p>
+          <div class="mt-4 pt-4 border-t border-gray-200">
+            <p class="font-medium text-gray-900 text-sm">{r.name}</p>
+            {r.tag && <p class="text-xs text-gray-500">{r.tag} · Google</p>}
           </div>
         </div>
-        <p class="text-gray-700 italic leading-relaxed text-sm">
-          "Booking behavior improved once reminders and follow-ups were automated. Less manual chasing, more confirmed jobs."
-        </p>
-      </div>
-
-      <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-            <img src="/logos/gaplets-logo.ico" class="w-6 h-6 object-contain" loading="lazy" alt=""/>
-          </div>
-          <div>
-            <p class="font-medium text-gray-900 text-sm">Gaplets</p>
-            <p class="text-xs text-gray-500">Scheduling SaaS</p>
-          </div>
-        </div>
-        <p class="text-gray-700 italic leading-relaxed text-sm">
-          "The cancellation recovery and replacement logic is what makes the system valuable. Empty slots stopped being silent losses."
-        </p>
-      </div>
-
+      ))}
     </div>
+
   </div>
 </section>
