@@ -1,0 +1,113 @@
+---
+export interface Props {
+  seo: {
+    title: string;
+    description: string;
+    keywords?: string;
+    canonical?: string;
+    ogImage?: string;
+  };
+}
+const { seo } = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description} />
+  {seo.keywords && <meta name="keywords" content={seo.keywords} />}
+  {seo.canonical && <link rel="canonical" href={seo.canonical} />}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={seo.title} />
+  <meta property="og:description" content={seo.description} />
+  <meta property="og:url" content={seo.canonical || Astro.url} />
+  {seo.ogImage && <meta property="og:image" content={seo.ogImage} />}
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+  <style is:inline>
+    @font-face {
+      font-family: 'Inter';
+      src: url('/fonts/Inter-Variable.woff2') format('woff2');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BrandsBuilders",
+    "url": "https://brandsbuilders.ca",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "areaServed": ["Calgary", "Edmonton", "Airdrie"]
+  })} />
+
+  <link rel="icon" href="/icono.ico" />
+</head>
+
+<script>
+  window.addEventListener('load', () => {
+    const s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXEQQW4KHT';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WXEQQW4KHT');
+      gtag('config', 'G-Y8Q1XJ8KRW');
+      gtag('config', 'AW-17710658719');
+    };
+  });
+</script>
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"9ctj2qfjcpy6MGvpKQFFGK",debug:true});</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '820302531124359');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=820302531124359&ev=PageView&noscript=1"/></noscript>
+
+<body class="bg-white text-gray-800 overflow-x-hidden">
+  <main>
+    <slot />
+  </main>
+
+  <footer class="bg-slate-950 text-white border-t border-slate-800">
+    <div class="container mx-auto px-6 py-8 max-w-5xl">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-5">
+        <a href="/">
+          <img src="/logo.webp" alt="BrandsBuilders" class="h-16 w-auto" />
+        </a>
+        <div class="flex items-center gap-6 text-sm text-slate-400">
+          <a href="mailto:admin@brandsbuilders.ca" class="hover:text-white transition">admin@brandsbuilders.ca</a>
+          <a href="/about" class="hover:text-white transition">About</a>
+        </div>
+      </div>
+      <div class="mt-6 pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>&copy; {new Date().getFullYear()} BrandsBuilders. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="/privacy-policy" class="hover:text-white transition">Privacy</a>
+          <a href="/terms-of-service" class="hover:text-white transition">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

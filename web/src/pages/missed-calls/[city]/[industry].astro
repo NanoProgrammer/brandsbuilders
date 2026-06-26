@@ -1,12 +1,28 @@
 ---
-import LandingLayout from '../layouts/LandingLayout.astro';
+import LandingLayout from '../../../layouts/LandingLayout.astro';
+import { industries, cities, getAllCombinations, type Industry, type City } from '../../../data/servicePages.ts';
+
+export function getStaticPaths() {
+  return getAllCombinations().map(({ city, industry }) => ({
+    params: { city: city.slug, industry: industry.slug },
+    props: { city, industry },
+  }));
+}
+
+const { city, industry } = Astro.props as { city: City; industry: Industry };
 
 const seo = {
-  title: 'Stop Losing Leads to Missed Calls — BrandsBuilders',
-  description: 'Every missed call is a customer going to your competitor. We automatically text back every missed call so you never lose a lead again — free for 30 days.',
-  canonical: 'https://brandsbuilders.ca',
-  ogImage: '/og.webp'
+  title: `Missed Call Recovery for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
+  description: `Every missed call from a ${city.name} homeowner is a ${industry.businessType} job gone to your competitor. We auto-text every missed call within 60 seconds — free for 30 days.`,
+  canonical: `https://brandsbuilders.ca/missed-calls/${city.slug}/${industry.slug}`,
+  ogImage: '/og.webp',
 };
+
+const reviews = [
+  { name: 'Abdul B.', text: 'Clean layout and helped increase revenue for my business.' },
+  { name: 'Heaven Artisan GF', text: 'He actually listens, understands the day-to-day challenges we face, and delivers solutions that are practical, efficient, and tailored — not generic.' },
+  { name: 'Justice Rayy', text: 'Local, friendly, and brings results over the expectation. Highly recommended.' },
+];
 ---
 
 <LandingLayout seo={seo}>
@@ -17,19 +33,18 @@ const seo = {
   <section class="bg-white pt-14 pb-16 lg:pb-20">
     <div class="container mx-auto px-6 max-w-4xl text-center">
 
-      <!-- stat pill -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-8">
         <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
-        The average home service business misses 30%+ of incoming calls
+        {industry.name} businesses in {city.name} miss 30%+ of incoming calls
       </div>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight">
-        Every Missed Call Is a Customer
-        <span class="text-orange-600"> Going to Your Competitor.</span>
+        Every Missed Call Is a {city.name} Customer
+        <span class="text-orange-600"> Going to Another {industry.name} Business.</span>
       </h1>
 
       <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        We automatically text back every missed call so you never lose a lead again —
+        {industry.urgencyLine} We automatically text back every missed call within 60 seconds —
         <strong class="text-gray-800">free for 30 days.</strong>
       </p>
 
@@ -44,7 +59,7 @@ const seo = {
         No contract · No credit card required · Setup in 1–2 hours
       </p>
 
-      <!-- ROI stat row -->
+      <!-- stat row -->
       <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
           <div class="text-3xl font-bold text-gray-900">30%+</div>
@@ -52,11 +67,11 @@ const seo = {
         </div>
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
           <div class="text-3xl font-bold text-orange-600">&lt; 60 sec</div>
-          <div class="text-sm text-gray-500 mt-1">auto-text response time</div>
+          <div class="text-sm text-gray-500 mt-1">auto-text response</div>
         </div>
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
-          <div class="text-3xl font-bold text-gray-900">$500+</div>
-          <div class="text-sm text-gray-500 mt-1">avg job value recovered</div>
+          <div class="text-3xl font-bold text-gray-900">{industry.avgJobValue}</div>
+          <div class="text-sm text-gray-500 mt-1">avg job value</div>
         </div>
       </div>
 
@@ -64,41 +79,53 @@ const seo = {
   </section>
 
   <!-- ═══════════════════════════════════════════
+       INDUSTRY + CITY CONTEXT
+  ═══════════════════════════════════════════ -->
+  <section class="bg-orange-50 border-y border-orange-100 py-12">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <p class="text-orange-900 text-lg leading-relaxed">
+        <strong>{industry.painPoint}</strong>
+      </p>
+      <p class="mt-3 text-orange-700 text-sm">{city.context}</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        HOW IT WORKS
   ═══════════════════════════════════════════ -->
-  <section class="bg-gray-50 py-20 border-y border-gray-200">
+  <section class="bg-white py-20">
     <div class="container mx-auto px-6 max-w-4xl">
 
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How it works</h2>
-        <p class="mt-3 text-lg text-gray-600">Three steps. Zero effort from you.</p>
+        <p class="mt-3 text-lg text-gray-600">Three steps. Zero effort on your end.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-white rounded-xl border border-gray-200 p-7 relative">
+        <div class="bg-white rounded-xl border border-gray-200 p-7">
           <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-lg mb-5">1</div>
           <h3 class="font-bold text-gray-900 text-lg mb-2">We set up your tracked number</h3>
           <p class="text-gray-600 leading-relaxed text-sm">
-            We provision a dedicated phone number for your business in 1–2 hours. No tech work on your end — we handle everything.
+            We provision a dedicated {city.name} phone number for your {industry.businessType} in 1–2 hours. Calls forward to your existing number — nothing changes for you.
           </p>
           <div class="mt-4 text-xs text-orange-600 font-medium">1–2 hours · zero effort from you</div>
         </div>
 
-        <div class="bg-white rounded-xl border border-gray-200 p-7 relative">
+        <div class="bg-white rounded-xl border border-gray-200 p-7">
           <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-lg mb-5">2</div>
           <h3 class="font-bold text-gray-900 text-lg mb-2">Missed call triggers an auto-text</h3>
           <p class="text-gray-600 leading-relaxed text-sm">
-            The moment a call goes unanswered, our system sends a personalized SMS to that lead within seconds — keeping them engaged before they dial a competitor.
+            The moment a {city.name} homeowner's call goes unanswered, they receive a personalized SMS within 60 seconds — keeping them engaged before they call another {industry.businessType}.
           </p>
           <div class="mt-4 text-xs text-orange-600 font-medium">Fires in under 60 seconds · 24/7</div>
         </div>
 
-        <div class="bg-white rounded-xl border border-gray-200 p-7 relative">
+        <div class="bg-white rounded-xl border border-gray-200 p-7">
           <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-lg mb-5">3</div>
           <h3 class="font-bold text-gray-900 text-lg mb-2">The lead responds and books</h3>
           <p class="text-gray-600 leading-relaxed text-sm">
-            They reply to the SMS, book an appointment, and you recover revenue you would have lost. We only charge for bookings saved — no booking, no charge.
+            They reply to the text, you book the {industry.callType}, and you recover revenue you would have lost. We only charge for bookings saved — no booking, no charge.
           </p>
           <div class="mt-4 text-xs text-orange-600 font-medium">$25 per booking · only if it works</div>
         </div>
@@ -109,70 +136,48 @@ const seo = {
   </section>
 
   <!-- ═══════════════════════════════════════════
-       PROOF / RESULTS
+       SOCIAL PROOF
   ═══════════════════════════════════════════ -->
-  <section class="bg-white py-20">
+  <section class="bg-gray-50 py-20 border-y border-gray-200">
     <div class="container mx-auto px-6 max-w-4xl">
 
-      <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Real results from real businesses</h2>
-        <p class="mt-3 text-lg text-gray-600">We've built and grown local businesses across Calgary.</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Trusted by local businesses</h2>
+        <p class="mt-3 text-gray-600">We've been building and growing businesses across {city.province} since 2022.</p>
       </div>
 
-      <!-- Google review highlights -->
-      <div class="grid sm:grid-cols-3 gap-6 mb-12">
-        <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-          <div class="flex gap-0.5 text-yellow-400 mb-3">
-            {Array.from({length: 5}).map(() => (
-              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
+      <div class="grid sm:grid-cols-3 gap-5 mb-10">
+        {reviews.map((r) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex gap-0.5 text-yellow-400 mb-3">
+              {Array.from({length: 5}).map(() => (
+                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed">"{r.text}"</p>
+            <div class="mt-4 pt-3 border-t border-gray-200">
+              <p class="font-semibold text-gray-900 text-sm">{r.name}</p>
+              <p class="text-xs text-gray-500">Google Review</p>
+            </div>
           </div>
-          <p class="text-gray-700 text-sm leading-relaxed">
-            "Clean layout and helped increase revenue for my business."
-          </p>
-          <div class="mt-4 pt-3 border-t border-gray-200 text-xs">
-            <span class="font-semibold text-gray-900">Abdul B.</span>
-            <span class="text-gray-500 ml-1">· Google Review</span>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-          <div class="flex gap-0.5 text-yellow-400 mb-3">
-            {Array.from({length: 5}).map(() => (
-              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed">
-            "He actually listens, understands the day-to-day challenges we face, and delivers solutions that are practical, efficient, and tailored — not generic."
-          </p>
-          <div class="mt-4 pt-3 border-t border-gray-200 text-xs">
-            <span class="font-semibold text-gray-900">Heaven Artisan GF</span>
-            <span class="text-gray-500 ml-1">· Google Review</span>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
-          <div class="flex gap-0.5 text-yellow-400 mb-3">
-            {Array.from({length: 5}).map(() => (
-              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            ))}
-          </div>
-          <p class="text-gray-700 text-sm leading-relaxed">
-            "Local, friendly, and brings results over the expectation. Highly recommended."
-          </p>
-          <div class="mt-4 pt-3 border-t border-gray-200 text-xs">
-            <span class="font-semibold text-gray-900">Justice Rayy</span>
-            <span class="text-gray-500 ml-1">· Google Review</span>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <!-- Website portfolio tease -->
-      <div class="bg-gray-50 border border-gray-200 rounded-xl p-7 text-center">
-        <p class="text-sm text-gray-500 uppercase tracking-wider font-medium mb-1">10+ websites built</p>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Refresh Exteriors · Artilate · GrillsGuard · Kelly & Sons YYC</h3>
-        <p class="text-gray-600 text-sm mb-5">Home service and local businesses across Calgary — built from scratch, optimized to convert.</p>
-        <a href="/proof" class="text-orange-600 hover:text-orange-700 font-medium text-sm transition">See all case studies →</a>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+        <div class="shrink-0 w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center">
+          <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">10+ websites built for local businesses in {city.province}</p>
+          <p class="text-gray-600 text-sm mt-1">Refresh Exteriors · Artilate · GrillsGuard · Kelly & Sons YYC — and more.</p>
+        </div>
+        <a href="/proof" class="shrink-0 text-sm font-medium text-orange-600 hover:text-orange-700 transition ml-auto">
+          See all work →
+        </a>
       </div>
 
     </div>
@@ -181,56 +186,57 @@ const seo = {
   <!-- ═══════════════════════════════════════════
        OBJECTION KILLERS
   ═══════════════════════════════════════════ -->
-  <section class="bg-gray-50 py-20 border-y border-gray-200">
+  <section class="bg-white py-20">
     <div class="container mx-auto px-6 max-w-3xl">
 
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">You probably have a few questions</h2>
+        <h2 class="text-3xl font-bold text-gray-900">Common questions</h2>
       </div>
 
       <div class="space-y-4">
 
-        <details class="bg-white border border-gray-200 rounded-xl p-6 group">
+        <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
           <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
             What does it cost?
             <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-3 text-gray-600 leading-relaxed">
-            Completely free for 30 days. After that, <strong>$25 per booking saved</strong>. If we don't recover a booking for you, you don't pay anything. No booking = no charge.
+            Completely free for 30 days. After that, <strong>$25 per booking saved</strong>. If we don't recover a booked {industry.callType} for you, you don't pay anything.
           </p>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-xl p-6 group">
+        <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
           <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
             Do I need to change my phone number?
             <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-3 text-gray-600 leading-relaxed">
-            No. We set up a dedicated tracking number that forwards calls to your existing number. Your customers call the same number, you answer on your same phone.
+            No. We set up a dedicated {city.name} tracking number that forwards all calls to your current number. Your customers keep calling the same number they always have.
           </p>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-xl p-6 group">
+        <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
           <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
             How long does setup take?
             <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-3 text-gray-600 leading-relaxed">
-            1–2 hours from the time you sign up. We handle all the configuration — you just tell us your business name, current phone number, and confirm the SMS message we draft for you.
+            1–2 hours from the time you sign up. We handle everything — you just confirm your business name, current number, and the SMS message we draft for your {industry.businessType}.
           </p>
         </details>
 
-        <details class="bg-white border border-gray-200 rounded-xl p-6 group">
+        <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
           <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
             Is there a contract?
             <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-3 text-gray-600 leading-relaxed">
-            No. Cancel anytime. After the free 30 days, you only pay for bookings we actually recover. If it's not working for you, just let us know and we remove the system — no fees, no paperwork.
+            No. Cancel anytime. After the free 30-day trial, you only pay for bookings we actually recover for your {industry.businessType}. No booking, no charge.
           </p>
         </details>
 
       </div>
+
     </div>
   </section>
 
@@ -241,10 +247,10 @@ const seo = {
     <div class="container mx-auto px-6 max-w-3xl text-center">
 
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-        Stop letting missed calls become your competitor's customers.
+        Stop losing {city.name} {industry.name.toLowerCase()} jobs to missed calls.
       </h2>
       <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-        Free for 30 days. Setup in 1–2 hours. No contracts.
+        Free for 30 days. Setup in 1–2 hours. $25 per booking saved after that — nothing if it doesn't work.
       </p>
 
       <a href="/apply"
@@ -253,7 +259,7 @@ const seo = {
       </a>
 
       <p class="mt-5 text-sm text-gray-400">
-        Or book a quick 15-minute call — we'll set everything up for you.
+        Serving {industry.plural} across {city.name}, {city.province} and beyond.
       </p>
 
     </div>
