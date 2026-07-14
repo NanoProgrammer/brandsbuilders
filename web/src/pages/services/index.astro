@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const seo = {
+  title: 'Services — BrandsBuilders',
+  description: 'Missed-call recovery, custom web design, reactivation campaigns, and a full-service membership — pick what your business needs right now.',
+  canonical: 'https://brandsbuilders.ca/services',
+};
+
+const services = [
+  {
+    id: 'missed-calls',
+    badge: 'Start here',
+    badgeColor: 'bg-orange-100 text-orange-700 border-orange-200',
+    accentColor: 'text-orange-600',
+    borderHover: 'hover:border-orange-300',
+    iconPath: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
+    iconBg: 'bg-orange-50',
+    iconColor: 'text-orange-500',
+    name: 'Missed-Call Recovery',
+    price: 'Free for 30 days',
+    priceSub: 'Then $25 per booking saved — nothing if it doesn\'t work',
+    headline: 'Every missed call auto-texted back within 60 seconds.',
+    description: 'We set up a dedicated tracked number for your business. When you miss a call, an automated SMS fires instantly — keeping the lead warm before they call your competitor.',
+    includes: [
+      'Dedicated tracked phone number',
+      'Auto-text within 60 seconds, 24/7',
+      'No contract, cancel anytime',
+      'Setup in 1–2 hours',
+    ],
+    cta: 'Start Free Trial',
+    ctaLink: '/apply',
+    ctaStyle: 'bg-orange-600 hover:bg-orange-700 text-white',
+  },
+  {
+    id: 'web-design',
+    badge: 'One-time',
+    badgeColor: 'bg-blue-100 text-blue-700 border-blue-200',
+    accentColor: 'text-blue-700',
+    borderHover: 'hover:border-blue-300',
+    iconPath: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+    iconBg: 'bg-blue-50',
+    iconColor: 'text-blue-500',
+    name: 'Web Design',
+    price: '$900',
+    priceSub: 'One-time · Domain (~$20/yr) is your only ongoing cost',
+    headline: 'A real website, built in code — not a template.',
+    description: 'Custom-coded, fast-loading, mobile-first. Contact form wired to Netlify so leads go straight to your inbox. You own everything — no lock-in, no monthly subscriptions.',
+    includes: [
+      'Custom code — no WordPress or page builders',
+      'Contact form connected to Netlify',
+      'Mobile-first, SEO-ready',
+      'Live in 1–2 weeks',
+    ],
+    cta: 'Get Started',
+    ctaLink: '/apply/web-design',
+    ctaStyle: 'bg-gray-900 hover:bg-gray-800 text-white',
+  },
+  {
+    id: 'reactivation',
+    badge: 'Guaranteed ROI',
+    badgeColor: 'bg-violet-100 text-violet-700 border-violet-200',
+    accentColor: 'text-violet-700',
+    borderHover: 'hover:border-violet-300',
+    iconPath: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+    iconBg: 'bg-violet-50',
+    iconColor: 'text-violet-500',
+    name: 'Reactivation Campaign',
+    price: '$1,500',
+    priceSub: 'One-time · Guaranteed $3,000 in reactivated sales',
+    headline: 'Turn your dead customer list into booked revenue.',
+    description: 'We reactivate your inactive clients via SMS and email. Campaign launches in 5 days. Each cycle runs 3 weeks. If we don\'t hit $3,000 in booked sales, the next cycle is free — up to 4 times per year.',
+    includes: [
+      '$3,000 in sales guaranteed or next cycle is free',
+      'Live in 5 days from onboarding call',
+      'Up to 4 cycles per year at no extra cost',
+      'SMS + email — both channels',
+    ],
+    cta: 'Start Campaign',
+    ctaLink: '/apply/reactivation',
+    ctaStyle: 'bg-violet-700 hover:bg-violet-800 text-white',
+  },
+  {
+    id: 'membership',
+    badge: 'Full system',
+    badgeColor: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+    accentColor: 'text-emerald-700',
+    borderHover: 'hover:border-emerald-300',
+    iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    iconBg: 'bg-emerald-50',
+    iconColor: 'text-emerald-500',
+    name: 'Revenue Recovery + Growth',
+    price: '$1,800/mo',
+    priceSub: 'Cancel with 2 weeks notice · 1 new client per week',
+    headline: 'Ads, CRO, missed calls, reactivation — one system.',
+    description: 'Everything you need to grow predictably: Google or Meta Ads, website optimization, missed-call recovery, quarterly reactivation of past customers, and a monthly report you can actually understand.',
+    includes: [
+      'Ads management (Google or Meta)',
+      'Website CRO + end-to-end tracking',
+      'Missed-call SMS recovery 24/7',
+      'Quarterly reactivation campaign',
+    ],
+    cta: 'Apply for Membership',
+    ctaLink: '/apply/membership',
+    ctaStyle: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+  },
+];
+---
+
+<Layout seo={seo}>
+
+  <!-- Header -->
+  <section class="bg-white pt-16 pb-10 border-b border-gray-200">
+    <div class="container mx-auto px-6 max-w-5xl text-center">
+      <p class="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-3">What We Offer</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        Pick what your business needs right now.
+      </h1>
+      <p class="mt-5 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Four services, four different problems. Start with one — add more as you grow. No pressure to buy a bundle.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service cards -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="grid md:grid-cols-2 gap-7">
+
+        {services.map((s) => (
+          <div class={`bg-white rounded-2xl border border-gray-200 ${s.borderHover} transition p-8 flex flex-col`}>
+
+            <div class="flex items-start justify-between mb-5">
+              <div class={`w-12 h-12 rounded-xl ${s.iconBg} flex items-center justify-center`}>
+                <svg class={`w-6 h-6 ${s.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={s.iconPath}/>
+                </svg>
+              </div>
+              <span class={`text-xs font-semibold px-3 py-1 rounded-full border ${s.badgeColor}`}>{s.badge}</span>
+            </div>
+
+            <h2 class="text-xl font-bold text-gray-900 mb-1">{s.name}</h2>
+            <div class={`text-2xl font-bold ${s.accentColor} mb-0.5`}>{s.price}</div>
+            <p class="text-xs text-gray-500 mb-4">{s.priceSub}</p>
+
+            <p class="text-gray-700 font-medium mb-2">{s.headline}</p>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">{s.description}</p>
+
+            <ul class="space-y-2 mb-6 flex-1">
+              {s.includes.map(item => (
+                <li class="flex items-start gap-2.5 text-sm text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a href={s.ctaLink}
+              class={`w-full text-center px-6 py-3 rounded-lg font-semibold transition text-sm ${s.ctaStyle}`}>
+              {s.cta} →
+            </a>
+
+          </div>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison note -->
+  <section class="bg-gray-50 py-14 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Not sure where to start?</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        Most businesses start with <strong class="text-gray-800">Missed-Call Recovery</strong> — it's free for 30 days, takes 1–2 hours to set up, and shows results immediately. If you don't have a website yet, <strong class="text-gray-800">Web Design</strong> is the next move. The <strong class="text-gray-800">Membership</strong> is for businesses ready to grow predictably with a system behind them.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/apply" class="inline-flex px-7 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition">
+          Start with Missed-Call Recovery →
+        </a>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-7 py-3.5 rounded-lg font-semibold text-gray-700 border border-gray-300 hover:border-gray-400 transition">
+          Book a Fit Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

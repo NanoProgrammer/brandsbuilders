@@ -1,0 +1,190 @@
+---
+import LandingLayout from '../../../layouts/LandingLayout.astro';
+import { industries, cities, getAllCombinations, type Industry, type City } from '../../../data/servicePages.ts';
+
+export function getStaticPaths() {
+  return getAllCombinations().map(({ city, industry }) => ({
+    params: { city: city.slug, industry: industry.slug },
+    props: { city, industry },
+  }));
+}
+
+const { city, industry } = Astro.props as { city: City; industry: Industry };
+
+const roadmap = [
+  { phase: 'Week 1', win: 'Know exactly what\'s broken — and your real numbers.', how: 'Audit your ads, website, and funnel. Review your unit economics. Define your lead magnet.' },
+  { phase: 'Week 2', win: 'Your site converts. Every sale is tracked.', how: 'Website CRO + end-to-end analytics with full sales attribution.' },
+  { phase: 'Week 3', win: 'Campaign live. First qualified leads coming in.', how: 'Full campaign setup, creatives, and launch.' },
+  { phase: 'Weeks 4–8', win: 'Landing page and creatives improve week over week.', how: 'Continuous optimization + creative rotation at end of month.' },
+  { phase: 'Month 2', win: 'Real ROI data compared to your week-1 baseline.', how: 'Sales results reporting — 6+ weeks of real data.' },
+  { phase: 'Month 3', win: 'Scale what\'s working without risking what\'s working.', how: 'Budget scaling based on your week-1 unit economics.' },
+];
+
+const seo = {
+  title: `Revenue Recovery + Growth for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
+  description: `Ads, website CRO, missed-call recovery, and quarterly reactivation for ${industry.plural} in ${city.name}. $1,800/mo. 1 new client per week. Cancel with 2 weeks notice.`,
+  canonical: `https://brandsbuilders.ca/membership/${city.slug}/${industry.slug}`,
+  ogImage: '/og.webp',
+};
+---
+
+<LandingLayout seo={seo}>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="bg-white pt-14 pb-16 lg:pb-20">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+        Revenue Recovery + Growth for {industry.name} in {city.name}
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+        Everything You Need to Grow Your {city.name} {industry.name} Business —
+        <span class="text-emerald-600"> One System, One Fee.</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        {industry.membershipWin}. All run for you, every month.
+        <strong class="text-gray-800"> $1,800/mo. Cancel with 2 weeks notice.</strong>
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/apply/membership"
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition text-lg shadow-sm">
+          Apply for Membership →
+        </a>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-700 border border-gray-300 hover:border-gray-400 transition text-lg">
+          Book a Fit Call
+        </a>
+      </div>
+
+      <div class="mt-6 inline-flex items-center gap-2 text-sm text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-lg">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        I only take 1 new client per week. If spots are full, you go on the waitlist for the next opening.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ INDUSTRY CONTEXT ═══ -->
+  <section class="bg-emerald-50 border-y border-emerald-100 py-12">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <p class="text-emerald-900 text-lg leading-relaxed font-medium">
+        {industry.membershipICP}.
+      </p>
+      <p class="mt-3 text-emerald-700 text-sm">{city.context}</p>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT'S INCLUDED ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Everything included every month</h2>
+        <p class="mt-3 text-lg text-gray-600">Your time: ~3 hours at setup. Then 1 hour per month.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', label: 'Ads Management', desc: `Google or Meta Ads for your ${industry.businessType} — campaigns, targeting, copy, and creative testing.` },
+          { icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Website CRO', desc: 'Ongoing optimization of your landing page to turn more visitors into leads, week over week.' },
+          { icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z', label: 'Missed-Call Protection', desc: `Every missed call from a ${city.name} customer triggers an auto-text in under 60 seconds — 24/7.` },
+          { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', label: 'Quarterly Reactivation', desc: `Every 3 months we run a reactivation campaign on your past ${industry.businessType} customer list.` },
+          { icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', label: 'Monthly Reporting', desc: 'Leads, cost per lead, conversions, and ROI — in plain numbers every month. No black-box reports.' },
+          { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', label: 'Cancel Anytime', desc: '2 weeks notice before your next billing date. No penalties, no paperwork, no bad feelings.' },
+        ].map(item => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6 hover:border-emerald-200 transition">
+            <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-1">{item.label}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROADMAP ═══ -->
+  <section class="bg-gray-50 py-20 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-3xl">
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Your first 90 days</h2>
+        <p class="text-gray-600">Here's exactly what happens — and what you'll see — each week.</p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+        <div class="space-y-8">
+          {roadmap.map((row, i) => (
+            <div class="flex gap-6 relative">
+              <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm font-bold shrink-0 z-10">
+                {i + 1}
+              </div>
+              <div class="pt-1.5">
+                <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-0.5">{row.phase}</p>
+                <p class="font-bold text-gray-900 mb-1">{row.win}</p>
+                <p class="text-gray-600 text-sm leading-relaxed">{row.how}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Common questions</h2>
+
+      <div class="space-y-4">
+        {[
+          { q: `Is $1,800/mo worth it for a ${industry.businessType} in ${city.name}?`, a: `It depends on your unit economics. If a single new ${industry.businessType} customer is worth ${industry.avgJobValue} to you, and the system brings in 2–3 new customers per month, the math works. That's why week 1 is a full audit — we review your numbers before scaling anything.` },
+          { q: 'What does "1 new client per week" mean?', a: 'I run this personally, not a team of account managers. Taking on more than 1 new client per week means someone gets less attention. If you apply and I\'m full for that week, you\'re added to the waitlist for the next opening.' },
+          { q: 'Is ad spend included in $1,800?', a: 'No. Ad spend goes directly into your own ad account — you own it, you control it. The $1,800 covers management, strategy, and all the other services. We typically recommend $500–$1,500/mo in ad spend to start.' },
+          { q: 'Can I cancel anytime?', a: 'Yes. Give me 2 weeks notice before your next billing cycle and I\'ll wind down your account with a full handover — data, assets, and access, all yours.' },
+          { q: 'What\'s the minimum commitment?', a: 'There\'s no minimum term. That said, the roadmap is built around 90 days of data to make real decisions. Cancelling before month 2 means leaving before the ROI data arrives — I\'ll always tell you what I\'m seeing.' },
+        ].map(item => (
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
+            <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="bg-gray-900 text-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Grow your {city.name} {industry.name.toLowerCase()} business — systematically.
+      </h2>
+      <p class="text-gray-400 text-lg mb-3 max-w-xl mx-auto">
+        $1,800/mo. Everything included. Cancel with 2 weeks notice.
+      </p>
+      <p class="text-amber-400 text-sm mb-10 font-medium">
+        1 new client per week — apply to hold your spot.
+      </p>
+      <a href="/apply/membership"
+        class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
+        Apply for Membership →
+      </a>
+      <p class="mt-5 text-sm text-gray-400">
+        Serving {industry.plural} across {city.name}, {city.province}.
+      </p>
+    </div>
+  </section>
+
+</LandingLayout>
