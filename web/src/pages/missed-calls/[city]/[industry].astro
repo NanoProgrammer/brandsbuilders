@@ -11,11 +11,27 @@ export function getStaticPaths() {
 
 const { city, industry } = Astro.props as { city: City; industry: Industry };
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Missed Call Recovery for ${industry.name} in ${city.name}`,
+  description: `Automatic SMS follow-up within 60 seconds for every missed call — built for ${industry.plural} in ${city.name}, ${city.province}.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'CAD',
+    description: 'Free for 30 days, then $25 per booking recovered',
+  },
+  url: `https://brandsbuilders.ca/missed-calls/${city.slug}/${industry.slug}`,
+};
+
 const seo = {
   title: `Missed Call Recovery for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
   description: `Every missed call from a ${city.name} homeowner is a ${industry.businessType} job gone to your competitor. We auto-text every missed call within 60 seconds — free for 30 days.`,
   canonical: `https://brandsbuilders.ca/missed-calls/${city.slug}/${industry.slug}`,
-  ogImage: '/og.webp',
+  schema: serviceSchema,
 };
 
 const reviews = [

@@ -1,18 +1,146 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ContactHero from '../../components/ContactHero.astro';
-import BookingSection from '../../components/BookingSection';
-import TrustBadges from '../../components/TrustBadges.astro';
 
 const seo = {
-  title: 'Apply — $1,500/mo Website + Ads + Lead Recovery | BrandsBuilders',
-  description: 'See if your business qualifies for the Tier 1 system: high-conversion website, ad management, and missed-call protection. $1,500/mo flat.',
+  title: 'Free 30-Day Trial — Missed-Call Recovery for Home Service Businesses | BrandsBuilders',
+  description: 'Get a dedicated tracked number + 60-second auto-text on every missed call. Setup in 1–2 hours. Free for 30 days, then $25 per booking recovered. No contract, no credit card.',
   canonical: 'https://brandsbuilders.ca/apply',
   ogImage: '/og.webp'
 };
 ---
+
 <Layout seo={seo}>
-  <ContactHero />
-  <BookingSection client:only="react" />
-  <TrustBadges />
+
+<script>
+function gtag_report_conversion() {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'conversion', { send_to: 'AW-17710658719/wq67CJeHgskbEJ_pjP1B' });
+  }
+  return true;
+}
+</script>
+
+<section class="bg-white py-14">
+  <div class="container mx-auto px-6 max-w-5xl grid lg:grid-cols-2 gap-14 items-start">
+
+    <!-- Left: copy -->
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
+        Missed-Call Recovery — Free for 30 Days
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        Stop losing leads to missed calls — starting today.
+      </h1>
+
+      <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+        Every time a call goes unanswered, we automatically send a personalized text to that lead within 60 seconds. Fill out the form and we'll have your system live in <strong class="text-gray-800">1–2 hours.</strong>
+      </p>
+
+      <div class="mt-8 space-y-3">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Dedicated tracked number — no change to your existing number</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Auto-text fires in under 60 seconds, 24/7</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">Free for 30 days — then $25 per booking recovered</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-gray-700">No contract. No booking = no charge. Cancel anytime.</span>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-gray-50 border border-gray-200 rounded-xl p-5">
+        <p class="text-sm font-semibold text-gray-900 mb-1">Prefer to talk first?</p>
+        <p class="text-sm text-gray-600 mb-3">Book a quick 15-minute call. We'll confirm your setup on the spot.</p>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition text-sm">
+          Book a Call →
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+      <div class="bg-gray-900 text-white px-6 py-4">
+        <p class="font-semibold">Start your free 30-day trial</p>
+        <p class="text-sm text-gray-400 mt-0.5">Takes 60 seconds. We respond within 2 hours.</p>
+      </div>
+      <form
+        name="missed-call-signup"
+        method="POST"
+        action="/thank-you"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="p-6 space-y-4"
+      >
+        <input type="hidden" name="form-name" value="missed-call-signup" />
+        <input type="hidden" name="service" value="missed-call-recovery" />
+        <p class="hidden"><input name="bot-field" /></p>
+
+        <input name="name" required placeholder="Your name"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
+        <input name="business" required placeholder="Business name"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
+        <input name="phone" type="tel" required placeholder="Your current business phone"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
+        <input name="email" type="email" required placeholder="Email"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
+        <select name="industry"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm">
+          <option value="">Industry (optional)</option>
+          <option>Plumbing</option>
+          <option>HVAC</option>
+          <option>Dentist / Dental Office</option>
+          <option>Roofing</option>
+          <option>Electrician</option>
+          <option>Pest Control</option>
+          <option>Auto Repair</option>
+          <option>Chiropractor</option>
+          <option>Landscaping</option>
+          <option>House Cleaning</option>
+          <option>Other</option>
+        </select>
+
+        <button
+          type="submit"
+          onclick="gtag_report_conversion()"
+          class="w-full px-6 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition text-sm"
+        >
+          Start Free Trial →
+        </button>
+        <p class="text-xs text-gray-500 text-center">No credit card required. No contract. Setup in 1–2 hours.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Trust row -->
+<section class="bg-gray-50 py-12 border-y border-gray-200">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <div class="text-2xl font-bold text-gray-900">< 60 sec</div>
+        <div class="text-sm text-gray-500 mt-1">Auto-text response time</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-gray-900">$25</div>
+        <div class="text-sm text-gray-500 mt-1">Per booking saved — nothing if it doesn't work</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-orange-600">1–2 hrs</div>
+        <div class="text-sm text-gray-500 mt-1">From signup to system live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </Layout>

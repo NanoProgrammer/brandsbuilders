@@ -1,0 +1,207 @@
+---
+import LandingLayout from '../../../layouts/LandingLayout.astro';
+import { industries, cities, getAllCombinations, type Industry, type City } from '../../../data/servicePages.ts';
+
+export function getStaticPaths() {
+  return getAllCombinations().map(({ city, industry }) => ({
+    params: { city: city.slug, industry: industry.slug },
+    props: { city, industry },
+  }));
+}
+
+const { city, industry } = Astro.props as { city: City; industry: Industry };
+
+const portfolio = [
+  { name: 'Refresh Exteriors', tag: 'Window Cleaning · Calgary', image: '/images/portfolio/refresh-exteriors.png', url: 'https://refreshedexterior.com', result: 'New website live in 2 weeks — first new customer within 7 days.' },
+  { name: 'Artilate', tag: 'E-Commerce · Calgary', image: '/images/portfolio/artilate.png', url: 'https://artilate.com', result: 'Conversion-focused product pages with real order tracking.' },
+  { name: 'GrillsGuard', tag: 'Home Services · Calgary', image: '/proof/grillsguard-hero-768.webp', url: 'https://grillsguard.com', result: 'Fast, mobile-first site built to turn visitors into quote requests.' },
+  { name: 'Kelly & Sons YYC', tag: 'Local Service · Calgary', image: '/images/portfolio/kellyandsons.png', url: 'https://kellyandsonsyyc.ca', result: 'Professional local service site generating calls and quote requests.' },
+  { name: 'Gaplets', tag: 'Scheduling SaaS', image: '/proof/gaplets-hero-768.webp', url: 'https://gaplets.com', result: 'Landing page built to explain the product and drive free trial signups.' },
+  { name: 'Brain Freeze Fruit', tag: 'Food & E-Commerce · Calgary', image: '/images/portfolio/behealthyhappy.png', url: 'https://behealthyhappy.ca', result: 'E-commerce store with product listings and mobile shopping flow.' },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Web Design for ${industry.name} in ${city.name}`,
+  description: `Custom-coded, high-conversion website for ${industry.plural} in ${city.name}, ${city.province}.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '900',
+    priceCurrency: 'CAD',
+    description: '$900 one-time. No monthly fees.',
+  },
+  url: `https://brandsbuilders.ca/web-design/${city.slug}/${industry.slug}`,
+};
+
+const seo = {
+  title: `Web Design for ${industry.name} in ${city.name}, ${city.province} — $900 | BrandsBuilders`,
+  description: `Custom-coded website for ${industry.plural} in ${city.name}. $900 one-time. Contact form connected to Netlify. Domain ~$20/yr is your only ongoing cost.`,
+  canonical: `https://brandsbuilders.ca/web-design/${city.slug}/${industry.slug}`,
+  schema: serviceSchema,
+};
+---
+
+<LandingLayout seo={seo}>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="bg-white pt-14 pb-16 lg:pb-20">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+        Web Design for {industry.name} in {city.name}
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+        A {city.name} {industry.name} Website
+        <span class="text-blue-700"> That Actually Brings In Leads.</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Custom-coded — not a template. Built for {industry.plural} in {city.name}: {industry.webUse}.
+        <strong class="text-gray-800"> $900 one-time. Domain (~$20/yr) is your only ongoing cost.</strong>
+      </p>
+
+      <div class="mt-10">
+        <a href="/apply/web-design"
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-lg shadow-sm">
+          Get Your Website →
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm text-gray-500">
+        No subscriptions · No WordPress · Live in 1–2 weeks
+      </p>
+
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+        <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-gray-900">$900</div>
+          <div class="text-sm text-gray-500 mt-1">One-time fee. Period.</div>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-blue-700">~$20/yr</div>
+          <div class="text-sm text-gray-500 mt-1">Domain — your only ongoing cost</div>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-gray-900">1–2 wks</div>
+          <div class="text-sm text-gray-500 mt-1">From kickoff to live</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ WHAT YOU GET ═══ -->
+  <section class="bg-gray-50 py-20 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-4xl">
+
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Built for {industry.plural} in {city.name}</h2>
+        <p class="mt-3 text-lg text-gray-600 max-w-xl mx-auto">{industry.webExample}</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          { label: 'Custom-coded, not a template', desc: 'Written from scratch in clean code — loads fast, scores well on SEO, and never looks like every other site on your block.' },
+          { label: industry.webUse.split(',')[0].trim().charAt(0).toUpperCase() + industry.webUse.split(',')[0].trim().slice(1), desc: `Built specifically for ${industry.plural}: ${industry.webLead} come in through a form that goes straight to your email.` },
+          { label: 'Contact form → Netlify', desc: 'Your inquiry form is connected to Netlify — every submission lands in your inbox instantly. No backend to maintain, no third-party forms.' },
+          { label: 'You own everything', desc: 'The code, the domain, the hosting. No monthly platform fee. If you ever move on, you take the site with you.' },
+          { label: 'Mobile-first design', desc: `Most ${city.name} homeowners search on their phone. Your site is built for mobile first — not adapted for it after the fact.` },
+          { label: 'Live in 1–2 weeks', desc: 'We handle design, development, and deployment. Your time investment is a kickoff call and feedback on the draft.' },
+        ].map(item => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
+            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-gray-900 mb-1">{item.label}</p>
+              <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PORTFOLIO ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Real websites for real businesses</h2>
+        <p class="mt-3 text-gray-600">10+ websites built for local businesses across {city.province} and beyond.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolio.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+            class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-blue-200 transition block">
+            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
+              <img src={p.image} alt={p.name} loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-1">{p.tag}</p>
+              <p class="font-bold text-gray-900">{p.name}</p>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">{p.result}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/proof" class="text-blue-700 hover:text-blue-800 font-medium transition text-sm">
+          View all 10+ projects →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="bg-gray-50 py-20 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Common questions</h2>
+
+      <div class="space-y-4">
+        {[
+          { q: `What does a $900 website include for a ${industry.businessType} in ${city.name}?`, a: `A fully custom-coded site designed for ${industry.plural}: ${industry.webUse}. Contact form wired to Netlify, mobile-first, SEO-ready. Delivered in 1–2 weeks.` },
+          { q: 'Why code and not WordPress?', a: 'WordPress is bloated, slow, and a security risk. A hand-coded site loads faster, scores better on Google, and costs you nothing to maintain. No plugins to update, no monthly fees, no getting hacked.' },
+          { q: 'What are my ongoing costs after $900?', a: 'Just your domain — about $20 per year. Hosting is on Netlify\'s free tier. No monthly platform fee, no subscription, nothing hidden.' },
+          { q: 'What if I want changes later?', a: 'Small changes (copy, photos, contact info) are included within the first 2 weeks after launch. For larger additions down the road, we quote them separately.' },
+          { q: 'Do I own the website?', a: 'Yes. You own the code, the domain, and the hosting account. If you ever move on, you take everything with you.' },
+        ].map(item => (
+          <details class="bg-white border border-gray-200 rounded-xl p-6 group">
+            <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="bg-gray-900 text-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Get your {city.name} {industry.name.toLowerCase()} website for $900.
+      </h2>
+      <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+        One-time fee. Domain (~$20/yr) is your only ongoing cost. Live in 1–2 weeks.
+      </p>
+      <a href="/apply/web-design"
+        class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
+        Get Started →
+      </a>
+      <p class="mt-5 text-sm text-gray-400">
+        Serving {industry.plural} across {city.name}, {city.province}.
+      </p>
+    </div>
+  </section>
+
+</LandingLayout>

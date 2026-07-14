@@ -1,0 +1,202 @@
+---
+import LandingLayout from '../../../layouts/LandingLayout.astro';
+import { industries, cities, getAllCombinations, type Industry, type City } from '../../../data/servicePages.ts';
+
+export function getStaticPaths() {
+  return getAllCombinations().map(({ city, industry }) => ({
+    params: { city: city.slug, industry: industry.slug },
+    props: { city, industry },
+  }));
+}
+
+const { city, industry } = Astro.props as { city: City; industry: Industry };
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Customer Reactivation Campaign for ${industry.name} in ${city.name}`,
+  description: `SMS and email campaign to reactivate inactive ${industry.businessType} customers in ${city.name}, ${city.province}. Guaranteed $3,000 in reactivated revenue.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '1500',
+    priceCurrency: 'CAD',
+    description: '$1,500 one-time. Guaranteed $3,000 in sales or next cycle is free.',
+  },
+  url: `https://brandsbuilders.ca/reactivation/${city.slug}/${industry.slug}`,
+};
+
+const seo = {
+  title: `Reactivation Campaign for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
+  description: `Reactivate your inactive ${industry.businessType} customers in ${city.name} via SMS and email. $1,500 one-time. Guaranteed $3,000 in sales — or the next cycle is free.`,
+  canonical: `https://brandsbuilders.ca/reactivation/${city.slug}/${industry.slug}`,
+  schema: serviceSchema,
+};
+---
+
+<LandingLayout seo={seo}>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="bg-white pt-14 pb-16 lg:pb-20">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-sm font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-violet-500 shrink-0"></span>
+        Reactivation Campaign for {industry.name} in {city.name}
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+        Your Past Customers Are Your
+        <span class="text-violet-700"> Cheapest Source of New Revenue.</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        {industry.reactivationWho} — they already trust you. We re-engage them via SMS and email.
+        <strong class="text-gray-800"> $1,500 one-time. Guaranteed $3,000 in reactivated sales.</strong>
+      </p>
+
+      <div class="mt-10">
+        <a href="/apply/reactivation"
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-white bg-violet-700 hover:bg-violet-800 transition text-lg shadow-sm">
+          Start My Campaign →
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm text-gray-500">
+        Launches in 5 days · Each cycle is 3 weeks · Up to 4 cycles/year if needed
+      </p>
+
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+        <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-gray-900">$1,500</div>
+          <div class="text-sm text-gray-500 mt-1">One-time investment</div>
+        </div>
+        <div class="bg-violet-50 border border-violet-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-violet-700">$3,000</div>
+          <div class="text-sm text-gray-500 mt-1">Guaranteed in booked sales</div>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
+          <div class="text-3xl font-bold text-gray-900">5 days</div>
+          <div class="text-sm text-gray-500 mt-1">From your call to campaign live</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ INDUSTRY CONTEXT ═══ -->
+  <section class="bg-violet-50 border-y border-violet-100 py-12">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <p class="text-violet-900 text-lg leading-relaxed font-medium">
+        {industry.reactivationWin}.
+      </p>
+      <p class="mt-3 text-violet-700 text-sm">{city.context}</p>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-4xl">
+
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How the campaign works</h2>
+        <p class="mt-3 text-lg text-gray-600">3 weeks per cycle. Results visible by day 21.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-5">
+        {[
+          { n: '1', label: 'Onboarding call', body: 'We review your customer list, segment by last purchase date and service type, and finalize the campaign message together.' },
+          { n: '2', label: 'Campaign launches in 5 days', body: `We write and send SMS and email sequences to your inactive ${industry.businessType} customers in ${city.name} — starting within 5 business days.` },
+          { n: '3', label: 'Leads respond and book', body: `Customers reply to the message, book a ${industry.callType}, and revenue you thought was gone comes back.` },
+          { n: '4', label: 'Results by day 21', body: 'At the end of 3 weeks you see every booking generated. If $3,000 wasn\'t hit, we start cycle 2 immediately — free.' },
+        ].map(step => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
+            <div class="w-10 h-10 rounded-full bg-violet-100 text-violet-700 font-bold flex items-center justify-center text-lg mx-auto mb-4">{step.n}</div>
+            <h3 class="font-bold text-gray-900 mb-2 text-sm">{step.label}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{step.body}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ GUARANTEE ═══ -->
+  <section class="bg-gray-50 py-16 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-3xl">
+
+      <div class="bg-white border border-violet-200 rounded-2xl p-8 text-center">
+        <div class="w-14 h-14 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">The guarantee in plain terms</h2>
+        <p class="text-gray-600 leading-relaxed max-w-xl mx-auto">
+          {industry.reactivationCycle}
+        </p>
+        <div class="mt-6 grid grid-cols-3 gap-4 text-center max-w-sm mx-auto">
+          <div>
+            <p class="font-bold text-violet-700 text-lg">3 weeks</p>
+            <p class="text-xs text-gray-500">per cycle</p>
+          </div>
+          <div>
+            <p class="font-bold text-violet-700 text-lg">4×</p>
+            <p class="text-xs text-gray-500">max cycles/year</p>
+          </div>
+          <div>
+            <p class="font-bold text-violet-700 text-lg">$0</p>
+            <p class="text-xs text-gray-500">extra if target not hit</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Common questions</h2>
+
+      <div class="space-y-4">
+        {[
+          { q: 'What if I don\'t have a big customer list?', a: 'The campaign works with lists as small as 50–100 past customers. The more data you have, the better our segmentation — but smaller lists can still produce strong results with the right message.' },
+          { q: 'What does "guarantee" mean exactly?', a: `If we don't generate $3,000 in booked ${industry.callType}s from your inactive list in the first 3-week cycle, we run another cycle immediately — at no extra cost. We do this up to 4 times per year.` },
+          { q: 'What format does my customer list need to be in?', a: 'An Excel sheet or CSV with names, phone numbers, and/or emails is all we need. If your list is in a CRM or booking software, we can usually export it together in 10 minutes.' },
+          { q: 'Is this spam?', a: `No. These are people who already purchased from your ${industry.businessType} and gave you their contact information. A re-engagement message to a past customer is not spam — it's a business follow-up.` },
+          { q: 'How long until I see results?', a: 'The campaign launches within 5 days of your onboarding call. The first cycle runs 3 weeks — by day 21 you\'ll see every booking generated from that attempt.' },
+        ].map(item => (
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
+            <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="bg-gray-900 text-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Reactivate your {city.name} {industry.name.toLowerCase()} customers — guaranteed.
+      </h2>
+      <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+        $1,500 one-time. $3,000 in booked sales guaranteed — or we keep running cycles until we hit it.
+      </p>
+      <a href="/apply/reactivation"
+        class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
+        Start My Campaign →
+      </a>
+      <p class="mt-5 text-sm text-gray-400">
+        Serving {industry.plural} across {city.name}, {city.province}.
+      </p>
+    </div>
+  </section>
+
+</LandingLayout>

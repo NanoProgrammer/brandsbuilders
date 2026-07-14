@@ -1,27 +1,133 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { POSTS } from '../../../data/posts.js';
-export function getStaticPaths() { return Object.keys(POSTS).map(slug => ({ params: { slug } })); }
+
+export function getStaticPaths() {
+  return Object.keys(POSTS).map(slug => ({ params: { slug } }));
+}
+
 const { slug } = Astro.params;
 const post = POSTS[slug];
 if (!post) return Astro.redirect('/404');
-const seo = { title: `${post.title} — BrandsBuilders`, description: post.excerpt, canonical: `https://brandsbuilders.ca/blog/${slug}` };
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.date,
+  author: {
+    '@type': 'Person',
+    name: 'Santiago González',
+    url: 'https://brandsbuilders.ca/about',
+  },
+  publisher: { '@id': 'https://brandsbuilders.ca/#business' },
+  mainEntityOfPage: `https://brandsbuilders.ca/blog/${slug}`,
+  image: 'https://brandsbuilders.ca/og.webp',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://brandsbuilders.ca' },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://brandsbuilders.ca/blog' },
+    { '@type': 'ListItem', position: 3, name: post.title, item: `https://brandsbuilders.ca/blog/${slug}` },
+  ],
+};
+
+const seo = {
+  title: `${post.title} — BrandsBuilders`,
+  description: post.excerpt,
+  canonical: `https://brandsbuilders.ca/blog/${slug}`,
+  schema: [articleSchema, breadcrumbSchema],
+};
+
+const ctaMap = {
+  'missed-call': {
+    headline: 'Stop losing leads to missed calls — starting today.',
+    sub: 'Free for 30 days. Then $25 per booking recovered. No contract.',
+    label: 'Start Free Trial →',
+    href: '/apply',
+    color: 'bg-orange-600 hover:bg-orange-700',
+  },
+  'web-design': {
+    headline: 'Get a custom website that actually generates calls.',
+    sub: '$900 one-time. No subscriptions. Live in 1–2 weeks.',
+    label: 'Get Your Website →',
+    href: '/apply/web-design',
+    color: 'bg-gray-900 hover:bg-gray-800',
+  },
+  'reactivation': {
+    headline: 'Turn your old customer list into booked revenue.',
+    sub: '$1,500 one-time. Guaranteed $3,000 in reactivated sales.',
+    label: 'Start My Campaign →',
+    href: '/apply/reactivation',
+    color: 'bg-violet-700 hover:bg-violet-800',
+  },
+  'membership': {
+    headline: 'Ads, CRO, missed calls, reactivation — one system.',
+    sub: '$1,800/mo. Cancel with 2 weeks notice. 1 new client per week.',
+    label: 'Apply for Membership →',
+    href: '/apply/membership',
+    color: 'bg-emerald-600 hover:bg-emerald-700',
+  },
+  'general': {
+    headline: 'Ready to build a system that generates leads consistently?',
+    sub: 'Start with missed-call recovery — free for 30 days.',
+    label: 'Get Started →',
+    href: '/apply',
+    color: 'bg-orange-600 hover:bg-orange-700',
+  },
+};
+
+const cta = ctaMap[post.offer] ?? ctaMap['general'];
+
+const awarenessLabels: Record<string, string> = {
+  'unaware': 'Foundations',
+  'pain-aware': 'Problem Diagnosis',
+  'problem-aware': 'Root Causes',
+  'solution-aware': 'Frameworks & Options',
+  'product-aware': 'How It Works',
+};
+const awarenessLabel = awarenessLabels[post.awarenessLevel] ?? post.category;
 ---
+
 <Layout seo={seo}>
 <section class="bg-white py-20">
   <div class="container mx-auto px-6 max-w-3xl">
-    <nav class="text-sm text-gray-500 mb-6"><a href="/" class="hover:text-gray-700">Home</a> / <a href="/blog" class="hover:text-gray-700">Insights</a></nav>
-    <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:text-gray-700">Home</a> /
+      <a href="/blog" class="hover:text-gray-700">Insights</a>
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-4">
       <span class="px-2 py-0.5 rounded bg-gray-100 text-xs font-medium">{post.category}</span>
+      {post.awarenessLevel && (
+        <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100 text-xs font-medium">{awarenessLabel}</span>
+      )}
       <span>{post.readTime}</span>
+      <span>{new Date(post.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
     </div>
+
     <h1 class="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
-    <p class="text-xl text-gray-600 mb-10">{post.excerpt}</p>
-    <article class="prose prose-gray max-w-none"><div set:html={post.content} /></article>
+    <p class="text-xl text-gray-600 mb-10 leading-relaxed">{post.excerpt}</p>
+
+    <article class="prose prose-gray max-w-none">
+      <div set:html={post.content} />
+    </article>
+
+    <!-- Offer-specific CTA -->
     <div class="mt-16 bg-gray-900 text-white rounded-xl p-8 text-center">
-      <h3 class="text-2xl font-bold mb-3">Ready for a system that actually converts?</h3>
-      <a href="/apply" class="inline-block mt-2 px-8 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Get Started →</a>
+      <h3 class="text-2xl font-bold mb-2">{cta.headline}</h3>
+      <p class="text-gray-400 mb-6 text-sm">{cta.sub}</p>
+      <a href={cta.href}
+        class={`inline-flex px-8 py-3 rounded-lg font-semibold text-white transition text-sm ${cta.color}`}>
+        {cta.label}
+      </a>
     </div>
+
   </div>
 </section>
 </Layout>

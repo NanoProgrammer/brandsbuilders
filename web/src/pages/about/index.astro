@@ -1,10 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Santiago González',
+  jobTitle: 'Founder',
+  worksFor: { '@id': 'https://brandsbuilders.ca/#business' },
+  url: 'https://brandsbuilders.ca/about',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Calgary',
+    addressRegion: 'AB',
+    addressCountry: 'CA',
+  },
+};
+
 const seo = {
-  title: 'About — BrandsBuilders',
-  description: "BrandsBuilders is run by Santiago González, an entrepreneur from Calgary helping home service businesses stop losing customers through missed calls, inactive client lists, and underperforming marketing.",
-  canonical: 'https://brandsbuilders.ca/about'
+  title: 'About BrandsBuilders — Calgary Marketing for Home Service Businesses',
+  description: 'BrandsBuilders is run by Santiago González from Calgary. We help plumbers, HVAC techs, roofers, and other trades stop losing customers to missed calls, dead customer lists, and marketing that doesn\'t produce real bookings.',
+  canonical: 'https://brandsbuilders.ca/about',
+  schema: personSchema,
 };
 
 const reviews = [
