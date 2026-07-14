@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { getAllCombinations } from "../data/servicePages.ts";
+import { POSTS } from "../data/posts.js";
 
 export const prerender = true;
 
@@ -19,9 +20,7 @@ export const GET: APIRoute = async () => {
     { path: "/faq", priority: "0.7" },
     { path: "/process", priority: "0.6" },
     { path: "/blog", priority: "0.6" },
-    { path: "/blog/client-acquisition-systems-alberta", priority: "0.5" },
-    { path: "/blog/when-growth-does-not-make-sense", priority: "0.5" },
-    { path: "/blog/why-ads-fail-local-businesses", priority: "0.5" },
+    ...Object.keys(POSTS).map(slug => ({ path: `/blog/${slug}`, priority: "0.5" })),
     { path: "/terms-of-service", priority: "0.3" },
     { path: "/privacy-policy", priority: "0.3" },
   ];
