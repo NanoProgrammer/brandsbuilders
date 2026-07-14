@@ -11,11 +11,27 @@ export function getStaticPaths() {
 
 const { city, industry } = Astro.props as { city: City; industry: Industry };
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Customer Reactivation Campaign for ${industry.name} in ${city.name}`,
+  description: `SMS and email campaign to reactivate inactive ${industry.businessType} customers in ${city.name}, ${city.province}. Guaranteed $3,000 in reactivated revenue.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '1500',
+    priceCurrency: 'CAD',
+    description: '$1,500 one-time. Guaranteed $3,000 in sales or next cycle is free.',
+  },
+  url: `https://brandsbuilders.ca/reactivation/${city.slug}/${industry.slug}`,
+};
+
 const seo = {
   title: `Reactivation Campaign for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
   description: `Reactivate your inactive ${industry.businessType} customers in ${city.name} via SMS and email. $1,500 one-time. Guaranteed $3,000 in sales — or the next cycle is free.`,
   canonical: `https://brandsbuilders.ca/reactivation/${city.slug}/${industry.slug}`,
-  ogImage: '/og.webp',
+  schema: serviceSchema,
 };
 ---
 

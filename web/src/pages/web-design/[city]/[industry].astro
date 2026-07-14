@@ -20,11 +20,27 @@ const portfolio = [
   { name: 'Brain Freeze Fruit', tag: 'Food & E-Commerce · Calgary', image: '/images/portfolio/behealthyhappy.png', url: 'https://behealthyhappy.ca', result: 'E-commerce store with product listings and mobile shopping flow.' },
 ];
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Web Design for ${industry.name} in ${city.name}`,
+  description: `Custom-coded, high-conversion website for ${industry.plural} in ${city.name}, ${city.province}.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '900',
+    priceCurrency: 'CAD',
+    description: '$900 one-time. No monthly fees.',
+  },
+  url: `https://brandsbuilders.ca/web-design/${city.slug}/${industry.slug}`,
+};
+
 const seo = {
   title: `Web Design for ${industry.name} in ${city.name}, ${city.province} — $900 | BrandsBuilders`,
   description: `Custom-coded website for ${industry.plural} in ${city.name}. $900 one-time. Contact form connected to Netlify. Domain ~$20/yr is your only ongoing cost.`,
   canonical: `https://brandsbuilders.ca/web-design/${city.slug}/${industry.slug}`,
-  ogImage: '/og.webp',
+  schema: serviceSchema,
 };
 ---
 

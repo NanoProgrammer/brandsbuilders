@@ -9,20 +9,20 @@ export const GET: APIRoute = async () => {
   const now = new Date().toISOString();
 
   const staticRoutes = [
-    { path: "/", priority: "1.0" },
-    { path: "/services", priority: "0.9" },
-    { path: "/apply", priority: "0.9" },
-    { path: "/apply/web-design", priority: "0.8" },
-    { path: "/apply/reactivation", priority: "0.8" },
-    { path: "/apply/membership", priority: "0.8" },
-    { path: "/proof", priority: "0.8" },
-    { path: "/about", priority: "0.7" },
-    { path: "/faq", priority: "0.7" },
-    { path: "/process", priority: "0.6" },
-    { path: "/blog", priority: "0.6" },
-    ...Object.keys(POSTS).map(slug => ({ path: `/blog/${slug}`, priority: "0.5" })),
-    { path: "/terms-of-service", priority: "0.3" },
-    { path: "/privacy-policy", priority: "0.3" },
+    { path: "/", priority: "1.0", changefreq: "weekly" },
+    { path: "/services", priority: "0.9", changefreq: "monthly" },
+    { path: "/apply", priority: "0.9", changefreq: "monthly" },
+    { path: "/apply/web-design", priority: "0.8", changefreq: "monthly" },
+    { path: "/apply/reactivation", priority: "0.8", changefreq: "monthly" },
+    { path: "/apply/membership", priority: "0.8", changefreq: "monthly" },
+    { path: "/proof", priority: "0.8", changefreq: "monthly" },
+    { path: "/about", priority: "0.7", changefreq: "yearly" },
+    { path: "/faq", priority: "0.7", changefreq: "monthly" },
+    { path: "/process", priority: "0.6", changefreq: "yearly" },
+    { path: "/blog", priority: "0.6", changefreq: "weekly" },
+    ...Object.keys(POSTS).map(slug => ({ path: `/blog/${slug}`, priority: "0.5", changefreq: "yearly" })),
+    { path: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
+    { path: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
   ];
 
   const combos = getAllCombinations();
@@ -36,14 +36,15 @@ export const GET: APIRoute = async () => {
     combos.map(({ city, industry }) => ({
       path: `${prefix}/${city.slug}/${industry.slug}`,
       priority: city.tier === 1 ? t1 : t2,
+      changefreq: "monthly",
     }))
   );
 
   const allRoutes = [...staticRoutes, ...serviceRoutes];
 
   const urls = allRoutes
-    .map(({ path, priority }) =>
-      `<url><loc>${base}${path}</loc><lastmod>${now}</lastmod><priority>${priority}</priority></url>`
+    .map(({ path, priority, changefreq }) =>
+      `<url><loc>${base}${path}</loc><lastmod>${now}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`
     )
     .join("");
 

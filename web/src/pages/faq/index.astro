@@ -1,27 +1,40 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-const seo = {
-  title: 'FAQ — Tier 1 System | BrandsBuilders',
-  description: 'Common questions about the $1,500/mo website, ads, and lead recovery system.',
-  canonical: 'https://brandsbuilders.ca/faq'
-};
+
 const faqs = [
-  { q: 'What\'s included for $1,500/month?', a: 'A high-conversion website build (or rebuild), Google or Meta Ads management on one platform, basic creative testing (2–3 ad variations per month), a dedicated tracked phone number, missed-call SMS protection, and monthly reporting. One flat fee, no upsells.' },
-  { q: 'Is ad spend included in the $1,500?', a: 'No. Ad spend is billed directly from your own Google Ads or Meta Ads account, so you keep full ownership and control of it. We recommend starting at $500–$1,500/month depending on your market and goals.' },
-  { q: 'Do I get both Google Ads and Meta Ads?', a: 'The service includes one platform. We help you decide which one fits your business and audience best before we start.' },
-  { q: 'Who creates the ad creatives?', a: 'We script and edit. For video/photo creatives, you record the raw footage or send us photos — we handle the rest, including monthly testing of 2–3 variations.' },
-  { q: 'How fast can I go live?', a: '2–3 weeks from kickoff to a live website. Ads launch shortly after, once tracking and the page are confirmed working correctly.' },
-  { q: 'What does missed-call protection do?', a: 'When a call goes unanswered, the system automatically sends an SMS to keep the conversation going and guide the lead toward booking — 24/7, with no extra effort from you.' },
-  { q: 'Is there a contract?', a: 'Month-to-month, $1,500/month flat. No long-term lock-in.' },
+  { q: 'How does missed-call recovery work?', a: 'When a call goes unanswered, the system automatically sends an SMS within 60 seconds to keep the conversation going and guide the lead toward booking — 24/7, with no extra effort from you. Free for 30 days, then $25 per booking recovered.' },
+  { q: 'What is included in the $900 website?', a: 'A custom, high-conversion website built for your home service business. One-time $900 fee, no monthly subscriptions. Live in 1–2 weeks. Includes hosting setup, contact forms, and tracking.' },
+  { q: 'What does the $1,500 reactivation campaign do?', a: 'We reach back out to your past customers via SMS and email to book new jobs. Guaranteed $3,000 in reactivated revenue or we run the next campaign free.' },
+  { q: 'What is the $1,800/month membership?', a: 'Our full-service growth system: missed-call recovery, website CRO, Google/Meta Ads management, reactivation campaigns, and monthly reporting. Designed to bring in at least 1 new client per week.' },
+  { q: 'Is ad spend included in the membership?', a: 'No. Ad spend is billed directly from your own Google or Meta Ads account so you keep full ownership. We recommend starting at $500–$1,500/month depending on your market.' },
+  { q: 'How fast can I go live with ads?', a: '2–3 weeks from kickoff to a live website. Ads launch shortly after, once tracking is confirmed working correctly.' },
+  { q: 'Is there a contract?', a: 'No long-term contracts. Missed-call recovery is month-to-month. The membership requires 2 weeks notice to cancel.' },
   { q: 'What reporting do I get?', a: 'Every month: leads generated, cost per lead, lead source, and conversions — in plain numbers, not vague summaries.' },
-  { q: 'Who is this for?', a: 'Businesses ready to invest consistently in lead generation, typically $2,000+/month combined (service fee + ad spend), and ready to move within the next few weeks.' },
+  { q: 'Who is this for?', a: 'Home service businesses in Western Canada — plumbers, HVAC techs, roofers, electricians, landscapers, cleaners, and similar trades — who want more booked jobs without wasting money on marketing that doesn\'t convert.' },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const seo = {
+  title: 'FAQ — Missed-Call Recovery, Web Design & Growth Services | BrandsBuilders',
+  description: 'Answers to the most common questions about BrandsBuilders services: $900 websites, missed-call recovery, $1,500 reactivation campaigns, and the $1,800/mo growth membership.',
+  canonical: 'https://brandsbuilders.ca/faq',
+  schema: faqSchema,
+};
 ---
 <Layout seo={seo}>
 <section class="bg-white py-16">
   <div class="container mx-auto px-6 max-w-3xl">
     <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h1>
-    <p class="text-lg text-gray-600 mb-12">About the $1,500/mo website, ads, and lead recovery system.</p>
+    <p class="text-lg text-gray-600 mb-12">About missed-call recovery, websites, reactivation campaigns, and the growth membership.</p>
     <div class="space-y-4">
       {faqs.map((f) => (
         <details class="bg-gray-50 border border-gray-200 rounded-xl p-5 group">

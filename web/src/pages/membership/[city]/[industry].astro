@@ -20,11 +20,28 @@ const roadmap = [
   { phase: 'Month 3', win: 'Scale what\'s working without risking what\'s working.', how: 'Budget scaling based on your week-1 unit economics.' },
 ];
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Full-Service Growth Membership for ${industry.name} in ${city.name}`,
+  description: `Ads, website CRO, missed-call recovery, and quarterly reactivation for ${industry.plural} in ${city.name}, ${city.province}. Designed to bring in at least 1 new client per week.`,
+  provider: { '@id': 'https://brandsbuilders.ca/#business' },
+  areaServed: { '@type': 'City', name: city.name },
+  offers: {
+    '@type': 'Offer',
+    price: '1800',
+    priceCurrency: 'CAD',
+    priceSpecification: { '@type': 'UnitPriceSpecification', price: '1800', priceCurrency: 'CAD', unitText: 'MONTH' },
+    description: '$1,800/mo. Cancel with 2 weeks notice.',
+  },
+  url: `https://brandsbuilders.ca/membership/${city.slug}/${industry.slug}`,
+};
+
 const seo = {
   title: `Revenue Recovery + Growth for ${industry.name} in ${city.name}, ${city.province} — BrandsBuilders`,
   description: `Ads, website CRO, missed-call recovery, and quarterly reactivation for ${industry.plural} in ${city.name}. $1,800/mo. 1 new client per week. Cancel with 2 weeks notice.`,
   canonical: `https://brandsbuilders.ca/membership/${city.slug}/${industry.slug}`,
-  ogImage: '/og.webp',
+  schema: serviceSchema,
 };
 ---
 

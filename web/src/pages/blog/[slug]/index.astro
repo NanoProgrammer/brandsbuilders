@@ -10,10 +10,37 @@ const { slug } = Astro.params;
 const post = POSTS[slug];
 if (!post) return Astro.redirect('/404');
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  datePublished: post.date,
+  author: {
+    '@type': 'Person',
+    name: 'Santiago González',
+    url: 'https://brandsbuilders.ca/about',
+  },
+  publisher: { '@id': 'https://brandsbuilders.ca/#business' },
+  mainEntityOfPage: `https://brandsbuilders.ca/blog/${slug}`,
+  image: 'https://brandsbuilders.ca/og.webp',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://brandsbuilders.ca' },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://brandsbuilders.ca/blog' },
+    { '@type': 'ListItem', position: 3, name: post.title, item: `https://brandsbuilders.ca/blog/${slug}` },
+  ],
+};
+
 const seo = {
   title: `${post.title} — BrandsBuilders`,
   description: post.excerpt,
   canonical: `https://brandsbuilders.ca/blog/${slug}`,
+  schema: [articleSchema, breadcrumbSchema],
 };
 
 const ctaMap = {
