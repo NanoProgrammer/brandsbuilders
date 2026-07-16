@@ -17,8 +17,8 @@ const personSchema = {
 };
 
 const seo = {
-  title: 'About BrandsBuilders — Calgary Marketing for Home Service Businesses',
-  description: 'BrandsBuilders is run by Santiago González from Calgary. We help plumbers, HVAC techs, roofers, and other trades stop losing customers to missed calls, dead customer lists, and marketing that doesn\'t produce real bookings.',
+  title: 'About BrandsBuilders — Revenue Recovery + Growth for Trades | Calgary',
+  description: 'BrandsBuilders is run by Santiago González from Calgary. We install revenue recovery and growth systems for trades businesses doing $1M–$3M — so they stop losing money to missed calls and inactive customer lists.',
   canonical: 'https://brandsbuilders.ca/about',
   schema: personSchema,
 };
@@ -33,87 +33,95 @@ const reviews = [
 
 <Layout seo={seo}>
 
-  <!-- ═══════════════════════════════════════════
-       WHO I AM
-  ═══════════════════════════════════════════ -->
+  <!-- WHO I AM -->
   <section class="bg-white py-20">
     <div class="container mx-auto px-6 max-w-4xl">
-
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-
-        <!-- Text -->
+      <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
           <p class="text-sm text-orange-600 font-semibold uppercase tracking-wider mb-4">About BrandsBuilders</p>
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Hi, I'm Santiago.
+            Hola, soy Santiago.
           </h1>
           <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
             <p>
-              I'm an 18-year-old entrepreneur based in Calgary, AB, and the founder of BrandsBuilders. I started this business because I kept seeing the same problem: local home service companies were losing leads every day — not from bad work, but from a missed call here, a slow website there, a client list nobody ever followed up with.
+              Tengo 18 años, soy de Calgary, AB, y fundé BrandsBuilders porque veía el mismo problema repetirse: negocios de trades con buen trabajo y buena reputación — perdiendo clientes todos los días por una llamada sin contestar, un cliente que no volvió, o marketing que no producía bookings reales.
             </p>
             <p>
-              I've spent 3+ years building websites, running ad campaigns, and building systems for local businesses across Calgary. BrandsBuilders is the result of everything I've learned about what actually moves the needle for service companies.
+              Llevo 3+ años construyendo sistemas digitales para negocios locales: websites, campañas de ads, reactivación de clientes, tracking. BrandsBuilders es la versión destilada de todo lo que aprendí sobre qué mueve la aguja — y qué no — para una empresa de servicios que quiere escalar.
             </p>
             <p>
-              I work with a small number of businesses at a time so I can actually deliver — not just sell.
+              Trabajo con un número pequeño de clientes a la vez para poder entregar de verdad. No solo vender.
             </p>
           </div>
         </div>
 
-        <!-- Photo placeholder -->
-        <div class="flex justify-center md:justify-end">
-          <div class="w-72 h-80 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-center p-6">
-            <div>
-              <div class="w-16 h-16 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center mx-auto mb-3">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                </svg>
-              </div>
-              <p class="text-sm text-gray-400">Photo coming soon</p>
+        <!-- Offer summary -->
+        <div class="space-y-4">
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Lo que hace BrandsBuilders</p>
+            <p class="text-gray-900 font-semibold text-lg leading-snug mb-4">
+              Revenue Recovery + Growth para trades haciendo $1M–$3M en revenue anual.
+            </p>
+            <ul class="space-y-2">
+              {[
+                'Sistema de recuperación de llamadas perdidas',
+                'Campañas de reactivación de clientes inactivos',
+                'Gestión de ads Google / Meta',
+                'Optimización del sitio y tracking real',
+                'Dashboard con cada lead y su valor',
+              ].map(item => (
+                <li class="flex items-start gap-2.5 text-sm text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-5 pt-4 border-t border-gray-200">
+              <span class="text-2xl font-bold text-gray-900">$2,500</span><span class="text-gray-500">/mes · sin setup fee · sin contrato</span>
             </div>
           </div>
-        </div>
 
+          <div class="bg-gray-900 text-white rounded-xl p-5 text-sm">
+            <p class="font-semibold text-orange-400 text-xs uppercase tracking-wider mb-2">La garantía</p>
+            <p class="text-gray-300 leading-relaxed">Si en 30 días no te genero más en booked jobs que lo que me pagas — trabajo gratis hasta que se cumpla.</p>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-sm text-gray-600">
+            <span class="font-semibold text-gray-900">Acceso directo:</span> Mi número personal, respuesta en menos de 24h, lunes a lunes. Sin tickets, sin chatbot.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       WHAT WE DO
-  ═══════════════════════════════════════════ -->
-  <section class="bg-gray-50 py-16 border-y border-gray-200">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-5">What BrandsBuilders does</h2>
-      <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">
-        We help home service businesses stop losing customers through missed calls, inactive client lists, and underperforming marketing.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PROOF
-  ═══════════════════════════════════════════ -->
-  <section class="bg-white py-20">
+  <!-- STATS -->
+  <section class="bg-gray-50 py-14 border-y border-gray-200">
     <div class="container mx-auto px-6 max-w-4xl">
-
-      <!-- stats -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-16">
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-gray-900">10+</div>
           <div class="text-sm text-gray-500 mt-1">Websites built</div>
         </div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-gray-900">3+ yrs</div>
           <div class="text-sm text-gray-500 mt-1">Building for local businesses</div>
         </div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center col-span-2 sm:col-span-1">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-orange-600">Calgary</div>
           <div class="text-sm text-gray-500 mt-1">AB · Home base</div>
         </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+          <div class="text-3xl font-bold text-gray-900">1/sem</div>
+          <div class="text-sm text-gray-500 mt-1">Capacidad de onboarding</div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- reviews -->
-      <h3 class="text-xl font-bold text-gray-900 mb-6">What clients say</h3>
+  <!-- REVIEWS -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Qué dicen los clientes</h2>
       <div class="grid sm:grid-cols-2 gap-5">
         {reviews.map((r) => (
           <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
@@ -135,16 +143,20 @@ const reviews = [
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       CTA
-  ═══════════════════════════════════════════ -->
+  <!-- CTA -->
   <section class="bg-gray-900 text-white py-16 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to stop losing customers?</h2>
-      <p class="text-gray-400 mb-8">Free for 30 days. Setup in 1–2 hours. No contracts.</p>
-      <a href="/" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
-        Get Started Free →
-      </a>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">¿Tu negocio califica?</h2>
+      <p class="text-gray-400 mb-8">Solo trabajo con trades haciendo $1M–$3M. Si ese eres tú, aplica — 1 spot disponible esta semana.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
+          Aplicar al programa →
+        </a>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition">
+          Hablar primero
+        </a>
+      </div>
     </div>
   </section>
 
