@@ -2,15 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
-  { q: 'How does missed-call recovery work?', a: 'When a call goes unanswered, the system automatically sends an SMS within 60 seconds to keep the conversation going and guide the lead toward booking — 24/7, with no extra effort from you. Free for 30 days, then $25 per booking recovered.' },
-  { q: 'What is included in the $900 website?', a: 'A custom, high-conversion website built for your home service business. One-time $900 fee, no monthly subscriptions. Live in 1–2 weeks. Includes hosting setup, contact forms, and tracking.' },
-  { q: 'What does the $1,500 reactivation campaign do?', a: 'We reach back out to your past customers via SMS and email to book new jobs. Guaranteed $3,000 in reactivated revenue or we run the next campaign free.' },
-  { q: 'What is the $1,800/month membership?', a: 'Our full-service growth system: missed-call recovery, website CRO, Google/Meta Ads management, reactivation campaigns, and monthly reporting. Designed to bring in at least 1 new client per week.' },
-  { q: 'Is ad spend included in the membership?', a: 'No. Ad spend is billed directly from your own Google or Meta Ads account so you keep full ownership. We recommend starting at $500–$1,500/month depending on your market.' },
-  { q: 'How fast can I go live with ads?', a: '2–3 weeks from kickoff to a live website. Ads launch shortly after, once tracking is confirmed working correctly.' },
-  { q: 'Is there a contract?', a: 'No long-term contracts. Missed-call recovery is month-to-month. The membership requires 2 weeks notice to cancel.' },
-  { q: 'What reporting do I get?', a: 'Every month: leads generated, cost per lead, lead source, and conversions — in plain numbers, not vague summaries.' },
-  { q: 'Who is this for?', a: 'Home service businesses in Western Canada — plumbers, HVAC techs, roofers, electricians, landscapers, cleaners, and similar trades — who want more booked jobs without wasting money on marketing that doesn\'t convert.' },
+  { q: '¿Por qué $2,500/mes si no incluye el presupuesto de anuncios?', a: 'Los $2,500 cubren todo mi trabajo: instalación del sistema, gestión completa, creativos, optimización continua, reporting, y acceso directo a mí. El presupuesto de anuncios va directo de tu tarjeta a Google o Meta — en cuentas de tu propiedad. Yo no toco ese dinero ni le meto margen. Si algún día te vas, todo queda contigo.' },
+  { q: '¿Cómo funciona la garantía exactamente?', a: 'Si en 30 días no te genero más en booked jobs que lo que me pagas — trabajo gratis el mes siguiente hasta que se cumpla. La medición es clara: trabajos agendados atribuidos al sistema — llamadas que entran por el número rastreado + respuestas de reactivación — con valor estimado mayor a $2,500 en el mes. Todo visible en tu dashboard. Sin discusiones.' },
+  { q: '¿Qué necesito yo aportar?', a: 'Aproximadamente 3 horas en el setup inicial para darme accesos y contexto. Después, contestas o devuelves los leads que el sistema te pasa dentro de 24 horas. Y 1 hora al mes para revisar el reporting. El punto del sistema es que trabaje sin ti encima — no que genere más trabajo.' },
+  { q: '¿Cuándo empiezo a gastar en anuncios?', a: 'Semana 3 o 4 — cuando tu landing esté optimizada y el tracking esté funcionando. Las primeras 2 semanas la fase de recuperación trabaja sobre lo que ya tienes (llamadas perdidas y lista de clientes inactivos) sin gastar en ads. La idea es que los primeros trabajos recuperados paguen la fase de crecimiento.' },
+  { q: '¿Hay contrato de permanencia?', a: 'No. Sin setup fee. Sin contrato de permanencia. Si en algún momento el sistema no tiene sentido para tu negocio, me avisas y se cierra. Sin penalizaciones, sin paperwork.' },
+  { q: '¿Para qué tipo de negocio es esto?', a: 'Trades y home services haciendo entre $1M y $3M en revenue anual en Canada occidental: plomería, HVAC, techado, electricidad, landscaping, limpieza residencial, pest control, auto repair, odontología, quiropráctica. Necesitas tener una base de clientes existente y poder devolver leads en menos de 24 horas.' },
+  { q: '¿Qué pasa si mi negocio no genera $1M todavía?', a: 'Este sistema específico está diseñado para negocios con volumen suficiente como para que la recuperación de llamadas y la reactivación generen resultados visibles rápido. Si estás por debajo de ese nivel, el ROI puede ser menor — me lo dices en el formulario y te doy mi opinión honesta.' },
+  { q: '¿Solo tomas 1 cliente por semana?', a: 'Sí. El sistema se instala bien o no se instala. Cada cliente necesita que yo conozca su negocio, sus números, su mercado. No puedo hacer eso en serie. Si el cupo de esta semana está lleno, el siguiente arranque es la próxima.' },
 ];
 
 const faqSchema = {
@@ -24,8 +23,8 @@ const faqSchema = {
 };
 
 const seo = {
-  title: 'FAQ — Missed-Call Recovery, Web Design & Growth Services | BrandsBuilders',
-  description: 'Answers to the most common questions about BrandsBuilders services: $900 websites, missed-call recovery, $1,500 reactivation campaigns, and the $1,800/mo growth membership.',
+  title: 'FAQ — Revenue Recovery + Growth Program | BrandsBuilders',
+  description: 'Preguntas frecuentes sobre el programa de $2,500/mes: qué incluye, cómo funciona la garantía, cuándo se prenden los anuncios, y para quién es.',
   canonical: 'https://brandsbuilders.ca/faq',
   schema: faqSchema,
 };
@@ -33,23 +32,39 @@ const seo = {
 <Layout seo={seo}>
 <section class="bg-white py-16">
   <div class="container mx-auto px-6 max-w-3xl">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h1>
-    <p class="text-lg text-gray-600 mb-12">About missed-call recovery, websites, reactivation campaigns, and the growth membership.</p>
+
+    <div class="mb-12">
+      <p class="text-sm text-orange-600 font-semibold uppercase tracking-wider mb-3">FAQ</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h1>
+      <p class="text-lg text-gray-600">Sobre el Revenue Recovery + Growth Program — $2,500/mes.</p>
+    </div>
+
     <div class="space-y-4">
       {faqs.map((f) => (
         <details class="bg-gray-50 border border-gray-200 rounded-xl p-5 group">
-          <summary class="cursor-pointer font-medium text-gray-900 flex justify-between items-center">
+          <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4 text-sm">
             {f.q}
-            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <p class="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
+          <p class="mt-3 text-gray-600 text-sm leading-relaxed">{f.a}</p>
         </details>
       ))}
     </div>
+
     <div class="mt-12 bg-gray-900 text-white rounded-xl p-8 text-center">
-      <h2 class="text-2xl font-bold mb-3">Still have questions?</h2>
-      <a href="/apply" class="inline-block mt-2 px-8 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">Get Started →</a>
+      <h2 class="text-2xl font-bold mb-2">¿Aún tienes preguntas?</h2>
+      <p class="text-gray-400 text-sm mb-6">Aplica y en menos de 24 horas te respondo personalmente — o agenda una llamada.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/apply" class="inline-flex px-7 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-sm">
+          Aplicar al programa →
+        </a>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-7 py-3 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-sm">
+          Agendar llamada
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 </Layout>

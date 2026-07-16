@@ -2,10 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Free 30-Day Trial — Missed-Call Recovery for Home Service Businesses | BrandsBuilders',
-  description: 'Get a dedicated tracked number + 60-second auto-text on every missed call. Setup in 1–2 hours. Free for 30 days, then $25 per booking recovered. No contract, no credit card.',
+  title: 'Aplicar — Revenue Recovery + Growth Program | BrandsBuilders',
+  description: 'Aplica para el Revenue Recovery + Growth Program. $2,500/mes. Sin setup fee. Sin contrato. Garantizado: más en booked jobs que lo que me pagas en 30 días — o trabajo gratis hasta lograrlo.',
   canonical: 'https://brandsbuilders.ca/apply',
-  ogImage: '/og.webp'
 };
 ---
 
@@ -25,98 +24,135 @@ function gtag_report_conversion() {
 
     <!-- Left: copy -->
     <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
-        <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
-        Missed-Call Recovery — Free for 30 Days
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></span>
+        1 spot disponible esta semana
       </div>
 
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-        Stop losing leads to missed calls — starting today.
+        Aplica al programa de crecimiento.
       </h1>
 
       <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-        Every time a call goes unanswered, we automatically send a personalized text to that lead within 60 seconds. Fill out the form and we'll have your system live in <strong class="text-gray-800">1–2 hours.</strong>
+        Tomo 1 cliente nuevo por semana para instalar el sistema bien. Llena el formulario — reviso en menos de 24 horas si hay fit.
       </p>
 
+      <!-- What they get -->
       <div class="mt-8 space-y-3">
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Dedicated tracked number — no change to your existing number</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Auto-text fires in under 60 seconds, 24/7</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">Free for 30 days — then $25 per booking recovered</span>
-        </div>
-        <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span class="text-gray-700">No contract. No booking = no charge. Cancel anytime.</span>
-        </div>
+        {[
+          'Fase 1: recuperación de llamadas perdidas + reactivación en 2 semanas',
+          'Fase 2: ads, CRO, y sistema de crecimiento mensual',
+          '$2,500/mes — sin setup fee, sin contrato de permanencia',
+          'Dashboard en tiempo real con cada lead y su valor',
+          'Mi número personal — respuesta en menos de 24h',
+        ].map(item => (
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-gray-700 text-sm">{item}</span>
+          </div>
+        ))}
       </div>
 
-      <div class="mt-10 bg-gray-50 border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Prefer to talk first?</p>
-        <p class="text-sm text-gray-600 mb-3">Book a quick 15-minute call. We'll confirm your setup on the spot.</p>
+      <!-- Guarantee callout -->
+      <div class="mt-10 bg-gray-900 text-white rounded-xl p-6">
+        <p class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">La garantía</p>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Si en 30 días no te genero más en booked jobs de lo que me pagas — trabajo gratis el mes siguiente hasta que se cumpla. Todo visible en tu dashboard. Sin letra chica.
+        </p>
+      </div>
+
+      <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5">
+        <p class="text-sm font-semibold text-gray-900 mb-1">¿Prefieres hablar primero?</p>
+        <p class="text-sm text-gray-600 mb-3">Llamada rápida de 30 minutos. Sin pitch, sin presión.</p>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
-          class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition text-sm">
-          Book a Call →
+          class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-sm">
+          Agendar llamada →
         </a>
       </div>
     </div>
 
     <!-- Right: form -->
     <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-      <div class="bg-gray-900 text-white px-6 py-4">
-        <p class="font-semibold">Start your free 30-day trial</p>
-        <p class="text-sm text-gray-400 mt-0.5">Takes 60 seconds. We respond within 2 hours.</p>
+      <div class="bg-gray-900 text-white px-6 py-5">
+        <p class="font-bold text-lg">Formulario de aplicación</p>
+        <p class="text-sm text-gray-400 mt-1">Reviso y respondo en menos de 24 horas.</p>
       </div>
       <form
-        name="missed-call-signup"
+        name="growth-program-apply"
         method="POST"
         action="/thank-you"
         data-netlify="true"
         netlify-honeypot="bot-field"
         class="p-6 space-y-4"
       >
-        <input type="hidden" name="form-name" value="missed-call-signup" />
-        <input type="hidden" name="service" value="missed-call-recovery" />
+        <input type="hidden" name="form-name" value="growth-program-apply" />
+        <input type="hidden" name="service" value="revenue-recovery-growth" />
         <p class="hidden"><input name="bot-field" /></p>
 
-        <input name="name" required placeholder="Your name"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
-        <input name="business" required placeholder="Business name"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
-        <input name="phone" type="tel" required placeholder="Your current business phone"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input name="name" required placeholder="Tu nombre"
+            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+          <input name="business" required placeholder="Nombre del negocio"
+            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+        </div>
+
         <input name="email" type="email" required placeholder="Email"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm" />
-        <select name="industry"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm">
-          <option value="">Industry (optional)</option>
-          <option>Plumbing</option>
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+
+        <input name="phone" type="tel" required placeholder="Teléfono de negocio"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+
+        <select name="industry" required
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
+          <option value="">Industria *</option>
+          <option>Plomería (Plumbing)</option>
           <option>HVAC</option>
-          <option>Dentist / Dental Office</option>
-          <option>Roofing</option>
-          <option>Electrician</option>
+          <option>Techado (Roofing)</option>
+          <option>Electricidad</option>
+          <option>Landscaping</option>
+          <option>Limpieza residencial</option>
           <option>Pest Control</option>
           <option>Auto Repair</option>
-          <option>Chiropractor</option>
-          <option>Landscaping</option>
-          <option>House Cleaning</option>
-          <option>Other</option>
+          <option>Odontología</option>
+          <option>Quiropráctica</option>
+          <option>Otra</option>
         </select>
+
+        <select name="revenue" required
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
+          <option value="">Revenue anual aproximado *</option>
+          <option value="under-500k">Menos de $500k</option>
+          <option value="500k-1m">$500k – $1M</option>
+          <option value="1m-2m">$1M – $2M</option>
+          <option value="2m-3m">$2M – $3M</option>
+          <option value="over-3m">Más de $3M</option>
+        </select>
+
+        <select name="location"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
+          <option value="">Ciudad / Provincia</option>
+          <option>Calgary, AB</option>
+          <option>Edmonton, AB</option>
+          <option>Red Deer, AB</option>
+          <option>Lethbridge, AB</option>
+          <option>Vancouver, BC</option>
+          <option>Surrey, BC</option>
+          <option>Kelowna, BC</option>
+          <option>Burnaby, BC</option>
+          <option>Otra ciudad en Canadá</option>
+        </select>
+
+        <textarea name="challenge" rows="3" placeholder="¿Cuál es tu mayor problema de crecimiento ahora mismo? (opcional)"
+          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm resize-none"></textarea>
 
         <button
           type="submit"
           onclick="gtag_report_conversion()"
-          class="w-full px-6 py-3.5 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition text-sm"
+          class="w-full px-6 py-4 rounded-lg font-bold text-white bg-gray-900 hover:bg-gray-800 transition text-base"
         >
-          Start Free Trial →
+          Enviar aplicación →
         </button>
-        <p class="text-xs text-gray-500 text-center">No credit card required. No contract. Setup in 1–2 hours.</p>
+        <p class="text-xs text-gray-400 text-center">Respondo en menos de 24 horas · Solo 1 spot esta semana</p>
       </form>
     </div>
 
@@ -126,18 +162,22 @@ function gtag_report_conversion() {
 <!-- Trust row -->
 <section class="bg-gray-50 py-12 border-y border-gray-200">
   <div class="container mx-auto px-6 max-w-4xl">
-    <div class="grid md:grid-cols-3 gap-8 text-center">
+    <div class="grid sm:grid-cols-4 gap-6 text-center">
       <div>
-        <div class="text-2xl font-bold text-gray-900">< 60 sec</div>
-        <div class="text-sm text-gray-500 mt-1">Auto-text response time</div>
+        <div class="text-2xl font-bold text-gray-900">$2,500</div>
+        <div class="text-sm text-gray-500 mt-1">/mes · todo incluido</div>
       </div>
       <div>
-        <div class="text-2xl font-bold text-gray-900">$25</div>
-        <div class="text-sm text-gray-500 mt-1">Per booking saved — nothing if it doesn't work</div>
+        <div class="text-2xl font-bold text-orange-600">2 semanas</div>
+        <div class="text-sm text-gray-500 mt-1">primeros trabajos recuperados</div>
       </div>
       <div>
-        <div class="text-2xl font-bold text-orange-600">1–2 hrs</div>
-        <div class="text-sm text-gray-500 mt-1">From signup to system live</div>
+        <div class="text-2xl font-bold text-gray-900">30 días</div>
+        <div class="text-sm text-gray-500 mt-1">garantía o trabajo gratis</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-gray-900">&lt; 24h</div>
+        <div class="text-sm text-gray-500 mt-1">respondo tu aplicación</div>
       </div>
     </div>
   </div>
