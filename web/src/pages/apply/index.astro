@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Aplicar — Revenue Recovery + Growth Program | BrandsBuilders',
-  description: 'Aplica para el Revenue Recovery + Growth Program. $2,500/mes. Sin setup fee. Sin contrato. Garantizado: más en booked jobs que lo que me pagas en 30 días — o trabajo gratis hasta lograrlo.',
+  title: 'Apply — Revenue Recovery + Growth Program | BrandsBuilders',
+  description: 'Apply for the Revenue Recovery + Growth Program. $2,500/mo. No setup fee. No contract. Guaranteed: more in booked jobs than you pay us in 30 days — or we work free until we deliver.',
   canonical: 'https://brandsbuilders.ca/apply',
 };
 ---
@@ -26,25 +26,24 @@ function gtag_report_conversion() {
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-semibold mb-6">
         <span class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></span>
-        1 spot disponible esta semana
+        1 spot available this week
       </div>
 
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-        Aplica al programa de crecimiento.
+        Apply to the growth program.
       </h1>
 
       <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-        Tomo 1 cliente nuevo por semana para instalar el sistema bien. Llena el formulario — reviso en menos de 24 horas si hay fit.
+        We take 1 new client per week to install the system properly. Fill out the form — we'll review and respond within 24 hours on whether there's a fit.
       </p>
 
-      <!-- What they get -->
       <div class="mt-8 space-y-3">
         {[
-          'Fase 1: recuperación de llamadas perdidas + reactivación en 2 semanas',
-          'Fase 2: ads, CRO, y sistema de crecimiento mensual',
-          '$2,500/mes — sin setup fee, sin contrato de permanencia',
-          'Dashboard en tiempo real con cada lead y su valor',
-          'Mi número personal — respuesta en menos de 24h',
+          'Phase 1: missed-call recovery + reactivation — first jobs in 2 weeks',
+          'Phase 2: ads, CRO, and monthly growth system',
+          '$2,500/mo — no setup fee, no long-term contract',
+          'Real-time dashboard with every lead and its value',
+          'My personal number — response under 24h',
         ].map(item => (
           <div class="flex items-start gap-3">
             <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -55,18 +54,18 @@ function gtag_report_conversion() {
 
       <!-- Guarantee callout -->
       <div class="mt-10 bg-gray-900 text-white rounded-xl p-6">
-        <p class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">La garantía</p>
+        <p class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">The guarantee</p>
         <p class="text-sm text-gray-200 leading-relaxed">
-          Si en 30 días no te genero más en booked jobs de lo que me pagas — trabajo gratis el mes siguiente hasta que se cumpla. Todo visible en tu dashboard. Sin letra chica.
+          If in 30 days we don't generate more in booked jobs than you paid us — we work the next month free until it's delivered. Everything visible in your dashboard. No fine print.
         </p>
       </div>
 
       <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">¿Prefieres hablar primero?</p>
-        <p class="text-sm text-gray-600 mb-3">Llamada rápida de 30 minutos. Sin pitch, sin presión.</p>
+        <p class="text-sm font-semibold text-gray-900 mb-1">Prefer to talk first?</p>
+        <p class="text-sm text-gray-600 mb-3">30-minute call. No pitch, no pressure.</p>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-sm">
-          Agendar llamada →
+          Book a call →
         </a>
       </div>
     </div>
@@ -74,8 +73,8 @@ function gtag_report_conversion() {
     <!-- Right: form -->
     <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
       <div class="bg-gray-900 text-white px-6 py-5">
-        <p class="font-bold text-lg">Formulario de aplicación</p>
-        <p class="text-sm text-gray-400 mt-1">Reviso y respondo en menos de 24 horas.</p>
+        <p class="font-bold text-lg">Application form</p>
+        <p class="text-sm text-gray-400 mt-1">We review and respond within 24 hours.</p>
       </div>
       <form
         name="growth-program-apply"
@@ -90,47 +89,47 @@ function gtag_report_conversion() {
         <p class="hidden"><input name="bot-field" /></p>
 
         <div class="grid sm:grid-cols-2 gap-4">
-          <input name="name" required placeholder="Tu nombre"
+          <input name="name" required placeholder="Your name"
             class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
-          <input name="business" required placeholder="Nombre del negocio"
+          <input name="business" required placeholder="Business name"
             class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
         </div>
 
         <input name="email" type="email" required placeholder="Email"
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
 
-        <input name="phone" type="tel" required placeholder="Teléfono de negocio"
+        <input name="phone" type="tel" required placeholder="Business phone"
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
 
         <select name="industry" required
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Industria *</option>
-          <option>Plomería (Plumbing)</option>
+          <option value="">Industry *</option>
+          <option>Plumbing</option>
           <option>HVAC</option>
-          <option>Techado (Roofing)</option>
-          <option>Electricidad</option>
+          <option>Roofing</option>
+          <option>Electrical</option>
           <option>Landscaping</option>
-          <option>Limpieza residencial</option>
+          <option>House Cleaning</option>
           <option>Pest Control</option>
           <option>Auto Repair</option>
-          <option>Odontología</option>
-          <option>Quiropráctica</option>
-          <option>Otra</option>
+          <option>Dentist / Dental Office</option>
+          <option>Chiropractor</option>
+          <option>Other</option>
         </select>
 
         <select name="revenue" required
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Revenue anual aproximado *</option>
-          <option value="under-500k">Menos de $500k</option>
+          <option value="">Annual revenue *</option>
+          <option value="under-500k">Under $500k</option>
           <option value="500k-1m">$500k – $1M</option>
           <option value="1m-2m">$1M – $2M</option>
           <option value="2m-3m">$2M – $3M</option>
-          <option value="over-3m">Más de $3M</option>
+          <option value="over-3m">Over $3M</option>
         </select>
 
         <select name="location"
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Ciudad / Provincia</option>
+          <option value="">City / Province</option>
           <option>Calgary, AB</option>
           <option>Edmonton, AB</option>
           <option>Red Deer, AB</option>
@@ -139,10 +138,10 @@ function gtag_report_conversion() {
           <option>Surrey, BC</option>
           <option>Kelowna, BC</option>
           <option>Burnaby, BC</option>
-          <option>Otra ciudad en Canadá</option>
+          <option>Other city in Canada</option>
         </select>
 
-        <textarea name="challenge" rows="3" placeholder="¿Cuál es tu mayor problema de crecimiento ahora mismo? (opcional)"
+        <textarea name="challenge" rows="3" placeholder="What's your biggest growth challenge right now? (optional)"
           class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm resize-none"></textarea>
 
         <button
@@ -150,9 +149,9 @@ function gtag_report_conversion() {
           onclick="gtag_report_conversion()"
           class="w-full px-6 py-4 rounded-lg font-bold text-white bg-gray-900 hover:bg-gray-800 transition text-base"
         >
-          Enviar aplicación →
+          Submit application →
         </button>
-        <p class="text-xs text-gray-400 text-center">Respondo en menos de 24 horas · Solo 1 spot esta semana</p>
+        <p class="text-xs text-gray-400 text-center">We respond within 24 hours · Only 1 spot this week</p>
       </form>
     </div>
 
@@ -165,19 +164,19 @@ function gtag_report_conversion() {
     <div class="grid sm:grid-cols-4 gap-6 text-center">
       <div>
         <div class="text-2xl font-bold text-gray-900">$2,500</div>
-        <div class="text-sm text-gray-500 mt-1">/mes · todo incluido</div>
+        <div class="text-sm text-gray-500 mt-1">/mo · everything included</div>
       </div>
       <div>
-        <div class="text-2xl font-bold text-orange-600">2 semanas</div>
-        <div class="text-sm text-gray-500 mt-1">primeros trabajos recuperados</div>
+        <div class="text-2xl font-bold text-orange-600">2 weeks</div>
+        <div class="text-sm text-gray-500 mt-1">first recovered jobs booked</div>
       </div>
       <div>
-        <div class="text-2xl font-bold text-gray-900">30 días</div>
-        <div class="text-sm text-gray-500 mt-1">garantía o trabajo gratis</div>
+        <div class="text-2xl font-bold text-gray-900">30 days</div>
+        <div class="text-sm text-gray-500 mt-1">guarantee or we work free</div>
       </div>
       <div>
         <div class="text-2xl font-bold text-gray-900">&lt; 24h</div>
-        <div class="text-sm text-gray-500 mt-1">respondo tu aplicación</div>
+        <div class="text-sm text-gray-500 mt-1">we respond to your application</div>
       </div>
     </div>
   </div>

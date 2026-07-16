@@ -2,14 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
-  { q: '¿Por qué $2,500/mes si no incluye el presupuesto de anuncios?', a: 'Los $2,500 cubren todo mi trabajo: instalación del sistema, gestión completa, creativos, optimización continua, reporting, y acceso directo a mí. El presupuesto de anuncios va directo de tu tarjeta a Google o Meta — en cuentas de tu propiedad. Yo no toco ese dinero ni le meto margen. Si algún día te vas, todo queda contigo.' },
-  { q: '¿Cómo funciona la garantía exactamente?', a: 'Si en 30 días no te genero más en booked jobs que lo que me pagas — trabajo gratis el mes siguiente hasta que se cumpla. La medición es clara: trabajos agendados atribuidos al sistema — llamadas que entran por el número rastreado + respuestas de reactivación — con valor estimado mayor a $2,500 en el mes. Todo visible en tu dashboard. Sin discusiones.' },
-  { q: '¿Qué necesito yo aportar?', a: 'Aproximadamente 3 horas en el setup inicial para darme accesos y contexto. Después, contestas o devuelves los leads que el sistema te pasa dentro de 24 horas. Y 1 hora al mes para revisar el reporting. El punto del sistema es que trabaje sin ti encima — no que genere más trabajo.' },
-  { q: '¿Cuándo empiezo a gastar en anuncios?', a: 'Semana 3 o 4 — cuando tu landing esté optimizada y el tracking esté funcionando. Las primeras 2 semanas la fase de recuperación trabaja sobre lo que ya tienes (llamadas perdidas y lista de clientes inactivos) sin gastar en ads. La idea es que los primeros trabajos recuperados paguen la fase de crecimiento.' },
-  { q: '¿Hay contrato de permanencia?', a: 'No. Sin setup fee. Sin contrato de permanencia. Si en algún momento el sistema no tiene sentido para tu negocio, me avisas y se cierra. Sin penalizaciones, sin paperwork.' },
-  { q: '¿Para qué tipo de negocio es esto?', a: 'Trades y home services haciendo entre $1M y $3M en revenue anual en Canada occidental: plomería, HVAC, techado, electricidad, landscaping, limpieza residencial, pest control, auto repair, odontología, quiropráctica. Necesitas tener una base de clientes existente y poder devolver leads en menos de 24 horas.' },
-  { q: '¿Qué pasa si mi negocio no genera $1M todavía?', a: 'Este sistema específico está diseñado para negocios con volumen suficiente como para que la recuperación de llamadas y la reactivación generen resultados visibles rápido. Si estás por debajo de ese nivel, el ROI puede ser menor — me lo dices en el formulario y te doy mi opinión honesta.' },
-  { q: '¿Solo tomas 1 cliente por semana?', a: 'Sí. El sistema se instala bien o no se instala. Cada cliente necesita que yo conozca su negocio, sus números, su mercado. No puedo hacer eso en serie. Si el cupo de esta semana está lleno, el siguiente arranque es la próxima.' },
+  { q: 'Why $2,500/mo if ad spend isn\'t included?', a: 'The $2,500 covers all our work: system installation, full management, creatives, continuous optimization, reporting, and direct access to me. Ad spend goes straight to Google or Meta — in accounts you own. We don\'t touch that money or mark it up. If you ever leave, everything stays with you.' },
+  { q: 'How does the guarantee work exactly?', a: 'If in 30 days we don\'t generate more in booked jobs than you paid us — we work the next month free until the guarantee is met. The measurement is clear: booked jobs through the tracked number and reactivation replies with estimated value over $2,500. Everything in your dashboard — no disputes.' },
+  { q: 'What do I need to contribute?', a: 'About 3 hours during initial setup for access and feedback. After that, you return or answer leads the system sends you within 24 hours, and spend 1 hour a month reviewing reporting. The point of the system is that it works without you on top of it.' },
+  { q: 'When do I start spending on ads?', a: 'Week 3 or 4 — once your landing is optimized and tracking is confirmed working. The first 2 weeks the recovery phase works on what you already have (missed calls and your inactive customer list) without spending on ads. The goal: phase 1 revenue pays for the ad spend in phase 2.' },
+  { q: 'Is there a long-term contract?', a: 'No. No setup fee. No cancellation penalty. If at any point the system doesn\'t make sense for your business, let us know and it\'s closed. No fees, no paperwork.' },
+  { q: 'What type of business is this for?', a: 'Trades and home service businesses doing $1M–$3M in annual revenue in Western Canada: plumbing, HVAC, roofing, electrical, landscaping, house cleaning, pest control, auto repair, dental, chiropractic. You need an existing customer base and the ability to return leads within 24 hours.' },
+  { q: 'What if my business is below $1M?', a: 'This specific system is designed for businesses with enough volume so that missed-call recovery and reactivation generate visible results fast. If you\'re below that level, the ROI may be lower — tell us in the form and we\'ll give you an honest answer.' },
+  { q: 'Why only 1 client per week?', a: 'The system gets installed properly or it doesn\'t. Each client needs me to understand their business, their numbers, and their market. That can\'t be done in series. If this week\'s spot is taken, the next start is next week.' },
 ];
 
 const faqSchema = {
@@ -24,7 +24,7 @@ const faqSchema = {
 
 const seo = {
   title: 'FAQ — Revenue Recovery + Growth Program | BrandsBuilders',
-  description: 'Preguntas frecuentes sobre el programa de $2,500/mes: qué incluye, cómo funciona la garantía, cuándo se prenden los anuncios, y para quién es.',
+  description: 'Answers to the most common questions about the $2,500/mo program: what\'s included, how the guarantee works, when ads turn on, and who qualifies.',
   canonical: 'https://brandsbuilders.ca/faq',
   schema: faqSchema,
 };
@@ -35,8 +35,8 @@ const seo = {
 
     <div class="mb-12">
       <p class="text-sm text-orange-600 font-semibold uppercase tracking-wider mb-3">FAQ</p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h1>
-      <p class="text-lg text-gray-600">Sobre el Revenue Recovery + Growth Program — $2,500/mes.</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h1>
+      <p class="text-lg text-gray-600">About the Revenue Recovery + Growth Program — $2,500/mo.</p>
     </div>
 
     <div class="space-y-4">
@@ -52,15 +52,15 @@ const seo = {
     </div>
 
     <div class="mt-12 bg-gray-900 text-white rounded-xl p-8 text-center">
-      <h2 class="text-2xl font-bold mb-2">¿Aún tienes preguntas?</h2>
-      <p class="text-gray-400 text-sm mb-6">Aplica y en menos de 24 horas te respondo personalmente — o agenda una llamada.</p>
+      <h2 class="text-2xl font-bold mb-2">Still have questions?</h2>
+      <p class="text-gray-400 text-sm mb-6">Apply and we'll respond personally within 24 hours — or book a call.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="/apply" class="inline-flex px-7 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-sm">
-          Aplicar al programa →
+          Apply to the program →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-7 py-3 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-sm">
-          Agendar llamada
+          Book a call
         </a>
       </div>
     </div>
