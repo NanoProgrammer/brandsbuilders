@@ -2,69 +2,103 @@
 import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
-  { q: 'Why $2,500/mo if ad spend isn\'t included?', a: 'The $2,500 covers all our work: system installation, full management, creatives, continuous optimization, reporting, and direct access to me. Ad spend goes straight to Google or Meta — in accounts you own. We don\'t touch that money or mark it up. If you ever leave, everything stays with you.' },
-  { q: 'How does the guarantee work exactly?', a: 'If in 30 days we don\'t generate more in booked jobs than you paid us — we work the next month free until the guarantee is met. The measurement is clear: booked jobs through the tracked number and reactivation replies with estimated value over $2,500. Everything in your dashboard — no disputes.' },
-  { q: 'What do I need to contribute?', a: 'About 3 hours during initial setup for access and feedback. After that, you return or answer leads the system sends you within 24 hours, and spend 1 hour a month reviewing reporting. The point of the system is that it works without you on top of it.' },
-  { q: 'When do I start spending on ads?', a: 'Week 3 or 4 — once your landing is optimized and tracking is confirmed working. The first 2 weeks the recovery phase works on what you already have (missed calls and your inactive customer list) without spending on ads. The goal: phase 1 revenue pays for the ad spend in phase 2.' },
-  { q: 'Is there a long-term contract?', a: 'No. No setup fee. No cancellation penalty. If at any point the system doesn\'t make sense for your business, let us know and it\'s closed. No fees, no paperwork.' },
-  { q: 'What type of business is this for?', a: 'Trades and home service businesses doing $1M–$3M in annual revenue in Western Canada: plumbing, HVAC, roofing, electrical, landscaping, house cleaning, pest control, auto repair, dental, chiropractic. You need an existing customer base and the ability to return leads within 24 hours.' },
-  { q: 'What if my business is below $1M?', a: 'This specific system is designed for businesses with enough volume so that missed-call recovery and reactivation generate visible results fast. If you\'re below that level, the ROI may be lower — tell us in the form and we\'ll give you an honest answer.' },
-  { q: 'Why only 1 client per week?', a: 'The system gets installed properly or it doesn\'t. Each client needs me to understand their business, their numbers, and their market. That can\'t be done in series. If this week\'s spot is taken, the next start is next week.' },
+  {
+    q: 'What exactly is a referral network?',
+    a: 'It\'s a group of 4–5 non-competing businesses that already stand in front of your ideal client right before they need your service. For HVAC, that\'s plumbers and home inspectors. For roofing, it\'s adjusters and realtors. For restoration, it\'s plumbers and property managers. We identify those businesses in your market, recruit them as partners, and set up the relationship so they send jobs to you instead of whoever they happen to know.',
+  },
+  {
+    q: 'How is this different from just asking for referrals?',
+    a: '"Ask for referrals" is random. What we build is a system with specific partner types, a value exchange, and a follow-up cadence that keeps you top of mind. A plumber who agreed to send restoration leads your way and gets a $150 gift card per booked job is going to keep thinking of you — consistently. That\'s the difference between a one-off favour and a channel.',
+  },
+  {
+    q: 'How many jobs can I realistically expect?',
+    a: 'A partner who actively refers sends 12–15 jobs per year on average. With 4 active partners, that\'s ~60 referred jobs annually from a mature network. Early on, one or two partners will be more active than others. By month 6, you\'ll have a clear picture of your top performers.',
+  },
+  {
+    q: 'How long until I see the first referral?',
+    a: 'The fastest partners send a job within 2–4 weeks of onboarding. Most networks see their first few referrals within 60 days. A fully mature network — where partners think of you by default — takes 3–6 months.',
+  },
+  {
+    q: 'Do I have to maintain this myself after you\'re done?',
+    a: 'Yes — and that\'s intentional. We hand you a simple system: a monthly touchpoint template, a reciprocity structure, and a follow-up cadence you can run in under an hour a month. You own the network. No dependency on us, no retainer.',
+  },
+  {
+    q: 'What if a partner stops sending referrals?',
+    a: 'Relationships drift. We build in a reactivation protocol for exactly this — a sequence you run every quarter to re-engage dormant partners. And since you own the relationships, you can always recruit a replacement using the same outreach approach we hand you.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'The fee is discussed on the 15-min call. It\'s anchored to your niche\'s real cost-per-acquisition. If your current CAC is $400–700 per job and a mature network produces 60 referred jobs a year at ~$0 CAC, the math is simple. We price it as a fraction of one year\'s CAC savings.',
+  },
+  {
+    q: 'What if I\'m not in HVAC, Roofing, or Restoration?',
+    a: 'The referral network model works in any trade where another business already sees your client before the job is posted. Book a 15-min call and we\'ll tell you honestly whether your niche fits the model.',
+  },
+  {
+    q: 'Do you build websites too?',
+    a: 'Yes. Custom-coded websites for trades businesses starting at $900 one-time. No monthly fees, no templates, live in 1–2 weeks. It\'s a separate service from the referral network — ask about it on the call if relevant.',
+  },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map(f => ({
+  mainEntity: faqs.map(({ q, a }) => ({
     '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
   })),
 };
 
 const seo = {
-  title: 'FAQ — Revenue Recovery + Growth Program | BrandsBuilders',
-  description: 'Answers to the most common questions about the $2,500/mo program: what\'s included, how the guarantee works, when ads turn on, and who qualifies.',
+  title: 'FAQ — Referral Network Builder | BrandsBuilders',
+  description: 'Common questions about how the BrandsBuilders referral network works, what results to expect, and whether it fits your trade.',
   canonical: 'https://brandsbuilders.ca/faq',
   schema: faqSchema,
 };
 ---
+
 <Layout seo={seo}>
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-3xl">
 
-    <div class="mb-12">
-      <p class="text-sm text-orange-600 font-semibold uppercase tracking-wider mb-3">FAQ</p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h1>
-      <p class="text-lg text-gray-600">About the Revenue Recovery + Growth Program — $2,500/mo.</p>
+  <section class="bg-white pt-16 pb-4 border-b border-gray-200">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h1 class="text-4xl font-bold text-gray-900 mb-3">Common questions</h1>
+      <p class="text-gray-600 text-lg">Everything you'd want to know before booking a call.</p>
     </div>
+  </section>
 
-    <div class="space-y-4">
-      {faqs.map((f) => (
-        <details class="bg-gray-50 border border-gray-200 rounded-xl p-5 group">
-          <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4 text-sm">
-            {f.q}
-            <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <p class="mt-3 text-gray-600 text-sm leading-relaxed">{f.a}</p>
-        </details>
-      ))}
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <div class="space-y-4">
+        {faqs.map(item => (
+          <details class="bg-gray-50 border border-gray-200 rounded-xl p-6 group">
+            <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4">
+              {item.q}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <p class="mt-3 text-gray-600 leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
     </div>
+  </section>
 
-    <div class="mt-12 bg-gray-900 text-white rounded-xl p-8 text-center">
-      <h2 class="text-2xl font-bold mb-2">Still have questions?</h2>
-      <p class="text-gray-400 text-sm mb-6">Apply and we'll respond personally within 24 hours — or book a call.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/apply" class="inline-flex px-7 py-3 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-sm">
-          Apply to the program →
+  <section class="bg-gray-900 text-white py-16 text-center">
+    <div class="container mx-auto px-6 max-w-2xl">
+      <h2 class="text-3xl font-bold mb-3">Still have a question?</h2>
+      <p class="text-gray-400 mb-8 text-lg">Book a 15-min call. We'll answer everything and tell you honestly if the model fits your niche.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/apply" class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
+          See which partners fit you →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
-          class="inline-flex px-7 py-3 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-sm">
-          Book a call
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">
+          Book a 15-min call
         </a>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
 </Layout>
