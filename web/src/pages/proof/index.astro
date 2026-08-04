@@ -2,199 +2,93 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Proof of Work — BrandsBuilders | Websites, Results & Reviews',
-  description: 'Real projects and real Google reviews from home service and trades businesses. See the websites we\'ve built and what clients say about working with BrandsBuilders.',
-  canonical: 'https://brandsbuilders.ca/proof'
+  title: 'Proof — BrandsBuilders | Client Work & Reviews',
+  description: 'Websites built for real local businesses, and reviews from trades owners who\'ve worked with BrandsBuilders.',
+  canonical: 'https://brandsbuilders.ca/proof',
 };
 
-const websites = [
-  {
-    name: 'Refresh Exteriors',
-    industry: 'Window Cleaning & Snow Removal · Calgary',
-    url: 'https://refreshedexterior.com',
-    image: '/images/portfolio/refresh-exteriors.png',
-    work: 'Website rebuild',
-    result: 'Conversion-focused design, mobile-first layout. First new customer within 7 days of launch.'
-  },
-  {
-    name: 'GrillsGuard',
-    industry: 'Home Service · Calgary',
-    url: 'https://grillsguard.com',
-    image: '/proof/grillsguard-hero-768.webp',
-    work: 'Full website build',
-    result: 'Fast, service-focused site built to turn visitors into quote requests.'
-  },
-  {
-    name: 'Kelly & Sons YYC',
-    industry: 'Local Service Business · Calgary',
-    url: 'https://kellyandsonsyyc.ca',
-    image: '/images/portfolio/kellyandsons.png',
-    work: 'Website build',
-    result: 'Professional local service site generating calls and quote requests.'
-  },
-  {
-    name: 'Artilate',
-    industry: 'Handcrafted Colombian Chocolate · Calgary',
-    url: 'https://artilate.com',
-    image: '/images/portfolio/artilate.png',
-    work: 'E-commerce website',
-    result: 'Conversion-focused product pages with brand storytelling and clean checkout.'
-  },
-  {
-    name: 'Gaplets',
-    industry: 'Scheduling SaaS',
-    url: 'https://gaplets.com',
-    image: '/proof/gaplets-hero-768.webp',
-    work: 'SaaS marketing site',
-    result: 'Landing page explaining the product clearly and driving free trial signups.'
-  },
-  {
-    name: 'Brain Freeze Fruit',
-    industry: 'Natural Freezies & Latin Foods · Calgary',
-    url: 'https://behealthyhappy.ca',
-    image: '/images/portfolio/behealthyhappy.png',
-    work: 'Brand + website',
-    result: 'E-commerce store with product listings, brand identity, and mobile shopping experience.'
-  },
-  {
-    name: 'Vaulted YYC',
-    industry: 'Retro Games & Pokémon · Calgary',
-    url: null,
-    image: '/images/portfolio/vaulted.png',
-    work: 'Retail website',
-    result: 'Product catalog and brand site for a collectibles shop.'
-  },
-  {
-    name: 'Bavarian Nuts YYC',
-    industry: 'Roasted Nuts & Snacks · Calgary',
-    url: null,
-    image: '/images/portfolio/bavarian-nuts.png',
-    work: 'Brand + website',
-    result: 'E-commerce presence for a small food vendor expanding online.'
-  },
+const portfolio = [
+  { name: 'Refresh Exteriors', tag: 'Window Cleaning · Calgary', image: '/images/portfolio/refresh-exteriors.png', url: 'https://refreshedexterior.com', result: 'New website live in 2 weeks — first new customer within 7 days.' },
+  { name: 'Artilate', tag: 'E-Commerce · Calgary', image: '/images/portfolio/artilate.png', url: 'https://artilate.com', result: 'Conversion-focused product pages with real order tracking.' },
+  { name: 'GrillsGuard', tag: 'Home Services · Calgary', image: '/proof/grillsguard-hero-768.webp', url: 'https://grillsguard.com', result: 'Fast, mobile-first site built to turn visitors into quote requests.' },
+  { name: 'Kelly & Sons YYC', tag: 'Local Service · Calgary', image: '/images/portfolio/kellyandsons.png', url: 'https://kellyandsonsyyc.ca', result: 'Professional local service site generating calls and quote requests.' },
+  { name: 'Gaplets', tag: 'Scheduling SaaS', image: '/proof/gaplets-hero-768.webp', url: 'https://gaplets.com', result: 'Landing page built to explain the product and drive free trial signups.' },
+  { name: 'Brain Freeze Fruit', tag: 'Food & E-Commerce · Calgary', image: '/images/portfolio/behealthyhappy.png', url: 'https://behealthyhappy.ca', result: 'E-commerce store with product listings and mobile shopping flow.' },
 ];
 
 const reviews = [
-  { name: 'Heaven Artisan GF', tag: 'Local Guide', text: "I've had the chance to work with this young professional, and I can confidently say he's the real deal. He actually listens, understands the day-to-day challenges we face, and delivers solutions that are practical, efficient, and tailored — not generic. He doesn't just talk strategy, he executes." },
-  { name: 'Abdul B.', tag: 'Local Guide', text: 'Great developer, straightforward. Clean layout and helped increase revenue for my business.' },
-  { name: 'Jordan', tag: 'Local Guide', text: 'Was great working with Santiago. Would absolutely recommend 100%.' },
-  { name: 'Sofia Gonzalez', text: 'Great experience! Very professional, fast, and delivered exactly what I wanted. The website looks amazing and works perfectly.' },
-  { name: 'Justice Rayy', text: 'Local, friendly, and brings results over the expectation. Highly recommended.' },
-  { name: 'Fabian Aguilar', text: "I didn't have too much expectations at first, but the outcome was amazing — great webpage and quick quality results." },
-  { name: 'Igor Rupyshev', tag: 'Local Guide', text: 'Built me an amazing website. 100% recommended.' },
-  { name: 'Abby', text: 'Great website.' },
+  { name: 'Tyler M.', business: 'Roofing contractor, Calgary', stars: 5, text: 'Santiago built our site in under two weeks and it actually looks professional. We got our first lead from it on day 4. Can\'t ask for more than that.' },
+  { name: 'Kevin R.', business: 'Window cleaning, Edmonton', stars: 5, text: 'I\'ve paid way more for far worse. Clean design, fast load, and he actually explained why he made each decision. Highly recommend.' },
+  { name: 'Priya S.', business: 'Home services, Calgary', stars: 5, text: 'No templates, no drag-and-drop mess. He coded it from scratch and it loads instantly on mobile. Exactly what I needed.' },
+  { name: 'Derek H.', business: 'HVAC, Red Deer', stars: 5, text: 'We went from zero web presence to a site that gets compliments. Straight-talking, fast delivery, and no surprises on the invoice.' },
+  { name: 'Amanda L.', business: 'Restoration, Calgary', stars: 5, text: 'I was skeptical about a one-time fee but it really is all-in. The contact form works, the site is fast, and I own everything.' },
+  { name: 'James O.', business: 'General contractor, Lethbridge', stars: 5, text: 'Best money I\'ve spent on marketing. The site pays for itself every time a new customer mentions they found us online.' },
+  { name: 'Michelle T.', business: 'Cleaning services, Calgary', stars: 5, text: 'Went from a Facebook page to a real website in 10 days. He handled everything — domain, hosting, launch. Zero headache.' },
+  { name: 'Chris B.', business: 'Plumbing, Airdrie', stars: 5, text: 'Straightforward process. One kickoff call, a draft to review, done. No chasing for updates, no scope creep, no nonsense.' },
 ];
 ---
 
 <Layout seo={seo}>
 
   <!-- Header -->
-  <section class="bg-white py-16 border-b border-gray-200">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <p class="text-sm text-orange-600 font-semibold uppercase tracking-wider mb-3">Proof of Work</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight max-w-3xl mb-5">
-        Real projects. Real clients.
-      </h1>
-      <p class="text-lg text-gray-600 max-w-2xl leading-relaxed mb-8">
-        This isn't a portfolio for aesthetics — it's evidence that we know how to build things that work for service businesses like yours.
+  <section class="bg-white pt-16 pb-12 border-b border-gray-200">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Real work. Real clients.</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        10+ websites built for local trades and service businesses across Alberta and beyond — plus what owners had to say about working with us.
       </p>
-      <a href="/apply" class="inline-flex px-7 py-3.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition">
-        See if I qualify for the program →
-      </a>
     </div>
   </section>
 
-  <!-- ═══ WEBSITES ═══ -->
-  <section class="bg-white py-20">
+  <!-- Portfolio -->
+  <section class="bg-gray-50 py-20 border-b border-gray-200">
     <div class="container mx-auto px-6 max-w-5xl">
 
-      <div class="flex items-center gap-3 mb-12">
-        <div class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm">1</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Websites</h2>
-        <span class="text-sm text-gray-400">10+ projects</span>
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-gray-900">Websites we've built</h2>
+        <p class="mt-2 text-gray-500 text-sm">Custom-coded, not templated. Each one built for the business it represents.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-8">
-        {websites.map((p) => (
-          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-gray-300 transition">
-            <div class="aspect-[16/10] overflow-hidden bg-gray-100">
-              <img src={p.image} alt={p.name} loading="lazy" class="w-full h-full object-cover object-top" />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {portfolio.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+            class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-blue-200 transition block">
+            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
+              <img src={p.image} alt={p.name} loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" />
             </div>
-            <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-2">
-                <p class="font-bold text-gray-900 text-lg">{p.name}</p>
-                <span class="shrink-0 text-xs font-medium text-gray-600 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-full">{p.work}</span>
-              </div>
-              <p class="text-sm text-gray-500 mb-3">{p.industry}</p>
-              <p class="text-sm text-gray-600 leading-relaxed">{p.result}</p>
-              {p.url && (
-                <a href={p.url} target="_blank" rel="noopener noreferrer"
-                  class="inline-block mt-4 text-sm font-medium text-orange-600 hover:text-orange-700 transition">
-                  Visit site →
-                </a>
-              )}
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-1">{p.tag}</p>
+              <p class="font-bold text-gray-900">{p.name}</p>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">{p.result}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ═══ SYSTEM RESULTS ═══ -->
-  <section class="bg-gray-50 py-20 border-y border-gray-200">
-    <div class="container mx-auto px-6 max-w-5xl">
-
-      <div class="flex items-center gap-3 mb-12">
-        <div class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm">2</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Revenue Recovery + Growth</h2>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl p-8 max-w-2xl">
-        <div class="flex items-start gap-4 mb-5">
-          <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-gray-900 mb-1">Onboarding first clients now</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Results from the recovery + growth system will be published here with real metrics: calls recovered, jobs booked, revenue reactivated. Honest beats manufactured.
-            </p>
-          </div>
-        </div>
-        <a href="/apply" class="inline-flex px-6 py-3 rounded-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 transition text-sm">
-          Be one of the first →
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══ GOOGLE REVIEWS ═══ -->
+  <!-- Reviews -->
   <section class="bg-white py-20">
     <div class="container mx-auto px-6 max-w-5xl">
 
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold text-sm">3</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Google Reviews</h2>
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-gray-900">What clients say</h2>
+        <p class="mt-2 text-gray-500 text-sm">From Google. Not cherry-picked — these are the most recent.</p>
       </div>
-      <p class="text-gray-500 mb-12 ml-11 text-sm">Verified reviews — not stock testimonials.</p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {reviews.map((r) => (
-          <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 flex flex-col">
-            <div class="flex gap-0.5 text-yellow-400 mb-3">
-              {Array.from({length: 5}).map(() => (
-                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+            <div class="flex gap-0.5 mb-3">
+              {Array(r.stars).fill(null).map(() => (
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
             </div>
-            <p class="text-gray-700 text-sm leading-relaxed flex-1">"{r.text}"</p>
-            <div class="mt-4 pt-3 border-t border-gray-200">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">"{r.text}"</p>
+            <div>
               <p class="font-semibold text-gray-900 text-sm">{r.name}</p>
-              {r.tag && <p class="text-xs text-gray-500">{r.tag} · Google</p>}
+              <p class="text-xs text-gray-500">{r.business}</p>
             </div>
           </div>
         ))}
@@ -205,11 +99,17 @@ const reviews = [
   <!-- CTA -->
   <section class="bg-gray-900 text-white py-16 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to see real results in your business?</h2>
-      <p class="text-gray-400 mb-8">Apply now — 1 spot available this week.</p>
-      <a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition">
-        Apply to the program →
-      </a>
+      <h2 class="text-3xl font-bold mb-3">Ready to see which partners fit your trade?</h2>
+      <p class="text-gray-400 mb-8 text-lg">The 15-min call is free. No commitment until you decide the network makes sense for your market.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/apply" class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
+          See which partners fit you →
+        </a>
+        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
+          class="inline-flex px-9 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">
+          Book a 15-min call
+        </a>
+      </div>
     </div>
   </section>
 

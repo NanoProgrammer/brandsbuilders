@@ -2,184 +2,132 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Apply — Revenue Recovery + Growth Program | BrandsBuilders',
-  description: 'Apply for the Revenue Recovery + Growth Program. $2,500/mo. No setup fee. No contract. Guaranteed: more in booked jobs than you pay us in 30 days — or we work free until we deliver.',
+  title: 'Apply — Referral Network Builder | BrandsBuilders',
+  description: 'Tell us about your business. We\'ll map which partner types fit your niche and explain what the network looks like before you commit to anything.',
   canonical: 'https://brandsbuilders.ca/apply',
+  noindex: false,
 };
 ---
 
 <Layout seo={seo}>
 
-<script>
-function gtag_report_conversion() {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', { send_to: 'AW-17710658719/wq67CJeHgskbEJ_pjP1B' });
-  }
-  return true;
-}
-</script>
+  <section class="bg-white pt-16 pb-20">
+    <div class="container mx-auto px-6 max-w-3xl">
 
-<section class="bg-white py-14">
-  <div class="container mx-auto px-6 max-w-5xl grid lg:grid-cols-2 gap-14 items-start">
-
-    <!-- Left: copy -->
-    <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-semibold mb-6">
-        <span class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></span>
-        1 spot available this week
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-        Apply to the growth program.
-      </h1>
-
-      <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-        We take 1 new client per week to install the system properly. Fill out the form — we'll review and respond within 24 hours on whether there's a fit.
-      </p>
-
-      <div class="mt-8 space-y-3">
-        {[
-          'Phase 1: missed-call recovery + reactivation — first jobs in 2 weeks',
-          'Phase 2: ads, CRO, and monthly growth system',
-          '$2,500/mo — no setup fee, no long-term contract',
-          'Real-time dashboard with every lead and its value',
-          'My personal number — response under 24h',
-        ].map(item => (
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span class="text-gray-700 text-sm">{item}</span>
-          </div>
-        ))}
-      </div>
-
-      <!-- Guarantee callout -->
-      <div class="mt-10 bg-gray-900 text-white rounded-xl p-6">
-        <p class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">The guarantee</p>
-        <p class="text-sm text-gray-200 leading-relaxed">
-          If in 30 days we don't generate more in booked jobs than you paid us — we work the next month free until it's delivered. Everything visible in your dashboard. No fine print.
+      <div class="mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-semibold mb-5">
+          <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
+          Takes 3 minutes
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          See which partners fit you
+        </h1>
+        <p class="text-gray-600 text-lg leading-relaxed max-w-xl">
+          Fill this out and we'll map your referral ecosystem — which partner types already see your ideal client and how many referrals a mature network produces in your niche.
         </p>
       </div>
 
-      <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Prefer to talk first?</p>
-        <p class="text-sm text-gray-600 mb-3">30-minute call. No pitch, no pressure.</p>
-        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
-          class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-sm">
-          Book a call →
-        </a>
-      </div>
-    </div>
-
-    <!-- Right: form -->
-    <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-      <div class="bg-gray-900 text-white px-6 py-5">
-        <p class="font-bold text-lg">Application form</p>
-        <p class="text-sm text-gray-400 mt-1">We review and respond within 24 hours.</p>
-      </div>
       <form
-        name="growth-program-apply"
+        name="referral-network-apply"
         method="POST"
-        action="/thank-you"
         data-netlify="true"
         netlify-honeypot="bot-field"
-        class="p-6 space-y-4"
+        action="/thank-you"
+        class="space-y-6"
       >
-        <input type="hidden" name="form-name" value="growth-program-apply" />
-        <input type="hidden" name="service" value="revenue-recovery-growth" />
-        <p class="hidden"><input name="bot-field" /></p>
+        <input type="hidden" name="form-name" value="referral-network-apply" />
+        <input type="hidden" name="service" value="referral-network-builder" />
+        <p class="hidden">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
 
-        <div class="grid sm:grid-cols-2 gap-4">
-          <input name="name" required placeholder="Your name"
-            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
-          <input name="business" required placeholder="Business name"
-            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1.5">Your name</label>
+            <input id="name" name="name" type="text" required placeholder="John Smith"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+          </div>
+          <div>
+            <label for="business" class="block text-sm font-semibold text-gray-700 mb-1.5">Business name</label>
+            <input id="business" name="business" type="text" required placeholder="Smith Roofing Ltd."
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+          </div>
         </div>
 
-        <input name="email" type="email" required placeholder="Email"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+            <input id="email" name="email" type="email" required placeholder="john@smithroofing.ca"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="403-555-0100"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+          </div>
+        </div>
 
-        <input name="phone" type="tel" required placeholder="Business phone"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+        <div>
+          <label for="industry" class="block text-sm font-semibold text-gray-700 mb-1.5">Your trade</label>
+          <select id="industry" name="industry" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition bg-white">
+            <option value="" disabled selected>Select your trade</option>
+            <option value="hvac">HVAC</option>
+            <option value="roofing">Roofing</option>
+            <option value="restoration">Restoration (water / fire / mold)</option>
+            <option value="other">Other trades</option>
+          </select>
+        </div>
 
-        <select name="industry" required
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Industry *</option>
-          <option>Plumbing</option>
-          <option>HVAC</option>
-          <option>Roofing</option>
-          <option>Electrical</option>
-          <option>Landscaping</option>
-          <option>House Cleaning</option>
-          <option>Pest Control</option>
-          <option>Auto Repair</option>
-          <option>Dentist / Dental Office</option>
-          <option>Chiropractor</option>
-          <option>Other</option>
-        </select>
+        <div>
+          <label for="revenue" class="block text-sm font-semibold text-gray-700 mb-1.5">Annual revenue (approx.)</label>
+          <select id="revenue" name="revenue" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition bg-white">
+            <option value="" disabled selected>Select a range</option>
+            <option value="under-500k">Under $500k</option>
+            <option value="500k-1m">$500k – $1M</option>
+            <option value="1m-3m">$1M – $3M</option>
+            <option value="3m-plus">$3M+</option>
+          </select>
+        </div>
 
-        <select name="revenue" required
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Annual revenue *</option>
-          <option value="under-500k">Under $500k</option>
-          <option value="500k-1m">$500k – $1M</option>
-          <option value="1m-2m">$1M – $2M</option>
-          <option value="2m-3m">$2M – $3M</option>
-          <option value="over-3m">Over $3M</option>
-        </select>
+        <div>
+          <label for="location" class="block text-sm font-semibold text-gray-700 mb-1.5">City / service area</label>
+          <input id="location" name="location" type="text" required placeholder="Calgary, AB"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+        </div>
 
-        <select name="location"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">City / Province</option>
-          <option>Calgary, AB</option>
-          <option>Edmonton, AB</option>
-          <option>Red Deer, AB</option>
-          <option>Lethbridge, AB</option>
-          <option>Vancouver, BC</option>
-          <option>Surrey, BC</option>
-          <option>Kelowna, BC</option>
-          <option>Burnaby, BC</option>
-          <option>Other city in Canada</option>
-        </select>
+        <div>
+          <label for="referrals" class="block text-sm font-semibold text-gray-700 mb-1.5">Do you currently get referrals from other businesses? How?</label>
+          <textarea id="referrals" name="referrals" rows="3" placeholder="e.g. A plumber sends us water damage jobs occasionally. Nothing systematic."
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition resize-none"></textarea>
+        </div>
 
-        <textarea name="challenge" rows="3" placeholder="What's your biggest growth challenge right now? (optional)"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm resize-none"></textarea>
+        <div>
+          <label for="challenge" class="block text-sm font-semibold text-gray-700 mb-1.5">Biggest lead gen challenge right now</label>
+          <textarea id="challenge" name="challenge" rows="3" placeholder="e.g. Spending $4k/mo on Google Ads and the quality is inconsistent."
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition resize-none"></textarea>
+        </div>
 
         <button
           type="submit"
-          onclick="gtag_report_conversion()"
-          class="w-full px-6 py-4 rounded-lg font-bold text-white bg-gray-900 hover:bg-gray-800 transition text-base"
-        >
-          Submit application →
+          id="apply-submit"
+          class="w-full py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-base">
+          Submit →
         </button>
-        <p class="text-xs text-gray-400 text-center">We respond within 24 hours · Only 1 spot this week</p>
+
+        <p class="text-xs text-gray-400 text-center">We review every application and respond within 1 business day.</p>
       </form>
-    </div>
 
-  </div>
-</section>
-
-<!-- Trust row -->
-<section class="bg-gray-50 py-12 border-y border-gray-200">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <div class="grid sm:grid-cols-4 gap-6 text-center">
-      <div>
-        <div class="text-2xl font-bold text-gray-900">$2,500</div>
-        <div class="text-sm text-gray-500 mt-1">/mo · everything included</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-orange-600">2 weeks</div>
-        <div class="text-sm text-gray-500 mt-1">first recovered jobs booked</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-gray-900">30 days</div>
-        <div class="text-sm text-gray-500 mt-1">guarantee or we work free</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-gray-900">&lt; 24h</div>
-        <div class="text-sm text-gray-500 mt-1">we respond to your application</div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 </Layout>
+
+<script>
+  document.getElementById('apply-submit')?.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', { send_to: 'AW-17710658719' });
+    }
+  });
+</script>
