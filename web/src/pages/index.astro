@@ -138,24 +138,22 @@ const seo = {
         <p class="mt-3 text-gray-600 text-lg">One referral partner, done right, is worth more than most ad campaigns.</p>
       </div>
       <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-        <div class="grid grid-cols-3 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider px-6 py-3">
+        <div class="grid grid-cols-2 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider px-6 py-3">
           <span>Partners active</span>
-          <span class="text-center">Jobs / year</span>
-          <span class="text-right">vs. ads at $500/job CAC</span>
+          <span class="text-right">Jobs / year</span>
         </div>
         {[
-          { partners: '1 partner', jobs: '~24 jobs/yr', savings: '~$12k saved' },
-          { partners: '2 partners', jobs: '~48 jobs/yr', savings: '~$24k saved' },
-          { partners: '4 partners', jobs: '~70+ jobs/yr', savings: '~$35k+ saved' },
+          { partners: '1 partner', jobs: '~24 jobs/yr' },
+          { partners: '2 partners', jobs: '~48 jobs/yr' },
+          { partners: '4 partners', jobs: '~70+ jobs/yr' },
         ].map((row, i) => (
-          <div class={`grid grid-cols-3 px-6 py-4 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-t border-gray-100`}>
+          <div class={`grid grid-cols-2 px-6 py-4 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-t border-gray-100`}>
             <span class="font-semibold text-gray-900">{row.partners}</span>
-            <span class="text-center text-gray-700">{row.jobs}</span>
-            <span class="text-right font-bold text-green-600">{row.savings}</span>
+            <span class="text-right text-gray-700">{row.jobs}</span>
           </div>
         ))}
         <div class="px-6 py-4 bg-orange-50 border-t border-orange-200">
-          <p class="text-xs text-orange-800 leading-relaxed">Referred jobs close easier and at higher margins — so the actual ROI is higher than the ad savings alone.</p>
+          <p class="text-xs text-orange-800 leading-relaxed">Referred jobs close easier and at higher margins — and they cost nothing to acquire.</p>
         </div>
       </div>
     </div>

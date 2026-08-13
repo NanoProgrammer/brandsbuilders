@@ -44,7 +44,7 @@ const seo = {
         <input type="hidden" name="form-name" value="referral-network-apply" />
         <input type="hidden" name="service" value="referral-network-builder" />
         <input name="bot-field" />
-        <input name="industry" /><input name="revenue" /><input name="location" />
+        <input name="industry" /><input name="location" />
         <input name="name" /><input name="email" /><input name="phone" /><input name="business" />
         <input name="referrals" /><input name="challenge" />
       </form>
@@ -70,19 +70,6 @@ const seo = {
                   ))}
                 </div>
                 <input type="hidden" id="f-industry" name="industry" />
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Annual revenue (approx.)</label>
-                <div class="grid grid-cols-2 gap-3" id="revenue-buttons">
-                  {[['Under $500k', 'under-500k'], ['$500k – $1M', '500k-1m'], ['$1M – $3M', '1m-3m'], ['$3M+', '3m-plus']].map(([label, val]) => (
-                    <button type="button" data-val={val}
-                      class="revenue-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
-                      {label}
-                    </button>
-                  ))}
-                </div>
-                <input type="hidden" id="f-revenue" name="revenue" />
               </div>
 
               <div>
@@ -121,7 +108,7 @@ const seo = {
 
               <div>
                 <label for="f-challenge" class="block text-sm font-semibold text-gray-700 mb-1.5">Biggest lead gen challenge right now</label>
-                <textarea id="f-challenge" rows="3" placeholder="e.g. Spending $4k/mo on Google Ads and the quality is inconsistent."
+                <textarea id="f-challenge" rows="3" placeholder="e.g. Ads are inconsistent, word-of-mouth is random, can't predict next month's jobs."
                   class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition resize-none"></textarea>
               </div>
             </div>
@@ -221,10 +208,8 @@ const seo = {
 
   function validateStep1() {
     const industry = (document.getElementById('f-industry') as HTMLInputElement)?.value;
-    const revenue = (document.getElementById('f-revenue') as HTMLInputElement)?.value;
     const location = (document.getElementById('f-location') as HTMLInputElement)?.value.trim();
     if (!industry) { alert('Please select your trade.'); return false; }
-    if (!revenue) { alert('Please select your revenue range.'); return false; }
     if (!location) { alert('Please enter your city / service area.'); return false; }
     return true;
   }
@@ -252,7 +237,6 @@ const seo = {
   }
 
   initToggleGroup('.industry-btn', 'f-industry');
-  initToggleGroup('.revenue-btn', 'f-revenue');
   initToggleGroup('.ref-status-btn', 'f-referrals');
 
   // Submit
@@ -279,7 +263,6 @@ const seo = {
       'form-name': 'referral-network-apply',
       service: 'referral-network-builder',
       industry: (document.getElementById('f-industry') as HTMLInputElement)?.value || '',
-      revenue: (document.getElementById('f-revenue') as HTMLInputElement)?.value || '',
       location: (document.getElementById('f-location') as HTMLInputElement)?.value || '',
       referrals: (document.getElementById('f-referrals') as HTMLInputElement)?.value || '',
       challenge: (document.getElementById('f-challenge') as HTMLTextAreaElement)?.value || '',

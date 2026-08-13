@@ -57,8 +57,8 @@ const seo = {
         </div>
         <div class="space-y-4">
           {[
-            { label: 'Cold ad lead', stats: ['Doesn\'t know you', 'Price-shops 4 competitors', 'Closes at 20–30%', 'CAC: $400–700'] },
-            { label: 'Referred lead', stats: ['Trusts you before calling', 'Rarely gets a second quote', 'Closes at 60–80%', 'CAC: ~$0'] },
+            { label: 'Cold ad lead', stats: ['Doesn\'t know you', 'Price-shops 4 competitors', 'Closes at 20–30%', 'High cost per job'] },
+            { label: 'Referred lead', stats: ['Trusts you before calling', 'Rarely gets a second quote', 'Closes at 60–80%', 'Near-zero cost per job'] },
           ].map((col, i) => (
             <div class={`rounded-xl p-5 ${i === 0 ? 'bg-gray-800 border border-gray-700' : 'bg-orange-900/40 border border-orange-700/50'}`}>
               <p class={`text-xs font-bold uppercase tracking-wider mb-3 ${i === 0 ? 'text-gray-400' : 'text-orange-400'}`}>{col.label}</p>
@@ -149,7 +149,7 @@ const seo = {
             <h3 class="font-bold text-gray-900 mb-3">Who fits this</h3>
             <ul class="space-y-2">
               {[
-                'HVAC companies doing $1M–$3M/year',
+                'HVAC companies with an active service area',
                 'Roofing contractors with an active service area',
                 'Restoration businesses (water, fire, mold)',
                 'You have a good reputation and close the jobs you get',
@@ -163,7 +163,7 @@ const seo = {
             </ul>
           </div>
           <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 text-sm text-orange-900 leading-relaxed">
-            <strong>The fee is discussed on the 15-min call.</strong> It's anchored to your niche's real cost-per-acquisition. If 60 referred jobs/year at your average ticket is a good trade, the math will be obvious.
+            <strong>The fee is discussed on the 15-min call.</strong> We'll walk you through what the network looks like for your niche and whether it makes sense before you decide anything.
           </div>
         </div>
       </div>
@@ -174,36 +174,23 @@ const seo = {
   <section class="bg-white py-16">
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="text-center mb-10">
-        <h2 class="text-2xl font-bold text-gray-900">The math on a mature network</h2>
+        <h2 class="text-2xl font-bold text-gray-900">Volume from a mature network</h2>
         <p class="mt-2 text-gray-500 text-sm">Each partner sends ~12–15 referrals per year. Four partners = ~60 jobs.</p>
       </div>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
-          <thead class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
-            <tr>
-              <th class="px-5 py-3 text-left">Active partners</th>
-              <th class="px-5 py-3 text-right">Referred jobs / year</th>
-              <th class="px-5 py-3 text-right">At $8,000 avg ticket</th>
-              <th class="px-5 py-3 text-right">vs. paying $500 CAC / job</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-100">
-            {[
-              ['1 partner', '12–15 jobs', '~$112,000', 'saves $6,000–7,500/yr'],
-              ['2 partners', '25–30 jobs', '~$224,000', 'saves $12,500–15,000/yr'],
-              ['4 partners', '~60 jobs', '~$480,000', 'saves $30,000/yr'],
-            ].map(([partners, jobs, revenue, saved]) => (
-              <tr class="hover:bg-gray-50 transition">
-                <td class="px-5 py-4 font-semibold text-gray-900">{partners}</td>
-                <td class="px-5 py-4 text-right text-gray-700">{jobs}</td>
-                <td class="px-5 py-4 text-right text-gray-700">{revenue}</td>
-                <td class="px-5 py-4 text-right text-green-700 font-medium">{saved}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {[
+          { partners: '1 partner', jobs: '12–15 jobs/yr', note: 'One great relationship.' },
+          { partners: '2 partners', jobs: '25–30 jobs/yr', note: 'A real channel.' },
+          { partners: '4 partners', jobs: '~60 jobs/yr', note: 'A mature network.' },
+        ].map(row => (
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">{row.partners}</p>
+            <p class="text-2xl font-bold text-gray-900 mb-1">{row.jobs}</p>
+            <p class="text-sm text-gray-500">{row.note}</p>
+          </div>
+        ))}
       </div>
-      <p class="text-xs text-gray-400 mt-3 text-center">Numbers based on industry averages. Your results depend on your market and close rate.</p>
+      <p class="text-xs text-gray-400 mt-4 text-center">Based on industry averages. Results depend on your market and follow-through.</p>
     </div>
   </section>
 
