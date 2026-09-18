@@ -2,184 +2,310 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Apply — Revenue Recovery + Growth Program | BrandsBuilders',
-  description: 'Apply for the Revenue Recovery + Growth Program. $2,500/mo. No setup fee. No contract. Guaranteed: more in booked jobs than you pay us in 30 days — or we work free until we deliver.',
+  title: 'Apply — Referral Network Builder | BrandsBuilders',
+  description: 'Tell us about your business. We\'ll map which partner types fit your niche and explain what the network looks like before you commit to anything.',
   canonical: 'https://brandsbuilders.ca/apply',
+  noindex: false,
 };
 ---
 
 <Layout seo={seo}>
 
-<script>
-function gtag_report_conversion() {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', { send_to: 'AW-17710658719/wq67CJeHgskbEJ_pjP1B' });
-  }
-  return true;
-}
-</script>
+  <section class="bg-white pt-16 pb-20">
+    <div class="container mx-auto px-6 max-w-2xl">
 
-<section class="bg-white py-14">
-  <div class="container mx-auto px-6 max-w-5xl grid lg:grid-cols-2 gap-14 items-start">
-
-    <!-- Left: copy -->
-    <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-semibold mb-6">
-        <span class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></span>
-        1 spot available this week
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-        Apply to the growth program.
-      </h1>
-
-      <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-        We take 1 new client per week to install the system properly. Fill out the form — we'll review and respond within 24 hours on whether there's a fit.
-      </p>
-
-      <div class="mt-8 space-y-3">
-        {[
-          'Phase 1: missed-call recovery + reactivation — first jobs in 2 weeks',
-          'Phase 2: ads, CRO, and monthly growth system',
-          '$2,500/mo — no setup fee, no long-term contract',
-          'Real-time dashboard with every lead and its value',
-          'My personal number — response under 24h',
-        ].map(item => (
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span class="text-gray-700 text-sm">{item}</span>
-          </div>
-        ))}
-      </div>
-
-      <!-- Guarantee callout -->
-      <div class="mt-10 bg-gray-900 text-white rounded-xl p-6">
-        <p class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">The guarantee</p>
-        <p class="text-sm text-gray-200 leading-relaxed">
-          If in 30 days we don't generate more in booked jobs than you paid us — we work the next month free until it's delivered. Everything visible in your dashboard. No fine print.
+      <!-- Header -->
+      <div class="mb-10 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-semibold mb-5">
+          <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
+          Takes 2 minutes
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          See which partners fit you
+        </h1>
+        <p class="text-gray-500 text-base leading-relaxed max-w-md mx-auto">
+          Answer 3 quick questions and we'll map your referral ecosystem before you get on a call.
         </p>
       </div>
 
-      <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Prefer to talk first?</p>
-        <p class="text-sm text-gray-600 mb-3">30-minute call. No pitch, no pressure.</p>
-        <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
-          class="inline-flex px-5 py-2.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-sm">
-          Book a call →
-        </a>
+      <!-- Progress bar -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between text-xs font-semibold text-gray-400 mb-2">
+          <span id="step-label">Step 1 of 3</span>
+          <span id="step-pct">33%</span>
+        </div>
+        <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-gray-900 rounded-full transition-all duration-300" style="width: 33%"></div>
+        </div>
       </div>
-    </div>
 
-    <!-- Right: form -->
-    <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-      <div class="bg-gray-900 text-white px-6 py-5">
-        <p class="font-bold text-lg">Application form</p>
-        <p class="text-sm text-gray-400 mt-1">We review and respond within 24 hours.</p>
-      </div>
-      <form
-        name="growth-program-apply"
-        method="POST"
-        action="/thank-you"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="p-6 space-y-4"
-      >
-        <input type="hidden" name="form-name" value="growth-program-apply" />
-        <input type="hidden" name="service" value="revenue-recovery-growth" />
-        <p class="hidden"><input name="bot-field" /></p>
+      <!-- Netlify needs the full form in the DOM at build time to detect fields -->
+      <form name="referral-network-apply" data-netlify="true" netlify-honeypot="bot-field" class="hidden" aria-hidden="true">
+        <input type="hidden" name="form-name" value="referral-network-apply" />
+        <input type="hidden" name="service" value="referral-network-builder" />
+        <input name="bot-field" />
+        <input name="industry" /><input name="revenue" /><input name="location" />
+        <input name="name" /><input name="email" /><input name="phone" /><input name="business" />
+        <input name="referrals" /><input name="challenge" />
+      </form>
 
-        <div class="grid sm:grid-cols-2 gap-4">
-          <input name="name" required placeholder="Your name"
-            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
-          <input name="business" required placeholder="Business name"
-            class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+      <!-- Multi-step UI form (JS-driven, submits via fetch) -->
+      <div id="multistep-form" class="space-y-0">
+
+        <!-- ── Step 1: Your Business ── -->
+        <div id="step-1" class="step-panel space-y-5">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Tell us about your business</h2>
+            <p class="text-sm text-gray-500 mb-6">We'll use this to map partner types specific to your trade and market.</p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your trade</label>
+                <div class="grid grid-cols-2 gap-3" id="industry-buttons">
+                  {['HVAC', 'Roofing', 'Restoration', 'Other'].map((t, i) => (
+                    <button type="button" data-val={t.toLowerCase().replace(' ', '-')}
+                      class="industry-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
+                      {t}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" id="f-industry" name="industry" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Annual revenue (approx.)</label>
+                <div class="grid grid-cols-2 gap-3" id="revenue-buttons">
+                  {[['Under $500k', 'under-500k'], ['$500k – $1M', '500k-1m'], ['$1M – $3M', '1m-3m'], ['$3M+', '3m-plus']].map(([label, val]) => (
+                    <button type="button" data-val={val}
+                      class="revenue-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" id="f-revenue" name="revenue" />
+              </div>
+
+              <div>
+                <label for="f-location" class="block text-sm font-semibold text-gray-700 mb-1.5">City / service area</label>
+                <input id="f-location" type="text" placeholder="Calgary, AB"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+              </div>
+            </div>
+          </div>
+
+          <button type="button" onclick="goStep(2)"
+            class="w-full py-4 rounded-xl font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-base">
+            Continue →
+          </button>
         </div>
 
-        <input name="email" type="email" required placeholder="Email"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+        <!-- ── Step 2: Your Situation ── -->
+        <div id="step-2" class="step-panel hidden space-y-5">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Your current lead situation</h2>
+            <p class="text-sm text-gray-500 mb-6">This helps us understand what the network needs to do for you.</p>
 
-        <input name="phone" type="tel" required placeholder="Business phone"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm" />
+            <div class="space-y-5">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Do you currently get referrals from other businesses?</label>
+                <div class="grid grid-cols-3 gap-3" id="referral-status-buttons">
+                  {[['None at all', 'none'], ['A few, random', 'some'], ['Yes, systematically', 'yes']].map(([label, val]) => (
+                    <button type="button" data-val={val}
+                      class="ref-status-btn border-2 border-gray-200 rounded-xl px-3 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-center leading-tight">
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" id="f-referrals" name="referrals" />
+              </div>
 
-        <select name="industry" required
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Industry *</option>
-          <option>Plumbing</option>
-          <option>HVAC</option>
-          <option>Roofing</option>
-          <option>Electrical</option>
-          <option>Landscaping</option>
-          <option>House Cleaning</option>
-          <option>Pest Control</option>
-          <option>Auto Repair</option>
-          <option>Dentist / Dental Office</option>
-          <option>Chiropractor</option>
-          <option>Other</option>
-        </select>
+              <div>
+                <label for="f-challenge" class="block text-sm font-semibold text-gray-700 mb-1.5">Biggest lead gen challenge right now</label>
+                <textarea id="f-challenge" rows="3" placeholder="e.g. Spending $4k/mo on Google Ads and the quality is inconsistent."
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition resize-none"></textarea>
+              </div>
+            </div>
+          </div>
 
-        <select name="revenue" required
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">Annual revenue *</option>
-          <option value="under-500k">Under $500k</option>
-          <option value="500k-1m">$500k – $1M</option>
-          <option value="1m-2m">$1M – $2M</option>
-          <option value="2m-3m">$2M – $3M</option>
-          <option value="over-3m">Over $3M</option>
-        </select>
+          <div class="flex gap-3">
+            <button type="button" onclick="goStep(1)"
+              class="px-6 py-4 rounded-xl font-semibold text-gray-600 border border-gray-300 hover:border-gray-400 transition text-base">
+              ← Back
+            </button>
+            <button type="button" onclick="goStep(3)"
+              class="flex-1 py-4 rounded-xl font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-base">
+              Continue →
+            </button>
+          </div>
+        </div>
 
-        <select name="location"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm">
-          <option value="">City / Province</option>
-          <option>Calgary, AB</option>
-          <option>Edmonton, AB</option>
-          <option>Red Deer, AB</option>
-          <option>Lethbridge, AB</option>
-          <option>Vancouver, BC</option>
-          <option>Surrey, BC</option>
-          <option>Kelowna, BC</option>
-          <option>Burnaby, BC</option>
-          <option>Other city in Canada</option>
-        </select>
+        <!-- ── Step 3: Contact ── -->
+        <div id="step-3" class="step-panel hidden space-y-5">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Where should we send your partner map?</h2>
+            <p class="text-sm text-gray-500 mb-6">We'll review your answers and reply within 1 business day.</p>
 
-        <textarea name="challenge" rows="3" placeholder="What's your biggest growth challenge right now? (optional)"
-          class="w-full bg-white border border-gray-300 px-4 py-3 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800 text-sm resize-none"></textarea>
+            <div class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-name" class="block text-sm font-semibold text-gray-700 mb-1.5">Your name</label>
+                  <input id="f-name" type="text" placeholder="John Smith"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+                </div>
+                <div>
+                  <label for="f-business" class="block text-sm font-semibold text-gray-700 mb-1.5">Business name</label>
+                  <input id="f-business" type="text" placeholder="Smith Roofing Ltd."
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+                </div>
+              </div>
 
-        <button
-          type="submit"
-          onclick="gtag_report_conversion()"
-          class="w-full px-6 py-4 rounded-lg font-bold text-white bg-gray-900 hover:bg-gray-800 transition text-base"
-        >
-          Submit application →
-        </button>
-        <p class="text-xs text-gray-400 text-center">We respond within 24 hours · Only 1 spot this week</p>
-      </form>
+              <div>
+                <label for="f-email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+                <input id="f-email" type="email" placeholder="john@smithroofing.ca"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+              </div>
+
+              <div>
+                <label for="f-phone" class="block text-sm font-semibold text-gray-700 mb-1.5">Phone <span class="text-gray-400 font-normal">(optional)</span></label>
+                <input id="f-phone" type="tel" placeholder="403-555-0100"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
+              </div>
+            </div>
+          </div>
+
+          <div id="form-error" class="hidden text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3"></div>
+
+          <div class="flex gap-3">
+            <button type="button" onclick="goStep(2)"
+              class="px-6 py-4 rounded-xl font-semibold text-gray-600 border border-gray-300 hover:border-gray-400 transition text-base">
+              ← Back
+            </button>
+            <button type="button" id="apply-submit"
+              class="flex-1 py-4 rounded-xl font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-base">
+              Submit →
+            </button>
+          </div>
+
+          <p class="text-xs text-gray-400 text-center">We review every application and respond within 1 business day.</p>
+        </div>
+
+      </div>
     </div>
-
-  </div>
-</section>
-
-<!-- Trust row -->
-<section class="bg-gray-50 py-12 border-y border-gray-200">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <div class="grid sm:grid-cols-4 gap-6 text-center">
-      <div>
-        <div class="text-2xl font-bold text-gray-900">$2,500</div>
-        <div class="text-sm text-gray-500 mt-1">/mo · everything included</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-orange-600">2 weeks</div>
-        <div class="text-sm text-gray-500 mt-1">first recovered jobs booked</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-gray-900">30 days</div>
-        <div class="text-sm text-gray-500 mt-1">guarantee or we work free</div>
-      </div>
-      <div>
-        <div class="text-2xl font-bold text-gray-900">&lt; 24h</div>
-        <div class="text-sm text-gray-500 mt-1">we respond to your application</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 </Layout>
+
+<script>
+  const steps = [1, 2, 3];
+  const stepLabels = ['Step 1 of 3 — Your Business', 'Step 2 of 3 — Your Situation', 'Step 3 of 3 — Contact'];
+  const stepPcts = ['33%', '66%', '100%'];
+
+  function goStep(n: number) {
+    if (n === 2 && !validateStep1()) return;
+    if (n === 3 && !validateStep2()) return;
+
+    steps.forEach(i => {
+      const el = document.getElementById(`step-${i}`);
+      if (el) el.classList.toggle('hidden', i !== n);
+    });
+
+    const label = document.getElementById('step-label');
+    const pct = document.getElementById('step-pct');
+    const bar = document.getElementById('progress-bar');
+    if (label) label.textContent = stepLabels[n - 1];
+    if (pct) pct.textContent = stepPcts[n - 1];
+    if (bar) bar.style.width = stepPcts[n - 1];
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep1() {
+    const industry = (document.getElementById('f-industry') as HTMLInputElement)?.value;
+    const revenue = (document.getElementById('f-revenue') as HTMLInputElement)?.value;
+    const location = (document.getElementById('f-location') as HTMLInputElement)?.value.trim();
+    if (!industry) { alert('Please select your trade.'); return false; }
+    if (!revenue) { alert('Please select your revenue range.'); return false; }
+    if (!location) { alert('Please enter your city / service area.'); return false; }
+    return true;
+  }
+
+  function validateStep2() {
+    const referrals = (document.getElementById('f-referrals') as HTMLInputElement)?.value;
+    if (!referrals) { alert('Please select your current referral situation.'); return false; }
+    return true;
+  }
+
+  // Toggle button selection style
+  function initToggleGroup(selector: string, hiddenId: string) {
+    document.querySelectorAll(selector).forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll(selector).forEach(b => {
+          b.classList.remove('border-gray-900', 'text-gray-900', 'bg-white');
+          b.classList.add('border-gray-200', 'text-gray-700');
+        });
+        btn.classList.remove('border-gray-200', 'text-gray-700');
+        btn.classList.add('border-gray-900', 'text-gray-900', 'bg-white');
+        const input = document.getElementById(hiddenId) as HTMLInputElement;
+        if (input) input.value = (btn as HTMLElement).dataset.val || '';
+      });
+    });
+  }
+
+  initToggleGroup('.industry-btn', 'f-industry');
+  initToggleGroup('.revenue-btn', 'f-revenue');
+  initToggleGroup('.ref-status-btn', 'f-referrals');
+
+  // Submit
+  document.getElementById('apply-submit')?.addEventListener('click', async () => {
+    const name = (document.getElementById('f-name') as HTMLInputElement)?.value.trim();
+    const email = (document.getElementById('f-email') as HTMLInputElement)?.value.trim();
+    const errEl = document.getElementById('form-error');
+
+    if (!name || !email) {
+      if (errEl) { errEl.textContent = 'Please enter your name and email.'; errEl.classList.remove('hidden'); }
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (errEl) { errEl.textContent = 'Please enter a valid email address.'; errEl.classList.remove('hidden'); }
+      return;
+    }
+    if (errEl) errEl.classList.add('hidden');
+
+    const submitBtn = document.getElementById('apply-submit') as HTMLButtonElement;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    const body = new URLSearchParams({
+      'form-name': 'referral-network-apply',
+      service: 'referral-network-builder',
+      industry: (document.getElementById('f-industry') as HTMLInputElement)?.value || '',
+      revenue: (document.getElementById('f-revenue') as HTMLInputElement)?.value || '',
+      location: (document.getElementById('f-location') as HTMLInputElement)?.value || '',
+      referrals: (document.getElementById('f-referrals') as HTMLInputElement)?.value || '',
+      challenge: (document.getElementById('f-challenge') as HTMLTextAreaElement)?.value || '',
+      name,
+      email,
+      business: (document.getElementById('f-business') as HTMLInputElement)?.value || '',
+      phone: (document.getElementById('f-phone') as HTMLInputElement)?.value || '',
+    });
+
+    try {
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
+      if (res.ok || res.redirected) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', { send_to: 'AW-17710658719' });
+        }
+        window.location.href = '/thank-you';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch {
+      submitBtn.textContent = 'Submit →';
+      submitBtn.disabled = false;
+      if (errEl) { errEl.textContent = 'Something went wrong. Please try again or email us directly.'; errEl.classList.remove('hidden'); }
+    }
+  });
+
+  // Make goStep accessible globally for onclick attributes
+  (window as any).goStep = goStep;
+</script>
