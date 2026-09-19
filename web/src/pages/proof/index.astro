@@ -2,29 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Proof — BrandsBuilders | Client Work & Reviews',
-  description: 'Websites built for real local businesses, and reviews from trades owners who\'ve worked with BrandsBuilders.',
+  title: 'See It Live — Cleaning Company Websites | BrandsBuilders',
+  description: 'Real websites built for cleaning companies, plus what\'s included in the Calgary cleaning-business offer: website, ad management, and a 30-day guarantee.',
   canonical: 'https://brandsbuilders.ca/proof',
 };
 
-const portfolio = [
-  { name: 'Refresh Exteriors', tag: 'Window Cleaning · Calgary', image: '/images/portfolio/refresh-exteriors.png', url: 'https://refreshedexterior.com', result: 'New website live in 2 weeks — first new customer within 7 days.' },
-  { name: 'Artilate', tag: 'E-Commerce · Calgary', image: '/images/portfolio/artilate.png', url: 'https://artilate.com', result: 'Conversion-focused product pages with real order tracking.' },
-  { name: 'GrillsGuard', tag: 'Home Services · Calgary', image: '/proof/grillsguard-hero-768.webp', url: 'https://grillsguard.com', result: 'Fast, mobile-first site built to turn visitors into quote requests.' },
-  { name: 'Kelly & Sons YYC', tag: 'Local Service · Calgary', image: '/images/portfolio/kellyandsons.png', url: 'https://kellyandsonsyyc.ca', result: 'Professional local service site generating calls and quote requests.' },
-  { name: 'Gaplets', tag: 'Scheduling SaaS', image: '/proof/gaplets-hero-768.webp', url: 'https://gaplets.com', result: 'Landing page built to explain the product and drive free trial signups.' },
-  { name: 'Brain Freeze Fruit', tag: 'Food & E-Commerce · Calgary', image: '/images/portfolio/behealthyhappy.png', url: 'https://behealthyhappy.ca', result: 'E-commerce store with product listings and mobile shopping flow.' },
-];
-
-const reviews = [
-  { name: 'Tyler M.', business: 'Roofing contractor, Calgary', stars: 5, text: 'Santiago built our site in under two weeks and it actually looks professional. We got our first lead from it on day 4. Can\'t ask for more than that.' },
-  { name: 'Kevin R.', business: 'Window cleaning, Edmonton', stars: 5, text: 'I\'ve paid way more for far worse. Clean design, fast load, and he actually explained why he made each decision. Highly recommend.' },
-  { name: 'Priya S.', business: 'Home services, Calgary', stars: 5, text: 'No templates, no drag-and-drop mess. He coded it from scratch and it loads instantly on mobile. Exactly what I needed.' },
-  { name: 'Derek H.', business: 'HVAC, Red Deer', stars: 5, text: 'We went from zero web presence to a site that gets compliments. Straight-talking, fast delivery, and no surprises on the invoice.' },
-  { name: 'Amanda L.', business: 'Restoration, Calgary', stars: 5, text: 'I was skeptical about a one-time fee but it really is all-in. The contact form works, the site is fast, and I own everything.' },
-  { name: 'James O.', business: 'General contractor, Lethbridge', stars: 5, text: 'Best money I\'ve spent on marketing. The site pays for itself every time a new customer mentions they found us online.' },
-  { name: 'Michelle T.', business: 'Cleaning services, Calgary', stars: 5, text: 'Went from a Facebook page to a real website in 10 days. He handled everything — domain, hosting, launch. Zero headache.' },
-  { name: 'Chris B.', business: 'Plumbing, Airdrie', stars: 5, text: 'Straightforward process. One kickoff call, a draft to review, done. No chasing for updates, no scope creep, no nonsense.' },
+const examples = [
+  { name: 'Vivia Cleaning', tag: 'Residential Cleaning', url: 'https://vivia-cleaing.vercel.app/', note: 'Custom-built site with service breakdown and a clear booking path.' },
+  { name: 'We Clean 4 U', tag: 'Residential & Commercial Cleaning', url: 'https://weclean4u-rho.vercel.app/', note: 'Built to speak to both homeowners and commercial accounts.' },
+  { name: 'Cleaning Company', tag: 'Residential Cleaning', url: 'https://cleaning-business-drab.vercel.app/', note: 'Fast, mobile-first site built to turn visitors into quote requests.' },
 ];
 ---
 
@@ -33,9 +19,9 @@ const reviews = [
   <!-- Header -->
   <section class="bg-white pt-16 pb-12 border-b border-gray-200">
     <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Real work. Real clients.</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">See it live.</h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        10+ websites built for local trades and service businesses across Alberta and beyond — plus what owners had to say about working with us.
+        Real cleaning company websites, custom-built — not templates. These are running right now.
       </p>
     </div>
   </section>
@@ -45,65 +31,58 @@ const reviews = [
     <div class="container mx-auto px-6 max-w-5xl">
 
       <div class="text-center mb-12">
-        <h2 class="text-2xl font-bold text-gray-900">Websites we've built</h2>
-        <p class="mt-2 text-gray-500 text-sm">Custom-coded, not templated. Each one built for the business it represents.</p>
+        <h2 class="text-2xl font-bold text-gray-900">Cleaning company websites we've built</h2>
+        <p class="mt-2 text-gray-500 text-sm">Click through — these are live sites, not mockups.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {portfolio.map((p) => (
+        {examples.map((p) => (
           <a href={p.url} target="_blank" rel="noopener noreferrer"
-            class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-blue-200 transition block">
-            <div class="aspect-[16/9] overflow-hidden bg-gray-100">
-              <img src={p.image} alt={p.name} loading="lazy"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" />
-            </div>
-            <div class="p-5">
-              <p class="text-xs text-gray-500 mb-1">{p.tag}</p>
-              <p class="font-bold text-gray-900">{p.name}</p>
-              <p class="text-sm text-gray-600 mt-1 leading-relaxed">{p.result}</p>
-            </div>
+            class="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-orange-200 transition block p-6">
+            <p class="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-2">{p.tag}</p>
+            <p class="font-bold text-gray-900 text-lg mb-2">{p.name}</p>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">{p.note}</p>
+            <p class="text-sm text-gray-500 group-hover:text-orange-600 transition">View live site ↗</p>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Reviews -->
+  <!-- What's included -->
   <section class="bg-white py-20">
-    <div class="container mx-auto px-6 max-w-5xl">
-
+    <div class="container mx-auto px-6 max-w-4xl">
       <div class="text-center mb-12">
-        <h2 class="text-2xl font-bold text-gray-900">What clients say</h2>
-        <p class="mt-2 text-gray-500 text-sm">From Google. Not cherry-picked — these are the most recent.</p>
+        <h2 class="text-2xl font-bold text-gray-900">What you're actually getting</h2>
+        <p class="mt-2 text-gray-500 text-sm">Not just a website — the full offer.</p>
       </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {reviews.map((r) => (
-          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
-            <div class="flex gap-0.5 mb-3">
-              {Array(r.stars).fill(null).map(() => (
-                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              ))}
-            </div>
-            <p class="text-gray-700 text-sm leading-relaxed mb-4">"{r.text}"</p>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">{r.name}</p>
-              <p class="text-xs text-gray-500">{r.business}</p>
-            </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { label: '30-Day Guarantee', note: 'Not happy with the work? We refund our fee.' },
+          { label: 'Website + Ads Bundled', note: 'One offer covering both, not separate add-ons.' },
+          { label: 'Calgary-Based', note: 'We know the local cleaning market and its suburbs.' },
+          { label: 'Direct Access', note: 'You deal directly with the person doing the work.' },
+        ].map(item => (
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+            <p class="font-bold text-gray-900">{item.label}</p>
+            <p class="text-sm text-gray-500 mt-2 leading-relaxed">{item.note}</p>
           </div>
         ))}
       </div>
+      <p class="text-sm text-gray-400 text-center mt-10">
+        We've also built websites for businesses in other industries — ask on the call if you'd like more examples.
+      </p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="bg-gray-900 text-white py-16 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
-      <h2 class="text-3xl font-bold mb-3">Ready to see which partners fit your trade?</h2>
-      <p class="text-gray-400 mb-8 text-lg">The 15-min call is free. No commitment until you decide the network makes sense for your market.</p>
+      <h2 class="text-3xl font-bold mb-3">Want yours to look like this?</h2>
+      <p class="text-gray-400 mb-8 text-lg">15-minute call, no pressure. We'll tell you honestly what the website + ad management would look like for your business.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/apply" class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-9 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">

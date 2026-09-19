@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Apply — Referral Network Builder | BrandsBuilders',
-  description: 'Tell us about your business. We\'ll map which partner types fit your niche and explain what the network looks like before you commit to anything.',
+  title: 'Apply — Website + Ad Management for Cleaning Companies | BrandsBuilders',
+  description: 'Tell us about your cleaning company. We\'ll map out what the website + ad management offer looks like for you before you commit to anything.',
   canonical: 'https://brandsbuilders.ca/apply',
   noindex: false,
 };
@@ -21,10 +21,10 @@ const seo = {
           Takes 2 minutes
         </div>
         <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-          See which partners fit you
+          Get my free growth plan
         </h1>
         <p class="text-gray-500 text-base leading-relaxed max-w-md mx-auto">
-          Answer 3 quick questions and we'll map your referral ecosystem before you get on a call.
+          Answer 3 quick questions and we'll map out the website + ad management offer for your cleaning company before you get on a call.
         </p>
       </div>
 
@@ -40,13 +40,13 @@ const seo = {
       </div>
 
       <!-- Netlify needs the full form in the DOM at build time to detect fields -->
-      <form name="referral-network-apply" data-netlify="true" netlify-honeypot="bot-field" class="hidden" aria-hidden="true">
-        <input type="hidden" name="form-name" value="referral-network-apply" />
-        <input type="hidden" name="service" value="referral-network-builder" />
+      <form name="cleaning-business-apply" data-netlify="true" netlify-honeypot="bot-field" class="hidden" aria-hidden="true">
+        <input type="hidden" name="form-name" value="cleaning-business-apply" />
+        <input type="hidden" name="service" value="cleaning-website-ads" />
         <input name="bot-field" />
-        <input name="industry" /><input name="revenue" /><input name="location" />
+        <input name="focus" /><input name="situation" /><input name="location" />
         <input name="name" /><input name="email" /><input name="phone" /><input name="business" />
-        <input name="referrals" /><input name="challenge" />
+        <input name="ad-experience" /><input name="challenge" />
       </form>
 
       <!-- Multi-step UI form (JS-driven, submits via fetch) -->
@@ -55,34 +55,38 @@ const seo = {
         <!-- ── Step 1: Your Business ── -->
         <div id="step-1" class="step-panel space-y-5">
           <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
-            <h2 class="text-lg font-bold text-gray-900 mb-1">Tell us about your business</h2>
-            <p class="text-sm text-gray-500 mb-6">We'll use this to map partner types specific to your trade and market.</p>
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Tell us about your cleaning company</h2>
+            <p class="text-sm text-gray-500 mb-6">We'll use this to build the website and target the ads around the right clients.</p>
 
             <div class="space-y-4">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your trade</label>
-                <div class="grid grid-cols-2 gap-3" id="industry-buttons">
-                  {['HVAC', 'Roofing', 'Restoration', 'Other'].map((t, i) => (
-                    <button type="button" data-val={t.toLowerCase().replace(' ', '-')}
-                      class="industry-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
-                      {t}
-                    </button>
-                  ))}
-                </div>
-                <input type="hidden" id="f-industry" name="industry" />
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Annual revenue (approx.)</label>
-                <div class="grid grid-cols-2 gap-3" id="revenue-buttons">
-                  {[['Under $500k', 'under-500k'], ['$500k – $1M', '500k-1m'], ['$1M – $3M', '1m-3m'], ['$3M+', '3m-plus']].map(([label, val]) => (
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">What clients do you want to focus on?</label>
+                <div class="grid grid-cols-3 gap-3" id="focus-buttons">
+                  {[['Residential', 'residential'], ['Commercial', 'commercial'], ['Both', 'both']].map(([label, val]) => (
                     <button type="button" data-val={val}
-                      class="revenue-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
+                      class="focus-btn border-2 border-gray-200 rounded-xl px-3 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-center">
                       {label}
                     </button>
                   ))}
                 </div>
-                <input type="hidden" id="f-revenue" name="revenue" />
+                <input type="hidden" id="f-focus" name="focus" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Current situation</label>
+                <div class="grid grid-cols-1 gap-3" id="situation-buttons">
+                  {[
+                    ['No website at all', 'no-website'],
+                    ['I have a website, but no ads running', 'website-no-ads'],
+                    ['I have a website and some ads running', 'website-and-ads'],
+                  ].map(([label, val]) => (
+                    <button type="button" data-val={val}
+                      class="situation-btn border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-left">
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" id="f-situation" name="situation" />
               </div>
 
               <div>
@@ -102,26 +106,26 @@ const seo = {
         <!-- ── Step 2: Your Situation ── -->
         <div id="step-2" class="step-panel hidden space-y-5">
           <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
-            <h2 class="text-lg font-bold text-gray-900 mb-1">Your current lead situation</h2>
-            <p class="text-sm text-gray-500 mb-6">This helps us understand what the network needs to do for you.</p>
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Your ad experience</h2>
+            <p class="text-sm text-gray-500 mb-6">This helps us understand what the ad management needs to do for you.</p>
 
             <div class="space-y-5">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Do you currently get referrals from other businesses?</label>
-                <div class="grid grid-cols-3 gap-3" id="referral-status-buttons">
-                  {[['None at all', 'none'], ['A few, random', 'some'], ['Yes, systematically', 'yes']].map(([label, val]) => (
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Have you run Google or Meta ads before?</label>
+                <div class="grid grid-cols-3 gap-3" id="ad-experience-buttons">
+                  {[['Never', 'never'], ['Tried it myself', 'tried-myself'], ['Yes, with help', 'yes-with-help']].map(([label, val]) => (
                     <button type="button" data-val={val}
-                      class="ref-status-btn border-2 border-gray-200 rounded-xl px-3 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-center leading-tight">
+                      class="ad-exp-btn border-2 border-gray-200 rounded-xl px-3 py-3 text-sm font-semibold text-gray-700 hover:border-gray-900 hover:text-gray-900 transition text-center leading-tight">
                       {label}
                     </button>
                   ))}
                 </div>
-                <input type="hidden" id="f-referrals" name="referrals" />
+                <input type="hidden" id="f-ad-experience" name="ad-experience" />
               </div>
 
               <div>
-                <label for="f-challenge" class="block text-sm font-semibold text-gray-700 mb-1.5">Biggest lead gen challenge right now</label>
-                <textarea id="f-challenge" rows="3" placeholder="e.g. Spending $4k/mo on Google Ads and the quality is inconsistent."
+                <label for="f-challenge" class="block text-sm font-semibold text-gray-700 mb-1.5">Biggest challenge getting new clients right now</label>
+                <textarea id="f-challenge" rows="3" placeholder="e.g. Everything comes from word of mouth, nothing from search or ads."
                   class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition resize-none"></textarea>
               </div>
             </div>
@@ -142,7 +146,7 @@ const seo = {
         <!-- ── Step 3: Contact ── -->
         <div id="step-3" class="step-panel hidden space-y-5">
           <div class="bg-gray-50 border border-gray-200 rounded-2xl p-7">
-            <h2 class="text-lg font-bold text-gray-900 mb-1">Where should we send your partner map?</h2>
+            <h2 class="text-lg font-bold text-gray-900 mb-1">Where should we send your growth plan?</h2>
             <p class="text-sm text-gray-500 mb-6">We'll review your answers and reply within 1 business day.</p>
 
             <div class="space-y-4">
@@ -154,14 +158,14 @@ const seo = {
                 </div>
                 <div>
                   <label for="f-business" class="block text-sm font-semibold text-gray-700 mb-1.5">Business name</label>
-                  <input id="f-business" type="text" placeholder="Smith Roofing Ltd."
+                  <input id="f-business" type="text" placeholder="Smith Cleaning Co."
                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
                 </div>
               </div>
 
               <div>
                 <label for="f-email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
-                <input id="f-email" type="email" placeholder="john@smithroofing.ca"
+                <input id="f-email" type="email" placeholder="john@smithcleaning.ca"
                   class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition" />
               </div>
 
@@ -197,7 +201,7 @@ const seo = {
 
 <script>
   const steps = [1, 2, 3];
-  const stepLabels = ['Step 1 of 3 — Your Business', 'Step 2 of 3 — Your Situation', 'Step 3 of 3 — Contact'];
+  const stepLabels = ['Step 1 of 3 — Your Business', 'Step 2 of 3 — Your Ad Experience', 'Step 3 of 3 — Contact'];
   const stepPcts = ['33%', '66%', '100%'];
 
   function goStep(n: number) {
@@ -220,18 +224,18 @@ const seo = {
   }
 
   function validateStep1() {
-    const industry = (document.getElementById('f-industry') as HTMLInputElement)?.value;
-    const revenue = (document.getElementById('f-revenue') as HTMLInputElement)?.value;
+    const focus = (document.getElementById('f-focus') as HTMLInputElement)?.value;
+    const situation = (document.getElementById('f-situation') as HTMLInputElement)?.value;
     const location = (document.getElementById('f-location') as HTMLInputElement)?.value.trim();
-    if (!industry) { alert('Please select your trade.'); return false; }
-    if (!revenue) { alert('Please select your revenue range.'); return false; }
+    if (!focus) { alert('Please select residential, commercial, or both.'); return false; }
+    if (!situation) { alert('Please select your current situation.'); return false; }
     if (!location) { alert('Please enter your city / service area.'); return false; }
     return true;
   }
 
   function validateStep2() {
-    const referrals = (document.getElementById('f-referrals') as HTMLInputElement)?.value;
-    if (!referrals) { alert('Please select your current referral situation.'); return false; }
+    const adExperience = (document.getElementById('f-ad-experience') as HTMLInputElement)?.value;
+    if (!adExperience) { alert('Please select your ad experience.'); return false; }
     return true;
   }
 
@@ -251,9 +255,9 @@ const seo = {
     });
   }
 
-  initToggleGroup('.industry-btn', 'f-industry');
-  initToggleGroup('.revenue-btn', 'f-revenue');
-  initToggleGroup('.ref-status-btn', 'f-referrals');
+  initToggleGroup('.focus-btn', 'f-focus');
+  initToggleGroup('.situation-btn', 'f-situation');
+  initToggleGroup('.ad-exp-btn', 'f-ad-experience');
 
   // Submit
   document.getElementById('apply-submit')?.addEventListener('click', async () => {
@@ -276,12 +280,12 @@ const seo = {
     submitBtn.disabled = true;
 
     const body = new URLSearchParams({
-      'form-name': 'referral-network-apply',
-      service: 'referral-network-builder',
-      industry: (document.getElementById('f-industry') as HTMLInputElement)?.value || '',
-      revenue: (document.getElementById('f-revenue') as HTMLInputElement)?.value || '',
+      'form-name': 'cleaning-business-apply',
+      service: 'cleaning-website-ads',
+      focus: (document.getElementById('f-focus') as HTMLInputElement)?.value || '',
+      situation: (document.getElementById('f-situation') as HTMLInputElement)?.value || '',
       location: (document.getElementById('f-location') as HTMLInputElement)?.value || '',
-      referrals: (document.getElementById('f-referrals') as HTMLInputElement)?.value || '',
+      'ad-experience': (document.getElementById('f-ad-experience') as HTMLInputElement)?.value || '',
       challenge: (document.getElementById('f-challenge') as HTMLTextAreaElement)?.value || '',
       name,
       email,
