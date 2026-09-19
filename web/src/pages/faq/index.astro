@@ -3,40 +3,44 @@ import Layout from '../../layouts/Layout.astro';
 
 const faqs = [
   {
-    q: 'What exactly is a referral network?',
-    a: 'It\'s a group of 4–5 non-competing businesses that already stand in front of your ideal client right before they need your service. For HVAC, that\'s plumbers and home inspectors. For roofing, it\'s adjusters and realtors. For restoration, it\'s plumbers and property managers. We identify those businesses in your market, recruit them as partners, and set up the relationship so they send jobs to you instead of whoever they happen to know.',
+    q: 'What exactly is included in the offer?',
+    a: 'A custom-built website for your cleaning company, plus Google and/or Meta ad campaigns that we create, edit, and run on your behalf — targeted at residential clients, commercial contracts, or both, depending on what you want to grow.',
   },
   {
-    q: 'How is this different from just asking for referrals?',
-    a: '"Ask for referrals" is random. What we build is a system with specific partner types, a value exchange, and a follow-up cadence that keeps you top of mind. A plumber who agreed to send restoration leads your way and gets a $150 gift card per booked job is going to keep thinking of you — consistently. That\'s the difference between a one-off favour and a channel.',
+    q: 'What does the 30-day guarantee cover?',
+    a: 'If you\'re not happy with the website or how we\'re managing the ads within the first 30 days, we refund what you paid us for that work. Ad spend you\'ve already paid directly to Google or Meta is separate and isn\'t part of the refund — that money goes straight to the ad platforms, not to us.',
   },
   {
-    q: 'How many jobs can I realistically expect?',
-    a: 'A partner who actively refers sends 12–15 jobs per year on average. With 4 active partners, that\'s ~60 referred jobs annually from a mature network. Early on, one or two partners will be more active than others. By month 6, you\'ll have a clear picture of your top performers.',
+    q: 'I don\'t have a website at all. Can I still start?',
+    a: 'Yes — that\'s exactly who this is built for. We build the site from scratch as part of the offer. You don\'t need anything in place beforehand.',
   },
   {
-    q: 'How long until I see the first referral?',
-    a: 'The fastest partners send a job within 2–4 weeks of onboarding. Most networks see their first few referrals within 60 days. A fully mature network — where partners think of you by default — takes 3–6 months.',
+    q: 'Can I focus only on residential or only on commercial clients?',
+    a: 'Yes. Tell us which side of the business you want to grow — residential, commercial, or both — and we build the site and target the ad campaigns around that.',
   },
   {
-    q: 'Do I have to maintain this myself after you\'re done?',
-    a: 'Yes — and that\'s intentional. We hand you a simple system: a monthly touchpoint template, a reciprocity structure, and a follow-up cadence you can run in under an hour a month. You own the network. No dependency on us, no retainer.',
+    q: 'Who pays for the ad spend?',
+    a: 'You do, directly to Google or Meta — that\'s separate from what you pay us for building the site and managing the campaigns. We\'ll walk through realistic ad budgets on the call.',
   },
   {
-    q: 'What if a partner stops sending referrals?',
-    a: 'Relationships drift. We build in a reactivation protocol for exactly this — a sequence you run every quarter to re-engage dormant partners. And since you own the relationships, you can always recruit a replacement using the same outreach approach we hand you.',
+    q: 'How long until the website and ads are live?',
+    a: 'Timelines depend on your specific setup, but we move quickly — we\'ll give you a clear timeline on the 15-minute call once we understand your business.',
+  },
+  {
+    q: 'Do I own the website?',
+    a: 'Yes, the site is built for you and is yours.',
+  },
+  {
+    q: 'What areas do you serve?',
+    a: 'Calgary is the core, plus the surrounding area — Airdrie, Cochrane, Chestermere, and Okotoks.',
   },
   {
     q: 'What does it cost?',
-    a: 'The fee is discussed on the 15-min call. It\'s anchored to your niche\'s real cost-per-acquisition. If your current CAC is $400–700 per job and a mature network produces 60 referred jobs a year at ~$0 CAC, the math is simple. We price it as a fraction of one year\'s CAC savings.',
+    a: 'It depends on your current setup and how much ad spend you want behind the campaigns. Book the 15-minute call and we\'ll walk you through it before you commit to anything.',
   },
   {
-    q: 'What if I\'m not in HVAC, Roofing, or Restoration?',
-    a: 'The referral network model works in any trade where another business already sees your client before the job is posted. Book a 15-min call and we\'ll tell you honestly whether your niche fits the model.',
-  },
-  {
-    q: 'Do you build websites too?',
-    a: 'Yes. Custom-coded websites for trades businesses starting at $900 one-time. No monthly fees, no templates, live in 1–2 weeks. It\'s a separate service from the referral network — ask about it on the call if relevant.',
+    q: 'What if my cleaning company is outside Calgary and area?',
+    a: 'Book the call anyway and we\'ll tell you honestly whether it makes sense for your market.',
   },
 ];
 
@@ -51,8 +55,8 @@ const faqSchema = {
 };
 
 const seo = {
-  title: 'FAQ — Referral Network Builder | BrandsBuilders',
-  description: 'Common questions about how the BrandsBuilders referral network works, what results to expect, and whether it fits your trade.',
+  title: 'FAQ — Website & Ad Management for Cleaning Companies | BrandsBuilders',
+  description: 'Common questions about the Calgary cleaning-business offer: website, ad management, the 30-day guarantee, and pricing.',
   canonical: 'https://brandsbuilders.ca/faq',
   schema: faqSchema,
 };
@@ -88,10 +92,10 @@ const seo = {
   <section class="bg-gray-900 text-white py-16 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
       <h2 class="text-3xl font-bold mb-3">Still have a question?</h2>
-      <p class="text-gray-400 mb-8 text-lg">Book a 15-min call. We'll answer everything and tell you honestly if the model fits your niche.</p>
+      <p class="text-gray-400 mb-8 text-lg">Book a 15-min call. We'll answer everything and tell you honestly if this fits your business.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/apply" class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-9 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">

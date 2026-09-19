@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 const seo = {
-  title: 'Referral Network Builder for Trades — BrandsBuilders',
-  description: 'We identify the 4–5 businesses already seeing your ideal client and build the relationships that send them to you. One-time fee. No retainer. ~60 referred jobs/year.',
+  title: 'Website + Ad Management for Cleaning Companies — Calgary | BrandsBuilders',
+  description: 'A website built for your cleaning company, plus Google & Meta ads we run on your behalf to bring in residential or commercial clients. Backed by a 30-day guarantee.',
   canonical: 'https://brandsbuilders.ca/services',
 };
 ---
@@ -15,24 +15,24 @@ const seo = {
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-xs font-semibold mb-6">
         <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
-        For HVAC · Roofing · Restoration
+        For Cleaning Companies · Calgary &amp; Area
       </div>
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-5">
-        Referral Network Builder
+        Website + Ad Management, Bundled
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl leading-relaxed mb-6">
-        We find the 4–5 businesses already standing in front of your ideal client — before the job is even posted — and we build the relationships that make them send it to you instead of your competitor.
+        We build your cleaning company a real website, then run the Google &amp; Meta ad campaigns on your behalf — pointed at residential clients, commercial contracts, or both.
       </p>
       <div class="flex flex-wrap items-center gap-4 mb-6">
         <div class="flex flex-wrap gap-2">
-          <span class="bg-green-50 text-green-700 border border-green-200 text-xs font-semibold px-3 py-1 rounded-full">One-time fee</span>
-          <span class="bg-green-50 text-green-700 border border-green-200 text-xs font-semibold px-3 py-1 rounded-full">No retainer</span>
-          <span class="bg-orange-50 text-orange-700 border border-orange-200 text-xs font-semibold px-3 py-1 rounded-full">~60 jobs/year from a mature network</span>
+          <span class="bg-green-50 text-green-700 border border-green-200 text-xs font-semibold px-3 py-1 rounded-full">30-day guarantee</span>
+          <span class="bg-green-50 text-green-700 border border-green-200 text-xs font-semibold px-3 py-1 rounded-full">Website + ads bundled</span>
+          <span class="bg-orange-50 text-orange-700 border border-orange-200 text-xs font-semibold px-3 py-1 rounded-full">Calgary &amp; surrounding area</span>
         </div>
       </div>
       <div class="flex flex-wrap gap-4">
         <a href="/apply" class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-8 py-3.5 rounded-lg font-semibold text-gray-700 border border-gray-300 hover:border-gray-400 transition">
@@ -49,16 +49,16 @@ const seo = {
         <div>
           <p class="text-orange-400 text-sm font-semibold uppercase tracking-wider mb-3">The real problem</p>
           <h2 class="text-3xl font-bold mb-4 leading-tight">
-            The plumber finishing a water heater job already knows the homeowner needs a restoration company. He just hasn't met you yet.
+            Someone in Calgary is searching for a cleaning company right now. If you don't have a real site and ads running, they're finding someone else.
           </h2>
           <p class="text-gray-400 leading-relaxed">
-            Right now, that plumber is sending the job to whoever he happens to know. It isn't a better company than yours — it's just a more familiar name. That's the entire gap we close.
+            Good reviews and word of mouth only reach people who already know you. New residential and commercial clients start with a search — and if there's nothing there to find, or nothing pointing them to you, the job goes to whoever showed up instead.
           </p>
         </div>
         <div class="space-y-4">
           {[
-            { label: 'Cold ad lead', stats: ['Doesn\'t know you', 'Price-shops 4 competitors', 'Closes at 20–30%', 'CAC: $400–700'] },
-            { label: 'Referred lead', stats: ['Trusts you before calling', 'Rarely gets a second quote', 'Closes at 60–80%', 'CAC: ~$0'] },
+            { label: 'No website, no ads', stats: ['Invisible to new searches', 'Relies entirely on word of mouth', 'No way to target commercial accounts', 'Growth stalls at your current network'] },
+            { label: 'Website + ads running', stats: ['Shows up when someone searches', 'Ads targeted to residential or commercial', 'New client inquiries land directly with you', 'Growth isn\'t capped by who you already know'] },
           ].map((col, i) => (
             <div class={`rounded-xl p-5 ${i === 0 ? 'bg-gray-800 border border-gray-700' : 'bg-orange-900/40 border border-orange-700/50'}`}>
               <p class={`text-xs font-bold uppercase tracking-wider mb-3 ${i === 0 ? 'text-gray-400' : 'text-orange-400'}`}>{col.label}</p>
@@ -81,29 +81,35 @@ const seo = {
   <section class="bg-white py-20">
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How we build your network</h2>
-        <p class="mt-3 text-gray-600 text-lg">Three steps. Delivered once. Maintained by you with the tools we hand you.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How it works</h2>
+        <p class="mt-3 text-gray-600 text-lg">From application to a live website and running ads.</p>
       </div>
 
       <div class="space-y-6">
         {[
           {
             n: '01',
-            title: 'Map your referral ecosystem',
-            body: 'We identify every type of business already in contact with your ideal client at the exact moment they need your service. For restoration that\'s plumbers, adjusters, property managers. For roofing it\'s adjusters, realtors, gutter companies. For HVAC it\'s plumbers, home inspectors, electricians.',
-            note: 'Output: a shortlist of the 4–5 highest-leverage partner types for your market.',
+            title: 'Apply & fit check',
+            body: 'Tell us about your business — residential, commercial, or both — and your current situation (no website, an outdated one, or a site with no ads running). We confirm the offer fits before anything else happens.',
+            note: 'Output: a clear picture of what we\'ll build and target.',
           },
           {
             n: '02',
-            title: 'Recruit and activate your partners',
-            body: 'We reach out to real businesses in your area using proven outreach scripts. We explain the value exchange, handle the first conversation, and set up the referral agreement. By the end, you have 4–5 active partners who have agreed to send jobs your way.',
-            note: 'Output: signed agreements, direct contacts, an active channel.',
+            title: 'We build your website',
+            body: 'A custom-built site for your cleaning company — service pages, service area, and a clear way for someone to request a quote or book. Built to convert a visitor into an inquiry, not just look nice.',
+            note: 'Output: a live website you own.',
           },
           {
             n: '03',
-            title: 'Hand you the tools to keep it running',
-            body: 'A referral network is only as strong as the relationships inside it. We give you a simple system to maintain those relationships without a retainer: a follow-up cadence, a monthly touchpoint template, and a reciprocity structure so your partners keep thinking of you first.',
-            note: 'Output: you own the network. No dependency on us.',
+            title: 'We launch and manage your ads',
+            body: 'We create, edit, and run the Google and/or Meta ad campaigns on your behalf, targeted at residential clients, commercial contracts, or both — whichever you want to grow. Every inquiry routes straight to you.',
+            note: 'Output: ads live, client inquiries coming in.',
+          },
+          {
+            n: '04',
+            title: 'Report and optimize',
+            body: 'We keep managing the campaigns, adjusting targeting and creative based on what\'s actually converting, and keep you posted on how it\'s performing.',
+            note: 'Output: ongoing management, not a one-and-done launch.',
           },
         ].map(step => (
           <div class="flex gap-6 items-start border border-gray-200 rounded-xl p-7 bg-gray-50">
@@ -125,17 +131,17 @@ const seo = {
       <div class="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <h2 class="text-2xl font-bold text-gray-900 mb-2">What you get</h2>
-          <p class="text-gray-500 text-sm mb-6">One-time engagement. Everything included.</p>
+          <p class="text-gray-500 text-sm mb-6">Website + ad management, one bundled offer.</p>
           <ul class="space-y-3">
             {[
-              'Full ecosystem map — every partner type relevant to your niche',
-              'Outreach to real businesses in your market (we make the first contact)',
-              '4–5 active partners recruited and onboarded',
-              'Referral agreements in place before we wrap up',
-              'Follow-up cadence so partners keep thinking of you',
-              'Monthly touchpoint templates you can run yourself',
-              'Reciprocity structure — how to send value back so the network stays active',
-              '30-day check-in after delivery to troubleshoot and adjust',
+              'A custom-built website for your cleaning company',
+              'Service pages built around residential, commercial, or both',
+              'A clear quote-request or booking path for visitors',
+              'Google and/or Meta ad campaigns created and launched for you',
+              'Ongoing ad management — targeting and creative adjusted over time',
+              'Client inquiries routed straight to you',
+              'Direct access to the person doing the work',
+              '30-day guarantee on the work itself',
             ].map(item => (
               <li class="flex items-start gap-3 text-sm text-gray-700">
                 <svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -146,14 +152,13 @@ const seo = {
         </div>
         <div class="space-y-4">
           <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="font-bold text-gray-900 mb-3">Who fits this</h3>
+            <h3 class="font-bold text-gray-900 mb-3">Who this is for</h3>
             <ul class="space-y-2">
               {[
-                'HVAC companies doing $1M–$3M/year',
-                'Roofing contractors with an active service area',
-                'Restoration businesses (water, fire, mold)',
-                'You have a good reputation and close the jobs you get',
-                'You want predictable inbound — without ad dependency',
+                'Cleaning companies in Calgary, Airdrie, Cochrane, Chestermere, or Okotoks',
+                'Residential cleaning, commercial cleaning, or both',
+                'You don\'t have a real website yet, or the one you have isn\'t bringing in new clients',
+                'You want ad campaigns run for you instead of doing it yourself',
               ].map(item => (
                 <li class="text-sm text-gray-700 flex items-start gap-2">
                   <span class="text-orange-500 mt-0.5">✓</span>
@@ -163,58 +168,36 @@ const seo = {
             </ul>
           </div>
           <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 text-sm text-orange-900 leading-relaxed">
-            <strong>The fee is discussed on the 15-min call.</strong> It's anchored to your niche's real cost-per-acquisition. If 60 referred jobs/year at your average ticket is a good trade, the math will be obvious.
+            <strong>The cost is discussed on the 15-min call</strong> — it depends on your current setup and how much ad spend you want behind the campaigns. Ad spend itself is paid directly to Google/Meta and is separate from what you pay us.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Math -->
+  <!-- Guarantee -->
   <section class="bg-white py-16">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl font-bold text-gray-900">The math on a mature network</h2>
-        <p class="mt-2 text-gray-500 text-sm">Each partner sends ~12–15 referrals per year. Four partners = ~60 jobs.</p>
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
+        30-Day Guarantee
       </div>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
-          <thead class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
-            <tr>
-              <th class="px-5 py-3 text-left">Active partners</th>
-              <th class="px-5 py-3 text-right">Referred jobs / year</th>
-              <th class="px-5 py-3 text-right">At $8,000 avg ticket</th>
-              <th class="px-5 py-3 text-right">vs. paying $500 CAC / job</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-100">
-            {[
-              ['1 partner', '12–15 jobs', '~$112,000', 'saves $6,000–7,500/yr'],
-              ['2 partners', '25–30 jobs', '~$224,000', 'saves $12,500–15,000/yr'],
-              ['4 partners', '~60 jobs', '~$480,000', 'saves $30,000/yr'],
-            ].map(([partners, jobs, revenue, saved]) => (
-              <tr class="hover:bg-gray-50 transition">
-                <td class="px-5 py-4 font-semibold text-gray-900">{partners}</td>
-                <td class="px-5 py-4 text-right text-gray-700">{jobs}</td>
-                <td class="px-5 py-4 text-right text-gray-700">{revenue}</td>
-                <td class="px-5 py-4 text-right text-green-700 font-medium">{saved}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="text-xs text-gray-400 mt-3 text-center">Numbers based on industry averages. Your results depend on your market and close rate.</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-5">
+        Not happy in the first 30 days? We refund our work.
+      </h2>
+      <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        That covers what you paid us for the website and the ad management. Ad spend already paid directly to Google or Meta isn't part of the refund — that money goes to the platforms, not to us, and we're upfront about that from the start.
+      </p>
     </div>
   </section>
 
   <!-- Final CTA -->
   <section class="bg-gray-900 text-white py-16 text-center">
     <div class="container mx-auto px-6 max-w-2xl">
-      <h2 class="text-3xl font-bold mb-3">Ready to see which partners are already in your market?</h2>
-      <p class="text-gray-400 mb-8 text-lg">The 15-min call is free. We'll tell you exactly which partner types fit your niche and what the network looks like before you decide anything.</p>
+      <h2 class="text-3xl font-bold mb-3">Ready to see what this looks like for your business?</h2>
+      <p class="text-gray-400 mb-8 text-lg">The 15-min call is free. We'll walk through your current setup and tell you honestly what the website + ad management would look like.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/apply" class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-9 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">

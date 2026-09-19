@@ -2,10 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 
 const seo = {
-  title: 'Referral Network for HVAC, Roofing & Restoration — BrandsBuilders',
-  description: 'Your best customers were never the ones you paid for. We build a referral network of 4–5 businesses that already see your ideal client — so they send them to you instead of your competition. One-time fee. ~60 new referred jobs/year.',
+  title: 'Websites & Ad Management for Cleaning Companies — Calgary | BrandsBuilders',
+  description: 'We build cleaning companies in Calgary a website and run their Google & Meta ads to bring in residential or commercial clients. Not happy in 30 days? We refund our work.',
   canonical: 'https://brandsbuilders.ca',
 };
+
+const examples = [
+  { name: 'Vivia Cleaning', tag: 'Residential Cleaning', url: 'https://vivia-cleaing.vercel.app/' },
+  { name: 'We Clean 4 U', tag: 'Residential & Commercial Cleaning', url: 'https://weclean4u-rho.vercel.app/' },
+  { name: 'Cleaning Company', tag: 'Residential Cleaning', url: 'https://cleaning-business-drab.vercel.app/' },
+];
+
+const areas = ['Calgary', 'Airdrie', 'Cochrane', 'Chestermere', 'Okotoks'];
 ---
 
 <Layout seo={seo}>
@@ -16,26 +24,26 @@ const seo = {
 
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-sm font-semibold mb-8">
         <span class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></span>
-        HVAC · Roofing · Restoration
+        Cleaning Companies · Calgary &amp; Area
       </div>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.08] tracking-tight">
-        Your best customers were never
-        <span class="text-orange-600"> the ones you paid for.</span>
+        We build your cleaning company a website
+        <span class="text-orange-600"> and run the ads that fill it with jobs.</span>
       </h1>
 
       <p class="mt-7 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        The plumbers, adjusters, and property managers around you already see your ideal client at the exact moment they need you. Right now they're sending them to your competition — out of habit.
+        One offer, built specifically for cleaning businesses in Calgary and the surrounding area: a real website, plus Google &amp; Meta ads we create, edit, and run for you — aimed at the residential or commercial clients you actually want.
       </p>
 
       <p class="mt-4 text-xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
-        We build you a referral network of 4–5 of those businesses so they send customers to you instead. Consistently. No ad spend.
+        Not happy with the work in the first 30 days? We refund it. No arguments.
       </p>
 
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/apply"
           class="inline-flex px-9 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition text-lg shadow-sm">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-9 py-4 rounded-lg font-semibold text-gray-700 border border-gray-300 hover:border-gray-400 transition text-lg">
@@ -44,169 +52,130 @@ const seo = {
       </div>
 
       <p class="mt-5 text-sm text-gray-400">
-        One-time fee · No monthly retainer · The network is yours to keep
+        Website + ad management, bundled · 30-day guarantee on our work
       </p>
 
       <!-- stat row -->
       <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
-          <div class="text-3xl font-bold text-gray-900">~60</div>
-          <div class="text-sm text-gray-500 mt-1">referred jobs per year from a mature network</div>
+          <div class="text-3xl font-bold text-gray-900">2-in-1</div>
+          <div class="text-sm text-gray-500 mt-1">website built + ads run for you, one offer</div>
         </div>
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
-          <div class="text-3xl font-bold text-orange-600">$0</div>
-          <div class="text-sm text-gray-500 mt-1">in ad spend required — these partners already see your client</div>
+          <div class="text-3xl font-bold text-orange-600">30 days</div>
+          <div class="text-sm text-gray-500 mt-1">not happy with the work? we refund it</div>
         </div>
         <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-5 text-center">
-          <div class="text-3xl font-bold text-gray-900">4–5</div>
-          <div class="text-sm text-gray-500 mt-1">strategic partners recruited and activated for you</div>
+          <div class="text-3xl font-bold text-gray-900">Calgary</div>
+          <div class="text-sm text-gray-500 mt-1">+ Airdrie, Cochrane, Chestermere, Okotoks</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ═══ THE INSIGHT ═══ -->
-  <section class="bg-gray-900 text-white py-16">
-    <div class="container mx-auto px-6 max-w-3xl text-center">
-      <p class="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-4">The problem with paid ads</p>
-      <h2 class="text-3xl sm:text-4xl font-bold leading-tight mb-6">
-        A cold lead doesn't trust you. A referred lead already does.
-      </h2>
-      <div class="grid sm:grid-cols-2 gap-6 text-left mt-10">
-        <div class="bg-gray-800 rounded-xl p-6">
-          <p class="text-xs font-bold text-red-400 uppercase tracking-wider mb-3">Cold lead from ads</p>
-          <ul class="space-y-2 text-sm text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✕</span> Shops you against 3 other guys</li>
-            <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✕</span> Slower to close, negotiates on price</li>
-            <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✕</span> You pay for every single one, forever</li>
-            <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✕</span> Stops when you stop spending</li>
-          </ul>
-        </div>
-        <div class="bg-gray-800 border border-orange-500/30 rounded-xl p-6">
-          <p class="text-xs font-bold text-green-400 uppercase tracking-wider mb-3">Referred lead from your network</p>
-          <ul class="space-y-2 text-sm text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Trusts you before they call</li>
-            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Closes faster, pays more</li>
-            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Zero ad spend — partners already see your client</li>
-            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Keeps coming in after it's built</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ HOW IT WORKS ═══ -->
-  <section class="bg-white py-20">
+  <!-- ═══ THE OFFER ═══ -->
+  <section id="offer" class="bg-gray-900 text-white py-16">
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">How the referral network works</h2>
-        <p class="mt-3 text-lg text-gray-600">We build it. You run it. The leads keep coming.</p>
+        <p class="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-4">The offer</p>
+        <h2 class="text-3xl sm:text-4xl font-bold leading-tight">
+          Built for one thing: getting your cleaning company more clients.
+        </h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-7">
-          <div class="w-10 h-10 rounded-full bg-gray-900 text-white font-bold flex items-center justify-center text-lg mb-5">1</div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">We map your referral ecosystem</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            We identify which types of businesses in your market already see your ideal client at the moment they need you — before they even know to call someone like you. For roofing it's adjusters. For HVAC it's plumbers. For restoration it's property managers.
+        <div class="bg-gray-800 rounded-xl p-7">
+          <div class="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-lg mb-5">1</div>
+          <h3 class="font-bold text-lg mb-2">We build your website</h3>
+          <p class="text-gray-300 leading-relaxed text-sm">
+            A real, professional site for your cleaning company — not a Facebook page. Built to show homeowners or businesses exactly what you offer and make it easy to book.
           </p>
         </div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-7">
-          <div class="w-10 h-10 rounded-full bg-gray-900 text-white font-bold flex items-center justify-center text-lg mb-5">2</div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">We recruit and activate 4–5 partners</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            We approach, vet, and onboard the specific businesses that make the most sense for your market. We set up the handoff process, the communication, and the incentive structure so the referral actually happens — not just the handshake.
+        <div class="bg-gray-800 rounded-xl p-7">
+          <div class="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-lg mb-5">2</div>
+          <h3 class="font-bold text-lg mb-2">We run your ads</h3>
+          <p class="text-gray-300 leading-relaxed text-sm">
+            We create, edit, and run the Google &amp; Meta ad campaigns on your behalf — targeted at homeowners or businesses in Calgary and the surrounding area actively looking for cleaning services.
           </p>
         </div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-7">
-          <div class="w-10 h-10 rounded-full bg-gray-900 text-white font-bold flex items-center justify-center text-lg mb-5">3</div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">You get the tools to keep it running</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            We hand you a system — the scripts, the check-in cadence, the tracking — so the network stays warm without you chasing it. One good partner sends you 2 customers a month. Four of them is ~70 jobs a year, with zero ad spend.
+        <div class="bg-gray-800 rounded-xl p-7">
+          <div class="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-lg mb-5">3</div>
+          <h3 class="font-bold text-lg mb-2">You choose the focus</h3>
+          <p class="text-gray-300 leading-relaxed text-sm">
+            Residential clients, commercial contracts, or both — we build the site and target the ads around whichever side of the business you want to grow.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THE MATH ═══ -->
-  <section class="bg-gray-50 py-20 border-y border-gray-200">
-    <div class="container mx-auto px-6 max-w-3xl">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">The math</h2>
-        <p class="mt-3 text-gray-600 text-lg">One referral partner, done right, is worth more than most ad campaigns.</p>
+  <!-- ═══ THE GUARANTEE ═══ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-semibold mb-6">
+        30-Day Guarantee
       </div>
-      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-        <div class="grid grid-cols-3 bg-gray-900 text-white text-xs font-bold uppercase tracking-wider px-6 py-3">
-          <span>Partners active</span>
-          <span class="text-center">Jobs / year</span>
-          <span class="text-right">vs. ads at $500/job CAC</span>
-        </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        If you're not happy in the first 30 days, we refund our work.
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        That covers what you paid us for the website and the ad management. Ad spend you've paid directly to Google or Meta is separate — that money goes straight to the platforms, not to us, so it isn't part of the refund. We're upfront about that from day one.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST STRIP ═══ -->
+  <section class="bg-gray-50 py-14 border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="grid sm:grid-cols-4 gap-5 text-center">
         {[
-          { partners: '1 partner', jobs: '~24 jobs/yr', savings: '~$12k saved' },
-          { partners: '2 partners', jobs: '~48 jobs/yr', savings: '~$24k saved' },
-          { partners: '4 partners', jobs: '~70+ jobs/yr', savings: '~$35k+ saved' },
-        ].map((row, i) => (
-          <div class={`grid grid-cols-3 px-6 py-4 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-t border-gray-100`}>
-            <span class="font-semibold text-gray-900">{row.partners}</span>
-            <span class="text-center text-gray-700">{row.jobs}</span>
-            <span class="text-right font-bold text-green-600">{row.savings}</span>
+          { label: '30-Day Guarantee', note: 'Refund on our fee if you\'re not happy' },
+          { label: 'Website + Ads Bundled', note: 'One offer, not a pile of add-ons' },
+          { label: 'Calgary-Based', note: 'We know the local market' },
+          { label: 'Direct Access', note: 'You talk to the person doing the work' },
+        ].map(item => (
+          <div class="bg-white border border-gray-200 rounded-xl px-4 py-5">
+            <p class="font-bold text-gray-900 text-sm">{item.label}</p>
+            <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">{item.note}</p>
           </div>
         ))}
-        <div class="px-6 py-4 bg-orange-50 border-t border-orange-200">
-          <p class="text-xs text-orange-800 leading-relaxed">Referred jobs close easier and at higher margins — so the actual ROI is higher than the ad savings alone.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ WHO FITS ═══ -->
+  <!-- ═══ SEE IT LIVE ═══ -->
   <section class="bg-white py-20">
-    <div class="container mx-auto px-6 max-w-3xl">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-gray-900">Built for high-ticket home service</h2>
-        <p class="mt-3 text-gray-600 text-lg">The referral network model works where the job value is high and trust matters.</p>
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">See it live</h2>
+        <p class="mt-3 text-gray-600 text-lg">Real cleaning company websites, built and running right now.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5">
-        {[
-          { industry: 'Restoration', partners: 'Plumbers, public adjusters, property managers', note: 'They see water damage before your phone rings.' },
-          { industry: 'Roofing', partners: 'Insurance adjusters, real estate agents, gutter companies', note: 'They\'re on the property when the damage is found.' },
-          { industry: 'HVAC', partners: 'Plumbers, home inspectors, property managers, electricians', note: 'Called in for the same job, refer you for yours.' },
-        ].map(item => (
-          <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
-            <p class="font-bold text-gray-900 text-lg mb-2">{item.industry}</p>
-            <p class="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-2">Partner sources</p>
-            <p class="text-sm text-gray-700 mb-3">{item.partners}</p>
-            <p class="text-xs text-gray-500 italic leading-relaxed">{item.note}</p>
-          </div>
+        {examples.map(ex => (
+          <a href={ex.url} target="_blank" rel="noopener noreferrer"
+            class="group bg-gray-50 border border-gray-200 rounded-xl p-6 hover:border-orange-300 hover:shadow-md transition block">
+            <p class="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-2">{ex.tag}</p>
+            <p class="font-bold text-gray-900 text-lg mb-3">{ex.name}</p>
+            <p class="text-sm text-gray-500 group-hover:text-orange-600 transition">View live site ↗</p>
+          </a>
         ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/proof" class="text-sm text-gray-600 hover:text-gray-800 font-medium transition">See the full offer breakdown →</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SOCIAL PROOF ═══ -->
+  <!-- ═══ SERVICE AREA ═══ -->
   <section class="bg-gray-50 py-16 border-y border-gray-200">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <div class="grid sm:grid-cols-3 gap-5 mb-8">
-        {[
-          { text: 'He actually listens, understands the day-to-day challenges we face, and delivers solutions that are practical, efficient, and tailored — not generic. He doesn\'t just talk strategy, he executes.', name: 'Heaven Artisan GF' },
-          { text: 'Clean layout and helped increase revenue for my business.', name: 'Abdul B.' },
-          { text: 'Local, friendly, and brings results over the expectation. Highly recommended.', name: 'Justice Rayy' },
-        ].map(r => (
-          <div class="bg-white rounded-xl border border-gray-200 p-6">
-            <div class="flex gap-0.5 text-yellow-400 mb-3">
-              {Array.from({length: 5}).map(() => (
-                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.175 0L6.62 16.282c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.984 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              ))}
-            </div>
-            <p class="text-gray-700 text-sm leading-relaxed">"{r.text}"</p>
-            <div class="mt-4 pt-3 border-t border-gray-200 text-xs font-semibold text-gray-900">{r.name} <span class="text-gray-400 font-normal">· Google Review</span></div>
-          </div>
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Where we work</h2>
+      <p class="text-gray-600 mb-6">Calgary and the surrounding area.</p>
+      <div class="flex flex-wrap justify-center gap-2.5">
+        {areas.map(area => (
+          <span class="bg-white border border-gray-200 text-gray-700 text-sm font-semibold px-4 py-2 rounded-full">{area}</span>
         ))}
-      </div>
-      <div class="text-center">
-        <a href="/proof" class="text-sm text-gray-600 hover:text-gray-800 font-medium transition">See all projects and reviews →</a>
       </div>
     </div>
   </section>
@@ -217,11 +186,11 @@ const seo = {
       <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">Common questions</h2>
       <div class="space-y-4">
         {[
-          { q: 'I already get some referrals. Why do I need this?', a: 'Because luck isn\'t a system. Most owners already know referred clients are their best — they close easier, pay more, complain less. The question is whether it happens consistently or just when it happens. What we build makes it predictable: the right partners, the right process, every month.' },
-          { q: 'How is this different from just asking people to refer me?', a: 'Asking is reactive. We identify which businesses already see your ideal client before they call anyone, approach and recruit the specific ones that make sense for your market, and set up the handoff process so the referral actually happens. There\'s a system behind it, not a hope.' },
-          { q: 'What\'s the one-time fee?', a: 'It\'s anchored to the real cost-per-acquisition in your niche — which varies by industry and market. The 15-minute call is specifically to walk you through which partners make sense for your business and what the investment looks like. The real question isn\'t the fee — it\'s how many jobs the network will send you.' },
-          { q: 'Do I have to maintain the network after you build it?', a: 'Yes — and that\'s by design. We hand you the tools: the check-in scripts, the tracking, the cadence. It takes 1–2 hours a month. You own the network outright. No retainer, no dependency on us.' },
-          { q: 'How long before I see results?', a: 'The first referrals can come in within weeks of a partner being activated — some partners have someone ready the day you onboard them. A mature 4-partner network produces 60–70 referred jobs per year. The earlier you start, the harder it is for your competition to lock in those same relationships.' },
+          { q: 'I don\'t have a website at all right now. Is that a problem?', a: 'No — that\'s exactly who this is built for. We build the website from scratch as part of the offer. You don\'t need anything in place before you start.' },
+          { q: 'What does the 30-day guarantee actually cover?', a: 'If you\'re not happy with the website or how we\'re managing the ads within the first 30 days, we refund what you paid us for that work. Ad spend already paid directly to Google or Meta isn\'t part of that, since it never came to us.' },
+          { q: 'Can I choose to only target residential or only commercial clients?', a: 'Yes. Tell us which side of the business you want to grow — residential, commercial, or both — and we build the site and target the ad campaigns around that.' },
+          { q: 'Do you only work with cleaning companies in Calgary proper?', a: 'Calgary is the core, but we also cover the surrounding area — Airdrie, Cochrane, Chestermere, and Okotoks.' },
+          { q: 'What\'s the cost?', a: 'That depends on your current setup and how much ad spend you want behind the campaigns. Book the 15-minute call and we\'ll walk you through it before you commit to anything.' },
         ].map(f => (
           <details class="bg-gray-50 border border-gray-200 rounded-xl p-5 group">
             <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center gap-4 text-sm">
@@ -240,23 +209,23 @@ const seo = {
     <div class="container mx-auto px-6 max-w-3xl text-center">
       <p class="text-orange-400 font-semibold text-sm uppercase tracking-wider mb-4">15 minutes</p>
       <h2 class="text-3xl sm:text-4xl font-bold leading-tight mb-6">
-        Every week that passes, those businesses keep sending your ideal client to someone else out of habit.
+        Every week without a real website and running ads is a week of jobs going to a competitor who has both.
       </h2>
       <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-        The longer that runs, the harder it is to put you in the middle. 15 minutes and we start building your network before it locks in with your competition.
+        15 minutes to walk through your business and tell you honestly what the website + ad management would look like for you — before you decide anything.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/apply"
           class="inline-flex px-10 py-4 rounded-lg font-semibold text-gray-900 bg-white hover:bg-gray-100 transition text-lg">
-          See which partners fit you →
+          Get my free growth plan →
         </a>
         <a href="https://cal.com/brandsbuilders/30-min" target="_blank" rel="noopener noreferrer"
           class="inline-flex px-10 py-4 rounded-lg font-semibold text-white border border-gray-700 hover:border-gray-500 transition text-lg">
           Book a 15-min call
         </a>
       </div>
-      <p class="mt-5 text-sm text-gray-500">One-time fee · No retainer · Network is yours to keep</p>
+      <p class="mt-5 text-sm text-gray-500">Website + ad management, bundled · 30-day guarantee on our work</p>
     </div>
   </section>
 
-</LandingLayout>
+</Layout>
